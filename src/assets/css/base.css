@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  
+}
+.full-width {
+  width: 100%;
+}
+.d-block {
+  display:block;
+}
+body {
+  background: rgb(15,26,57);
+  background: linear-gradient(170deg, rgba(15,26,57,1) 9%, rgba(13,14,33,1) 55%);
+}
+.container-m {
+  padding-right: 100px; 
+  padding-left: 100px
+}
+.material-icons {
+  margin-right: 3px;
+}
+.material-icons.bg {
+  background-color: #3A506F;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.lead_head_text {
+  color: whitesmoke;
+  font-size: 3rem;
+  line-height: 1;
+}
+.lead_text {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: whitesmoke;
+}
+.lead_text-1 {
+  font-size: 1.25rem;
+  line-height: 1.4rem;
+  color: whitesmoke;
+}
+.lead-text-dim {
+  color: #242a3f;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.mt-100 {
+  margin-top: 100px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mx-10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.mx-20 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.mr {
+  margin-right: 6px;
+}
+.flex-justify-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+.flex-justify-center {
+  display:flex;
+  justify-content:center;
+}
+.flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+.head_text {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+}
+.head_text-1 {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+}
+.swap_form_div {
+  border: 2px solid #202131;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.selected_token {
+  margin-top: 10px;
+  padding: 6px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.selected_token:hover {
+  background-color: #202D3F;
+}
+.center {
+  text-align: center;
+}
+.token_table {
+  height:500px; 
+  overflow-y:auto;
+}
+.insights {
+  background-color: whitesmoke;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 170px;
+  color: #0D132A;
+  font-weight: bold;
+  padding: 5px;
+}
+.swap {
+  background-color: #1B1F2F;
+  width: 480px;
+  padding: 15px;
+  color: whitesmoke;
+  border-radius: 25px;
+}
+.pool {
+  width: 630px;
+  color: whitesmoke;
+}
+.liquidity {
+  background-color: #242a3f;
+  padding: 10px;
+  border-radius: 15px;
+}
+.exchange-bg {
+  background: url("../images/globe-particle.png");
+  background-position: center; /* Center the image */
+  background-repeat: repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+.liquidity-tip {
+  background-color: #242a3f;
+  color: #5a5f70;
+  padding: 10px;
+  border-radius: 15px;
+}
+.add-liquidity {
+  background-color: #1B1F2F;
+  width: 420px;
+  padding: 15px;
+  color: whitesmoke;
+  border-radius: 25px;
+}
+.footer {
+  height: 10%;
+}
+
+
+
+@media (min-width: 768px) {
+  .container-m {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+}
+
+@media (min-width: 1200px) {
+  .container-m {
+    max-width: 1140px;
+    padding-right: 100px; 
+  padding-left: 100px
+  }
+}
+
+@media (min-width: 992px) {
+  .container-m {
+    max-width: 960px;
+    padding-right: 100px; 
+  padding-left: 100px
+}
+}
+
+@media (min-width: 576px) {
+  .container-m {
+    max-width: 100%;
+}
+}
+
+@media (min-width: 410px) {
+  .container-m {
+    max-width: 100%;
+}
+}
+

@@ -1,0 +1,49 @@
+.vs-navbar__item {
+  font-size: 1.2rem !important;
+}
+
+.vs-navbar {
+  padding: 0px 20px !important;
+  min-height: 54px !important;
+}
+
+.vs-dialog {
+  background: #1B1F2F !important;
+  color: white !important;
+  min-width: 450px !important;
+}
+
+.token_input {
+  .vs-input-content {
+    color: #55596A !important;
+
+    .vs-input {
+      border: 2px solid transparent;
+      background: transparent;
+      color: whitesmoke;
+      font-size: 1.5rem;
+    }
+
+    .vs-input__label--label {
+      font-size: 1.2rem !important;
+    }
+  }
+}
+
+.token_table {
+  .vs-table__header {
+    background: transparent !important
+  }
+}
+
+.vs-table__tr:hover {
+  background-color: #242a3f !important;
+}
+
+.vs-table__td:hover {
+  background-color: #242a3f !important;
+}
+
+.vs-avatar-content {
+  --vs-color: none !important;
+}
