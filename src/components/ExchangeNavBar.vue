@@ -12,14 +12,14 @@
         <vs-navbar-item :active="active == 'home'" id="home" to="/">
           SOLID DEFI
         </vs-navbar-item>
+      </template>
+      <template #right>
         <vs-navbar-item :active="active == 'swap'" id="swap" to="/app/swap">
           Swap
         </vs-navbar-item>
         <vs-navbar-item :active="active == 'pool'" id="pool" to="/app/pool">
           Pool
         </vs-navbar-item>
-      </template>
-      <template #right>
         <vs-button danger> Connect to a wallet</vs-button>
       </template>
     </vs-navbar>

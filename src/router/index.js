@@ -2,8 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '@/views/Home';
+import About from '@/views/About';
 import Hero from '@/views/sections/Hero';
 import TokenSwap from '@/components/TokenSwap';
+import TokenSwap2 from '@/components/TokenSwap2';
 import Pool from '@/components/Pool';
 import Faqs from '@/views/Faqs';
 import Exchange from '@/views/Exchange';
@@ -27,6 +29,11 @@ const routes = [
         path: "faqs",
         name: "Faqs",
         component: Faqs
+      },
+      {
+        path: "about",
+        name: "About",
+        component: About
       }
     ]
   },
@@ -40,6 +47,11 @@ const routes = [
         path: "/app/swap",
         name: "TokenSwap",
         component: TokenSwap
+      },
+      {
+        path: "/app/swap2",
+        name: "TokenSwap2",
+        component: TokenSwap2
       },
       {
         path: "/app/pool",

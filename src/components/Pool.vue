@@ -1,8 +1,8 @@
 <template>
   <div class="mt-100">
-    <div class="flex-justify-center">
+    <div class="flex-justify-between">
       <div class="pool">
-        <div class="liquidity">
+        <!-- <div class="liquidity">
           <span class="flex-align-center insights">
             <span class="material-icons" style="color:#5b3cc4;">
               lightbulb
@@ -14,8 +14,8 @@
             their share of the pool. Fees are added to the pool, accrue in real
             time and can be claimed by withdrawing your liquidity.
           </p>
-        </div>
-        <div class="flex-justify-between mt-20">
+        </div> -->
+        <div class="mt-20">
           <span class="lead_text">Your Liquidity</span>
           <div class="d-flex">
             <vs-button border> <b>Create a pair</b></vs-button>

@@ -1,5 +1,5 @@
 <template>
   <div class="mt-100">
-    <h1>Fags</h1>
+    <h1>About</h1>
   </div>
 </template>

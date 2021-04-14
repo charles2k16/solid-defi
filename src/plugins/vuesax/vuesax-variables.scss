@@ -15,12 +15,12 @@
 
 .token_input {
   .vs-input-content {
-    color: #55596A !important;
-
+    color: rgb(216, 215, 215) !important;
+    
     .vs-input {
-      border: 2px solid transparent;
-      background: transparent;
-      color: whitesmoke;
+      // border: 2px solid transparent;
+      background: #222942;
+      color: white;
       font-size: 1.5rem;
     }
 
@@ -32,6 +32,15 @@
 
 .token_table {
   .vs-table__header {
+    background: transparent !important;
+  }
+}
+
+.token_list_table {
+  background-color: #1B1F2F;
+  color: rgb(170, 168, 168);
+
+  .vs-table__header {
     background: transparent !important
   }
 }
@@ -42,6 +51,10 @@
 
 .vs-table__td:hover {
   background-color: #242a3f !important;
+}
+
+.vs-table__thead .vs-table__th {
+  background: transparent !important;
 }
 
 .vs-avatar-content {

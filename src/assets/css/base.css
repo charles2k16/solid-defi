@@ -83,13 +83,9 @@ body {
   display: flex;
   align-items: center;
 }
-.flex-justify-center {
-  display:flex;
-  justify-content:center;
-}
 .flex-justify-between {
-  display: flex;
-  justify-content: space-between;
+  display:flex;
+  justify-content:space-between;
 }
 .d-flex {
   display: flex;
@@ -104,10 +100,19 @@ body {
   font-size: 1.2rem;
 }
 .swap_form_div {
-  border: 2px solid #202131;
+  /* border: 2px solid #202131; */
   padding: 10px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.swap_form_div_tks {
+  /* border: 2px solid #202131; */
+  margin-top: -15px;
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -138,11 +143,25 @@ body {
   padding: 5px;
 }
 .swap {
-  background-color: #1B1F2F;
   width: 480px;
-  padding: 15px;
-  color: whitesmoke;
+}
+.swap_form {
+  background-color: #1B1F2F;
+  height: 280px;
   border-radius: 25px;
+  padding: 10px;
+  color: rgb(179, 177, 177);
+}
+.swap_token_table {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.swap_metrics {
+  color: rgb(136, 135, 135);
+  margin-top: 40px;
+  background-color: #1B1F2F;
+  border-radius: 20px;
+  padding: 10px;
 }
 .pool {
   width: 630px;
@@ -175,7 +194,19 @@ body {
 .footer {
   height: 10%;
 }
-
+.show-token-list {
+  z-index: 99000;
+  position: fixed;
+  width: 350px;
+  height: 320px;
+  overflow-y: auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+.show-token-list-div {
+  background: #1B1F2F !important;
+  color: white !important;
+}
 
 
 @media (min-width: 768px) {

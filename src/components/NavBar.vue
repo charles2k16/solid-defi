@@ -14,7 +14,7 @@
         </vs-navbar-item>
       </template>
       <template #right>
-        <vs-navbar-item :active="active == 'forum'" id="forum">
+        <!-- <vs-navbar-item :active="active == 'forum'" id="forum">
           Forum
         </vs-navbar-item>
         <vs-navbar-item :active="active == 'governance'" id="governance">
@@ -25,9 +25,9 @@
         </vs-navbar-item>
         <vs-navbar-item :active="active == 'about'" id="about">
           About
-        </vs-navbar-item>
+        </vs-navbar-item> -->
         <template>
-          <vs-button color="#B62549" border
+          <vs-button border warn
             ><span class="material-icons">
               insights
             </span>

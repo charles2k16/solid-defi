@@ -21,7 +21,7 @@
             blockchain technology.
           </p>
           <div class="mt-20">
-            <vs-button>
+            <vs-button warn>
               <span class="material-icons mr">
                 menu_book
               </span>
