@@ -38,14 +38,14 @@ body {
   cursor: pointer;
 }
 .lead_head_text {
-  color: whitesmoke;
+  color: rgb(202, 199, 199);
   font-size: 3rem;
   line-height: 1;
 }
 .lead_text {
   font-size: 1.25rem;
   line-height: 1.75rem;
-  color: whitesmoke;
+  color: rgb(204, 202, 202);
 }
 .lead_text-1 {
   font-size: 1.25rem;
@@ -207,7 +207,17 @@ body {
   background: #1B1F2F !important;
   color: white !important;
 }
-
+.wallects {
+  border: 1px solid #2c2f44;
+  padding: 5px;
+  border-radius: 10px;
+}
+.linegrapgh {
+  padding:10px;
+  border:1px solid grey; 
+  border-radius:10px;
+  width: 650px;
+}
 
 @media (min-width: 768px) {
   .container-m {

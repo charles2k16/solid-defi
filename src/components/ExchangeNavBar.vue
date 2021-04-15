@@ -20,17 +20,34 @@
         <vs-navbar-item :active="active == 'pool'" id="pool" to="/app/pool">
           Pool
         </vs-navbar-item>
-        <vs-button danger> Connect to a wallet</vs-button>
+        <vs-button danger @click="showWallects = true">
+          Connect to a wallet</vs-button
+        >
       </template>
     </vs-navbar>
+
+    <vs-dialog v-model="showWallects" width="420px">
+      <template #header>
+        <h4 class="not-margin">
+          Choose a wallect provider
+        </h4>
+      </template>
+      <ConnectWallect />
+    </vs-dialog>
   </div>
 </template>
 
 <script>
+import ConnectWallect from './ConnectWallect';
+
 export default {
   name: 'ExchangeNavBar',
+  components: {
+    ConnectWallect,
+  },
   data: () => ({
     active: '',
+    showWallects: false,
   }),
 };
 </script>
