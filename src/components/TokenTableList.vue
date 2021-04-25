@@ -38,7 +38,7 @@
               <vs-avatar size="30">
                 <img :src="tr.logoURI" alt="logo" />
               </vs-avatar>
-              <span class="mx-20" style="color:#395f9c"
+              <span class="mx-20" style="color:rgb(170, 168, 168);"
                 ><b>{{ tr.name }}</b>
               </span>
             </span>

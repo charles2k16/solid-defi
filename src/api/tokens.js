@@ -14,5 +14,11 @@ export default {
     return axios.get(url)
       .then((response) => Promise.resolve(response))
       .catch((error) => Promise.reject(error))
+  },
+  getTokenCurrency() {
+    let url = 'https://www.binance.com/bapi/asset/v1/public/asset-service/product/currency'
+    return axios.get(url)
+      .then((response) => Promise.resolve(response))
+      .catch((error) => Promise.reject(error))
   }
 }

@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-100">
+  <div class="mt-100" style="background:#292A37;">
     <div>
-      <div class="flex-justify-between ">
+      <div class="flex-justify-between">
         <div class="linegrapgh">
           <div class="d-flex">
             <vs-button transparent warn @click="showlineChart">

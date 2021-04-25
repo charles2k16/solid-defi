@@ -2,9 +2,10 @@
   <div class="center examplex">
     <vs-navbar
       text-white
-      color="#121f42"
+      color="#7d33ff"
       center-collapsed
       fixed
+      square
       v-model="active"
     >
       <template #left>
@@ -17,8 +18,8 @@
         <vs-navbar-item :active="active == 'swap'" id="swap" to="/app/swap">
           Swap
         </vs-navbar-item>
-        <vs-navbar-item :active="active == 'pool'" id="pool" to="/app/pool">
-          Pool
+        <vs-navbar-item :active="active == 'Tokenomic'" id="Tokenomic">
+          Tokenomic
         </vs-navbar-item>
         <vs-button danger @click="showWallects = true">
           Connect to a wallet</vs-button

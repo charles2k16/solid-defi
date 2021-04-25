@@ -5,6 +5,9 @@
 .vs-navbar {
   padding: 0px 20px !important;
   min-height: 54px !important;
+  width: 950px !important;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .vs-dialog {
@@ -13,21 +16,31 @@
   min-width: 450px !important;
 }
 
-.token_input {
-  .vs-input-content {
-    color: rgb(216, 215, 215) !important;
+// .token_input {
+//   .vs-input-content {
+//     color: rgb(216, 215, 215) !important;
     
-    .vs-input {
-      // border: 2px solid transparent;
-      background: #222942;
-      color: white;
-      font-size: 1.5rem;
-    }
+//     .vs-input {
+//       // border: 2px solid transparent;
+//       background: #222942;
+//       color: white;
+//       font-size: 1.5rem;
+//     }
 
-    .vs-input__label--label {
-      font-size: 1.2rem !important;
-    }
-  }
+//     .vs-input__label--label {
+//       font-size: 1.2rem !important;
+//     }
+//   }
+// }
+
+.vs-input {
+  width: 300px !important;
+  height: 51px;
+  padding: 5px 12px !important;
+}
+
+.vs-input__label {
+  font-size: 1rem !important;
 }
 
 .token_table {

@@ -2,12 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '@/views/Home';
-import About from '@/views/About';
-import Hero from '@/views/sections/Hero';
 import TokenSwap from '@/components/TokenSwap';
 import TokenSwap2 from '@/components/TokenSwap2';
 import Pool from '@/components/Pool';
-import Faqs from '@/views/Faqs';
+import Charts from '@/views/Charts';
 import Exchange from '@/views/Exchange';
 import AddLiquidity from '@/components/AddLiquidity';
 
@@ -16,26 +14,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    redirect: '/home',
     name: 'Home',
     component: Home,
-    children: [
-      {
-        path: "home",
-        name: "Hero",
-        component: Hero
-      },
-      {
-        path: "faqs",
-        name: "Faqs",
-        component: Faqs
-      },
-      {
-        path: "about",
-        name: "About",
-        component: About
-      }
-    ]
   },
   {
     path: '/app',
@@ -62,6 +42,11 @@ const routes = [
         path: "/app/pool/add",
         name: "Add Pool",
         component: AddLiquidity
+      },
+      {
+        path: "/app/charts",
+        name: "Charts",
+        component: Charts
       },
     ]
   }
