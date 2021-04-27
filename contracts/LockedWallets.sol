@@ -6,34 +6,28 @@ contract LockedWallets {
   uint256 public unlockDate;
   uint256 public createdAt;
 
-  event WithdrewTokens(address tokenContract, address to, uint256 amount);
-
   constructor() public {
     unlockDate = 200;
     createdAt = now;
   }
-
-  // payable means this address can receive ether
-  // when receieved we trigger a received event.
-  function() payable public { 
-    Received(msg.sender, msg.value);
-  }
-
-  function get1000Tokens() public {
+  
+  function get1000Tokens(address _tokenContract) public {
     require(now >= unlockDate);
 
-    // the address we a are withdrawing the token from
-    // ERC20 token = ERC20(_tokenContract);
+    // the address we are withdrawing the token from
+    SolidToken token = SolidToken(_tokenContract);
 
     uint256 amount = 1000;
     token.transfer(msg.sender, amount);
-    WithdrewTokens(msg.sender, amount);
+    emit WithdrewTokens(msg.sender, amount);
   }
 
   // msg.sender(whoever is calling the contract, type = address).
 
-
   function info() public view returns(uint256, uint256) {
     return (unlockDate, createdAt);
   }
+
+  event WithdrewTokens(address tokenContract, uint256 amount);
+  event Received(address from, uint256 amount);
 }

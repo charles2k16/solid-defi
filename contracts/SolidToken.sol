@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
 
 contract SolidToken { 
-  string public name = "Solid Protocol";
-  string public symbol = "SPT";
+  string public name = "Solid Token";
+  string public symbol = "ST";
   uint8  public decimals = 18;
   uint256 public totalSupply = 1000000000000000000000000; // 1 million tokens
 
@@ -11,13 +11,13 @@ contract SolidToken {
   event Transfer(
     address indexed _from,
     address indexed _receiver,
-    uint256 _numTokens
+    uint256 _amount
   );
 
   event Approval(
     address indexed _owner,
     address indexed _spender,
-    uint256 _numTokens
+    uint256 _amount
   );
 
 
@@ -32,18 +32,18 @@ contract SolidToken {
     balanceOf[msg.sender] = totalSupply;
   }
 
-  function transfer(address _receiver, uint256 _numTokens) public returns (bool success) {
-    require( _numTokens <= balanceOf[msg.sender]);
-    balanceOf[msg.sender] = balanceOf[msg.sender] - _numTokens;
-    balanceOf[_receiver] = balanceOf[_receiver] + _numTokens;
-    emit Transfer(msg.sender, _receiver, _numTokens);
+  function transfer(address _receiver, uint256 _amount) public returns (bool success) {
+    require( _amount <= balanceOf[msg.sender]);
+    balanceOf[msg.sender] = balanceOf[msg.sender] - _amount;
+    balanceOf[_receiver] = balanceOf[_receiver] + _amount;
+    emit Transfer(msg.sender, _receiver, _amount);
     return true;
   }
 
-  function approve(address _spender, uint256 _numTokens) public returns (bool success) {
+  function approve(address _spender, uint256 _amount) public returns (bool success) {
     // account owner approves spender a number of token to be spent or transfered.
-    allowance[msg.sender][_spender] = _numTokens;
-    emit Approval(msg.sender, _spender, _numTokens);
+    allowance[msg.sender][_spender] = _amount;
+    emit Approval(msg.sender, _spender, _amount);
     return true;
   }
 
