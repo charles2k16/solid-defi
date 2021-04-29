@@ -45,7 +45,11 @@
 }
 
 .vs-card__group .vs-card__group-cards .vs-card-content {
-  min-width: 300px !important;
+  min-width: 260px !important;
+}
+
+.vs-card {
+  max-width: 250px !important;
 }
 
 .vs-dialog {

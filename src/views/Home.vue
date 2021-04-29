@@ -81,7 +81,7 @@
                   </span>
                   <b>Join us on Telegram</b>
                 </vs-button>
-                <p class="small_text">
+                <p class="small_text1">
                   For news, early access & special prizes
                 </p>
                 <h2 class="mt-30 small_text_primary">
@@ -96,10 +96,13 @@
         </vs-row>
 
         <!-- News -->
+      </div>
+    </div>
 
-        <div class="mt-100">
-          <div></div>
-          <vs-card-group>
+    <div class="news">
+      <div class="sec_div">
+        <div class="wrap">
+          <!-- <vs-card-group style="margin-top: -100px; z-index: 9999;">
             <vs-card>
               <template #title>
                 <h3>Solid Protocol (SP) to list on MXC Exchange.</h3>
@@ -161,8 +164,6 @@
                 <p style="font-size:16px;">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 </p>
               </template>
               <template #interactions>
@@ -174,13 +175,61 @@
                 </vs-button>
               </template>
             </vs-card>
-          </vs-card-group>
+          </vs-card-group> -->
 
-          <vs-button transparent>
-            <b>READ ALL POSTS</b>
-          </vs-button>
+          <div class="pt-50 pb-50">
+            <vs-row>
+              <vs-col :w="7" :xs="12" :sm="12">
+                <div>
+                  <h1 class="lead_head_text_black">
+                    What is SOLID <br />
+                    PROTOCOL?
+                  </h1>
+                  <div style="margin-top:70px">
+                    <img src="../assets/images/polygon.png" alt="" />
+                    <br />
+                    <p class="mt-20 small_text">
+                      SOLID COLLABORATES WITH POLYGON
+                    </p>
+                  </div>
+                </div>
+              </vs-col>
+              <vs-col :w="5" :xs="12" :sm="12">
+                <p class="lead_text_black">
+                  The Solid Protocol acts as a bridge that could take any supply
+                  of any market and convert it into a “Solid version” of the
+                  market. It creates a stable market that the price is adjusted
+                  non-linearly, in which it is a more stabilized market and
+                  could be considered as a subset of the original market.
+                </p>
+                <p class="lead_text_black mt-20">
+                  Our vision is to create an anti-inflation protocol for the
+                  market with quantitative easing (QE), as one holds a “Solid
+                  version” of a stable coin, the token could increase against
+                  inflation.
+                </p>
+              </vs-col>
+            </vs-row>
+
+            <div class="center mt-100">
+              <h1 class="token_text">1,000,000,000 tokens</h1>
+              <p class="mt-20">
+                The total supply of GAMEE Tokens is 1,000,000,000 tokens, all
+                minted at once. Solid Tokens will be distributed among 11 main
+                groups:
+              </p>
+
+              <div class="center mt-50">
+                <img src="../assets/images/chart.png" alt="chart" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <vs-button transparent>
+        <b>READ ALL POSTS</b>
+      </vs-button>
     </div>
 
     <div class="community">
