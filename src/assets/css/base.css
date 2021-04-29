@@ -29,32 +29,29 @@ a {
   cursor: pointer;
 }
 .lead_head_text {
-  color: rgb(39, 38, 38);
-  font-size: 3rem;
+  color: whitesmoke;
+  font-size: 2.5rem;
   line-height: 1;
   font-weight: bold;
 }
 .lead_head_text1 {
-  color: rgb(26, 25, 25);
-  font-size: 2.5rem;
-  line-height: 4rem;
+  color: whitesmoke;
+  font-size: 2.4rem;
+  line-height: 3rem;
   font-weight: bold;
 }
 .lead_text {
   font-size: 1.25rem;
   line-height: 1.90rem;
-  color: rgb(56, 54, 54);
+  color: rgb(214, 213, 213);
 }
-.lead_text-1 {
-  font-size: 1.50rem;
-  line-height: 2.30rem;
-  color: rgb(31, 30, 30);
-  font-weight: bold;
+.small_text {
+  font-size: 1rem;
+  color: rgb(190, 188, 188)
 }
-.lead-text-dim {
-  color: #242a3f;
+.small_text_primary {
+  color: #5b3cc4;
   font-size: 1.1rem;
-  text-align: center;
 }
 .tks {
   color: #5b3cc4;
@@ -69,6 +66,9 @@ a {
 }
 .mt-10 {
   margin-top: 10px;
+}
+.mt-30 {
+  margin-top: 30px;
 }
 .mx-10 {
   margin-left: 10px;
@@ -85,7 +85,7 @@ a {
   margin-left: 10px;
 }
 .ml-20 {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 .flex-justify-between-center {
   display: flex;
@@ -149,14 +149,9 @@ a {
   text-align: center;
 }
 .insights {
-  background-color: whitesmoke;
-  border: 1px solid white;
-  border-radius: 20px;
-  width: 250px;
-  color: #0D132A;
+  color:whitesmoke;
   font-weight: bold;
-  padding: 5px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .insights1 {
   background-color: #F4F4FF;
@@ -253,27 +248,12 @@ a {
   padding: 10px;
   border-radius: 5px;
   color: rgb(170, 168, 168);
-  font-weight: li;
 }
 .hero {
-  background-color: #F4F4FF;
+  background-color:#1A1D29;
   padding-top: 100px;
   padding-bottom: 100px;
   width: 100%;
-}
-.subscription {
-  background: rgb(244,210,230);
-  background: linear-gradient(170deg, rgba(244,210,230,1) 29%, rgba(243,220,233,1) 65%);
-  padding-top: 50px;
-  padding-bottom: 50px;
-  width: 100%;
-}
-.news {
-  padding-top: 80px;
-  padding-bottom: 50px;
-  width: auto;
-  height: auto;
-
 }
 .wrap {
   width: 940px;

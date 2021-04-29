@@ -5,7 +5,7 @@ import './vuesax-variables.scss';
 import 'vuesax/dist/vuesax.css' //Vuesax styles
 Vue.use(Vuesax, {
   colors: {
-    primary: '#5b3cc4',
+    primary: '#7922DC',
     success: 'rgb(23, 201, 100)',
     danger: 'rgb(242, 19, 93)',
     warning: 'rgb(170, 168, 168)',

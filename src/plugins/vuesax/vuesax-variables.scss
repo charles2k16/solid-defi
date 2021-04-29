@@ -1,13 +1,51 @@
 .vs-navbar__item {
-  font-size: 1.2rem !important;
+  font-size: 1.3rem !important;
 }
 
 .vs-navbar {
   padding: 0px 20px !important;
-  min-height: 54px !important;
+  min-height: 70px !important;
   width: 950px !important;
   margin-right: auto;
   margin-left: auto;
+}
+
+.nav_button.vs-button--default {
+  border-radius: 70px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  color: #fff;
+  box-shadow:  -16px -16px 32px #0a0c14,
+             5px 5px 5px 5px rgb(36, 35, 35);
+
+  background: rgb(77,26,192) !important;
+  background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
+}
+
+.eth_button.vs-button--default {
+  border-radius: 70px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  color: #fff;
+  background: #161D25;
+  box-shadow:  5px 5px 10px #141b22,
+               -5px -5px 10px #181f28;
+}
+
+.sub_button.vs-button--default {
+  border-radius: 80px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  color: #fff;
+  box-shadow:  6px 6px 12px #0d0e14,
+             -6px -6px 12px #272c3e;
+
+  background: rgb(77,26,192) !important;
+  background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
+}
+
+.vs-card__group .vs-card__group-cards .vs-card-content {
+  min-width: 300px !important;
 }
 
 .vs-dialog {
@@ -35,8 +73,9 @@
 
 .vs-input {
   width: 300px !important;
-  height: 51px;
+  height: 45px;
   padding: 5px 12px !important;
+  border-radius: 80px !important;
 }
 
 .vs-input__label {

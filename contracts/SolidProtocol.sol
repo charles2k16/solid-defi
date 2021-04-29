@@ -21,7 +21,7 @@ contract SolidProtocol is SolidProtocolERC20 {
 
   constructor() public {
     balanceOf[msg.sender] = totalSupply;
-    unlockDate = 900;
+    unlockDate = 500;
     createdAt = now;
   }
 
@@ -56,9 +56,9 @@ contract SolidProtocol is SolidProtocolERC20 {
   }
 
   function send1000Tokens(address receiver) public {
-    require(now >= unlockDate);
+    require(createdAt <= unlockDate, 'Token not yet ready');
 
-    uint256 amount = 1000;
-    transfer(receiver, amount);
+    uint amount = 1000;
+    _transfer(msg.sender, receiver, amount);
   }
 }

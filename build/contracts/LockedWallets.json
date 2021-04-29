@@ -111,9 +111,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Received\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"tokenContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"WithdrewTokens\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"createdAt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tokenContract\",\"type\":\"address\"}],\"name\":\"get1000Tokens\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"info\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"unlockDate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/apple/Workspace/blockchain/solidDefi/contracts/LockedWallets.sol\":\"LockedWallets\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/apple/Workspace/blockchain/solidDefi/contracts/LockedWallets.sol\":{\"keccak256\":\"0x3abd7b28132b8cfac5ed94e77656384b6199cd7ba99ee3f760d0da4be77776a1\",\"urls\":[\"bzz-raw://b1db37e5137f0a6416ff7f8a6ecb7d75d7d92357e5c3d2d0a75f7bf1ff60c13e\",\"dweb:/ipfs/QmbJrqgEjzy9KeQBNyKMcfhBDbyPC32kFgQwcFWAwPjZR2\"]},\"/Users/apple/Workspace/blockchain/solidDefi/contracts/SolidToken.sol\":{\"keccak256\":\"0x94bfc7742e55506ee48199e97b7be38ebca0ce162d43eeecaeeea4fbae8d9973\",\"urls\":[\"bzz-raw://b086de2a22f9fbd6bd5ff108279f62d6bb3c7e0ca211d62ba4ab84fc8e5492aa\",\"dweb:/ipfs/QmRMKo3SY1nVnqUWZQB7wxxowBn3Cb2KpjU9Bn6C9VTZJu\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060c8600081905550426001819055506102968061002f6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063370158ea1461005157806355b955271461007657806369ac5721146100ba578063cf09e0d0146100d8575b600080fd5b6100596100f6565b604051808381526020018281526020019250505060405180910390f35b6100b86004803603602081101561008c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610107565b005b6100c2610255565b6040518082815260200191505060405180910390f35b6100e061025b565b6040518082815260200191505060405180910390f35b600080600054600154915091509091565b60005442101561011657600080fd5b600081905060006103e890508173ffffffffffffffffffffffffffffffffffffffff1663a9059cbb33836040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156101a957600080fd5b505af11580156101bd573d6000803e3d6000fd5b505050506040513d60208110156101d357600080fd5b8101908080519060200190929190505050507fc7373a0f64b3fe06c2144779575ea56ae879f4d815db065edd84fa72d744f1283382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505050565b60005481565b6001548156fea265627a7a72315820b2c8d57fe74e5f354786f85926d088929d51928329ce09129c1683715fee5a7b64736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063370158ea1461005157806355b955271461007657806369ac5721146100ba578063cf09e0d0146100d8575b600080fd5b6100596100f6565b604051808381526020018281526020019250505060405180910390f35b6100b86004803603602081101561008c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610107565b005b6100c2610255565b6040518082815260200191505060405180910390f35b6100e061025b565b6040518082815260200191505060405180910390f35b600080600054600154915091509091565b60005442101561011657600080fd5b600081905060006103e890508173ffffffffffffffffffffffffffffffffffffffff1663a9059cbb33836040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156101a957600080fd5b505af11580156101bd573d6000803e3d6000fd5b505050506040513d60208110156101d357600080fd5b8101908080519060200190929190505050507fc7373a0f64b3fe06c2144779575ea56ae879f4d815db065edd84fa72d744f1283382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505050565b60005481565b6001548156fea265627a7a72315820b2c8d57fe74e5f354786f85926d088929d51928329ce09129c1683715fee5a7b64736f6c63430005100032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Received\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"tokenContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"WithdrewTokens\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"createdAt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tokenContract\",\"type\":\"address\"}],\"name\":\"get1000Tokens\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"info\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"unlockDate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/apple/Workspace/blockchain/solidDefi/contracts/LockedWallets.sol\":\"LockedWallets\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/apple/Workspace/blockchain/solidDefi/contracts/LockedWallets.sol\":{\"keccak256\":\"0x3abd7b28132b8cfac5ed94e77656384b6199cd7ba99ee3f760d0da4be77776a1\",\"urls\":[\"bzz-raw://b1db37e5137f0a6416ff7f8a6ecb7d75d7d92357e5c3d2d0a75f7bf1ff60c13e\",\"dweb:/ipfs/QmbJrqgEjzy9KeQBNyKMcfhBDbyPC32kFgQwcFWAwPjZR2\"]},\"/Users/apple/Workspace/blockchain/solidDefi/contracts/SolidToken.sol\":{\"keccak256\":\"0xca313212fdefdfc9315f02f44f42623e0e6ee47bf009f80b7e57b87975ea5496\",\"urls\":[\"bzz-raw://7ff6d7812925ea187df077ba9d9dbe568c1e76c586116cb61df720e85241f7fb\",\"dweb:/ipfs/QmaRDcUvGuYdp5RRPo1ixjYBWnGT9PB85UzFcL4VTJh5Hy\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060c8600081905550426001819055506102968061002f6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063370158ea1461005157806355b955271461007657806369ac5721146100ba578063cf09e0d0146100d8575b600080fd5b6100596100f6565b604051808381526020018281526020019250505060405180910390f35b6100b86004803603602081101561008c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610107565b005b6100c2610255565b6040518082815260200191505060405180910390f35b6100e061025b565b6040518082815260200191505060405180910390f35b600080600054600154915091509091565b60005442101561011657600080fd5b600081905060006103e890508173ffffffffffffffffffffffffffffffffffffffff1663a9059cbb33836040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156101a957600080fd5b505af11580156101bd573d6000803e3d6000fd5b505050506040513d60208110156101d357600080fd5b8101908080519060200190929190505050507fc7373a0f64b3fe06c2144779575ea56ae879f4d815db065edd84fa72d744f1283382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505050565b60005481565b6001548156fea265627a7a72315820b2e7f541ad1921685a5ef300e7362906f1a07fed36a47815825650b84466b37264736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063370158ea1461005157806355b955271461007657806369ac5721146100ba578063cf09e0d0146100d8575b600080fd5b6100596100f6565b604051808381526020018281526020019250505060405180910390f35b6100b86004803603602081101561008c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610107565b005b6100c2610255565b6040518082815260200191505060405180910390f35b6100e061025b565b6040518082815260200191505060405180910390f35b600080600054600154915091509091565b60005442101561011657600080fd5b600081905060006103e890508173ffffffffffffffffffffffffffffffffffffffff1663a9059cbb33836040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156101a957600080fd5b505af11580156101bd573d6000803e3d6000fd5b505050506040513d60208110156101d357600080fd5b8101908080519060200190929190505050507fc7373a0f64b3fe06c2144779575ea56ae879f4d815db065edd84fa72d744f1283382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505050565b60005481565b6001548156fea265627a7a72315820b2e7f541ad1921685a5ef300e7362906f1a07fed36a47815825650b84466b37264736f6c63430005100032",
   "sourceMap": "53:749:0:-;;;138:69;8:9:-1;5:2;;;30:1;27;20:12;5:2;138:69:0;178:3;165:10;:16;;;;199:3;187:9;:15;;;;53:749;;;;;;",
   "deployedSourceMap": "53:749:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;53:749:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;593:95;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;213:309;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;213:309:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;80:25;;;:::i;:::-;;;;;;;;;;;;;;;;;;;109:24;;;:::i;:::-;;;;;;;;;;;;;;;;;;;593:95;629:7;638;661:10;;673:9;;653:30;;;;593:95;;:::o;213:309::-;288:10;;281:3;:17;;273:26;;;;;;359:16;389:14;359:45;;411:14;428:4;411:21;;438:5;:14;;;453:10;465:6;438:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;438:34:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;438:34:0;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;438:34:0;;;;;;;;;;;;;;;;;483;498:10;510:6;483:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;213:309;;;:::o;80:25::-;;;;:::o;109:24::-;;;;:::o",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./SolidToken.sol\";\n\ncontract LockedWallets {\n  uint256 public unlockDate;\n  uint256 public createdAt;\n\n  constructor() public {\n    unlockDate = 200;\n    createdAt = now;\n  }\n  \n  function get1000Tokens(address _tokenContract) public {\n    require(now >= unlockDate);\n\n    // the address we are withdrawing the token from\n    SolidToken token = SolidToken(_tokenContract);\n\n    uint256 amount = 1000;\n    token.transfer(msg.sender, amount);\n    emit WithdrewTokens(msg.sender, amount);\n  }\n\n  // msg.sender(whoever is calling the contract, type = address).\n\n  function info() public view returns(uint256, uint256) {\n    return (unlockDate, createdAt);\n  }\n\n  event WithdrewTokens(address tokenContract, uint256 amount);\n  event Received(address from, uint256 amount);\n}",
@@ -145,7 +145,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 80,
-        "sourceUnit": 303,
+        "sourceUnit": 628,
         "src": "25:26:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -301,7 +301,7 @@
                       "name": "now",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 319,
+                      "referencedDeclaration": 728,
                       "src": "199:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -372,7 +372,7 @@
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 319,
+                          "referencedDeclaration": 728,
                           "src": "281:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -412,10 +412,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        320,
-                        321
+                        729,
+                        730
                       ],
-                      "referencedDeclaration": 320,
+                      "referencedDeclaration": 729,
                       "src": "273:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -455,7 +455,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_SolidToken_$302",
+                        "typeIdentifier": "t_contract$_SolidToken_$627",
                         "typeString": "contract SolidToken"
                       },
                       "typeName": {
@@ -463,10 +463,10 @@
                         "id": 29,
                         "name": "SolidToken",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 302,
+                        "referencedDeclaration": 627,
                         "src": "359:10:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_SolidToken_$302",
+                          "typeIdentifier": "t_contract$_SolidToken_$627",
                           "typeString": "contract SolidToken"
                         }
                       },
@@ -503,10 +503,10 @@
                       "name": "SolidToken",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 302,
+                      "referencedDeclaration": 627,
                       "src": "378:10:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_contract$_SolidToken_$302_$",
+                        "typeIdentifier": "t_type$_t_contract$_SolidToken_$627_$",
                         "typeString": "type(contract SolidToken)"
                       }
                     },
@@ -520,7 +520,7 @@
                     "nodeType": "FunctionCall",
                     "src": "378:26:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_SolidToken_$302",
+                      "typeIdentifier": "t_contract$_SolidToken_$627",
                       "typeString": "contract SolidToken"
                     }
                   },
@@ -593,7 +593,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 317,
+                          "referencedDeclaration": 726,
                           "src": "453:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -648,7 +648,7 @@
                         "referencedDeclaration": 30,
                         "src": "438:5:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_SolidToken_$302",
+                          "typeIdentifier": "t_contract$_SolidToken_$627",
                           "typeString": "contract SolidToken"
                         }
                       },
@@ -659,7 +659,7 @@
                       "lValueRequested": false,
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 213,
+                      "referencedDeclaration": 538,
                       "src": "438:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -696,7 +696,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 317,
+                          "referencedDeclaration": 726,
                           "src": "498:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1135,7 +1135,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 80,
-        "sourceUnit": 303,
+        "sourceUnit": 628,
         "src": "25:26:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1291,7 +1291,7 @@
                       "name": "now",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 319,
+                      "referencedDeclaration": 728,
                       "src": "199:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1362,7 +1362,7 @@
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 319,
+                          "referencedDeclaration": 728,
                           "src": "281:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1402,10 +1402,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        320,
-                        321
+                        729,
+                        730
                       ],
-                      "referencedDeclaration": 320,
+                      "referencedDeclaration": 729,
                       "src": "273:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1445,7 +1445,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_SolidToken_$302",
+                        "typeIdentifier": "t_contract$_SolidToken_$627",
                         "typeString": "contract SolidToken"
                       },
                       "typeName": {
@@ -1453,10 +1453,10 @@
                         "id": 29,
                         "name": "SolidToken",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 302,
+                        "referencedDeclaration": 627,
                         "src": "359:10:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_SolidToken_$302",
+                          "typeIdentifier": "t_contract$_SolidToken_$627",
                           "typeString": "contract SolidToken"
                         }
                       },
@@ -1493,10 +1493,10 @@
                       "name": "SolidToken",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 302,
+                      "referencedDeclaration": 627,
                       "src": "378:10:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_contract$_SolidToken_$302_$",
+                        "typeIdentifier": "t_type$_t_contract$_SolidToken_$627_$",
                         "typeString": "type(contract SolidToken)"
                       }
                     },
@@ -1510,7 +1510,7 @@
                     "nodeType": "FunctionCall",
                     "src": "378:26:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_SolidToken_$302",
+                      "typeIdentifier": "t_contract$_SolidToken_$627",
                       "typeString": "contract SolidToken"
                     }
                   },
@@ -1583,7 +1583,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 317,
+                          "referencedDeclaration": 726,
                           "src": "453:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1638,7 +1638,7 @@
                         "referencedDeclaration": 30,
                         "src": "438:5:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_SolidToken_$302",
+                          "typeIdentifier": "t_contract$_SolidToken_$627",
                           "typeString": "contract SolidToken"
                         }
                       },
@@ -1649,7 +1649,7 @@
                       "lValueRequested": false,
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 213,
+                      "referencedDeclaration": 538,
                       "src": "438:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -1686,7 +1686,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 317,
+                          "referencedDeclaration": 726,
                           "src": "498:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2150,8 +2150,7 @@
     }
   },
   "schemaVersion": "3.2.3",
-  "updatedAt": "2021-04-27T03:32:36.410Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-04-27T06:57:55.811Z",
   "devdoc": {
     "methods": {}
   },

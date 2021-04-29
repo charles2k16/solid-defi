@@ -1,8 +1,8 @@
 <template>
-  <div class="center examplex">
+  <div class="center">
     <vs-navbar
       text-black
-      color="#F4F4FF"
+      color="#0F121E"
       center-collapsed
       fixed
       square
@@ -11,15 +11,15 @@
       <template #left>
         <!-- <img src="/logos/logo-vuesax-logotipo-vuesax-png-4.png" alt="" /> -->
         <vs-navbar-item :active="active == 'home'" id="home" to="/">
-          SOLID PROTOCOL
+          LOGO
         </vs-navbar-item>
       </template>
       <template #right>
         <!-- <vs-navbar-item :active="active == 'about'" id="about" to="/about">
           About Us
         </vs-navbar-item> -->
-        <vs-button blank>
-          See Whitepaper
+        <vs-button blank style="font-size: 1rem;" class="nav_button">
+          <b>Read Whitepaper</b>
         </vs-button>
       </template>
     </vs-navbar>
