@@ -1,17 +1,17 @@
 <template>
-  <div>
+  <div class="main_container">
     <NavBar />
 
     <div class="hero">
       <div class="wrap">
-        <div class="d-flex-center mt-30">
+        <div class="center mt-30">
           <h1 class="lead_head_text">Get your SLD now</h1>
         </div>
 
         <div class="d-flex-center mt-20">
-          <vs-button transparent style="font-size:1.2rem; color:whitesmoke;">
+          <!-- <vs-button transparent style="font-size:1.2rem; color:whitesmoke;">
             via Uniswap
-          </vs-button>
+          </vs-button> -->
           <vs-button
             href="https://ropsten.etherscan.io/address/0x687422eea2cb73b5d3e242ba5456b782919afc85"
             blank
@@ -22,7 +22,94 @@
           </vs-button>
         </div>
 
-        <div class="mt-30">
+        <vs-row class="mt-50" justify="space-around">
+          <vs-col :w="5" :xs="12" :sm="12">
+            <div class="sales_div">
+              <div class="sales_div_head">
+                <h2>30% off</h2>
+              </div>
+              <hr class="sales_hr" />
+
+              <div class="promo_div">
+                <vs-button class="buy_button" style="font-size: 1.5rem;">
+                  BUY
+                </vs-button>
+              </div>
+
+              <div class="connect_d">
+                <vs-button class="connect_button" style="font-size: 1rem;">
+                  Connect to a wallet
+                </vs-button>
+              </div>
+            </div>
+          </vs-col>
+
+          <vs-col :w="5" :xs="12" :sm="12">
+            <div class="sales_div">
+              <div class="sales_div_head">
+                <h2>40% off</h2>
+              </div>
+              <hr class="sales_hr" />
+
+              <div class="promo_div">
+                <vs-button class="buy_button" style="font-size: 1.5rem;">
+                  BUY
+                </vs-button>
+              </div>
+
+              <div class="connect_d">
+                <vs-button class="connect_button" style="font-size: 1rem;">
+                  Connect to a wallet
+                </vs-button>
+              </div>
+            </div>
+          </vs-col>
+        </vs-row>
+
+        <vs-row class="mt-50">
+          <vs-col :w="5" :xs="10" :sm="10">
+            <h1 class="yellow">
+              70M token sold in presale
+            </h1>
+          </vs-col>
+          <vs-col :w="2" :xs="2" :sm="2">
+            <div>
+              <div class="rule"></div>
+            </div>
+          </vs-col>
+          <vs-col :w="5" :xs="12" :sm="12">
+            <div class="progress">
+              <div class="progress_div"></div>
+            </div>
+
+            <h4 class="mt-20 p_tokens">100M TOKEN</h4>
+          </vs-col>
+        </vs-row>
+
+        <vs-row class="mt-50">
+          <vs-col :w="7" :xs="12" :sm="12">
+            <div class="flex-align-center">
+              <h1 class="time_left">Time Left</h1>
+              <flip-countdown
+                deadline="2021-06-11 00:00:00"
+                class="timerr"
+              ></flip-countdown>
+            </div>
+          </vs-col>
+          <vs-col :w="5" :xs="12" :sm="12">
+            <div class="progress">
+              <div class="progress_time"></div>
+            </div>
+            <h4 class="mt-20 p_tokens">5 days</h4>
+          </vs-col>
+        </vs-row>
+
+        <vs-row class="mt-100">
+          <vs-col :w="12" :xs="12" :sm="12">
+            <div class="gif_anime"></div>
+          </vs-col>
+        </vs-row>
+        <!-- <div class="mt-30">
           <iframe
             src="https://app.uniswap.org/#/swap?outputCurrency=0xd9016a907dc0ecfa3ca425ab20b6b785b42f2373"
             height="660px"
@@ -38,7 +125,7 @@
             id="myId"
           >
           </iframe>
-        </div>
+        </div> -->
 
         <vs-row class="mt-100">
           <vs-col :w="7" :xs="12" :sm="12">
@@ -58,12 +145,9 @@
                 new information.
               </p>
 
-              <div class="d-flex-center mt-30">
+              <div class="d-flex mt-30">
                 <vs-input v-model="email" placeholder="Enter your email" />
-                <vs-button
-                  class="sub_button"
-                  style="font-size: 1rem;margin-left:30px;"
-                >
+                <vs-button class="sub_button">
                   <span class="material-icons mr">
                     mail_outline
                   </span>
@@ -73,13 +157,13 @@
 
               <div class="mt-30">
                 <vs-button transparent style="font-size:20px">
-                  <span
-                    class="material-icons mr"
-                    style="color:white; font-size:40px;"
-                  >
-                    send
-                  </span>
-                  <b>Join us on Telegram</b>
+                  <img
+                    src="../assets/images/telegram2.png"
+                    alt="telegram"
+                    width="25px"
+                    class="mr-10"
+                  />
+                  <b style="color:#5b3cc4;">Join us on Telegram</b>
                 </vs-button>
                 <p class="small_text1">
                   For news, early access & special prizes
@@ -91,16 +175,14 @@
             </div>
           </vs-col>
           <vs-col :w="5" :xs="12" :sm="12">
-            <img src="../assets/images/game.png" alt="" />
+            <!-- <img src="../assets/images/game.png" alt="" /> -->
           </vs-col>
         </vs-row>
-
-        <!-- News -->
       </div>
     </div>
 
     <div class="news">
-      <div class="sec_div">
+      <div class="sec_div" style="padding-bottom:50px;">
         <div class="wrap">
           <!-- <vs-card-group style="margin-top: -100px; z-index: 9999;">
             <vs-card>
@@ -185,8 +267,8 @@
                     What is SOLID <br />
                     PROTOCOL?
                   </h1>
-                  <div style="margin-top:70px">
-                    <img src="../assets/images/polygon.png" alt="" />
+                  <div class="partner_div">
+                    <img src="../assets/images/polygon.png" alt="polygon" />
                     <br />
                     <p class="mt-20 small_text">
                       SOLID COLLABORATES WITH POLYGON
@@ -208,56 +290,122 @@
                   version” of a stable coin, the token could increase against
                   inflation.
                 </p>
+
+                <div class="partner_div2">
+                  <img src="../assets/images/polygon.png" alt="polygon" />
+                  <br />
+                  <p class="mt-20 small_text">
+                    SOLID COLLABORATES WITH POLYGON
+                  </p>
+                </div>
               </vs-col>
             </vs-row>
 
             <div class="center mt-100">
               <h1 class="token_text">1,000,000,000 tokens</h1>
-              <p class="mt-20">
+              <p class="mt-20 text_p">
                 The total supply of GAMEE Tokens is 1,000,000,000 tokens, all
                 minted at once. Solid Tokens will be distributed among 11 main
                 groups:
               </p>
 
               <div class="center mt-50">
-                <img src="../assets/images/chart.png" alt="chart" />
+                <img
+                  src="../assets/images/chart.png"
+                  alt="chart"
+                  style="width:100%; height:auto;"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <vs-button transparent>
-        <b>READ ALL POSTS</b>
-      </vs-button>
     </div>
 
     <div class="community">
       <div class="wrap">
-        <h2>
-          Join our Community
-        </h2>
+        <vs-row class="mt-100">
+          <vs-col :w="6" :xs="12" :sm="12">
+            <div>
+              <h2 class="lead_head_text1">
+                Join our <br />
+                Community
+              </h2>
+              <p class="lead_text mt-20">
+                You can be the first to know about SLD token. Don’t miss the
+                opportunity !
+              </p>
+            </div>
+          </vs-col>
+
+          <vs-col :w="6" :xs="12" :sm="12">
+            <div class="flex-justify-around-center mt-20">
+              <div class="flex-row-center">
+                <vs-avatar class="tele_avatar" size="70">
+                  <img src="../assets/images/telegram2.png" alt="telegram" />
+                </vs-avatar>
+                <p class="mt-20 center p_link">
+                  <a href=""
+                    >Join us on <br />
+                    Telegram</a
+                  >
+                </p>
+              </div>
+
+              <div class="flex-row-center">
+                <vs-avatar size="70">
+                  <img src="../assets/images/twitter.png" alt="twitter" />
+                </vs-avatar>
+                <p class="mt-20 center p_link">
+                  <a href=""
+                    >Follow us on <br />
+                    Twitter</a
+                  >
+                </p>
+              </div>
+            </div>
+          </vs-col>
+        </vs-row>
       </div>
     </div>
 
     <div class="footer_container">
-      <p>
-        © 2021 SOLID PROTOCOL all rights reserved.
-      </p>
+      <div class="wrap">
+        <div class="d-flex-center">
+          <img src="../assets/images/logo.png" alt="logo" width="70px" />
+          <span class="material-icons add_icon">
+            add
+          </span>
+          <img
+            src="../assets/images/polygon2.png"
+            alt="polygon"
+            width="200px"
+          />
+        </div>
+
+        <div class="center mt-20">
+          <p class="p_link">
+            © Solid Token in strategic partnership with <a href="#">Polygon</a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar';
+import FlipCountdown from 'vue2-flip-countdown';
 
 export default {
   name: 'Home',
   components: {
     NavBar,
+    FlipCountdown,
   },
   data: () => ({
     active: 0,
+    email: '',
   }),
 };
 </script>

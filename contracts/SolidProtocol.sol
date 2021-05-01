@@ -11,7 +11,6 @@ contract SolidProtocol is SolidProtocolERC20 {
   uint8 public constant decimals = 18;
   uint  public totalSupply = 1000000000000000000000000; // 1 million tokens
   uint256 public unlockDate;
-  uint256 public createdAt;
 
   mapping(address => uint) public balanceOf;
   mapping(address => mapping(address => uint)) public allowance;
@@ -21,8 +20,7 @@ contract SolidProtocol is SolidProtocolERC20 {
 
   constructor() public {
     balanceOf[msg.sender] = totalSupply;
-    unlockDate = 500;
-    createdAt = now;
+    unlockDate = 1625097600;  // July 30th
   }
 
   function _approve(address owner, address spender, uint value) private {
@@ -56,7 +54,7 @@ contract SolidProtocol is SolidProtocolERC20 {
   }
 
   function send1000Tokens(address receiver) public {
-    require(createdAt <= unlockDate, 'Token not yet ready');
+    require(block.timestamp >= unlockDate, 'Token not yet ready');
 
     uint amount = 1000;
     _transfer(msg.sender, receiver, amount);

@@ -5,7 +5,8 @@
 .vs-navbar {
   padding: 0px 20px !important;
   min-height: 70px !important;
-  width: 950px !important;
+  width: 940px !important;
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -42,10 +43,36 @@
 
   background: rgb(77,26,192) !important;
   background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
+  font-size: 1rem;
+  margin-left:30px;
+}
+
+.connect_button.vs-button--default {
+  border-radius: 80px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  color: #fff;
+  background: linear-gradient(145deg, #1e2024, #23272b);
+  box-shadow:  5px 5px 11px #141618,
+             -5px -5px 11px #2e3238;
+}
+
+.buy_button.vs-button--default {
+  border-radius: 80px !important;
+  width: 200px;
+  color: #fff;
+  background: linear-gradient(315deg, #E1C324, #cb8016);
+  box-shadow:  2px 2px 2px #a76912,
+               5px 5px 13px #a76912;
 }
 
 .vs-card__group .vs-card__group-cards .vs-card-content {
   min-width: 260px !important;
+}
+
+.tele_avatar .vs-avatar {
+  background: #7D33FC !important;
+  padding: 10px;
 }
 
 .vs-card {
@@ -80,10 +107,17 @@
   height: 45px;
   padding: 5px 12px !important;
   border-radius: 80px !important;
+  background: linear-gradient(315deg, #171a25, #1c1f2c) !important;
+  box-shadow:  -5px -5px 13px #141620,
+               2px 2px 2px #1c1f2c;
+  font-size: 1rem !important;
+  color: rgb(165, 162, 162) !important; 
+  font-weight: bold;     
 }
 
 .vs-input__label {
   font-size: 1rem !important;
+  color: rgb(65, 63, 63);
 }
 
 .token_table {
