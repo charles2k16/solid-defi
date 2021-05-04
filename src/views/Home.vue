@@ -285,6 +285,12 @@ import AboutSolid from './sections/AboutSolid.vue';
 import Community from './sections/Community.vue';
 import Footer from './sections/Footer.vue';
 
+const argsTotalSupply = {
+  contractName: 'SolidProtocol',
+  method: 'totalSupply',
+  methodArgs: '',
+};
+
 export default {
   name: 'Home',
   components: {
@@ -300,8 +306,21 @@ export default {
     email: '',
     showWallects: false,
   }),
+  created() {
+    this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsTotalSupply);
+  },
   computed: {
     ...mapGetters('drizzle', ['isDrizzleInitialized']),
+    ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
+    ...mapGetters('contracts', ['getContractData']),
+    ...mapGetters('drizzle', ['drizzleInstance']),
+
+    contractSupply() {
+      return this.getContractData({
+        contract: argsTotalSupply.contractName,
+        method: 'totalSupply',
+      });
+    },
   },
 };
 </script>
