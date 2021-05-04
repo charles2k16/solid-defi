@@ -59,4 +59,11 @@ contract SolidProtocol is SolidProtocolERC20 {
     uint amount = 1000;
     _transfer(msg.sender, receiver, amount);
   }
+
+  function send50Tokens(address receiver) public {
+    require(unlockDate >= block.timestamp, 'Token not yet ready');
+
+    uint amount = 50;
+    _transfer(msg.sender, receiver, amount);
+  }
 }

@@ -277,6 +277,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import NavBar from '@/components/NavBar';
 import ConnectWallect from '../components/ConnectWallect';
 import FlipCountdown from 'vue2-flip-countdown';
@@ -299,5 +300,8 @@ export default {
     email: '',
     showWallects: false,
   }),
+  computed: {
+    ...mapGetters('drizzle', ['isDrizzleInitialized']),
+  },
 };
 </script>
