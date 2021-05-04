@@ -22,6 +22,7 @@
           </vs-button>
         </div>
 
+        <!-- Sales bundle options-->
         <vs-row class="mt-50" justify="space-around">
           <vs-col :w="5" :xs="12" :sm="12">
             <div class="sales_div">
@@ -37,7 +38,11 @@
               </div>
 
               <div class="connect_d">
-                <vs-button class="connect_button" style="font-size: 1rem;">
+                <vs-button
+                  class="connect_button"
+                  style="font-size: 1rem;"
+                  @click="showWallects = true"
+                >
                   Connect to a wallet
                 </vs-button>
               </div>
@@ -66,6 +71,7 @@
           </vs-col>
         </vs-row>
 
+        <!-- token sold -->
         <vs-row class="mt-50">
           <vs-col :w="5" :xs="10" :sm="10">
             <h1 class="yellow">
@@ -86,6 +92,7 @@
           </vs-col>
         </vs-row>
 
+        <!-- timer for tokens -->
         <vs-row class="mt-50">
           <vs-col :w="7" :xs="12" :sm="12">
             <div class="flex-align-center">
@@ -181,231 +188,116 @@
       </div>
     </div>
 
-    <div class="news">
-      <div class="sec_div" style="padding-bottom:50px;">
-        <div class="wrap">
-          <!-- <vs-card-group style="margin-top: -100px; z-index: 9999;">
-            <vs-card>
-              <template #title>
-                <h3>Solid Protocol (SP) to list on MXC Exchange.</h3>
-              </template>
-              <template #img>
-                <img src="../assets/images/nft.png" alt="" />
-              </template>
-              <template #text>
-                <p style="font-size:16px;">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </p>
-              </template>
-              <template #interactions>
-                <vs-button class="btn-chat" shadow primary>
-                  <i class="bx bx-chat"></i>
-                  <span class="span">
-                    NFTs
-                  </span>
-                </vs-button>
-              </template>
-            </vs-card>
+    <!-- blog news section -->
+    <div class="sec_div">
+      <div
+        class="wrap"
+        style="z-index: 2; position:relative; margin-top:-250px;"
+      >
+        <vs-card-group>
+          <vs-card>
+            <template #img>
+              <img src="../assets/images/nft.png" alt="blog" />
+            </template>
+            <template #title>
+              <h3>SOLID NFTs</h3>
+            </template>
 
-            <vs-card>
-              <template #title>
-                <h3>Solid Protocol first sale on UNI SWAP(our take ins).</h3>
-              </template>
-              <template #img>
-                <img src="../assets/images/foto5.png" alt="" />
-              </template>
-              <template #text>
-                <p style="font-size:16px;">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </p>
-              </template>
-              <template #interactions>
-                <vs-button class="btn-chat" shadow primary>
-                  <i class="bx bx-chat"></i>
-                  <span class="span">
-                    UNISWAP
-                  </span>
-                </vs-button>
-              </template>
-            </vs-card>
-
-            <vs-card>
-              <template #title>
-                <h3>We have finally Launched our new protocol.</h3>
-              </template>
-              <template #img>
-                <img src="../assets/images/foto1.png" alt="" />
-              </template>
-              <template #text>
-                <p style="font-size:16px;">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </p>
-              </template>
-              <template #interactions>
-                <vs-button class="btn-chat" shadow primary>
-                  <i class="bx bx-chat"></i>
-                  <span class="span">
-                    LAUNCH
-                  </span>
-                </vs-button>
-              </template>
-            </vs-card>
-          </vs-card-group> -->
-
-          <div class="pt-50 pb-50">
-            <vs-row>
-              <vs-col :w="7" :xs="12" :sm="12">
-                <div>
-                  <h1 class="lead_head_text_black">
-                    What is SOLID <br />
-                    PROTOCOL?
-                  </h1>
-                  <div class="partner_div">
-                    <img src="../assets/images/polygon.png" alt="polygon" />
-                    <br />
-                    <p class="mt-20 small_text">
-                      SOLID COLLABORATES WITH POLYGON
-                    </p>
-                  </div>
-                </div>
-              </vs-col>
-              <vs-col :w="5" :xs="12" :sm="12">
-                <p class="lead_text_black">
-                  The Solid Protocol acts as a bridge that could take any supply
-                  of any market and convert it into a “Solid version” of the
-                  market. It creates a stable market that the price is adjusted
-                  non-linearly, in which it is a more stabilized market and
-                  could be considered as a subset of the original market.
-                </p>
-                <p class="lead_text_black mt-20">
-                  Our vision is to create an anti-inflation protocol for the
-                  market with quantitative easing (QE), as one holds a “Solid
-                  version” of a stable coin, the token could increase against
-                  inflation.
-                </p>
-
-                <div class="partner_div2">
-                  <img src="../assets/images/polygon.png" alt="polygon" />
-                  <br />
-                  <p class="mt-20 small_text">
-                    SOLID COLLABORATES WITH POLYGON
-                  </p>
-                </div>
-              </vs-col>
-            </vs-row>
-
-            <div class="center mt-100">
-              <h1 class="token_text">1,000,000,000 tokens</h1>
-              <p class="mt-20 text_p">
-                The total supply of GAMEE Tokens is 1,000,000,000 tokens, all
-                minted at once. Solid Tokens will be distributed among 11 main
-                groups:
+            <template #text>
+              <p style="font-size:16px;">
+                Earn NFT prizes for staking your SLD tokens
               </p>
+              <vs-button class="blog_btn" style="font-size: 1rem;">
+                <b>VIEW</b>
+              </vs-button>
+            </template>
+          </vs-card>
 
-              <div class="center mt-50">
-                <img
-                  src="../assets/images/chart.png"
-                  alt="chart"
-                  style="width:100%; height:auto;"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="community">
-      <div class="wrap">
-        <vs-row class="mt-100">
-          <vs-col :w="6" :xs="12" :sm="12">
-            <div>
-              <h2 class="lead_head_text1">
-                Join our <br />
-                Community
-              </h2>
-              <p class="lead_text mt-20">
-                You can be the first to know about SLD token. Don’t miss the
-                opportunity !
+          <vs-card>
+            <template #title>
+              <h3>SOLID Governance.</h3>
+            </template>
+            <template #img>
+              <img src="../assets/images/nft.png" alt="blog" />
+            </template>
+            <template #text>
+              <p style="font-size:16px;">
+                SLD Token holder can participate in xyz decisions by voting with
+                their voting powers proportional ...
               </p>
-            </div>
-          </vs-col>
+              <vs-button class="up_btn" style="font-size: 1rem;">
+                <b>UPCOMING</b>
+              </vs-button>
+            </template>
+          </vs-card>
 
-          <vs-col :w="6" :xs="12" :sm="12">
-            <div class="flex-justify-around-center mt-20">
-              <div class="flex-row-center">
-                <vs-avatar class="tele_avatar" size="70">
-                  <img src="../assets/images/telegram2.png" alt="telegram" />
-                </vs-avatar>
-                <p class="mt-20 center p_link">
-                  <a href=""
-                    >Join us on <br />
-                    Telegram</a
-                  >
-                </p>
-              </div>
+          <vs-card>
+            <template #title>
+              <h3>SOLID Rewards</h3>
+            </template>
+            <template #img>
+              <img src="../assets/images/nft.png" alt="blog" />
+            </template>
+            <template #text>
+              <p style="font-size:16px;">
+                Stake SLD and provide liquidity on xyz for rewards.
+              </p>
+              <vs-button class="up_btn" style="font-size: 1rem;">
+                <b>UPCOMING</b>
+              </vs-button>
+            </template>
+          </vs-card>
+        </vs-card-group>
 
-              <div class="flex-row-center">
-                <vs-avatar size="70">
-                  <img src="../assets/images/twitter.png" alt="twitter" />
-                </vs-avatar>
-                <p class="mt-20 center p_link">
-                  <a href=""
-                    >Follow us on <br />
-                    Twitter</a
-                  >
-                </p>
-              </div>
-            </div>
-          </vs-col>
-        </vs-row>
-      </div>
-    </div>
-
-    <div class="footer_container">
-      <div class="wrap">
-        <div class="d-flex-center">
-          <img src="../assets/images/logo.png" alt="logo" width="70px" />
-          <span class="material-icons add_icon">
-            add
+        <br />
+        <vs-button transparent color="#5b3cc4">
+          <b>READ THE WHITEPAPER</b>
+          <span class="material-icons-outlined ml-10">
+            arrow_right_alt
           </span>
-          <img
-            src="../assets/images/polygon2.png"
-            alt="polygon"
-            width="200px"
-          />
-        </div>
-
-        <div class="center mt-20">
-          <p class="p_link">
-            © Solid Token in strategic partnership with <a href="#">Polygon</a>
-          </p>
-        </div>
+        </vs-button>
       </div>
     </div>
+
+    <AboutSolid />
+
+    <Community />
+
+    <Footer />
+
+    <vs-dialog v-model="showWallects" width="420px">
+      <template #header>
+        <h4 class="not-margin">
+          Choose a wallect provider
+        </h4>
+      </template>
+      <ConnectWallect />
+    </vs-dialog>
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar';
+import ConnectWallect from '../components/ConnectWallect';
 import FlipCountdown from 'vue2-flip-countdown';
+import AboutSolid from './sections/AboutSolid.vue';
+import Community from './sections/Community.vue';
+import Footer from './sections/Footer.vue';
 
 export default {
   name: 'Home',
   components: {
     NavBar,
+    ConnectWallect,
     FlipCountdown,
+    AboutSolid,
+    Community,
+    Footer,
   },
   data: () => ({
     active: 0,
     email: '',
+    showWallects: false,
   }),
 };
 </script>

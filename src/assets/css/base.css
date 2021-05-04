@@ -294,7 +294,7 @@ hr.sales_hr {
 .hero {
   background-color:#1A1D29;
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 350px;
   display: block;
   align-items: center;
   margin: 0 auto;
@@ -456,7 +456,7 @@ hr.sales_hr {
         width: 100% !important;
       }
       .sales_div {
-        width: 350px;
+        width: 400px !important;
         margin-bottom: 25px;
       }
       .rule {
@@ -495,18 +495,18 @@ hr.sales_hr {
 
 /* ----------- iPhone 11 12 pro  ----------- */
 @media only screen 
-    and (device-width: 390px) 
-    and (device-height: 844px) 
+    and (min-device-width: 390px) 
+    and (max-device-height: 844px) 
     and (-webkit-device-pixel-ratio: 3) { 
     .wrap {
       width: 100% !important;
-      padding: 0 9px;
+      padding: 0 10px;
     }
     .vs-navbar {
       width: 100% !important;
     }
     .sales_div {
-      width: 350px;
+      width: 370px !important;
       margin-bottom: 25px;
     }
     .rule {
@@ -556,7 +556,7 @@ hr.sales_hr {
         width: 100% !important;
       }
       .sales_div {
-        width: 350px;
+        width: 400px !important;
         margin-bottom: 25px;
       }
       .rule {
@@ -655,7 +655,7 @@ hr.sales_hr {
       width: 100% !important;
     }
     .sales_div {
-      width: 350px;
+      width: 400px !important;
       margin-bottom: 25px;
     }
     .rule {

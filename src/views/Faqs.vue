@@ -1,5 +1,0 @@
-<template>
-  <div class="mt-100">
-    <h1>Fags</h1>
-  </div>
-</template>

@@ -66,8 +66,28 @@
                5px 5px 13px #a76912;
 }
 
+.blog_btn.vs-button--default {
+  border-radius: 80px !important;
+  width: 140px;
+  color: #fff;
+  background: linear-gradient(315deg, #E1C324, #cb8016);
+  box-shadow:  2px 2px 2px #a76912,
+               5px 5px 13px #a76912;
+}
+
+.up_btn.vs-button--default {
+  border-radius: 80px !important;
+  width: 140px;
+  color: #acace2;
+  border: 1px solid rgb(172, 169, 169);
+  background: #CACAFE;
+box-shadow:  -25px -25px 100px #bebeef,
+             25px 25px 100px #d6d6ff;
+}
+
 .vs-card__group .vs-card__group-cards .vs-card-content {
-  min-width: 260px !important;
+  min-width: 274px !important;
+  margin-left: 1px !important;
 }
 
 .tele_avatar .vs-avatar {
@@ -76,7 +96,42 @@
 }
 
 .vs-card {
-  max-width: 250px !important;
+  max-width: 264px !important;
+  background: #666666 !important;
+  border-radius: 35px !important;
+  box-shadow:  0px 0px 0px #a8a8d3,
+             -10px -10px 11px #ececff;
+}
+
+.vs-card__text {
+  font-size: 0.85rem;
+  padding: 20px 20px 15px 20px !important;
+  border-radius: 30px;
+  background: #CACAFE;
+  border: 1px solid #babaf7;
+  text-align: center;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.vs-card__img {
+  background: #666666;
+}
+
+.vs-card__img img {
+  width: 100%;
+  padding: 15px 25px 0px;
+  border-top-left-radius: 40px !important;
+  border-top-right-radius: 40px !important;
+}
+
+.vs-card__title {
+  color: #5b3cc4;
+  font-weight: bold;
+  text-align: center;
 }
 
 .vs-dialog {
