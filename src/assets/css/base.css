@@ -442,6 +442,35 @@ hr.sales_hr {
 .partner_div2 {
   display: none;
 }
+.eth_div {
+  width: 260px;
+  background-color: #40444E;
+  display: flex;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+.eth_bal {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 6px 8px;
+  color: rgb(221, 219, 219);
+}
+.eth_acc {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  background-color: #2C2F36;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 6px 8px;
+  color: rgb(218, 216, 216);
+}
+
 
 /* ----------- iPhone 12 pro max ----------- */
 @media only screen 

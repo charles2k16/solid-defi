@@ -38,12 +38,21 @@
               </div>
 
               <div class="connect_d">
+                <div class="eth_div" v-if="isDrizzleInitialized">
+                  <div class="eth_bal">Ropsten</div>
+                  <div class="eth_acc">
+                    <span style="overflow-x:hidden;"
+                      >{{ toEth(activeBalance) }} ETH</span
+                    >
+                  </div>
+                </div>
                 <vs-button
+                  v-else
                   class="connect_button"
                   style="font-size: 1rem;"
                   @click="showWallects = true"
                 >
-                  Connect to a wallet
+                  Connect Wallect
                 </vs-button>
               </div>
             </div>
@@ -57,134 +66,35 @@
               <hr class="sales_hr" />
 
               <div class="promo_div">
-                <vs-button class="buy_button" style="font-size: 1.5rem;">
+                <vs-button
+                  class="buy_button"
+                  style="font-size: 1.5rem;"
+                  @click="checknetwork"
+                >
                   BUY
                 </vs-button>
               </div>
 
               <div class="connect_d">
-                <vs-button class="connect_button" style="font-size: 1rem;">
-                  Connect to a wallet
-                </vs-button>
+                <div class="eth_div" v-if="isDrizzleInitialized">
+                  <div class="eth_bal">{{ toEth(activeBalance) }}</div>
+                  <div class="eth_acc">
+                    <span style="width:80%; overflow-x:hidden;">{{
+                      activeAccount
+                    }}</span>
+                    <vs-avatar size="30">
+                      <img src="../assets/images/logo.png" alt="logo" />
+                    </vs-avatar>
+                  </div>
+                </div>
               </div>
             </div>
           </vs-col>
         </vs-row>
 
-        <!-- token sold -->
-        <vs-row class="mt-50">
-          <vs-col :w="5" :xs="10" :sm="10">
-            <h1 class="yellow">
-              70M token sold in presale
-            </h1>
-          </vs-col>
-          <vs-col :w="2" :xs="2" :sm="2">
-            <div>
-              <div class="rule"></div>
-            </div>
-          </vs-col>
-          <vs-col :w="5" :xs="12" :sm="12">
-            <div class="progress">
-              <div class="progress_div"></div>
-            </div>
+        <Illustrations />
 
-            <h4 class="mt-20 p_tokens">100M TOKEN</h4>
-          </vs-col>
-        </vs-row>
-
-        <!-- timer for tokens -->
-        <vs-row class="mt-50">
-          <vs-col :w="7" :xs="12" :sm="12">
-            <div class="flex-align-center">
-              <h1 class="time_left">Time Left</h1>
-              <flip-countdown
-                deadline="2021-06-11 00:00:00"
-                class="timerr"
-              ></flip-countdown>
-            </div>
-          </vs-col>
-          <vs-col :w="5" :xs="12" :sm="12">
-            <div class="progress">
-              <div class="progress_time"></div>
-            </div>
-            <h4 class="mt-20 p_tokens">5 days</h4>
-          </vs-col>
-        </vs-row>
-
-        <vs-row class="mt-100">
-          <vs-col :w="12" :xs="12" :sm="12">
-            <div class="gif_anime"></div>
-          </vs-col>
-        </vs-row>
-        <!-- <div class="mt-30">
-          <iframe
-            src="https://app.uniswap.org/#/swap?outputCurrency=0xd9016a907dc0ecfa3ca425ab20b6b785b42f2373"
-            height="660px"
-            width="100%"
-            style="
-                border: 0;
-                margin: 0 auto;
-                display: block;
-                border-radius: 10px;
-                max-width: 940px;
-                min-width: 240px;
-              "
-            id="myId"
-          >
-          </iframe>
-        </div> -->
-
-        <vs-row class="mt-100">
-          <vs-col :w="7" :xs="12" :sm="12">
-            <span class="insights">
-              SLD TOKEN
-            </span>
-
-            <div class="mt-20">
-              <h1 class="lead_head_text1">
-                Fight inflation, <br />
-                Earn Rewards
-              </h1>
-
-              <p class="lead_text mt-20">
-                The SLD Token. A fungible ERC-20 utility token built on
-                Ethereum. Leave us your email here to be the first one to get
-                new information.
-              </p>
-
-              <div class="d-flex mt-30">
-                <vs-input v-model="email" placeholder="Enter your email" />
-                <vs-button class="sub_button">
-                  <span class="material-icons mr">
-                    mail_outline
-                  </span>
-                  <b>SUBSCRIBE</b>
-                </vs-button>
-              </div>
-
-              <div class="mt-30">
-                <vs-button transparent style="font-size:20px">
-                  <img
-                    src="../assets/images/telegram2.png"
-                    alt="telegram"
-                    width="25px"
-                    class="mr-10"
-                  />
-                  <b style="color:#5b3cc4;">Join us on Telegram</b>
-                </vs-button>
-                <p class="small_text1">
-                  For news, early access & special prizes
-                </p>
-                <h2 class="mt-30 small_text_primary">
-                  Learn more in Solid Protocol Whitepaper
-                </h2>
-              </div>
-            </div>
-          </vs-col>
-          <vs-col :w="5" :xs="12" :sm="12">
-            <!-- <img src="../assets/images/game.png" alt="" /> -->
-          </vs-col>
-        </vs-row>
+        <Subscribe />
       </div>
     </div>
 
@@ -277,10 +187,12 @@
 </template>
 
 <script>
+import Web3 from 'web3';
 import { mapGetters } from 'vuex';
 import NavBar from '@/components/NavBar';
 import ConnectWallect from '../components/ConnectWallect';
-import FlipCountdown from 'vue2-flip-countdown';
+import Illustrations from './sections/Illustrations.vue';
+import Subscribe from './sections/Subscribe.vue';
 import AboutSolid from './sections/AboutSolid.vue';
 import Community from './sections/Community.vue';
 import Footer from './sections/Footer.vue';
@@ -296,7 +208,8 @@ export default {
   components: {
     NavBar,
     ConnectWallect,
-    FlipCountdown,
+    Illustrations,
+    Subscribe,
     AboutSolid,
     Community,
     Footer,
@@ -314,12 +227,33 @@ export default {
     ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
     ...mapGetters('contracts', ['getContractData']),
     ...mapGetters('drizzle', ['drizzleInstance']),
+    ...mapGetters('drizzle', ['drizzleInstance']),
 
     contractSupply() {
       return this.getContractData({
         contract: argsTotalSupply.contractName,
         method: 'totalSupply',
       });
+    },
+  },
+  methods: {
+    transferToken() {
+      this.transferLoading = true;
+      this.drizzleInstance.contracts['SolidProtocol'].methods[
+        'send50Tokens'
+      ].cacheSend(this.activeAccount);
+    },
+    checknetwork() {
+      console.log(this.drizzleInstance.web3._provider.networkVersion);
+      console.log(this.drizzleInstance.web3._provider.selectedAddress);
+
+      const etherValue = Web3.utils.fromWei(this.activeBalance, 'ether');
+      console.log(etherValue);
+    },
+    toEth(weiBalance) {
+      let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
+      let ether = etherValue.toFixed(4);
+      return ether;
     },
   },
 };
