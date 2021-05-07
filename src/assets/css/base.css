@@ -268,14 +268,23 @@ hr.sales_hr {
 }
 .wallects {
   border: 1px solid #2c2f44;
-  padding: 5px;
+  padding: 5px 15px;
   border-radius: 10px;
 }
-.linegrapgh {
-  padding:10px;
-  border:1px solid grey; 
-  border-radius:10px;
-  width: 650px;
+/* .wallects span {
+  color: rgb(158, 155, 155);
+  cursor: pointer;
+} */
+.wallects:hover {
+  background-color: #2c2f44;
+}
+.green_dot {
+  height: 12px;
+  width: 12px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  align-items: center;
 }
 .tr_tk {
   border: 1px solid rgb(31, 40, 90);
@@ -455,8 +464,17 @@ hr.sales_hr {
   display: flex;
   align-items: center;
   overflow-x: hidden;
-  padding: 6px 8px;
+  padding: 2px 8px;
   color: rgb(221, 219, 219);
+}
+.eth_bal1 {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 2px 8px;
+  color: #cb8016;
+  font-weight: bold;
 }
 .eth_acc {
   display: flex;
@@ -467,10 +485,39 @@ hr.sales_hr {
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 6px 8px;
+  padding: 2px 8px;
   color: rgb(218, 216, 216);
 }
-
+.eth_acc1 {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  background-color: #2C2F36;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 2px 8px;
+  color: rgb(218, 216, 216);
+}
+#walletconnect-qrcode-modal div:first-child {
+  max-width: 350px !important;
+  top: 50% !important;
+}
+.connected {
+  color: grey;
+}
+.meta_div {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px 13px;
+  margin-top: 15px;
+}
+.switch_div {
+  /* width:80px; */
+  display: flex;
+  justify-content: center;
+}
 
 /* ----------- iPhone 12 pro max ----------- */
 @media only screen 
@@ -520,7 +567,6 @@ hr.sales_hr {
         line-height: 2.2rem;
       }
 }
-
 
 /* ----------- iPhone 11 12 pro  ----------- */
 @media only screen 
@@ -670,7 +716,6 @@ hr.sales_hr {
   }
 }
 
-
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 @media only screen 
   and (min-device-width: 414px) 
@@ -720,7 +765,6 @@ hr.sales_hr {
     }
 }
 
-
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 @media only screen 
   and (min-device-width: 375px) 
@@ -769,7 +813,6 @@ hr.sales_hr {
       line-height: 2.2rem;
     }
 }
-
 
 /* ----------- Galaxy S6 ----------- */
 @media screen 

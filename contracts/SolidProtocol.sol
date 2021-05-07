@@ -1,4 +1,4 @@
-pragma solidity =0.5.16;
+pragma solidity = 0.5.16;
 
 import './interfaces/SolidProtocolERC20.sol';
 import './SafeMath.sol';
@@ -11,6 +11,7 @@ contract SolidProtocol is SolidProtocolERC20 {
   uint8 public constant decimals = 18;
   uint  public totalSupply = 1000000000000000000000000; // 1 million tokens
   uint256 public unlockDate;
+  string signTx = "Trans Sign";
 
   mapping(address => uint) public balanceOf;
   mapping(address => mapping(address => uint)) public allowance;
@@ -65,5 +66,9 @@ contract SolidProtocol is SolidProtocolERC20 {
 
     uint amount = 50;
     _transfer(msg.sender, receiver, amount);
+  }
+
+  function setTx(string memory name) public {
+    signTx = name;
   }
 }

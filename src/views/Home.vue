@@ -32,25 +32,72 @@
               <hr class="sales_hr" />
 
               <div class="promo_div">
-                <vs-button class="buy_button" style="font-size: 1.5rem;">
+                <vs-button
+                  class="buy_button"
+                  style="font-size: 1.5rem;"
+                  @click="buyTokens"
+                >
                   BUY
                 </vs-button>
               </div>
 
               <div class="connect_d">
-                <div class="eth_div" v-if="isDrizzleInitialized">
-                  <div class="eth_bal">Ropsten</div>
-                  <div class="eth_acc">
-                    <span style="overflow-x:hidden;"
-                      >{{ toEth(activeBalance) }} ETH</span
+                <div
+                  v-if="
+                    isDrizzleInitialized &&
+                      checkNetwork(
+                        this.drizzleInstance.web3._provider.networkVersion
+                      )
+                  "
+                >
+                  <div class="eth_div">
+                    <div class="eth_bal1 net_balance">
+                      {{
+                        getNetworkName(
+                          this.drizzleInstance.web3._provider.networkVersion
+                        )
+                      }}
+                    </div>
+                    <div class="eth_acc1">
+                      <span style="overflow-x:hidden"
+                        >{{ toEth(activeBalance) }} ETH</span
+                      >
+                    </div>
+                  </div>
+                  <div class="switch_div">
+                    <vs-switch
+                      v-model="activeChain"
+                      class="mt-20"
+                      color="#7d33ff"
                     >
+                      <template #off>
+                        Matic
+                      </template>
+                      <template #on>
+                        Eth
+                      </template>
+                    </vs-switch>
                   </div>
                 </div>
+
+                <vs-button
+                  danger
+                  @click="changeNetwork"
+                  v-else-if="
+                    isDrizzleInitialized &&
+                      !checkNetwork(
+                        this.drizzleInstance.web3._provider.networkVersion
+                      )
+                  "
+                >
+                  Wrong Network Connected
+                </vs-button>
+
                 <vs-button
                   v-else
                   class="connect_button"
                   style="font-size: 1rem;"
-                  @click="showWallects = true"
+                  @click="changeNetwork"
                 >
                   Connect Wallect
                 </vs-button>
@@ -66,27 +113,54 @@
               <hr class="sales_hr" />
 
               <div class="promo_div">
-                <vs-button
-                  class="buy_button"
-                  style="font-size: 1.5rem;"
-                  @click="checknetwork"
-                >
+                <vs-button class="buy_button" style="font-size: 1.5rem;">
                   BUY
                 </vs-button>
               </div>
 
               <div class="connect_d">
-                <div class="eth_div" v-if="isDrizzleInitialized">
-                  <div class="eth_bal">{{ toEth(activeBalance) }}</div>
+                <div
+                  class="eth_div"
+                  v-if="
+                    isDrizzleInitialized &&
+                      checkNetwork(
+                        this.drizzleInstance.web3._provider.networkVersion
+                      )
+                  "
+                  @click="checkAccounts"
+                >
+                  <div class="eth_bal">{{ toEth(activeBalance) }} ETH</div>
                   <div class="eth_acc">
                     <span style="width:80%; overflow-x:hidden;">{{
                       activeAccount
                     }}</span>
-                    <vs-avatar size="30">
+                    <vs-avatar size="20">
                       <img src="../assets/images/logo.png" alt="logo" />
                     </vs-avatar>
                   </div>
                 </div>
+
+                <vs-button
+                  danger
+                  @click="changeNetwork"
+                  v-else-if="
+                    isDrizzleInitialized &&
+                      !checkNetwork(
+                        this.drizzleInstance.web3._provider.networkVersion
+                      )
+                  "
+                >
+                  Wrong Network Connected
+                </vs-button>
+
+                <vs-button
+                  v-else
+                  class="connect_button"
+                  style="font-size: 1rem;"
+                  @click="changeNetwork"
+                >
+                  Connect Wallect
+                </vs-button>
               </div>
             </div>
           </vs-col>
@@ -183,6 +257,65 @@
       </template>
       <ConnectWallect />
     </vs-dialog>
+
+    <vs-dialog v-model="showAccounts" width="420px">
+      <template #header>
+        <h4 class="not-margin">
+          Account
+        </h4>
+      </template>
+      <div>
+        <div class="flex-justify-between-center">
+          <h4 class="connected">
+            Connected with
+            {{
+              drizzleInstance.web3._provider.isMetaMask
+                ? 'Metamask'
+                : 'Matic Wallect'
+            }}
+          </h4>
+
+          <vs-button color="#cb8016" transparent @click="changeNetwork">
+            Change
+          </vs-button>
+        </div>
+
+        <div class="meta_div">
+          <div class="eth_acc">
+            <vs-avatar size="20">
+              <img src="../assets/images/logo.png" alt="logo" />
+            </vs-avatar>
+            <span style="width:80%; text-overflow: ellipsis;">{{
+              activeAccount
+            }}</span>
+          </div>
+
+          <div class="flex-justify-between-center mt-10">
+            <vs-button
+              color="#cb8016"
+              transparent
+              @click="copyToClip(activeAccount)"
+            >
+              <span class="material-icons">
+                content_copy
+              </span>
+              Copy address
+            </vs-button>
+            <vs-button
+              color="#cb8016"
+              transparent
+              :href="`https://ropsten.etherscan.io/address/${activeAccount}`"
+              blank
+            >
+              <span class="material-icons">
+                link
+              </span>
+              View on etherscan
+            </vs-button>
+          </div>
+        </div>
+      </div>
+    </vs-dialog>
   </div>
 </template>
 
@@ -218,6 +351,8 @@ export default {
     active: 0,
     email: '',
     showWallects: false,
+    showAccounts: false,
+    activeChain: false,
   }),
   created() {
     this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsTotalSupply);
@@ -237,23 +372,24 @@ export default {
     },
   },
   methods: {
-    transferToken() {
-      this.transferLoading = true;
+    buyTokens() {
       this.drizzleInstance.contracts['SolidProtocol'].methods[
         'send50Tokens'
       ].cacheSend(this.activeAccount);
     },
-    checknetwork() {
-      console.log(this.drizzleInstance.web3._provider.networkVersion);
+    changeNetwork() {
+      var a = parseInt(this.drizzleInstance.web3._provider.networkVersion);
+      console.log(a);
       console.log(this.drizzleInstance.web3._provider.selectedAddress);
-
-      const etherValue = Web3.utils.fromWei(this.activeBalance, 'ether');
-      console.log(etherValue);
+      this.showWallects = true;
     },
     toEth(weiBalance) {
       let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
-      let ether = etherValue.toFixed(4);
+      let ether = parseFloat(etherValue).toFixed(4);
       return ether;
+    },
+    checkAccounts() {
+      this.showAccounts = true;
     },
   },
 };
