@@ -1,0 +1,40 @@
+/*
+Write your variables here. All available variables can be
+found in element-ui/packages/theme-chalk/src/common/var.scss.
+For example, to overwrite the theme color:
+*/
+
+$--color-primary: #2fa512;
+$--color-success: #39c477;
+$--color-warning: #f7ba2a;
+$--color-danger: #ff4949;
+$--color-info: rgb(126, 126, 123);
+
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import '~element-ui/packages/theme-chalk/src/index';
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+  background-color: #d3dce6;
+}
+
+.el-carousel__item--card {
+  width: 40% !important;
+  border-radius: 13px;
+}
+.el-tabs__item {
+  height: 100% !important;
+}
+
+.el-carousel__arrow, .el-carousel__arrow--left {
+  display: none !important;
+}
+
+.el-carousel__indicator {
+  display: none;
+}

@@ -9,6 +9,7 @@ import drizzleVuePlugin from '@drizzle/vue-plugin'
 import drizzleOptions from '@/plugins/drizzle'
 
 import '@/assets/css/base.css';
+import "@/plugins/element/index.js";
 import '@/plugins/vuesax';
 
 Vue.use(Vuex);

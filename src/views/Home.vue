@@ -37,7 +37,7 @@
                   style="font-size: 1.5rem;"
                   @click="buyTokens"
                 >
-                  BUY
+                  BUY NOW
                 </vs-button>
               </div>
 
@@ -65,8 +65,9 @@
                     </div>
                   </div>
                   <div class="switch_div">
+                    <span>Currently on: </span>
                     <vs-switch
-                      v-model="activeChain"
+                      v-model="getNetChain"
                       class="mt-20"
                       color="#7d33ff"
                     >
@@ -151,6 +152,7 @@
                   "
                 >
                   Wrong Network Connected
+                  {{ errorNotify('top-center', 'danger') }}
                 </vs-button>
 
                 <vs-button
@@ -162,6 +164,172 @@
                   Connect Wallect
                 </vs-button>
               </div>
+            </div>
+          </vs-col>
+        </vs-row>
+
+        <vs-row class="mt-50" justify="space-around">
+          <!-- <vs-col :w="4" :xs="12" :sm="12"> </vs-col> -->
+
+          <vs-col :w="12" :xs="12" :sm="12">
+            <div class="tab">
+              <button
+                class="tablinks"
+                @click="openCity($event, 'London')"
+                id="defaultOpen"
+              >
+                <div class="flex-justify-between-center">
+                  <div class="flex-row-center">
+                    <vs-avatar size="40">
+                      <img src="../assets/images/eth.png" alt="telegram" />
+                    </vs-avatar>
+                    <span class="mt-10"><b>ETH</b></span>
+                  </div>
+                  <div class="mx-10">
+                    <h3 class="stock_bold">40,000</h3>
+                    <span class="d-block">Stock: 210</span>
+                    <span class="d-block">Owned: 0</span>
+                  </div>
+                  <div>
+                    <h3 class="stock_bold">80,000</h3>
+                    <span class="d-block">Stock: 70</span>
+                    <span class="d-block">Owned: 0</span>
+                  </div>
+                </div>
+              </button>
+              <button class="tablinks" @click="openCity($event, 'Paris')">
+                <div class="flex-justify-between-center">
+                  <div class="flex-row-center">
+                    <vs-avatar size="40">
+                      <img src="../assets/images/eth.png" alt="telegram" />
+                    </vs-avatar>
+                    <span class="mt-10"><b>wETH</b></span>
+                  </div>
+                  <div class="mx-10">
+                    <h3 class="stock_bold">40,000</h3>
+                    <span class="d-block">Stock: 210</span>
+                    <span class="d-block">Owned: 0</span>
+                  </div>
+                  <div>
+                    <h3 class="stock_bold">80,000</h3>
+                    <span class="d-block">Stock: 70</span>
+                    <span class="d-block">Owned: 0</span>
+                  </div>
+                </div>
+              </button>
+              <button class="tablinks" @click="openCity($event, 'Tokyo')">
+                <div class="flex-justify-between-center">
+                  <div class="flex-row-center">
+                    <vs-avatar size="40">
+                      <img src="../assets/images/matic.png" alt="telegram" />
+                    </vs-avatar>
+                    <span class="mt-10"><b>MATIC</b></span>
+                  </div>
+                  <div class="mx-10">
+                    <h3 class="stock_bold">40,000</h3>
+                    <span class="d-block">Stock: 40</span>
+                    <span class="d-block">Owned: 0</span>
+                  </div>
+                  <div>
+                    <h3 class="stock_bold">80,000</h3>
+                    <span class="d-block">Stock: 120</span>
+                    <span class="d-block">Owned: 0</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+
+            <div id="London" class="tabcontent">
+              <p class="center bun_p">
+                Don’t miss out on the SOLID bundle sale! <br />
+                <span class="percentage_off"><b>35% off</b></span>
+                from the IDO price
+              </p>
+
+              <el-carousel type="card" :autoplay="false">
+                <el-carousel-item>
+                  <div>
+                    <img
+                      src="../assets/images/token_bundles.jpeg"
+                      alt="tkbundles"
+                      class="caro_image"
+                    />
+                  </div>
+                  <div class="bk_bun d-flex-center">
+                    <vs-avatar size="35">
+                      <img src="../assets/images/logo.png" alt="token" />
+                    </vs-avatar>
+                    <span>80, 000</span>
+                  </div>
+                </el-carousel-item>
+
+                <el-carousel-item>
+                  <div>
+                    <img
+                      src="../assets/images/token_bundles.jpeg"
+                      alt="tkbundles"
+                      class="caro_image"
+                    />
+                  </div>
+                  <div class="bk_bun d-flex-center">
+                    <vs-avatar size="35">
+                      <img src="../assets/images/logo.png" alt="token" />
+                    </vs-avatar>
+                    <span>40, 000</span>
+                  </div>
+                </el-carousel-item>
+              </el-carousel>
+
+              <div class="center d-flex-center mt-20">
+                <div>
+                  <div class="d-flex-center">
+                    <div class="flex-align-center">
+                      <span class="material-icons mi">
+                        remove_circle
+                      </span>
+                      <input class="num_input" placeholder="1" />
+                      <span class="material-icons mi">
+                        add_circle
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mt-10">
+                    <small>*Maximum 4 bundles in a single transaction.</small>
+                  </div>
+
+                  <div class="round_token_button mt-10">
+                    <span class="matic_btn">
+                      Connect to <br />
+                      <span style="color:blue;"> <b>Matic </b></span>
+                    </span>
+
+                    <span style="color:#B6B6B6;"
+                      >You're <br />
+                      <span style="color:#DDDBEC;">
+                        <b>ON Etherum </b></span
+                      ></span
+                    >
+
+                    <vs-button
+                      class="buy_button"
+                      style="font-size: 1rem;"
+                      @click="buyTokens"
+                    >
+                      <b> BUY</b>
+                    </vs-button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="Paris" class="tabcontent">
+              <h3>Paris</h3>
+              <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="Tokyo" class="tabcontent">
+              <h3>Tokyo</h3>
+              <p>Tokyo is the capital of Japan.</p>
             </div>
           </vs-col>
         </vs-row>
@@ -357,6 +525,9 @@ export default {
   created() {
     this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsTotalSupply);
   },
+  mounted() {
+    document.getElementById('defaultOpen').click();
+  },
   computed: {
     ...mapGetters('drizzle', ['isDrizzleInitialized']),
     ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
@@ -370,12 +541,26 @@ export default {
         method: 'totalSupply',
       });
     },
+
+    getNetChain() {
+      let chain = this.drizzleInstance.web3._provider.networkVersion;
+      let id = parseInt(chain);
+      if (id == 80001 || id == 137) return false;
+      else return true;
+    },
   },
   methods: {
     buyTokens() {
+      // check network first
+      let chainId = this.drizzleInstance.web3._provider.networkVersion;
+      if (this.getNetworkName(chainId) == 'Wrong Network')
+        this.errorNotify('top-center', 'danger');
+      else this.buy100tokens();
+    },
+    buy100tokens() {
       this.drizzleInstance.contracts['SolidProtocol'].methods[
         'send50Tokens'
-      ].cacheSend(this.activeAccount);
+      ].cacheSend(this.activeAccount, { gas: 60000 });
     },
     changeNetwork() {
       var a = parseInt(this.drizzleInstance.web3._provider.networkVersion);

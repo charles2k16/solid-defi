@@ -68,7 +68,7 @@ contract SolidProtocol is SolidProtocolERC20 {
     _transfer(msg.sender, receiver, amount);
   }
 
-  function setTx(string memory name) public {
-    signTx = name;
+  function setTx() public {
+    signTx = 'test trans';
   }
 }

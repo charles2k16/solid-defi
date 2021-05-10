@@ -47,7 +47,12 @@ export default {
         this.isDrizzleInitialized &&
         this.checkNetwork(this.drizzleInstance.web3._provider.networkVersion)
       ) {
-        this.openNotification('top-right', '#2c2f44');
+        this.openNotification(
+          'top-right',
+          '#2c2f44',
+          'Already Connected.',
+          'You already connected to Metamask'
+        );
       } else if (!this.isDrizzleInitialized) {
         this.connectToMetaMask();
       } else {
@@ -728,8 +733,11 @@ export default {
           gasPrice: 0,
         });
       } else {
-        console.log(
-          'Non-Ethereum browser detected.You should consider trying MetaMask!'
+        this.openNotification(
+          'top-center',
+          '#2c2f44',
+          'Non-Ethereum browser',
+          'Non-Ethereum browser detected.You should consider downloading MetaMask!'
         );
       }
     },

@@ -59,7 +59,7 @@
 
 .buy_button.vs-button--default {
   border-radius: 80px !important;
-  width: 200px;
+  width: 120px;
   color: #fff;
   background: linear-gradient(315deg, #E1C324, #cb8016);
   box-shadow:  2px 2px 2px #a76912,
@@ -81,7 +81,7 @@
   color: #acace2;
   border: 1px solid rgb(172, 169, 169);
   background: #CACAFE;
-box-shadow:  -25px -25px 100px #bebeef,
+  box-shadow:  -25px -25px 100px #bebeef,
              25px 25px 100px #d6d6ff;
 }
 
@@ -132,6 +132,10 @@ box-shadow:  -25px -25px 100px #bebeef,
   color: #5b3cc4;
   font-weight: bold;
   text-align: center;
+}
+
+.vs-switch__text .off {
+  color: red !important
 }
 
 .vs-dialog {
