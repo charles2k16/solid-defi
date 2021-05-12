@@ -1,19 +1,5 @@
 export default {
   methods: {
-
-    openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-    },
     checkNetwork(netId) {
       let id = parseInt(netId);
       let networks = [1, 2, 3, 4, 42, 61, 62, 137, 80001];
@@ -59,7 +45,7 @@ export default {
       return netName;
     },
     copyToClip(text) {
-      var textArea = document.createElement("textarea");
+      let textArea = document.createElement("textarea");
       textArea.value = text;
 
       textArea.select();

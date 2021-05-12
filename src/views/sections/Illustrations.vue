@@ -26,10 +26,10 @@
       <vs-col :w="7" :xs="12" :sm="12">
         <div class="flex-align-center">
           <h1 class="time_left">Time Left</h1>
-          <!-- <flip-countdown
+          <flip-countdown
             deadline="2021-06-11 00:00:00"
             class="timerr"
-          ></flip-countdown> -->
+          ></flip-countdown>
         </div>
       </vs-col>
       <vs-col :w="5" :xs="12" :sm="12">
@@ -49,12 +49,12 @@
 </template>
 
 <script>
-// import FlipCountdown from 'vue2-flip-countdown';
+import FlipCountdown from 'vue2-flip-countdown';
 
 export default {
   name: 'Illustrations',
   components: {
-    // FlipCountdown,
+    FlipCountdown,
   },
 };
 </script>

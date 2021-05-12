@@ -9,10 +9,7 @@
       v-model="active"
     >
       <template #left>
-        <!-- <img src="/logos/logo-vuesax-logotipo-vuesax-png-4.png" alt="" /> -->
-        <vs-navbar-item :active="active == 'home'" id="home" to="/">
-          LOGO
-        </vs-navbar-item>
+        <img src="../assets/images/logo.png" alt="logo" />
       </template>
       <template #right>
         <!-- <vs-navbar-item :active="active == 'about'" id="about" to="/about">

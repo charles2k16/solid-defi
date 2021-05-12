@@ -106,9 +106,13 @@ hr.sales_hr {
 }
 .mr-10 {
   margin-right: 20px;
+  color: #5772ec;
 }
 .ml-10 {
   margin-left: 10px;
+}
+.ml-15 {
+  margin-left: 18px;
 }
 .ml-20 {
   margin-left: 30px;
@@ -582,12 +586,17 @@ hr.sales_hr {
   font-size: 1.2rem;
   font-weight: bold;
 }
+#matic, #wEth {
+  display: none;
+}
 
 /* Style the tab */
 .tab {
   float: left;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: 1px solid #7c7e85;
+  background-color: #7c7e85;
+   /* border: 1px solid #ccc;
+  background-color: #f1f1f1; */
   width: 35%;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -641,6 +650,7 @@ hr.sales_hr {
     and (-webkit-device-pixel-ratio: 3) {
       .vs-dialog {
         width: 90% !important;
+        min-width: 90% !important;
       }
       .wrap {
         width: 100% !important;
@@ -760,6 +770,19 @@ hr.sales_hr {
       .rule {
         display: none;
       }
+      .tab {
+        width: 100%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 0px;
+      }
+      .tabcontent {
+        width: 100%;
+      }
+      .el-carousel__item--card {
+        width: 80% !important;
+        border-radius: 13px;
+      }
       .progress {
         width: 95%;
         margin-top: 5px;
@@ -861,6 +884,20 @@ hr.sales_hr {
     .sales_div {
       width: 400px !important;
       margin-bottom: 25px;
+    }
+    .tab {
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-left-radius: 0px;
+    }
+    .tabcontent {
+      width: 100%;
+      padding: 5px;
+    }
+    .el-carousel__item--card {
+      width: 80% !important;
+      border-radius: 13px;
     }
     .rule {
       display: none;

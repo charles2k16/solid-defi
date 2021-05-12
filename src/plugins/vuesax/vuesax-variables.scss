@@ -95,6 +95,10 @@
   padding: 10px;
 }
 
+.matic_avatar .vs-avatar {
+  background:  #1E264D !important;
+}
+
 .vs-card {
   max-width: 264px !important;
   background: #666666 !important;
@@ -141,7 +145,30 @@
 .vs-dialog {
   background: #1B1F2F !important;
   color: white !important;
-  min-width: 450px !important;
+  min-width: 400px !important;
+}
+
+.notify_dialog .vs-dialog {
+  background: #d4d7e4 !important;
+  color: rgb(68, 66, 66) !important;
+  min-width: 340px !important;
+  opacity: 0.9;
+  
+}
+
+.notify_dialog .vs-dialog:after {
+  content: " ";
+  position: absolute;
+  left: 40%;
+  bottom: -15px;
+  border-top: 15px solid #d4d7e4;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
+.notify_dialog {
+  left: 170px !important;
+  top: 150px !important;
 }
 
 // .token_input {
