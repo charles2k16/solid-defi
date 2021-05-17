@@ -10,7 +10,7 @@
                 PROTOCOL?
               </h1>
               <div class="partner_div">
-                <img src="../../assets/images/polygon.png" alt="polygon" />
+                <img src="../../assets/images/polygon_logo.png" alt="polygon" />
                 <br />
                 <p class="mt-20 small_text">
                   SOLID COLLABORATES WITH POLYGON
@@ -33,7 +33,7 @@
             </p>
 
             <div class="partner_div2">
-              <img src="../../assets/images/polygon.png" alt="polygon" />
+              <img src="../../assets/images/polygon_logo.png" alt="polygon" />
               <br />
               <p class="mt-20 small_text">
                 SOLID COLLABORATES WITH POLYGON

@@ -7,7 +7,7 @@
           add
         </span>
         <img
-          src="../../assets/images/polygon2.png"
+          src="../../assets/images/polygon_logo.png"
           alt="polygon"
           width="200px"
         />
@@ -15,7 +15,8 @@
 
       <div class="center mt-20">
         <p class="p_link">
-          © Solid Token in strategic partnership with <a href="#">Polygon</a>
+          © Solid Token in strategic partnership with
+          <a href="#">Polygon</a>
         </p>
       </div>
     </div>
