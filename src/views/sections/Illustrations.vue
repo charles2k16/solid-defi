@@ -8,7 +8,7 @@
         </h1>
       </vs-col>
       <vs-col :w="2" :xs="2" :sm="2">
-        <div>
+        <div style="text-align:center;margin-left:40px;">
           <div class="rule"></div>
         </div>
       </vs-col>
@@ -17,13 +17,13 @@
           <div class="progress_div"></div>
         </div>
 
-        <h4 class="mt-20 p_tokens">100M TOKEN</h4>
+        <p class="mt-20 p_tokens">100M Tokens</p>
       </vs-col>
     </vs-row>
 
     <!-- timer for tokens -->
     <vs-row class="mt-50">
-      <vs-col :w="7" :xs="12" :sm="12">
+      <vs-col :w="6" :xs="12" :sm="12">
         <div class="flex-align-center">
           <h1 class="time_left">Time Left</h1>
           <flip-countdown
@@ -32,11 +32,16 @@
           ></flip-countdown>
         </div>
       </vs-col>
+      <vs-col :w="1" :xs="2" :sm="2">
+        <div style="text-align:center;margin-left:-40px;">
+          <div class="green_rule"></div>
+        </div>
+      </vs-col>
       <vs-col :w="5" :xs="12" :sm="12">
         <div class="progress">
           <div class="progress_time"></div>
         </div>
-        <h4 class="mt-20 p_tokens">5 days</h4>
+        <p class="mt-20 p_tokens">5 days</p>
       </vs-col>
     </vs-row>
 

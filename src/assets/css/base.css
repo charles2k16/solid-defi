@@ -332,7 +332,16 @@ hr.sales_hr {
 .hero {
   background-color:#1A1D29;
   padding-top: 100px;
+  padding-bottom: 70px;
+  display: block;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+.ilustrations {
+  background-color:#181C20;
   padding-bottom: 350px;
+  padding-top: 60px;
   display: block;
   align-items: center;
   margin: 0 auto;
@@ -407,32 +416,38 @@ hr.sales_hr {
 }
 .progress {
   background-color: #0F1422;
-  width: 100%;
+  width: 85%;
   border-radius: 50px;
 }
 .progress_div {
-  background: linear-gradient(315deg, #E1C324, #cb8016);
-  width: 70%;
+  background: linear-gradient(315deg, #e1be24, #FCB42A);
+  width: 50%;
   height: 20px;
   border-radius: 40px;
   margin-top: 10px;
 }
 .progress_time {
   background: linear-gradient(315deg, #6D21DF, #501BC4);
-  width: 30%;
+  width: 80%;
   height: 20px;
   border-radius: 40px;
   margin-top: 10px;
 }
 .rule {
-  width: 40px;
+  width: 35px;
   margin-top: 20px;
   margin-left: 40px;
-  border: 1px solid #cb8016;
+  border: 1px solid #FCB42A;
+}
+.green_rule {
+  width: 35px;
+  margin-top: 20px;
+  margin-left: 40px;
+  border: 1px solid #5b3cc4;;
 }
 .yellow {
-  color: #cb8016;
-  font-size: 28px;
+  color: #FCB42A;
+  font-size: 29px;
 }
 .community {
   background-color:#1A1D29;
@@ -450,26 +465,25 @@ hr.sales_hr {
 }
 .p_tokens {
   float:right;
-  color:rgb(158, 154, 154)
+  color:rgb(230, 227, 227);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .gif_anime {
   height: 350px;
-  border: 1px solid rgb(167, 156, 156);
   width: 100%;
   border-radius: 70px;
   background-color: #484B4E;
 }
 .promo_div2 {
   height: 460px;
-  border: 1px solid rgb(167, 156, 156);
-  width: 80%;
+  width: 328px;
   float: right;
   border-radius: 70px;
   background-color: #484B4E;
 }
 .time_left {
   color:#5b3cc4;
-  font-size: 28px;
+  font-size: 29px;
 }
 .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__bottom-4digits[data-v-78efe7f6], .flip-card__back-bottom-4digits[data-v-78efe7f6] {
   color: #5b3cc4 !important;

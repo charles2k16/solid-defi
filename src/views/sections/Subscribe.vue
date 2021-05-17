@@ -13,6 +13,7 @@
 
         <p class="lead_text mt-20">
           The SLD Token. A fungible ERC-20 utility token built on Ethereum.
+          <br />
           Leave us your email here to be the first one to get new information.
         </p>
 

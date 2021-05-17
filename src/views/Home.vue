@@ -4,11 +4,11 @@
 
     <div class="hero">
       <div class="wrap">
-        <div class="center mt-70">
+        <div class="center mt-50">
           <h1 class="lead_head_text">Get your SLD now</h1>
         </div>
 
-        <div class="d-flex-center mt-50">
+        <div class="d-flex-center mt-30">
           <!-- <vs-button transparent style="font-size:1.2rem; color:whitesmoke;">
             via Uniswap
           </vs-button> -->
@@ -24,7 +24,7 @@
       </div>
 
       <div class="wrap_bundle">
-        <div class="mt-50">
+        <div class="mt-30">
           <vs-row class="mt-20">
             <vs-col :w="4" :xs="6" :sm="6">
               <br /><br />
@@ -126,12 +126,14 @@
                     Don’t miss out on the SOLID bundle sale! <br />
                   </p>
                   <p class="center bun_p">
-                    <span class="percentage_off"><b>35% off</b></span>
+                    <span class="percentage_off"
+                      ><b>{{ percentageOff }}% off</b></span
+                    >
                     from the IDO price
                   </p>
 
                   <el-carousel type="card" :autoplay="false" class="mt-10">
-                    <el-carousel-item>
+                    <el-carousel-item @click="changePercentage(35)">
                       <div>
                         <img
                           src="../assets/images/solid_voucher_80000.png"
@@ -149,7 +151,7 @@
                       </div>
                     </el-carousel-item>
 
-                    <el-carousel-item>
+                    <el-carousel-item @click="changePercentage(30)">
                       <div>
                         <img
                           src="../assets/images/sLD_Token_voucher_40k.png"
@@ -284,7 +286,11 @@
                 <div id="wEth" class="tabcontent">
                   <p class="center bun_p">
                     Don’t miss out on the SOLID bundle sale! <br />
-                    <span class="percentage_off"><b>35% off</b></span>
+                  </p>
+                  <p class="center bun_p">
+                    <span class="percentage_off"
+                      ><b>{{ percentageOff }}% off</b></span
+                    >
                     from the IDO price
                   </p>
 
@@ -346,7 +352,7 @@
                         </div>
                       </div>
                       <div class="mt-10">
-                        <small
+                        <small style="font-size:10px;"
                           >*Maximum 4 bundles in a single transaction.</small
                         >
                       </div>
@@ -435,7 +441,11 @@
                 <div id="matic" class="tabcontent">
                   <p class="center bun_p">
                     Don’t miss out on the SOLID bundle sale! <br />
-                    <span class="percentage_off"><b>35% off</b></span>
+                  </p>
+                  <p class="center bun_p">
+                    <span class="percentage_off"
+                      ><b>{{ percentageOff }}% off</b></span
+                    >
                     from the IDO price
                   </p>
 
@@ -497,7 +507,7 @@
                         </div>
                       </div>
                       <div class="mt-10">
-                        <small
+                        <small style="font-size:10px;"
                           >*Maximum 4 bundles in a single transaction.</small
                         >
                       </div>
@@ -587,10 +597,12 @@
           </vs-row>
         </div>
       </div>
+    </div>
 
+    <div class="ilustrations">
       <div class="wrap">
         <Illustrations />
-
+        <br />
         <Subscribe />
       </div>
     </div>
@@ -782,6 +794,7 @@ export default {
     Footer,
   },
   data: () => ({
+    percentageOff: 35,
     active: 0,
     email: '',
     showWallects: false,
@@ -912,6 +925,10 @@ export default {
           );
         else this.maticBundle--;
       }
+    },
+    changePercentage(percent) {
+      console.log(percent);
+      this.percentageOff = percent;
     },
     openCity(evt, cityName) {
       if ((cityName == 'wEth' || cityName == 'matic') && this.onEthNetwork) {
