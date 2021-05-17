@@ -793,7 +793,7 @@ export default {
     title: '',
   }),
   created() {
-    this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsTotalSupply);
+    // this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsTotalSupply);
   },
   computed: {
     ...mapGetters('drizzle', ['isDrizzleInitialized']),
