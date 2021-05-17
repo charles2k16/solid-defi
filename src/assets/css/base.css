@@ -1,7 +1,15 @@
+@font-face {
+  font-family: Montserrat;
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+}
+@font-face {
+  font-family: 'Open Sans', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+}
 * {
   margin: 0;
   padding: 0;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat;
   box-sizing: border-box;
 }
 *,
@@ -29,7 +37,7 @@ hr.sales_hr {
 }
 .lead_head_text {
   color: whitesmoke;
-  font-size: 2.5rem;
+  font-size: 42px;
   line-height: 1;
   font-weight: bold;
 }
@@ -41,22 +49,25 @@ hr.sales_hr {
 }
 .lead_head_text1 {
   color: whitesmoke;
-  font-size: 2.4rem;
+  font-size: 41px;
   line-height: 3rem;
   font-weight: bold;
 }
 .lead_text {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.90rem;
   color: rgb(214, 213, 213);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .small_text1 {
   font-size: 1rem;
-  color: rgb(190, 188, 188)
+  color: rgb(190, 188, 188);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .small_text_primary {
   color: #5b3cc4;
   font-size: 1.1rem;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .small_text {
   font-size: 0.8rem;
@@ -64,14 +75,19 @@ hr.sales_hr {
   font-weight: bold;
 }
 .lead_text_black {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.90rem;
   color: rgb(22, 22, 22);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+
 }
 .text_p {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.90rem;
   color: #161616;
+  width: 70%;
+  margin: 0px auto;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .tks {
   color: #5b3cc4;
@@ -87,11 +103,20 @@ hr.sales_hr {
 .mt-10 {
   margin-top: 10px;
 }
+.mt-5 {
+  margin-top: 5px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
 .mt-30 {
   margin-top: 30px;
 }
 .mt-50 {
   margin-top: 50px;
+}
+.mt-70 {
+  margin-top: 70px;
 }
 .mx-10 {
   margin-left: 10px;
@@ -305,7 +330,7 @@ hr.sales_hr {
   width: 100%;
 }
 .hero {
-  background-color:#1A1D29;
+  background-color:#0F121E;
   padding-top: 100px;
   padding-bottom: 350px;
   display: block;
@@ -315,6 +340,12 @@ hr.sales_hr {
 }
 .wrap {
   width: 940px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+.wrap_bundle {
+  width: 1100px;
   height: auto;
   margin-right: auto;
   margin-left: auto;
@@ -363,6 +394,7 @@ hr.sales_hr {
   justify-content: center;
   padding-bottom: 20px;
 }
+
 .connect_d {
   display: flex;
   justify-content: center;
@@ -381,14 +413,14 @@ hr.sales_hr {
 .progress_div {
   background: linear-gradient(315deg, #E1C324, #cb8016);
   width: 70%;
-  height: 25px;
+  height: 20px;
   border-radius: 40px;
   margin-top: 10px;
 }
 .progress_time {
   background: linear-gradient(315deg, #6D21DF, #501BC4);
   width: 30%;
-  height: 25px;
+  height: 20px;
   border-radius: 40px;
   margin-top: 10px;
 }
@@ -400,6 +432,7 @@ hr.sales_hr {
 }
 .yellow {
   color: #cb8016;
+  font-size: 28px;
 }
 .community {
   background-color:#1A1D29;
@@ -426,8 +459,17 @@ hr.sales_hr {
   border-radius: 70px;
   background-color: #484B4E;
 }
+.promo_div2 {
+  height: 460px;
+  border: 1px solid rgb(167, 156, 156);
+  width: 80%;
+  float: right;
+  border-radius: 70px;
+  background-color: #484B4E;
+}
 .time_left {
   color:#5b3cc4;
+  font-size: 28px;
 }
 .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__bottom-4digits[data-v-78efe7f6], .flip-card__back-bottom-4digits[data-v-78efe7f6] {
   color: #5b3cc4 !important;
@@ -443,10 +485,10 @@ hr.sales_hr {
   line-height: 1 !important;
 }
 .flip-card[data-v-78efe7f6] {
-  font-size: 2.5rem !important;
+  font-size: 2.3rem !important;
 }
 .flip-clock__slot[data-v-78efe7f6] {
-  font-size: 1rem !important;
+  font-size: 0.8rem !important;
   color: rgb(201, 193, 193) !important;
 }
 .partner_div {
@@ -529,15 +571,17 @@ hr.sales_hr {
 }
 
 .round_token_button {
-  background-color: #1A1D29;
+  background: #1A1D29;
+  box-shadow:  9px 9px 15px #807f89,
+             -9px -9px 15px #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 350px;
   padding: 2px;
   border-radius: 45px;
+  margin-bottom: 20px;
 }
-
 .matic_btn {
   width: 100px;
   font-size: 0.8rem;
@@ -548,20 +592,21 @@ hr.sales_hr {
   cursor: pointer;
 }
 .bun_p {
-  font-size: 1.2rem;
+  font-size: 13px;
+  margin-top: 15px;
 }
 .percentage_off {
-  font-size: 2rem;
+  font-size: 1rem;
   color: #091750;
+  margin-top: 20px;
 }
 .num_input {
-  width: 50px;
   background: transparent;
   border: 1px solid grey;
   border-radius: 5px;
-  width: 50px;
-  padding: 5px;
-  font-size: 1rem;
+  width: 40px;
+  padding: 4px;
+  font-size: 0.8rem;
   margin: 0px 7px;
   text-align: center;
 }
@@ -570,17 +615,22 @@ hr.sales_hr {
 }
 .caro_image {
   width: 100%;
-  height: 255px;
 }
 .bk_bun {
   background:#EEEEEE;
   margin-top:-5px;
   padding: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .bk_bun span {
- font-size: 1.5rem;
+ font-size: 18px;
  font-weight: bold;
  margin-left: 10px;
+}
+.logo_img {
+  border-radius: 100px;
+  width: 30px;
 }
 .stock_bold {
   font-size: 1.2rem;
@@ -589,18 +639,23 @@ hr.sales_hr {
 #matic, #wEth {
   display: none;
 }
+.opacity {
+  opacity: 0.8;
+  background: #6A6C72;
+}
+.bundle_tab {
+  background: #000000;
+  padding: 10px;
+  text-align: center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
 
 /* Style the tab */
 .tab {
   float: left;
-  border: 1px solid #7c7e85;
-  background-color: #7c7e85;
-   /* border: 1px solid #ccc;
-  background-color: #f1f1f1; */
   width: 35%;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  /* height: 300px; */
+  border-bottom-left-radius: 20px;
 }
 
 /* Style the buttons inside the tab */
@@ -608,15 +663,14 @@ hr.sales_hr {
   display: block;
   background-color: inherit;
   color: black;
-  padding: 22px 16px;
+  padding: 22px 10px;
   width: 100%;
   border: none;
   outline: none;
   text-align: left;
   cursor: pointer;
   transition: 0.3s;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  background: #6A6C72;
 }
 
 /* Change background color of buttons on hover */
@@ -626,21 +680,19 @@ hr.sales_hr {
 
 /* Create an active/current "tab button" class */
 .tab button.active {
-  background-color: #DDDBEC
+  background-color: #DDDBEC;
+  opacity: 1px;
 }
 
 /* Style the tab content */
 .tabcontent {
   float: left;
-  padding: 0px 12px;
+  padding: 0px 4px;
   border: 1px solid #DDDBEC;
   width: 65%;
   border-left: none;
   background-color: #DDDBEC;
-  padding: 5px 5px 15px 5px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  /* height: 300px; */
+  border-bottom-right-radius: 20px;
 }
 
 /* ----------- iPhone 12 pro max ----------- */
@@ -877,6 +929,9 @@ hr.sales_hr {
     .wrap {
       width: 100% !important;
       padding: 0 9px;
+    }
+    .wrap_bundle {
+      width: 100% !important;
     }
     .vs-navbar {
       width: 100% !important;

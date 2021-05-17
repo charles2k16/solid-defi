@@ -16,9 +16,9 @@
   padding-left: 15px !important;
   padding-right: 15px !important;
   color: #fff;
-  box-shadow:  -16px -16px 32px #0a0c14,
-             5px 5px 5px 5px rgb(36, 35, 35);
-
+  box-shadow:  6px 6px 12px #0d0e14,
+  -6px -6px 12px #272c3e, inset -10px -10px 10px #aeaec025,
+  inset 2px 2px 2px rgb(99, 89, 247);
   background: rgb(77,26,192) !important;
   background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
 }
@@ -29,8 +29,8 @@
   padding-right: 15px !important;
   color: #fff;
   background: #161D25;
-  box-shadow:  5px 5px 10px #141b22,
-               -5px -5px 10px #181f28;
+  box-shadow:  8px 8px 24px #0c0e18,
+  -8px -8px 24px #121624;
 }
 
 .sub_button.vs-button--default {
@@ -39,7 +39,8 @@
   padding-right: 15px !important;
   color: #fff;
   box-shadow:  6px 6px 12px #0d0e14,
-             -6px -6px 12px #272c3e;
+             -6px -6px 12px #272c3e, inset -10px -10px 10px #aeaec025,
+             inset 2px 2px 2px rgb(99, 89, 247);
 
   background: rgb(77,26,192) !important;
   background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;

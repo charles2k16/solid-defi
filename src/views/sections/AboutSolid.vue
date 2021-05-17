@@ -51,7 +51,7 @@
 
           <div class="center mt-50">
             <img
-              src="../../assets/images/chart.png"
+              src="../../assets/images/Tokenom.png"
               alt="chart"
               style="width:100%; height:auto;"
             />

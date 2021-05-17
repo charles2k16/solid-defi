@@ -15,20 +15,31 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import '~element-ui/packages/theme-chalk/src/index';
 
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
+// .el-carousel__item:nth-child(2n) {
+//   background-color:white;
+// }
 
 .el-carousel__item:nth-child(2n+1) {
-  background-color: #d3dce6;
+  margin-left: 20px;
+}
+
+.el-carousel__mask {
+  background-color: #FFFFFF !important;
+  opacity: 0.6 !important;
 }
 
 .el-carousel__item--card {
-  width: 40% !important;
+  width: 168px !important;
   border-radius: 13px;
 }
-.el-tabs__item {
-  height: 100% !important;
+
+.el-carousel__item  {
+  height: 215px !important;
+}
+
+.el-carousel__container {
+  position: relative;
+  height: 220px;
 }
 
 .el-carousel__arrow, .el-carousel__arrow--left {
@@ -37,4 +48,10 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 .el-carousel__indicator {
   display: none;
+}
+
+.el-carousel__mask {
+  height: 208px !important;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }

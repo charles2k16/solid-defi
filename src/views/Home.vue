@@ -4,677 +4,580 @@
 
     <div class="hero">
       <div class="wrap">
-        <div class="center mt-30">
+        <div class="center mt-70">
           <h1 class="lead_head_text">Get your SLD now</h1>
         </div>
 
-        <div class="d-flex-center mt-20">
+        <div class="d-flex-center mt-50">
           <!-- <vs-button transparent style="font-size:1.2rem; color:whitesmoke;">
             via Uniswap
           </vs-button> -->
           <vs-button
             href="https://ropsten.etherscan.io/address/0x687422eea2cb73b5d3e242ba5456b782919afc85"
             blank
-            style="font-size: 1.1rem;"
-            class="eth_button"
+            style="font-size: 15px;color:whitesmoke;"
+            transparent
           >
             View SLD on Etherscan
           </vs-button>
         </div>
+      </div>
 
-        <!-- Sales bundle options-->
-        <!-- <vs-row class="mt-50" justify="space-around">
-          <vs-col :w="5" :xs="12" :sm="12">
-            <div class="sales_div">
-              <div class="sales_div_head">
-                <h2>30% off</h2>
-              </div>
-              <hr class="sales_hr" />
-
-              <div class="promo_div">
-                <vs-button
-                  class="buy_button"
-                  style="font-size: 1.5rem;"
-                  @click="buyTokens"
-                >
-                  BUY
-                </vs-button>
-              </div>
-
-              <div class="connect_d">
-                <div
-                  v-if="
-                    isDrizzleInitialized &&
-                      checkNetwork(
-                        this.drizzleInstance.web3._provider.networkVersion
-                      )
-                  "
-                >
-                  <div class="eth_div">
-                    <div class="eth_bal1 net_balance">
-                      {{
-                        getNetworkName(
-                          this.drizzleInstance.web3._provider.networkVersion
-                        )
-                      }}
-                    </div>
-                    <div class="eth_acc1">
-                      <span style="overflow-x:hidden"
-                        >{{ toEth(activeBalance) }} ETH</span
-                      >
-                    </div>
-                  </div>
-                  <div class="switch_div">
-                    <span>Currently on: </span>
-                    <vs-switch
-                      v-model="onEthNetwork"
-                      class="mt-20"
-                      color="#7d33ff"
-                    >
-                      <template #off>
-                        Matic
-                      </template>
-                      <template #on>
-                        Eth
-                      </template>
-                    </vs-switch>
-                  </div>
-                </div>
-
-                <vs-button
-                  danger
-                  @click="changeNetwork"
-                  v-else-if="
-                    isDrizzleInitialized &&
-                      !checkNetwork(
-                        this.drizzleInstance.web3._provider.networkVersion
-                      )
-                  "
-                >
-                  Wrong Network Connected
-                </vs-button>
-
-                <vs-button
-                  v-else
-                  class="connect_button"
-                  style="font-size: 1rem;"
-                  @click="changeNetwork"
-                >
-                  Connect Wallect
-                </vs-button>
-              </div>
-            </div>
-          </vs-col>
-
-          <vs-col :w="5" :xs="12" :sm="12">
-            <div class="sales_div">
-              <div class="sales_div_head">
-                <h2>40% off</h2>
-              </div>
-              <hr class="sales_hr" />
-
-              <div class="promo_div">
-                <vs-button class="buy_button" style="font-size: 1.5rem;">
-                  BUY
-                </vs-button>
-              </div>
-
-              <div class="connect_d">
-                <div
-                  class="eth_div"
-                  v-if="
-                    isDrizzleInitialized &&
-                      checkNetwork(
-                        this.drizzleInstance.web3._provider.networkVersion
-                      )
-                  "
-                  @click="checkAccounts"
-                >
-                  <div class="eth_bal">{{ toEth(activeBalance) }} ETH</div>
-                  <div class="eth_acc">
-                    <span style="width:80%; overflow-x:hidden;">{{
-                      activeAccount
-                    }}</span>
-                    <vs-avatar size="20">
-                      <img src="../assets/images/logo.png" alt="logo" />
-                    </vs-avatar>
-                  </div>
-                </div>
-
-                <vs-button
-                  danger
-                  @click="changeNetwork"
-                  v-else-if="
-                    isDrizzleInitialized &&
-                      !checkNetwork(
-                        this.drizzleInstance.web3._provider.networkVersion
-                      )
-                  "
-                >
-                  Wrong Network Connected
-                  {{ errorNotify('top-center', 'danger') }}
-                </vs-button>
-
-                <vs-button
-                  v-else
-                  class="connect_button"
-                  style="font-size: 1rem;"
-                  @click="changeNetwork"
-                >
-                  Connect Wallect
-                </vs-button>
-              </div>
-            </div>
-          </vs-col>
-        </vs-row> -->
-
+      <div class="wrap_bundle">
         <div class="mt-50">
-          <h4 class="insights center">SOLID TOKEN BUNDLE</h4>
-          <vs-row justify="space-around" class="mt-20">
-            <vs-col :w="12" :xs="12" :sm="12">
-              <div class="tab">
-                <button
-                  class="tablinks"
-                  @click="openCity($event, 'eth')"
-                  id="defaultOpen"
-                >
-                  <div class="flex-justify-between-center">
-                    <div class="flex-row-center">
-                      <vs-avatar size="40">
-                        <img src="../assets/images/eth.png" alt="telegram" />
-                      </vs-avatar>
-                      <span class="mt-10"><b>ETH</b></span>
-                    </div>
-                    <div class="mx-10">
-                      <h3 class="stock_bold">40,000</h3>
-                      <span class="d-block">Stock: 210</span>
-                      <span class="d-block">Owned: 0</span>
-                    </div>
-                    <div>
-                      <h3 class="stock_bold">80,000</h3>
-                      <span class="d-block">Stock: 70</span>
-                      <span class="d-block">Owned: 0</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="tablinks" @click="openCity($event, 'wEth')">
-                  <div class="flex-justify-between-center">
-                    <div class="flex-row-center">
-                      <vs-avatar size="40">
-                        <img src="../assets/images/eth.png" alt="telegram" />
-                      </vs-avatar>
-                      <span class="mt-10"><b>wETH</b></span>
-                    </div>
-                    <div class="mx-10">
-                      <h3 class="stock_bold">40,000</h3>
-                      <span class="d-block">Stock: 210</span>
-                      <span class="d-block">Owned: 0</span>
-                    </div>
-                    <div>
-                      <h3 class="stock_bold">80,000</h3>
-                      <span class="d-block">Stock: 70</span>
-                      <span class="d-block">Owned: 0</span>
-                    </div>
-                  </div>
-                </button>
-                <button class="tablinks" @click="openCity($event, 'matic')">
-                  <div class="flex-justify-between-center">
-                    <div class="flex-row-center">
-                      <vs-avatar size="40" class="matic_avatar">
-                        <img src="../assets/images/matic.png" alt="telegram" />
-                      </vs-avatar>
-                      <span class="mt-10"><b>MATIC</b></span>
-                    </div>
-                    <div class="mx-10">
-                      <h3 class="stock_bold">40,000</h3>
-                      <span class="d-block">Stock: 40</span>
-                      <span class="d-block">Owned: 0</span>
-                    </div>
-                    <div>
-                      <h3 class="stock_bold">80,000</h3>
-                      <span class="d-block">Stock: 120</span>
-                      <span class="d-block">Owned: 0</span>
-                    </div>
-                  </div>
-                </button>
-              </div>
+          <vs-row class="mt-20">
+            <vs-col :w="4" :xs="6" :sm="6">
+              <br /><br />
+              <img
+                src="../assets/images/solid_bundle_promo.png"
+                alt="log"
+                width="520px"
+              />
+            </vs-col>
+            <vs-col :w="8" :xs="6" :sm="6">
+              <div style="width:711px;">
+                <div class="bundle_tab">
+                  <h4 class="insights center">SOLID Token Bundle</h4>
+                </div>
 
-              <div id="eth" class="tabcontent">
-                <p class="center bun_p">
-                  Don’t miss out on the SOLID bundle sale! <br />
-                  <span class="percentage_off"><b>35% off</b></span>
-                  from the IDO price
-                </p>
+                <div class="tab">
+                  <button
+                    class="tablinks active"
+                    @click="openCity($event, 'eth')"
+                  >
+                    <div class="flex-justify-between-center">
+                      <div class="flex-row-center">
+                        <vs-avatar size="60">
+                          <img src="../assets/images/eth.png" alt="telegram" />
+                        </vs-avatar>
+                        <span class="mt-20"><b>ETH</b></span>
+                      </div>
+                      <div class="mx-10">
+                        <h3 class="stock_bold">40,000</h3>
+                        <br />
+                        <span class="d-block">Stock: 210</span>
+                        <span class="d-block mt-5">Owned: 0</span>
+                      </div>
+                      <div>
+                        <h3 class="stock_bold">80,000</h3>
+                        <br />
+                        <span class="d-block">Stock: 70</span>
+                        <span class="d-block mt-5">Owned: 0</span>
+                      </div>
+                    </div>
+                  </button>
+                  <button
+                    class="tablinks opacity"
+                    @click="openCity($event, 'wEth')"
+                  >
+                    <div class="flex-justify-between-center">
+                      <div class="flex-row-center">
+                        <vs-avatar size="60">
+                          <img src="../assets/images/eth.png" alt="telegram" />
+                        </vs-avatar>
+                        <span class="mt-20"><b>wETH</b></span>
+                      </div>
+                      <div>
+                        <h3 class="stock_bold">40,000</h3>
+                        <br />
+                        <span class="d-block">Stock: 210</span>
+                        <span class="d-block mt-5">Owned: 0</span>
+                      </div>
+                      <div>
+                        <h3 class="stock_bold">80,000</h3>
+                        <br />
+                        <span class="d-block">Stock: 70</span>
+                        <span class="d-block mt-5">Owned: 0</span>
+                      </div>
+                    </div>
+                  </button>
+                  <button
+                    class="tablinks opacity"
+                    @click="openCity($event, 'matic')"
+                  >
+                    <div class="flex-justify-between-center">
+                      <div class="flex-row-center">
+                        <vs-avatar size="60">
+                          <img
+                            src="../assets/images/matic_icon.png"
+                            alt="telegram"
+                          />
+                        </vs-avatar>
+                        <span class="mt-20"><b>MATIC</b></span>
+                      </div>
+                      <div class="mx-10">
+                        <h3 class="stock_bold">40,000</h3>
+                        <br />
+                        <span class="d-block">Stock: 40</span>
+                        <span class="d-block mt-5">Owned: 0</span>
+                      </div>
+                      <div>
+                        <h3 class="stock_bold">80,000</h3>
+                        <br />
+                        <span class="d-block">Stock: 120</span>
+                        <span class="d-block mt-5">Owned: 0</span>
+                      </div>
+                    </div>
+                  </button>
+                </div>
 
-                <el-carousel type="card" :autoplay="false">
-                  <el-carousel-item>
-                    <div>
-                      <img
-                        src="../assets/images/token_bundles.jpeg"
-                        alt="tkbundles"
-                        class="caro_image"
-                      />
-                    </div>
-                    <div class="bk_bun d-flex-center">
-                      <vs-avatar size="35">
-                        <img src="../assets/images/logo.png" alt="token" />
-                      </vs-avatar>
-                      <span>80, 000</span>
-                    </div>
-                  </el-carousel-item>
+                <div id="eth" class="tabcontent">
+                  <p class="center bun_p">
+                    Don’t miss out on the SOLID bundle sale! <br />
 
-                  <el-carousel-item>
-                    <div>
-                      <img
-                        src="../assets/images/token_bundles.jpeg"
-                        alt="tkbundles"
-                        class="caro_image"
-                      />
-                    </div>
-                    <div class="bk_bun d-flex-center">
-                      <vs-avatar size="35">
-                        <img src="../assets/images/logo.png" alt="token" />
-                      </vs-avatar>
-                      <span>40, 000</span>
-                    </div>
-                  </el-carousel-item>
-                </el-carousel>
+                    <span class="percentage_off"><b>35% off</b></span>
+                    from the IDO price
+                  </p>
 
-                <div class="center d-flex-center mt-20">
-                  <div>
-                    <div class="d-flex-center">
-                      <div class="flex-align-center">
-                        <span
-                          class="material-icons mi"
-                          @click="minBundle('eth')"
-                        >
-                          remove_circle
-                        </span>
-                        <input
-                          class="num_input"
-                          placeholder="1"
-                          v-model="ethBundle"
+                  <el-carousel type="card" :autoplay="false" class="mt-15">
+                    <el-carousel-item>
+                      <div>
+                        <img
+                          src="../assets/images/solid_voucher_80000.png"
+                          alt="tkbundles"
+                          class="caro_image"
                         />
-                        <span
-                          class="material-icons mi"
-                          @click="maxBundle('eth')"
-                        >
-                          add_circle
-                        </span>
                       </div>
-                    </div>
-                    <div class="mt-10">
-                      <small>*Maximum 4 bundles in a single transaction.</small>
-                    </div>
+                      <div class="bk_bun d-flex-center">
+                        <img
+                          src="../assets/images/logo.png"
+                          alt="token"
+                          class="logo_img"
+                        />
+                        <span>80, 000</span>
+                      </div>
+                    </el-carousel-item>
 
-                    <div class="round_token_button mt-10">
-                      <div
-                        class="flex-justify-between-center"
-                        v-if="
-                          isDrizzleInitialized &&
-                            checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
-                        "
-                      >
-                        <span
-                          class="matic_btn"
-                          v-if="onEthNetwork"
+                    <el-carousel-item>
+                      <div>
+                        <img
+                          src="../assets/images/sLD_Token_voucher_40k.png"
+                          alt="tkbundles"
+                          class="caro_image"
+                        />
+                      </div>
+                      <div class="bk_bun d-flex-center">
+                        <!-- <vs-avatar size="35">
+                        <img src="../assets/images/logo.png" alt="token" />
+                      </vs-avatar> -->
+                        <img
+                          src="../assets/images/logo.png"
+                          alt="token"
+                          class="logo_img"
+                        />
+                        <span>40, 000</span>
+                      </div>
+                    </el-carousel-item>
+                  </el-carousel>
+
+                  <div class="center d-flex-center">
+                    <div>
+                      <div class="d-flex-center">
+                        <div class="flex-align-center">
+                          <span
+                            class="material-icons mi"
+                            @click="minBundle('eth')"
+                          >
+                            remove_circle
+                          </span>
+                          <input
+                            class="num_input"
+                            placeholder="1"
+                            v-model="ethBundle"
+                          />
+                          <span
+                            class="material-icons mi"
+                            @click="maxBundle('eth')"
+                          >
+                            add_circle
+                          </span>
+                        </div>
+                      </div>
+                      <div class="mt-10">
+                        <span style="font-size:10px;"
+                          >*Maximum 4 bundles in a single transaction.</span
+                        >
+                      </div>
+
+                      <div class="round_token_button mt-10">
+                        <div
+                          class="flex-justify-between-center"
+                          v-if="
+                            isDrizzleInitialized &&
+                              checkNetwork(
+                                this.drizzleInstance.web3._provider
+                                  .networkVersion
+                              )
+                          "
+                        >
+                          <span
+                            class="matic_btn"
+                            v-if="onEthNetwork"
+                            @click="changeNetwork"
+                          >
+                            Connect to <br />
+                            <span style="color:blue;"> <b>Matic </b></span>
+                          </span>
+                          <span style="color:#B6B6B6;font-size:0.8rem;" v-else
+                            >You're <br />
+                            ON
+                            <span style="color:#5772ec;">
+                              <b> Matic </b></span
+                            ></span
+                          >
+
+                          <span
+                            style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
+                            v-if="onEthNetwork"
+                            >You're <br />
+                            <span style="color:#DDDBEC;">
+                              <b>ON Etherum </b></span
+                            ></span
+                          >
+                          <span
+                            class="matic_btn ml-15"
+                            v-else
+                            @click="changeNetwork"
+                          >
+                            Connect to <br />
+                            <span style="color:blue;"> <b>Etherum </b></span>
+                          </span>
+                        </div>
+
+                        <vs-button
+                          danger
                           @click="changeNetwork"
+                          v-else-if="
+                            isDrizzleInitialized &&
+                              !checkNetwork(
+                                this.drizzleInstance.web3._provider
+                                  .networkVersion
+                              )
+                          "
                         >
-                          Connect to <br />
-                          <span style="color:blue;"> <b>Matic </b></span>
-                        </span>
-                        <span style="color:#B6B6B6;font-size:0.8rem;" v-else
-                          >You're <br />
-                          ON
-                          <span style="color:#5772ec;">
-                            <b> Matic </b></span
-                          ></span
-                        >
+                          Wrong Network Connected
+                          {{ errorNotify('top-center', 'danger') }}
+                        </vs-button>
 
-                        <span
-                          style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
-                          v-if="onEthNetwork"
-                          >You're <br />
-                          <span style="color:#DDDBEC;">
-                            <b>ON Etherum </b></span
-                          ></span
-                        >
-                        <span
-                          class="matic_btn ml-15"
+                        <vs-button
                           v-else
+                          class="connect_button"
+                          style="font-size: 1rem;"
                           @click="changeNetwork"
                         >
-                          Connect to <br />
-                          <span style="color:blue;"> <b>Etherum </b></span>
-                        </span>
+                          Connect Wallect
+                        </vs-button>
+
+                        <vs-button
+                          class="buy_button"
+                          style="font-size: 1rem;"
+                          @click="buyTokens"
+                        >
+                          <b> BUY</b>
+                        </vs-button>
                       </div>
-
-                      <vs-button
-                        danger
-                        @click="changeNetwork"
-                        v-else-if="
-                          isDrizzleInitialized &&
-                            !checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
-                        "
-                      >
-                        Wrong Network Connected
-                        {{ errorNotify('top-center', 'danger') }}
-                      </vs-button>
-
-                      <vs-button
-                        v-else
-                        class="connect_button"
-                        style="font-size: 1rem;"
-                        @click="changeNetwork"
-                      >
-                        Connect Wallect
-                      </vs-button>
-
-                      <vs-button
-                        class="buy_button"
-                        style="font-size: 1rem;"
-                        @click="buyTokens"
-                      >
-                        <b> BUY</b>
-                      </vs-button>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div id="wEth" class="tabcontent">
-                <p class="center bun_p">
-                  Don’t miss out on the SOLID bundle sale! <br />
-                  <span class="percentage_off"><b>35% off</b></span>
-                  from the IDO price
-                </p>
+                <div id="wEth" class="tabcontent">
+                  <p class="center bun_p">
+                    Don’t miss out on the SOLID bundle sale! <br />
+                    <span class="percentage_off"><b>35% off</b></span>
+                    from the IDO price
+                  </p>
 
-                <el-carousel type="card" :autoplay="false">
-                  <el-carousel-item>
-                    <div>
-                      <img
-                        src="../assets/images/token_bundles.jpeg"
-                        alt="tkbundles"
-                        class="caro_image"
-                      />
-                    </div>
-                    <div class="bk_bun d-flex-center">
-                      <vs-avatar size="35">
-                        <img src="../assets/images/logo.png" alt="token" />
-                      </vs-avatar>
-                      <span>80, 000</span>
-                    </div>
-                  </el-carousel-item>
-
-                  <el-carousel-item>
-                    <div>
-                      <img
-                        src="../assets/images/token_bundles.jpeg"
-                        alt="tkbundles"
-                        class="caro_image"
-                      />
-                    </div>
-                    <div class="bk_bun d-flex-center">
-                      <vs-avatar size="35">
-                        <img src="../assets/images/logo.png" alt="token" />
-                      </vs-avatar>
-                      <span>40, 000</span>
-                    </div>
-                  </el-carousel-item>
-                </el-carousel>
-
-                <div class="center d-flex-center mt-20">
-                  <div>
-                    <div class="d-flex-center">
-                      <div class="flex-align-center">
-                        <span
-                          class="material-icons mi"
-                          @click="minBundle('wEth')"
-                        >
-                          remove_circle
-                        </span>
-                        <input
-                          class="num_input"
-                          placeholder="1"
-                          v-model="wBundle"
+                  <el-carousel type="card" :autoplay="false">
+                    <el-carousel-item>
+                      <div>
+                        <img
+                          src="../assets/images/solid_voucher_80000.png"
+                          alt="tkbundles"
+                          class="caro_image"
                         />
-                        <span
-                          class="material-icons mi"
-                          @click="maxBundle('wEth')"
-                        >
-                          add_circle
-                        </span>
                       </div>
-                    </div>
-                    <div class="mt-10">
-                      <small>*Maximum 4 bundles in a single transaction.</small>
-                    </div>
+                      <div class="bk_bun d-flex-center">
+                        <vs-avatar size="35">
+                          <img src="../assets/images/logo.png" alt="token" />
+                        </vs-avatar>
+                        <span>80, 000</span>
+                      </div>
+                    </el-carousel-item>
 
-                    <div class="round_token_button mt-10">
-                      <div
-                        class="flex-justify-between-center"
-                        v-if="
-                          isDrizzleInitialized &&
-                            checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
-                        "
-                      >
-                        <span
-                          class="matic_btn"
-                          v-if="onEthNetwork"
+                    <el-carousel-item>
+                      <div>
+                        <img
+                          src="../assets/images/sLD_Token_voucher_40k.png"
+                          alt="tkbundles"
+                          class="caro_image"
+                        />
+                      </div>
+                      <div class="bk_bun d-flex-center">
+                        <vs-avatar size="35">
+                          <img src="../assets/images/logo.png" alt="token" />
+                        </vs-avatar>
+                        <span>40, 000</span>
+                      </div>
+                    </el-carousel-item>
+                  </el-carousel>
+
+                  <div class="center d-flex-center mt-20">
+                    <div>
+                      <div class="d-flex-center">
+                        <div class="flex-align-center">
+                          <span
+                            class="material-icons mi"
+                            @click="minBundle('wEth')"
+                          >
+                            remove_circle
+                          </span>
+                          <input
+                            class="num_input"
+                            placeholder="1"
+                            v-model="wBundle"
+                          />
+                          <span
+                            class="material-icons mi"
+                            @click="maxBundle('wEth')"
+                          >
+                            add_circle
+                          </span>
+                        </div>
+                      </div>
+                      <div class="mt-10">
+                        <small
+                          >*Maximum 4 bundles in a single transaction.</small
+                        >
+                      </div>
+
+                      <div class="round_token_button mt-10">
+                        <div
+                          class="flex-justify-between-center"
+                          v-if="
+                            isDrizzleInitialized &&
+                              checkNetwork(
+                                this.drizzleInstance.web3._provider
+                                  .networkVersion
+                              )
+                          "
+                        >
+                          <span
+                            class="matic_btn"
+                            v-if="onEthNetwork"
+                            @click="changeNetwork"
+                          >
+                            Connect to <br />
+                            <span style="color:blue;"> <b>Matic </b></span>
+                          </span>
+                          <span style="color:#B6B6B6;font-size:0.8rem;" v-else
+                            >You're <br />
+                            ON
+                            <span style="color:#5772ec;">
+                              <b> Matic </b></span
+                            ></span
+                          >
+
+                          <span
+                            style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
+                            v-if="onEthNetwork"
+                            >You're <br />
+                            <span style="color:#DDDBEC;">
+                              <b>ON Etherum </b></span
+                            ></span
+                          >
+                          <span
+                            class="matic_btn ml-15"
+                            v-else
+                            @click="changeNetwork"
+                          >
+                            Connect to <br />
+                            <span style="color:blue;"> <b>Etherum </b></span>
+                          </span>
+                        </div>
+
+                        <vs-button
+                          danger
                           @click="changeNetwork"
+                          v-else-if="
+                            isDrizzleInitialized &&
+                              !checkNetwork(
+                                this.drizzleInstance.web3._provider
+                                  .networkVersion
+                              )
+                          "
                         >
-                          Connect to <br />
-                          <span style="color:blue;"> <b>Matic </b></span>
-                        </span>
-                        <span style="color:#B6B6B6;font-size:0.8rem;" v-else
-                          >You're <br />
-                          ON
-                          <span style="color:#5772ec;">
-                            <b> Matic </b></span
-                          ></span
-                        >
+                          Wrong Network Connected
+                          {{ errorNotify('top-center', 'danger') }}
+                        </vs-button>
 
-                        <span
-                          style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
-                          v-if="onEthNetwork"
-                          >You're <br />
-                          <span style="color:#DDDBEC;">
-                            <b>ON Etherum </b></span
-                          ></span
-                        >
-                        <span
-                          class="matic_btn ml-15"
+                        <vs-button
                           v-else
+                          class="connect_button"
+                          style="font-size: 1rem;"
                           @click="changeNetwork"
                         >
-                          Connect to <br />
-                          <span style="color:blue;"> <b>Etherum </b></span>
-                        </span>
+                          Connect Wallect
+                        </vs-button>
+
+                        <vs-button
+                          class="buy_button"
+                          style="font-size: 1rem;"
+                          @click="buyTokens"
+                        >
+                          <b> BUY</b>
+                        </vs-button>
                       </div>
-
-                      <vs-button
-                        danger
-                        @click="changeNetwork"
-                        v-else-if="
-                          isDrizzleInitialized &&
-                            !checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
-                        "
-                      >
-                        Wrong Network Connected
-                        {{ errorNotify('top-center', 'danger') }}
-                      </vs-button>
-
-                      <vs-button
-                        v-else
-                        class="connect_button"
-                        style="font-size: 1rem;"
-                        @click="changeNetwork"
-                      >
-                        Connect Wallect
-                      </vs-button>
-
-                      <vs-button
-                        class="buy_button"
-                        style="font-size: 1rem;"
-                        @click="buyTokens"
-                      >
-                        <b> BUY</b>
-                      </vs-button>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div id="matic" class="tabcontent">
-                <p class="center bun_p">
-                  Don’t miss out on the SOLID bundle sale! <br />
-                  <span class="percentage_off"><b>35% off</b></span>
-                  from the IDO price
-                </p>
+                <div id="matic" class="tabcontent">
+                  <p class="center bun_p">
+                    Don’t miss out on the SOLID bundle sale! <br />
+                    <span class="percentage_off"><b>35% off</b></span>
+                    from the IDO price
+                  </p>
 
-                <el-carousel type="card" :autoplay="false">
-                  <el-carousel-item>
-                    <div>
-                      <img
-                        src="../assets/images/token_bundles.jpeg"
-                        alt="tkbundles"
-                        class="caro_image"
-                      />
-                    </div>
-                    <div class="bk_bun d-flex-center">
-                      <vs-avatar size="35">
-                        <img src="../assets/images/logo.png" alt="token" />
-                      </vs-avatar>
-                      <span>80, 000</span>
-                    </div>
-                  </el-carousel-item>
-
-                  <el-carousel-item>
-                    <div>
-                      <img
-                        src="../assets/images/token_bundles.jpeg"
-                        alt="tkbundles"
-                        class="caro_image"
-                      />
-                    </div>
-                    <div class="bk_bun d-flex-center">
-                      <vs-avatar size="35">
-                        <img src="../assets/images/logo.png" alt="token" />
-                      </vs-avatar>
-                      <span>40, 000</span>
-                    </div>
-                  </el-carousel-item>
-                </el-carousel>
-
-                <div class="center d-flex-center mt-20">
-                  <div>
-                    <div class="d-flex-center">
-                      <div class="flex-align-center">
-                        <span
-                          class="material-icons mi"
-                          @click="minBundle('matic')"
-                        >
-                          remove_circle
-                        </span>
-                        <input
-                          class="num_input"
-                          placeholder="1"
-                          v-model="maticBundle"
+                  <el-carousel type="card" :autoplay="false">
+                    <el-carousel-item>
+                      <div>
+                        <img
+                          src="../assets/images/solid_voucher_80000.png"
+                          alt="tkbundles"
+                          class="caro_image"
                         />
-                        <span
-                          class="material-icons mi"
-                          @click="maxBundle('matic')"
-                        >
-                          add_circle
-                        </span>
                       </div>
-                    </div>
-                    <div class="mt-10">
-                      <small>*Maximum 4 bundles in a single transaction.</small>
-                    </div>
+                      <div class="bk_bun d-flex-center">
+                        <vs-avatar size="35">
+                          <img src="../assets/images/logo.png" alt="token" />
+                        </vs-avatar>
+                        <span>80, 000</span>
+                      </div>
+                    </el-carousel-item>
 
-                    <div class="round_token_button mt-10">
-                      <div
-                        class="flex-justify-between-center"
-                        v-if="
-                          isDrizzleInitialized &&
-                            checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
-                        "
-                      >
-                        <span
-                          class="matic_btn"
-                          v-if="onEthNetwork"
+                    <el-carousel-item>
+                      <div>
+                        <img
+                          src="../assets/images/sLD_Token_voucher_40k.png"
+                          alt="tkbundles"
+                          class="caro_image"
+                        />
+                      </div>
+                      <div class="bk_bun d-flex-center">
+                        <vs-avatar size="35">
+                          <img src="../assets/images/logo.png" alt="token" />
+                        </vs-avatar>
+                        <span>40, 000</span>
+                      </div>
+                    </el-carousel-item>
+                  </el-carousel>
+
+                  <div class="center d-flex-center mt-20">
+                    <div>
+                      <div class="d-flex-center">
+                        <div class="flex-align-center">
+                          <span
+                            class="material-icons mi"
+                            @click="minBundle('matic')"
+                          >
+                            remove_circle
+                          </span>
+                          <input
+                            class="num_input"
+                            placeholder="1"
+                            v-model="maticBundle"
+                          />
+                          <span
+                            class="material-icons mi"
+                            @click="maxBundle('matic')"
+                          >
+                            add_circle
+                          </span>
+                        </div>
+                      </div>
+                      <div class="mt-10">
+                        <small
+                          >*Maximum 4 bundles in a single transaction.</small
+                        >
+                      </div>
+
+                      <div class="round_token_button mt-10">
+                        <div
+                          class="flex-justify-between-center"
+                          v-if="
+                            isDrizzleInitialized &&
+                              checkNetwork(
+                                this.drizzleInstance.web3._provider
+                                  .networkVersion
+                              )
+                          "
+                        >
+                          <span
+                            class="matic_btn"
+                            v-if="onEthNetwork"
+                            @click="changeNetwork"
+                          >
+                            Connect to <br />
+                            <span style="color:blue;"> <b>Matic </b></span>
+                          </span>
+                          <span style="color:#B6B6B6;font-size:0.8rem;" v-else
+                            >You're <br />
+                            ON
+                            <span style="color:#5772ec;">
+                              <b> Matic </b></span
+                            ></span
+                          >
+
+                          <span
+                            style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
+                            v-if="onEthNetwork"
+                            >You're <br />
+                            <span style="color:#DDDBEC;">
+                              <b>ON Etherum </b></span
+                            ></span
+                          >
+                          <span
+                            class="matic_btn ml-15"
+                            v-else
+                            @click="changeNetwork"
+                          >
+                            Connect to <br />
+                            <span style="color:blue;"> <b>Etherum </b></span>
+                          </span>
+                        </div>
+
+                        <vs-button
+                          danger
                           @click="changeNetwork"
+                          v-else-if="
+                            isDrizzleInitialized &&
+                              !checkNetwork(
+                                this.drizzleInstance.web3._provider
+                                  .networkVersion
+                              )
+                          "
                         >
-                          Connect to <br />
-                          <span style="color:blue;"> <b>Matic </b></span>
-                        </span>
-                        <span style="color:#B6B6B6;font-size:0.8rem;" v-else
-                          >You're <br />
-                          ON
-                          <span style="color:#5772ec;">
-                            <b> Matic </b></span
-                          ></span
-                        >
+                          Wrong Network Connected
+                          {{ errorNotify('top-center', 'danger') }}
+                        </vs-button>
 
-                        <span
-                          style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
-                          v-if="onEthNetwork"
-                          >You're <br />
-                          <span style="color:#DDDBEC;">
-                            <b>ON Etherum </b></span
-                          ></span
-                        >
-                        <span
-                          class="matic_btn ml-15"
+                        <vs-button
                           v-else
+                          class="connect_button"
+                          style="font-size: 1rem;"
                           @click="changeNetwork"
                         >
-                          Connect to <br />
-                          <span style="color:blue;"> <b>Etherum </b></span>
-                        </span>
+                          Connect Wallect
+                        </vs-button>
+
+                        <vs-button
+                          class="buy_button"
+                          style="font-size: 1rem;"
+                          @click="buyTokens"
+                        >
+                          <b> BUY</b>
+                        </vs-button>
                       </div>
-
-                      <vs-button
-                        danger
-                        @click="changeNetwork"
-                        v-else-if="
-                          isDrizzleInitialized &&
-                            !checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
-                        "
-                      >
-                        Wrong Network Connected
-                        {{ errorNotify('top-center', 'danger') }}
-                      </vs-button>
-
-                      <vs-button
-                        v-else
-                        class="connect_button"
-                        style="font-size: 1rem;"
-                        @click="changeNetwork"
-                      >
-                        Connect Wallect
-                      </vs-button>
-
-                      <vs-button
-                        class="buy_button"
-                        style="font-size: 1rem;"
-                        @click="buyTokens"
-                      >
-                        <b> BUY</b>
-                      </vs-button>
                     </div>
                   </div>
                 </div>
@@ -682,7 +585,9 @@
             </vs-col>
           </vs-row>
         </div>
+      </div>
 
+      <div class="wrap">
         <Illustrations />
 
         <Subscribe />
@@ -705,7 +610,7 @@
             </template>
 
             <template #text>
-              <p style="font-size:16px;">
+              <p style="font-size:15px;">
                 Earn NFT prizes for staking your SLD tokens
               </p>
               <vs-button class="blog_btn" style="font-size: 1rem;">
@@ -722,7 +627,7 @@
               <img src="../assets/images/nft.png" alt="blog" />
             </template>
             <template #text>
-              <p style="font-size:16px;">
+              <p style="font-size:15px;">
                 SLD Token holder can participate in xyz decisions by voting with
                 their voting powers proportional ...
               </p>
@@ -740,7 +645,7 @@
               <img src="../assets/images/nft.png" alt="blog" />
             </template>
             <template #text>
-              <p style="font-size:16px;">
+              <p style="font-size:15px;">
                 Stake SLD and provide liquidity on xyz for rewards.
               </p>
               <vs-button class="up_btn" style="font-size: 1rem;">
