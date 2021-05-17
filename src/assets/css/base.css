@@ -2,10 +2,10 @@
   font-family: Montserrat;
   src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 }
-@font-face {
+/* @font-face {
   font-family: 'Open Sans', sans-serif;
   src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
-}
+} */
 * {
   margin: 0;
   padding: 0;
@@ -593,12 +593,12 @@ hr.sales_hr {
 }
 .bun_p {
   font-size: 13px;
-  margin-top: 15px;
+  margin-top: 8px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .percentage_off {
   font-size: 1rem;
   color: #091750;
-  margin-top: 20px;
 }
 .num_input {
   background: transparent;
@@ -639,10 +639,14 @@ hr.sales_hr {
 #matic, #wEth {
   display: none;
 }
-.opacity {
+.notify_txt {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+}
+/* .opacity {
   opacity: 0.8;
   background: #6A6C72;
-}
+} */
 .bundle_tab {
   background: #000000;
   padding: 10px;
@@ -656,6 +660,7 @@ hr.sales_hr {
   float: left;
   width: 35%;
   border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 /* Style the buttons inside the tab */

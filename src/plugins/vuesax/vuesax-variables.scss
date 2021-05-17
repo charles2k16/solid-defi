@@ -150,11 +150,15 @@
 }
 
 .notify_dialog .vs-dialog {
-  background: #d4d7e4 !important;
+  background: #f7f7f7 !important;
   color: rgb(68, 66, 66) !important;
   min-width: 340px !important;
   opacity: 0.9;
   
+}
+
+.vs-dialog-content.notify_dialog {
+  background: none !important
 }
 
 .notify_dialog .vs-dialog:after {
@@ -162,32 +166,15 @@
   position: absolute;
   left: 40%;
   bottom: -15px;
-  border-top: 15px solid #d4d7e4;
+  border-top: 15px solid #f7f7f7;
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
 }
 
 .notify_dialog {
-  left: 170px !important;
-  top: 150px !important;
+  left: 300px !important;
+  top: 140px !important;
 }
-
-// .token_input {
-//   .vs-input-content {
-//     color: rgb(216, 215, 215) !important;
-    
-//     .vs-input {
-//       // border: 2px solid transparent;
-//       background: #222942;
-//       color: white;
-//       font-size: 1.5rem;
-//     }
-
-//     .vs-input__label--label {
-//       font-size: 1.2rem !important;
-//     }
-//   }
-// }
 
 .vs-input {
   width: 300px !important;

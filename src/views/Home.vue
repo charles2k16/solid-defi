@@ -124,12 +124,13 @@
                 <div id="eth" class="tabcontent">
                   <p class="center bun_p">
                     Don’t miss out on the SOLID bundle sale! <br />
-
+                  </p>
+                  <p class="center bun_p">
                     <span class="percentage_off"><b>35% off</b></span>
                     from the IDO price
                   </p>
 
-                  <el-carousel type="card" :autoplay="false" class="mt-15">
+                  <el-carousel type="card" :autoplay="false" class="mt-10">
                     <el-carousel-item>
                       <div>
                         <img
@@ -739,14 +740,14 @@
       </div>
     </vs-dialog>
 
-    <vs-dialog v-model="showNotifyDialog" width="350px" class="notify_dialog">
+    <vs-dialog v-model="showNotifyDialog" width="250px" class="notify_dialog">
       <template #header>
         <h4 class="not-margin">
           Warning
         </h4>
       </template>
       <div>
-        <b><p style="font-size:1.2rem;" v-html="title"></p> </b>
+        <b><p class="notify_txt" v-html="title"></p> </b>
       </div>
     </vs-dialog>
   </div>
