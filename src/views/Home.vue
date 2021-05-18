@@ -683,9 +683,7 @@
         <vs-row>
           <vs-col :w="4" :xs="12" :sm="12">
             <div class="blog">
-              <div class="blog_img">
-                <img src="../assets/images/nft.png" alt="blog" />
-              </div>
+              <div class="blog_img"></div>
               <div class="blog_content">
                 <h3>SOLID NFTs</h3>
                 <p>
@@ -700,10 +698,10 @@
           <vs-col :w="4" :xs="12" :sm="12">
             <div class="blog">
               <div class="blog_img">
-                <img src="../assets/images/nft.png" alt="blog" />
+                <!-- <img src="../assets/images/nft.png" alt="blog" /> -->
               </div>
               <div class="blog_content">
-                <h3>SOLID Governance.</h3>
+                <h3>SOLID Governance</h3>
                 <p>
                   SLD Token holder can participate in xyz decisions by voting
                   with their voting powers proportional ...
@@ -717,7 +715,7 @@
           <vs-col :w="4" :xs="12" :sm="12">
             <div class="blog">
               <div class="blog_img">
-                <img src="../assets/images/nft.png" alt="blog" />
+                <!-- <img src="../assets/images/nft.png" alt="blog" /> -->
               </div>
               <div class="blog_content">
                 <h3>SOLID Rewards</h3>
@@ -1013,6 +1011,7 @@ export default {
       tablinks = document.getElementsByClassName('tablinks');
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(' active', '');
+        // tablinks[i].className
       }
       document.getElementById(cityName).style.display = 'block';
       evt.currentTarget.className += ' active';

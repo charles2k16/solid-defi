@@ -17,8 +17,8 @@
         />
       </div>
 
-      <div class="center mt-30">
-        <p class="p_link">
+      <div class="center mt-40">
+        <p class="p_link" style="text-decoration: none;">
           Copyright © 2021 Solid Token. All rights reserved
         </p>
       </div>

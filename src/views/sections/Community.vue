@@ -8,7 +8,7 @@
               Join our <br />
               Community
             </h2>
-            <p class="lead_text mt-10">
+            <p class="lead_text mt-15">
               You can be the first to know about SLD token. <br />
               Don’t miss the opportunity !
             </p>
@@ -24,12 +24,9 @@
                   alt="telegram"
                 />
               </vs-avatar>
-
-              <p class="mt-40 center p_link">
-                <a href=""
-                  >Join us on <br />
-                  Telegram</a
-                >
+              <p class="mt-30 center p_link">
+                Join us on <br />
+                Telegram
               </p>
             </div>
 
@@ -37,11 +34,9 @@
               <vs-avatar size="60" class="twit_avatar">
                 <img src="../../assets/images/twitter.png" alt="twitter" />
               </vs-avatar>
-              <p class="mt-40 center p_link">
-                <a href=""
-                  >Follow us on <br />
-                  Twitter</a
-                >
+              <p class="mt-30 center p_link">
+                Follow us on <br />
+                Twitter
               </p>
             </div>
           </div>

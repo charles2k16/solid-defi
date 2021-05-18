@@ -309,8 +309,8 @@ hr.sales_hr {
 }
 .footer_container {
   background:#121728;
-  padding-top: 70px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .show-token-list {
   z-index: 99000;
@@ -454,6 +454,8 @@ hr.sales_hr {
   background-color: #0F1422;
   width: 85%;
   border-radius: 50px;
+  box-shadow: inset 7px 7px 8px #020414,
+            inset -7px -7px 8px #292f3e;
 }
 .progress_div {
   background: linear-gradient(315deg, #e1be24, #FCB42A);
@@ -485,14 +487,17 @@ hr.sales_hr {
   color: #FCB42A;
   font-size: 26px;
 }
-.community {
-  background-color:#1A1D29;
+.community { 
+  background: rgb(48,49,73);
+  background: linear-gradient(153deg, rgba(48,49,73,1) 25%, rgba(23,27,31,1) 68%);
   padding-top: 30px;
   padding-bottom: 80px;
 }
 .p_link {
   color: rgb(175, 174, 174);
-  font-size: 18px;
+  font-size: 1rem;
+  line-height: 1.90rem;
+  text-decoration: underline;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .p_link a{
@@ -627,8 +632,8 @@ hr.sales_hr {
 
 .round_token_button {
   background: #1A1D29;
-  box-shadow:  8px 8px 12px #6f6e7a,
-  -8px -8px 12px #ffffff;
+  box-shadow:  6px 6px 12px #7b85b4,
+  -7px -7px 10px #ffffff, inset -20px -20px 20px #0f102425;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -776,6 +781,8 @@ hr.sales_hr {
   background: #666666;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
+  width: 100%;
+  height: 200px;
 }
 .blog_img img {
   width: 100%;
@@ -785,6 +792,7 @@ hr.sales_hr {
 }
 .blog_content h3 {
   color: #5b3cc4;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
 }
