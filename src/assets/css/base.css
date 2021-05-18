@@ -612,6 +612,7 @@ hr.sales_hr {
 }
 .connected {
   color: grey;
+  font-size: 12px;
 }
 .meta_div {
   border: 1px solid grey;

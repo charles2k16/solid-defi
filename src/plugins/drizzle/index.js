@@ -1,4 +1,4 @@
-import SolidProtocol from '@/artifacts/SolidProtocol'
+import SolidEscrow from '@/abi/SolidEscrow'
 
 const options = {
   web3: {
@@ -9,10 +9,10 @@ const options = {
     }
   },
 
-  contracts: [SolidProtocol],
-  events: {
-    SolidProtocol: ['Transfer']
-  },
+  contracts: [SolidEscrow],
+  // events: {
+  //   SolidProtocol: ['Transfer']
+  // },
   polls: {
     // check accounts every 15 seconds
     accounts: 15000

@@ -23,7 +23,7 @@
             <div class="progress_div"></div>
           </div>
 
-          <p class="mt-20 p_tokens">100M Tokens</p>
+          <p class="mt-20 p_tokens">{{ contractSmallBundle }}</p>
         </div>
       </vs-col>
     </vs-row>
@@ -63,12 +63,32 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import FlipCountdown from 'vue2-flip-countdown';
+
+const argsSmallBundle = {
+  contractName: 'SolidEscrow',
+  method: 'smallbundle',
+  methodArgs: '',
+};
 
 export default {
   name: 'Illustrations',
   components: {
     FlipCountdown,
+  },
+  computed: {
+    ...mapGetters('contracts', ['getContractData']),
+
+    contractSmallBundle() {
+      return this.getContractData({
+        contract: argsSmallBundle.contractName,
+        method: 'smallbundle',
+      });
+    },
+  },
+  created() {
+    this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundle);
   },
 };
 </script>

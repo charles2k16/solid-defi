@@ -232,6 +232,7 @@
                           >
 
                           <span
+                            @click="checkAccounts"
                             style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
                             v-if="onEthNetwork"
                             >You're <br />
@@ -782,9 +783,20 @@
             <vs-avatar size="20">
               <img src="../assets/images/logo.png" alt="logo" />
             </vs-avatar>
-            <span style="width:80%; text-overflow: ellipsis;">{{
-              activeAccount
-            }}</span>
+            <span
+              style="width:100%; text-overflow: ellipsis; overflow-x:hidden;"
+              >{{ activeAccount }}</span
+            >
+          </div>
+
+          <div class="eth_acc">
+            <vs-avatar size="20">
+              <img src="../assets/images/logo.png" alt="logo" />
+            </vs-avatar>
+            <span
+              style="width:100%; text-overflow: ellipsis; overflow-x:hidden;"
+              >{{ activeBalance }}</span
+            >
           </div>
 
           <div class="flex-justify-between-center mt-10">
@@ -838,9 +850,14 @@ import AboutSolid from './sections/AboutSolid.vue';
 import Community from './sections/Community.vue';
 import Footer from './sections/Footer.vue';
 
-const argsTotalSupply = {
-  contractName: 'SolidProtocol',
-  method: 'totalSupply',
+const argsbigBundle = {
+  contractName: 'SolidEscrow',
+  method: 'bigbundle',
+  methodArgs: '',
+};
+const argsSmallBundle = {
+  contractName: 'SolidEscrow',
+  method: 'smallbundle',
   methodArgs: '',
 };
 
@@ -863,25 +880,33 @@ export default {
     showAccounts: false,
     activeChain: false,
     ethBundle: 1,
+    currentEthBundle: 80000,
     maticBundle: 1,
     wBundle: 1,
     showNotifyDialog: false,
     title: '',
+    currentNetwork: 'eth',
   }),
   created() {
-    // this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsTotalSupply);
+    this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsbigBundle);
+    this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundle);
   },
   computed: {
     ...mapGetters('drizzle', ['isDrizzleInitialized']),
     ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
     ...mapGetters('contracts', ['getContractData']),
     ...mapGetters('drizzle', ['drizzleInstance']),
-    ...mapGetters('drizzle', ['drizzleInstance']),
 
-    contractSupply() {
+    contractBigBundle() {
       return this.getContractData({
-        contract: argsTotalSupply.contractName,
-        method: 'totalSupply',
+        contract: argsbigBundle.contractName,
+        method: 'bigbundle',
+      });
+    },
+    contractSmallBundle() {
+      return this.getContractData({
+        contract: argsSmallBundle.contractName,
+        method: 'smallbundle',
       });
     },
     onEthNetwork() {
@@ -897,13 +922,29 @@ export default {
       let chainId = this.drizzleInstance.web3._provider.networkVersion;
       if (this.getNetworkName(chainId) == 'Wrong Network')
         this.errorNotify('top-center', 'danger');
-      else this.checkNetId();
+      else this.buyBundleTokens();
     },
-    // buyBundleTokens() {
-    //   this.drizzleInstance.contracts['SolidProtocol'].methods[
-    //     'send50Tokens'
-    //   ].cacheSend(this.activeAccount, { gas: 60000 });
-    // },
+    buyBundleTokens() {
+      console.log(this.currentNetwork);
+      if (this.currentNetwork !== 'eth' && this.onEthNetwork) {
+        this.title =
+          'You are on <span style="color:#5772ec;">Ethereum</span> chain Please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction';
+        this.showNotifyDialog = true;
+        return;
+      } else if (this.currentEthBundle == 'eth' && !this.onEthNetwork) {
+        this.title =
+          'You are on <span style="color:#5772ec;">Matic</span> chain Please switch to <span style="color:#5772ec;">Ethereum Chain</span> for this transaction';
+        this.showNotifyDialog = true;
+        return;
+      }
+
+      console.log('eth', this.currentEthBundle);
+      // this.drizzleInstance.contracts['SolidEscrow'].methods[
+      //   'buySmallBundle'
+      // ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
+      //   value: '72700000000000000',
+      // });
+    },
     changeNetwork() {
       var a = parseInt(this.drizzleInstance.web3._provider.networkVersion);
       console.log(a);
@@ -915,20 +956,35 @@ export default {
       let ether = parseFloat(etherValue).toFixed(4);
       return ether;
     },
+    toWei(eth) {
+      let weiValue = Web3.utils.toWei(eth, 'ether');
+      // let ether = parseFloat(etherValue).toFixed(4);
+      return weiValue;
+    },
     checkAccounts() {
       this.showAccounts = true;
     },
     maxBundle(bundle) {
       console.log(bundle);
       if (bundle == 'eth') {
-        if (this.ethBundle == 3)
+        if (this.ethBundle == 3) {
           this.openNotification(
             'top-center',
             'danger',
             'Bundle Size',
             "Maximum bundle can't exceed 3"
           );
-        else this.ethBundle++;
+          this.currentEthBundle =
+            this.percentageOff == 35
+              ? 80000 * this.ethBundle
+              : 40000 * this.ethBundle;
+        } else {
+          this.ethBundle++;
+          this.currentEthBundle =
+            this.percentageOff == 35
+              ? 80000 * this.ethBundle
+              : 40000 * this.ethBundle;
+        }
       }
 
       if (bundle == 'wEth') {
@@ -956,14 +1012,21 @@ export default {
     minBundle(bundle) {
       console.log(bundle);
       if (bundle == 'eth') {
-        if (this.ethBundle == 1)
+        if (this.ethBundle == 1) {
           this.openNotification(
             'top-center',
             'danger',
             'Bundle Size',
             "Maximum bundle can't be less than 1"
           );
-        else this.ethBundle--;
+          this.currentEthBundle = this.percentageOff == 35 ? 80000 : 40000;
+        } else {
+          this.ethBundle--;
+          this.currentEthBundle =
+            this.percentageOff == 35
+              ? this.currentEthBundle - 80000
+              : this.currentEthBundle - 40000;
+        }
       }
 
       if (bundle == 'wEth') {
@@ -988,16 +1051,18 @@ export default {
         else this.maticBundle--;
       }
     },
-    changeBundle(r, i) {
-      console.log(r, i);
+    changeBundle(r) {
+      this.ethBundle = 1;
       let bb = r;
+      this.currentEthBundle = bb == 1 ? 40000 : 80000;
       this.percentageOff = bb == 1 ? 30 : 35;
     },
     openCity(evt, cityName) {
+      this.currentNetwork = cityName;
       if ((cityName == 'wEth' || cityName == 'matic') && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain Please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction';
-        // this.showNotifyDialog = true;
+        this.showNotifyDialog = true;
       } else if (cityName == 'eth' && !this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Matic</span> chain Please switch to <span style="color:#5772ec;">Ethereum Chain</span> for this transaction';
