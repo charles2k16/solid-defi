@@ -1,61 +1,63 @@
 <template>
-  <div class="sec_div">
-    <div class="wrap mt-50">
-      <div class="pt-50 pb-50">
-        <vs-row>
-          <vs-col :w="7" :xs="12" :sm="12">
-            <div>
-              <h1 class="lead_head_text_black">
-                What is SOLID <br />
-                PROTOCOL?
-              </h1>
-              <div class="partner_div">
-                <img src="../../assets/images/polygon_logo.png" alt="polygon" />
-                <br />
-                <p class="mt-20 small_text">
-                  SOLID COLLABORATES WITH POLYGON
-                </p>
-              </div>
-            </div>
-          </vs-col>
-          <vs-col :w="5" :xs="12" :sm="12">
-            <p class="lead_text_black">
-              The Solid Protocol acts as a bridge that could take any supply of
-              any market and convert it into a “Solid version” of the market. It
-              creates a stable market that the price is adjusted non-linearly,
-              in which it is a more stabilized market and could be considered as
-              a subset of the original market.
-            </p>
-            <p class="lead_text_black mt-20">
-              Our vision is to create an anti-inflation protocol for the market
-              with quantitative easing (QE), as one holds a “Solid version” of a
-              stable coin, the token could increase against inflation.
-            </p>
-
-            <div class="partner_div2">
-              <img src="../../assets/images/polygon_logo.png" alt="polygon" />
+  <div class="wrap mt-50">
+    <div class="pt-50 pb-50">
+      <vs-row>
+        <vs-col :w="6" :xs="12" :sm="12">
+          <div>
+            <h1 class="lead_head_text_black">
+              What is SOLID <br />
+              PROTOCOL?
+            </h1>
+            <div class="partner_div">
+              <img
+                src="../../assets/images/polygon_logo.png"
+                alt="polygon"
+                width="250px;"
+              />
               <br />
               <p class="mt-20 small_text">
                 SOLID COLLABORATES WITH POLYGON
               </p>
             </div>
-          </vs-col>
-        </vs-row>
-
-        <div class="center mt-100">
-          <h1 class="token_text">1,000,000,000 tokens</h1>
-          <p class="mt-20 text_p">
-            The total supply of GAMEE Tokens is 1,000,000,000 tokens, all minted
-            at once. Solid Tokens will be distributed among 11 main groups:
+          </div>
+        </vs-col>
+        <vs-col :w="6" :xs="12" :sm="12">
+          <p class="lead_text_black">
+            The Solid Protocol acts as a bridge that could take any supply of
+            any market and convert it into a “Solid version” of the market. It
+            creates a stable market that the price is adjusted non-linearly, in
+            which it is a more stabilized market and could be considered as a
+            subset of the original market.
+          </p>
+          <p class="lead_text_black mt-50">
+            Our vision is to create an anti-inflation protocol for the market
+            with quantitative easing (QE), as one holds a “Solid version” of a
+            stable coin, the token could increase against inflation.
           </p>
 
-          <div class="center mt-50">
-            <img
-              src="../../assets/images/Tokenom.png"
-              alt="chart"
-              style="width:100%; height:auto;"
-            />
+          <div class="partner_div2">
+            <img src="../../assets/images/polygon_logo.png" alt="polygon" />
+            <br />
+            <p class="mt-20 small_text">
+              SOLID COLLABORATES WITH POLYGON
+            </p>
           </div>
+        </vs-col>
+      </vs-row>
+
+      <div class="center mt-100">
+        <h1 class="token_text">1,000,000,000 tokens</h1>
+        <p class="mt-20 text_p">
+          The total supply of GAMEE Tokens is 1,000,000,000 tokens, all minted
+          at once. Solid Tokens will be distributed among 11 main groups:
+        </p>
+
+        <div class="center mt-50">
+          <img
+            src="../../assets/images/Tokenom.png"
+            alt="chart"
+            style="width:80%; height:auto;"
+          />
         </div>
       </div>
     </div>

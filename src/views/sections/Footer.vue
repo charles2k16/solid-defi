@@ -2,21 +2,24 @@
   <div class="footer_container">
     <div class="wrap">
       <div class="d-flex-center">
-        <img src="../../assets/images/logo.png" alt="logo" width="70px" />
+        <img
+          src="../../assets/images/solid_token_logo.png"
+          alt="logo"
+          width="60px"
+        />
         <span class="material-icons add_icon">
           add
         </span>
         <img
-          src="../../assets/images/polygon_logo.png"
+          src="../../assets/images/polygon.png"
           alt="polygon"
           width="200px"
         />
       </div>
 
-      <div class="center mt-20">
+      <div class="center mt-30">
         <p class="p_link">
-          © Solid Token in strategic partnership with
-          <a href="#">Polygon</a>
+          Copyright © 2021 Solid Token. All rights reserved
         </p>
       </div>
     </div>

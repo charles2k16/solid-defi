@@ -3,21 +3,28 @@
     <!-- token sold -->
     <vs-row class="mt-50">
       <vs-col :w="5" :xs="10" :sm="10">
-        <h1 class="yellow">
-          70M token sold in presale
-        </h1>
+        <div class="flex-align-center">
+          <h1 class="yellow">
+            70M token sold in presale
+          </h1>
+        </div>
       </vs-col>
       <vs-col :w="2" :xs="2" :sm="2">
-        <div style="text-align:center;margin-left:40px;">
+        <div
+          class="flex-align-center"
+          style="text-align:center;margin-left:40px;"
+        >
           <div class="rule"></div>
         </div>
       </vs-col>
       <vs-col :w="5" :xs="12" :sm="12">
-        <div class="progress">
-          <div class="progress_div"></div>
-        </div>
+        <div>
+          <div class="progress">
+            <div class="progress_div"></div>
+          </div>
 
-        <p class="mt-20 p_tokens">100M Tokens</p>
+          <p class="mt-20 p_tokens">100M Tokens</p>
+        </div>
       </vs-col>
     </vs-row>
 
@@ -33,19 +40,21 @@
         </div>
       </vs-col>
       <vs-col :w="1" :xs="2" :sm="2">
-        <div style="text-align:center;margin-left:-40px;">
+        <div style="text-align:center;margin-left:-40px;padding-top:15px">
           <div class="green_rule"></div>
         </div>
       </vs-col>
       <vs-col :w="5" :xs="12" :sm="12">
-        <div class="progress">
-          <div class="progress_time"></div>
+        <div style="maring-top:50px;padding-top:15px">
+          <div class="progress">
+            <div class="progress_time"></div>
+          </div>
+          <p class="mt-20 p_tokens">5 days</p>
         </div>
-        <p class="mt-20 p_tokens">5 days</p>
       </vs-col>
     </vs-row>
 
-    <vs-row class="mt-100">
+    <vs-row class="mt-70">
       <vs-col :w="12" :xs="12" :sm="12">
         <div class="gif_anime"></div>
       </vs-col>

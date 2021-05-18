@@ -15,21 +15,21 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import '~element-ui/packages/theme-chalk/src/index';
 
-// .el-carousel__item:nth-child(2n) {
-//   background-color:white;
-// }
-
-.el-carousel__item:nth-child(2n+1) {
-  margin-left: 20px;
+.el-carousel__item:nth-child(2n).is-active {
+  margin-left: 90px;
 }
 
-.el-carousel__mask {
-  background-color: #FFFFFF !important;
-  opacity: 0.6 !important;
+.el-carousel__item:nth-child(2n+1).is-active {
+  margin-left: -50px;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .el-carousel__item--card {
-  width: 168px !important;
+  width: 42% !important;
   border-radius: 13px;
 }
 
@@ -51,7 +51,9 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 }
 
 .el-carousel__mask {
-  height: 208px !important;
+  background-color: rgb(255, 255, 255) !important;
+  opacity: 0.6 !important;
+  height: 213px !important;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }

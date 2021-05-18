@@ -24,18 +24,18 @@
       </div>
 
       <div class="wrap_bundle">
-        <div class="mt-30">
+        <div class="mt-50">
           <vs-row class="mt-20">
-            <vs-col :w="4" :xs="6" :sm="6">
+            <vs-col :w="4" :xs="12" :sm="12">
               <br /><br />
               <img
                 src="../assets/images/solid_bundle_promo.png"
                 alt="log"
-                width="520px"
+                class="solid_bundle_promo"
               />
             </vs-col>
-            <vs-col :w="8" :xs="6" :sm="6">
-              <div style="width:711px;">
+            <vs-col :w="8" :xs="12" :sm="12">
+              <div class="bundle_container">
                 <div class="bundle_tab">
                   <h4 class="insights center">SOLID Token Bundle</h4>
                 </div>
@@ -45,24 +45,27 @@
                     class="tablinks active"
                     @click="openCity($event, 'eth')"
                   >
-                    <div class="flex-justify-between-center">
+                    <div class="flex-justify-evenly-center">
                       <div class="flex-row-center">
-                        <vs-avatar size="60">
-                          <img src="../assets/images/eth.png" alt="telegram" />
-                        </vs-avatar>
+                        <img
+                          src="../assets/images/eth.png"
+                          alt="telegram"
+                          width="60px"
+                        />
+
                         <span class="mt-20"><b>ETH</b></span>
                       </div>
-                      <div class="mx-10">
+                      <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-                        <span class="d-block">Stock: 210</span>
-                        <span class="d-block mt-5">Owned: 0</span>
+                        <span class="d-block stock">Stock: 210</span>
+                        <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
-                      <div>
+                      <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-                        <span class="d-block">Stock: 70</span>
-                        <span class="d-block mt-5">Owned: 0</span>
+                        <span class="d-block stock">Stock: 70</span>
+                        <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
                     </div>
                   </button>
@@ -70,24 +73,24 @@
                     class="tablinks opacity"
                     @click="openCity($event, 'wEth')"
                   >
-                    <div class="flex-justify-between-center">
+                    <div class="flex-justify-evenly-center">
                       <div class="flex-row-center">
                         <vs-avatar size="60">
                           <img src="../assets/images/eth.png" alt="telegram" />
                         </vs-avatar>
                         <span class="mt-20"><b>wETH</b></span>
                       </div>
-                      <div>
+                      <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-                        <span class="d-block">Stock: 210</span>
-                        <span class="d-block mt-5">Owned: 0</span>
+                        <span class="d-block stock">Stock: 210</span>
+                        <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
-                      <div>
+                      <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-                        <span class="d-block">Stock: 70</span>
-                        <span class="d-block mt-5">Owned: 0</span>
+                        <span class="d-block stock">Stock: 70</span>
+                        <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
                     </div>
                   </button>
@@ -95,7 +98,7 @@
                     class="tablinks opacity"
                     @click="openCity($event, 'matic')"
                   >
-                    <div class="flex-justify-between-center">
+                    <div class="flex-justify-evenly-center">
                       <div class="flex-row-center">
                         <vs-avatar size="60">
                           <img
@@ -105,17 +108,17 @@
                         </vs-avatar>
                         <span class="mt-20"><b>MATIC</b></span>
                       </div>
-                      <div class="mx-10">
+                      <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-                        <span class="d-block">Stock: 40</span>
-                        <span class="d-block mt-5">Owned: 0</span>
+                        <span class="d-block stock">Stock: 40</span>
+                        <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
-                      <div>
+                      <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-                        <span class="d-block">Stock: 120</span>
-                        <span class="d-block mt-5">Owned: 0</span>
+                        <span class="d-block stock">Stock: 120</span>
+                        <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
                     </div>
                   </button>
@@ -125,15 +128,21 @@
                   <p class="center bun_p">
                     Don’t miss out on the SOLID bundle sale! <br />
                   </p>
-                  <p class="center bun_p">
+                  <br />
+                  <p class="center bun_p2">
                     <span class="percentage_off"
                       ><b>{{ percentageOff }}% off</b></span
                     >
                     from the IDO price
                   </p>
 
-                  <el-carousel type="card" :autoplay="false" class="mt-10">
-                    <el-carousel-item @click="changePercentage(35)">
+                  <el-carousel
+                    type="card"
+                    :autoplay="false"
+                    class="mt-15"
+                    @change="changeBundle"
+                  >
+                    <el-carousel-item name="bigBundle">
                       <div>
                         <img
                           src="../assets/images/solid_voucher_80000.png"
@@ -142,16 +151,14 @@
                         />
                       </div>
                       <div class="bk_bun d-flex-center">
-                        <img
-                          src="../assets/images/logo.png"
-                          alt="token"
-                          class="logo_img"
-                        />
+                        <vs-avatar size="35">
+                          <img src="../assets/images/logo.png" alt="token" />
+                        </vs-avatar>
                         <span>80, 000</span>
                       </div>
                     </el-carousel-item>
 
-                    <el-carousel-item @click="changePercentage(30)">
+                    <el-carousel-item name="smallBundle">
                       <div>
                         <img
                           src="../assets/images/sLD_Token_voucher_40k.png"
@@ -160,20 +167,15 @@
                         />
                       </div>
                       <div class="bk_bun d-flex-center">
-                        <!-- <vs-avatar size="35">
-                        <img src="../assets/images/logo.png" alt="token" />
-                      </vs-avatar> -->
-                        <img
-                          src="../assets/images/logo.png"
-                          alt="token"
-                          class="logo_img"
-                        />
+                        <vs-avatar size="35">
+                          <img src="../assets/images/logo.png" alt="token" />
+                        </vs-avatar>
                         <span>40, 000</span>
                       </div>
                     </el-carousel-item>
                   </el-carousel>
 
-                  <div class="center d-flex-center">
+                  <div class="center d-flex-center mt-15">
                     <div>
                       <div class="d-flex-center">
                         <div class="flex-align-center">
@@ -196,9 +198,9 @@
                           </span>
                         </div>
                       </div>
-                      <div class="mt-10">
-                        <span style="font-size:10px;"
-                          >*Maximum 4 bundles in a single transaction.</span
+                      <div class="mt-5">
+                        <span style="font-size:12px;color:#625f81;"
+                          >*Maximum 3 bundles in a single transaction.</span
                         >
                       </div>
 
@@ -265,7 +267,7 @@
                         <vs-button
                           v-else
                           class="connect_button"
-                          style="font-size: 1rem;"
+                          style="font-size: 0.8rem;"
                           @click="changeNetwork"
                         >
                           Connect Wallect
@@ -287,15 +289,21 @@
                   <p class="center bun_p">
                     Don’t miss out on the SOLID bundle sale! <br />
                   </p>
-                  <p class="center bun_p">
+                  <br />
+                  <p class="center bun_p2">
                     <span class="percentage_off"
                       ><b>{{ percentageOff }}% off</b></span
                     >
                     from the IDO price
                   </p>
 
-                  <el-carousel type="card" :autoplay="false">
-                    <el-carousel-item>
+                  <el-carousel
+                    type="card"
+                    :autoplay="false"
+                    class="mt-15"
+                    @change="changeBundle"
+                  >
+                    <el-carousel-item name="bigBundle">
                       <div>
                         <img
                           src="../assets/images/solid_voucher_80000.png"
@@ -311,7 +319,7 @@
                       </div>
                     </el-carousel-item>
 
-                    <el-carousel-item>
+                    <el-carousel-item name="smallBundle">
                       <div>
                         <img
                           src="../assets/images/sLD_Token_voucher_40k.png"
@@ -328,7 +336,7 @@
                     </el-carousel-item>
                   </el-carousel>
 
-                  <div class="center d-flex-center mt-20">
+                  <div class="center d-flex-center mt-15">
                     <div>
                       <div class="d-flex-center">
                         <div class="flex-align-center">
@@ -351,9 +359,9 @@
                           </span>
                         </div>
                       </div>
-                      <div class="mt-10">
-                        <small style="font-size:10px;"
-                          >*Maximum 4 bundles in a single transaction.</small
+                      <div class="mt-5">
+                        <small style="font-size:12px;color:#625f81;"
+                          >*Maximum 3 bundles in a single transaction.</small
                         >
                       </div>
 
@@ -420,7 +428,7 @@
                         <vs-button
                           v-else
                           class="connect_button"
-                          style="font-size: 1rem;"
+                          style="font-size: 0.8rem;"
                           @click="changeNetwork"
                         >
                           Connect Wallect
@@ -442,15 +450,21 @@
                   <p class="center bun_p">
                     Don’t miss out on the SOLID bundle sale! <br />
                   </p>
-                  <p class="center bun_p">
+                  <br />
+                  <p class="center bun_p2">
                     <span class="percentage_off"
                       ><b>{{ percentageOff }}% off</b></span
                     >
                     from the IDO price
                   </p>
 
-                  <el-carousel type="card" :autoplay="false">
-                    <el-carousel-item>
+                  <el-carousel
+                    type="card"
+                    :autoplay="false"
+                    class="mt-15"
+                    @change="changeBundle"
+                  >
+                    <el-carousel-item name="bigBundle">
                       <div>
                         <img
                           src="../assets/images/solid_voucher_80000.png"
@@ -466,7 +480,7 @@
                       </div>
                     </el-carousel-item>
 
-                    <el-carousel-item>
+                    <el-carousel-item name="smallBundle">
                       <div>
                         <img
                           src="../assets/images/sLD_Token_voucher_40k.png"
@@ -483,7 +497,7 @@
                     </el-carousel-item>
                   </el-carousel>
 
-                  <div class="center d-flex-center mt-20">
+                  <div class="center d-flex-center mt-15">
                     <div>
                       <div class="d-flex-center">
                         <div class="flex-align-center">
@@ -506,9 +520,9 @@
                           </span>
                         </div>
                       </div>
-                      <div class="mt-10">
-                        <small style="font-size:10px;"
-                          >*Maximum 4 bundles in a single transaction.</small
+                      <div class="mt-5">
+                        <small style="font-size:12px;color:#625f81;"
+                          >*Maximum 3 bundles in a single transaction.</small
                         >
                       </div>
 
@@ -575,7 +589,7 @@
                         <vs-button
                           v-else
                           class="connect_button"
-                          style="font-size: 1rem;"
+                          style="font-size: 0.8rem;"
                           @click="changeNetwork"
                         >
                           Connect Wallect
@@ -598,7 +612,6 @@
         </div>
       </div>
     </div>
-
     <div class="ilustrations">
       <div class="wrap">
         <Illustrations />
@@ -613,7 +626,7 @@
         class="wrap"
         style="z-index: 2; position:relative; margin-top:-250px;"
       >
-        <vs-card-group>
+        <!-- <vs-card-group>
           <vs-card>
             <template #img>
               <img src="../assets/images/nft.png" alt="blog" />
@@ -623,7 +636,7 @@
             </template>
 
             <template #text>
-              <p style="font-size:15px;">
+              <p>
                 Earn NFT prizes for staking your SLD tokens
               </p>
               <vs-button class="blog_btn" style="font-size: 1rem;">
@@ -640,7 +653,7 @@
               <img src="../assets/images/nft.png" alt="blog" />
             </template>
             <template #text>
-              <p style="font-size:15px;">
+              <p>
                 SLD Token holder can participate in xyz decisions by voting with
                 their voting powers proportional ...
               </p>
@@ -658,7 +671,7 @@
               <img src="../assets/images/nft.png" alt="blog" />
             </template>
             <template #text>
-              <p style="font-size:15px;">
+              <p>
                 Stake SLD and provide liquidity on xyz for rewards.
               </p>
               <vs-button class="up_btn" style="font-size: 1rem;">
@@ -666,9 +679,60 @@
               </vs-button>
             </template>
           </vs-card>
-        </vs-card-group>
+        </vs-card-group> -->
+        <vs-row>
+          <vs-col :w="4" :xs="12" :sm="12">
+            <div class="blog">
+              <div class="blog_img">
+                <img src="../assets/images/nft.png" alt="blog" />
+              </div>
+              <div class="blog_content">
+                <h3>SOLID NFTs</h3>
+                <p>
+                  Earn NFT prizes for staking your SLD tokens
+                </p>
+                <vs-button class="up_btn" style="font-size: 1rem;">
+                  <b>UPCOMING</b>
+                </vs-button>
+              </div>
+            </div>
+          </vs-col>
+          <vs-col :w="4" :xs="12" :sm="12">
+            <div class="blog">
+              <div class="blog_img">
+                <img src="../assets/images/nft.png" alt="blog" />
+              </div>
+              <div class="blog_content">
+                <h3>SOLID Governance.</h3>
+                <p>
+                  SLD Token holder can participate in xyz decisions by voting
+                  with their voting powers proportional ...
+                </p>
+                <vs-button class="up_btn" style="font-size: 1rem;">
+                  <b>UPCOMING</b>
+                </vs-button>
+              </div>
+            </div>
+          </vs-col>
+          <vs-col :w="4" :xs="12" :sm="12">
+            <div class="blog">
+              <div class="blog_img">
+                <img src="../assets/images/nft.png" alt="blog" />
+              </div>
+              <div class="blog_content">
+                <h3>SOLID Rewards</h3>
+                <p>
+                  Stake SLD and provide liquidity on xyz for rewards.
+                </p>
+                <vs-button class="up_btn" style="font-size: 1rem;">
+                  <b>UPCOMING</b>
+                </vs-button>
+              </div>
+            </div>
+          </vs-col>
+        </vs-row>
 
-        <br />
+        <br /><br />
         <vs-button transparent color="#5b3cc4">
           <b>READ THE WHITEPAPER</b>
           <span class="material-icons-outlined ml-10">
@@ -676,9 +740,9 @@
           </span>
         </vs-button>
       </div>
-    </div>
 
-    <AboutSolid />
+      <AboutSolid />
+    </div>
 
     <Community />
 
@@ -926,9 +990,10 @@ export default {
         else this.maticBundle--;
       }
     },
-    changePercentage(percent) {
-      console.log(percent);
-      this.percentageOff = percent;
+    changeBundle(r, i) {
+      console.log(r, i);
+      let bb = r;
+      this.percentageOff = bb == 1 ? 30 : 35;
     },
     openCity(evt, cityName) {
       if ((cityName == 'wEth' || cityName == 'matic') && this.onEthNetwork) {

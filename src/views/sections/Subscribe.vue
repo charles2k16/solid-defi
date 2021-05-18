@@ -8,7 +8,7 @@
       <div class="mt-20">
         <h1 class="lead_head_text1">
           Fight inflation, <br />
-          Earn Rewards
+          Earn rewards!
         </h1>
 
         <p class="lead_text mt-20">
@@ -20,19 +20,16 @@
         <div class="d-flex mt-30">
           <vs-input v-model="email" placeholder="Enter your email" />
           <vs-button class="sub_button">
-            <span class="material-icons mr">
-              mail_outline
-            </span>
             <b>SUBSCRIBE</b>
           </vs-button>
         </div>
 
         <div class="mt-30">
-          <vs-button transparent style="font-size:20px">
+          <vs-button transparent style="font-size:18px">
             <img
               src="../../assets/images/telegram2.png"
               alt="telegram"
-              width="25px"
+              width="23px"
               class="mr-10"
             />
             <b style="color:#5b3cc4;">Join us on Telegram</b>

@@ -38,13 +38,13 @@
   padding-left: 15px !important;
   padding-right: 15px !important;
   color: #fff;
-  box-shadow:  6px 6px 12px #0d0e14,
-             -6px -6px 12px #272c3e, inset -10px -10px 10px #aeaec025,
+  box-shadow:  4px 4px 10px #0d0e14,
+             -4px -4px 10px #272c3e, inset -10px -10px 10px #aeaec025,
              inset 2px 2px 2px rgb(99, 89, 247);
 
   background: rgb(77,26,192) !important;
   background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
-  font-size: 1rem;
+  font-size: 13px;
   margin-left:30px;
 }
 
@@ -77,69 +77,36 @@
 }
 
 .up_btn.vs-button--default {
+  padding-top: 2px;
   border-radius: 80px !important;
   width: 140px;
   color: #acace2;
   border: 1px solid rgb(172, 169, 169);
-  background: #CACAFE;
+  background: #c4d0fa;
   box-shadow:  -25px -25px 100px #bebeef,
              25px 25px 100px #d6d6ff;
-}
-
-.vs-card__group .vs-card__group-cards .vs-card-content {
-  min-width: 274px !important;
-  margin-left: 1px !important;
+  margin-bottom: 15px;
 }
 
 .tele_avatar .vs-avatar {
   background: #7D33FC !important;
-  padding: 10px;
+  padding: 15px;
+}
+
+.twit_avatar .vs-avatar {
+  background: #55ACEE !important;
+  padding: 3px;
 }
 
 .matic_avatar .vs-avatar {
   background:  #1E264D !important;
 }
 
-.vs-card {
-  max-width: 264px !important;
-  background: #666666 !important;
-  border-radius: 35px !important;
-}
 
-.vs-card__text {
-  font-size: 0.85rem;
-  padding: 20px 20px 15px 20px !important;
-  border-radius: 30px;
-  background: #CACAFE;
-  border: 1px solid #babaf7;
-  text-align: center;
-  height: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: space-between;
-}
 
-.vs-card__img {
-  background: #666666;
-}
-
-.vs-card__img img {
-  width: 100%;
-  padding: 15px 25px 0px;
-  border-top-left-radius: 40px !important;
-  border-top-right-radius: 40px !important;
-}
-
-.vs-card__title {
-  color: #5b3cc4;
-  font-weight: bold;
-  text-align: center;
-}
-
-.vs-switch__text .off {
-  color: red !important
-}
+// .vs-switch__text .off {
+//   color: red !important
+// }
 
 .vs-dialog {
   background: #1B1F2F !important;
@@ -174,48 +141,21 @@
 }
 
 .vs-input {
-  width: 300px !important;
-  height: 45px;
+  width: 270px !important;
+  height: 37px;
   padding: 5px 12px !important;
   border-radius: 80px !important;
   background: linear-gradient(315deg, #171a25, #1c1f2c) !important;
   box-shadow:  -5px -5px 13px #141620,
                2px 2px 2px #1c1f2c;
-  font-size: 1rem !important;
+  font-size: 0.8rem !important;
   color: rgb(165, 162, 162) !important; 
-  font-weight: bold;     
+  font-family: Avenir, Helvetica, Arial, sans-serif; 
 }
 
 .vs-input__label {
-  font-size: 1rem !important;
-  color: rgb(65, 63, 63);
-}
-
-.token_table {
-  .vs-table__header {
-    background: transparent !important;
-  }
-}
-
-.token_list_table {
-  background-color: #1B1F2F;
-  color: rgb(170, 168, 168);
-
-  .vs-table__header {
-    background: transparent !important
-  }
-}
-
-.vs-table__tr:hover {
-  background-color: #242a3f !important;
-}
-
-.vs-table__td:hover {
-  background-color: #242a3f !important;
-}
-
-.vs-table__thead .vs-table__th {
-  background: transparent !important;
+  font-size: 0.7rem !important;
+  color: rgb(146, 145, 145);
 }
 
 .vs-avatar-content {
