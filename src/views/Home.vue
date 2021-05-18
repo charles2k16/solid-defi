@@ -997,7 +997,7 @@ export default {
       if ((cityName == 'wEth' || cityName == 'matic') && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain Please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction';
-        this.showNotifyDialog = true;
+        // this.showNotifyDialog = true;
       } else if (cityName == 'eth' && !this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Matic</span> chain Please switch to <span style="color:#5772ec;">Ethereum Chain</span> for this transaction';
@@ -1011,10 +1011,11 @@ export default {
       tablinks = document.getElementsByClassName('tablinks');
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(' active', '');
-        // tablinks[i].className
+        tablinks[i].classList.add('opacity');
       }
       document.getElementById(cityName).style.display = 'block';
       evt.currentTarget.className += ' active';
+      evt.currentTarget.classList.remove('opacity');
     },
   },
 };
