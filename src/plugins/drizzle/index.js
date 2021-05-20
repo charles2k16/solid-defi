@@ -1,4 +1,5 @@
 import SolidEscrow from '@/abi/SolidEscrow'
+import MaticEscrow from '@/abi/MaticEscrow'
 
 const options = {
   web3: {
@@ -9,7 +10,7 @@ const options = {
     }
   },
 
-  contracts: [SolidEscrow],
+  contracts: [SolidEscrow, MaticEscrow],
   // events: {
   //   SolidProtocol: ['Transfer']
   // },

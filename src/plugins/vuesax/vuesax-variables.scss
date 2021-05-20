@@ -62,11 +62,28 @@
 
 .buy_button.vs-button--default {
   border-radius: 80px !important;
-  width: 120px;
+  width: 100px;
   color: #fff;
   background: linear-gradient(315deg, #E1C324, #cb8016);
   box-shadow:  2px 2px 2px #a76912,
                5px 5px 13px #a76912;
+}
+
+.buy_now.vs-button--default {
+  border-radius: 80px !important;
+  width: 100px;
+  color: #fff;
+  background: linear-gradient(315deg, #b49b1c, #cb8016);
+  box-shadow:  2px 2px 2px #754a0e,
+               5px 5px 13px #724b15;
+  font-size: 16px;
+}
+
+.cancel_btn.vs-button--default {
+  border-radius: 80px !important;
+  width: 100px;
+  margin-right: 15px;
+  font-size: 16px;
 }
 
 .blog_btn.vs-button--default {
@@ -115,6 +132,7 @@
   background: #1B1F2F !important;
   color: white !important;
   min-width: 400px !important;
+  font-family: Avenir, Helvetica, Arial, sans-serif; 
 }
 
 .notify_dialog .vs-dialog {
@@ -141,6 +159,11 @@
 .notify_dialog {
   left: 300px !important;
   top: 140px !important;
+}
+
+.con-footer {
+  display: flex;
+  margin-top: 10px;
 }
 
 .vs-input {

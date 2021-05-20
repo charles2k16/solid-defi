@@ -557,6 +557,9 @@ hr.sales_hr {
 .partner_div2 {
   display: none;
 }
+.round_token_button span {
+  cursor: pointer;
+}
 .eth_div {
   width: 260px;
   background-color: #40444E;
@@ -585,7 +588,7 @@ hr.sales_hr {
 .eth_acc {
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 100%;
   background-color: #2C2F36;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -593,6 +596,26 @@ hr.sales_hr {
   border-bottom-right-radius: 10px;
   padding: 2px 8px;
   color: rgb(218, 216, 216);
+}
+.eth_balance {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  background-color: #2C2F36;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 2px 8px;
+  color: rgb(218, 216, 216);
+}
+.acc_span {
+  text-overflow: 
+  ellipsis; 
+  overflow-x:hidden;
+  margin-left: 5px;
+  font-size: 15px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .eth_acc1 {
   display: flex;
@@ -613,6 +636,7 @@ hr.sales_hr {
 .connected {
   color: grey;
   font-size: 12px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .meta_div {
   border: 1px solid grey;
@@ -852,13 +876,10 @@ hr.sales_hr {
   background-color: #DDDBEC;
   border-bottom-right-radius: 15px;
 }
-
 .bundle_container {
   width:817px;
 }
-.mobile_dialog {
-  display: none;
-}
+
 /* ----------- iPhone 12 pro max ----------- */
 @media only screen 
     and (device-width: 428px) 

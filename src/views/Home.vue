@@ -58,13 +58,17 @@
                       <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-                        <span class="d-block stock">Stock: 210</span>
+                        <span class="d-block stock"
+                          >Stock: {{ ethSmallStock }}</span
+                        >
                         <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
                       <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-                        <span class="d-block stock">Stock: 70</span>
+                        <span class="d-block stock"
+                          >Stock: {{ ethBigStock }}</span
+                        >
                         <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
                     </div>
@@ -83,13 +87,17 @@
                       <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-                        <span class="d-block stock">Stock: 210</span>
+                        <span class="d-block stock"
+                          >Stock: {{ ethMaticSmallStock }}</span
+                        >
                         <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
                       <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-                        <span class="d-block stock">Stock: 70</span>
+                        <span class="d-block stock"
+                          >Stock: {{ ethMaticBigStock }}</span
+                        >
                         <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
                     </div>
@@ -111,13 +119,17 @@
                       <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-                        <span class="d-block stock">Stock: 40</span>
+                        <span class="d-block stock"
+                          >Stock: {{ maticSmallStock }}</span
+                        >
                         <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
                       <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-                        <span class="d-block stock">Stock: 120</span>
+                        <span class="d-block stock"
+                          >Stock: {{ maticBigStock }}</span
+                        >
                         <span class="d-block stock mt-5">Owned: 0</span>
                       </div>
                     </div>
@@ -137,6 +149,7 @@
                   </p>
 
                   <el-carousel
+                    ref="carouseleth"
                     type="card"
                     :autoplay="false"
                     class="mt-15"
@@ -223,7 +236,10 @@
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
                           </span>
-                          <span style="color:#B6B6B6;font-size:0.8rem;" v-else
+                          <span
+                            @click="checkAccounts"
+                            style="color:#B6B6B6;font-size:0.8rem;"
+                            v-else
                             >You're <br />
                             ON
                             <span style="color:#5772ec;">
@@ -303,6 +319,7 @@
                     :autoplay="false"
                     class="mt-15"
                     @change="changeBundle"
+                    ref="carouselweth"
                   >
                     <el-carousel-item name="bigBundle">
                       <div>
@@ -385,7 +402,10 @@
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
                           </span>
-                          <span style="color:#B6B6B6;font-size:0.8rem;" v-else
+                          <span
+                            @click="checkAccounts"
+                            style="color:#B6B6B6;font-size:0.8rem;"
+                            v-else
                             >You're <br />
                             ON
                             <span style="color:#5772ec;">
@@ -394,6 +414,7 @@
                           >
 
                           <span
+                            @click="checkAccounts"
                             style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
                             v-if="onEthNetwork"
                             >You're <br />
@@ -464,6 +485,7 @@
                     :autoplay="false"
                     class="mt-15"
                     @change="changeBundle"
+                    ref="carouselmatic"
                   >
                     <el-carousel-item name="bigBundle">
                       <div>
@@ -546,7 +568,10 @@
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
                           </span>
-                          <span style="color:#B6B6B6;font-size:0.8rem;" v-else
+                          <span
+                            @click="checkAccounts"
+                            style="color:#B6B6B6;font-size:0.8rem;"
+                            v-else
                             >You're <br />
                             ON
                             <span style="color:#5772ec;">
@@ -555,6 +580,7 @@
                           >
 
                           <span
+                            @click="checkAccounts"
                             style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
                             v-if="onEthNetwork"
                             >You're <br />
@@ -766,11 +792,11 @@
         <div class="flex-justify-between-center">
           <h4 class="connected">
             Connected with
-            {{
-              drizzleInstance.web3._provider.isMetaMask
-                ? 'Metamask'
-                : 'Matic Wallect'
-            }}
+            <span style="color:#cb8016">
+              {{
+                getNetworkName(drizzleInstance.web3._provider.networkVersion)
+              }}
+            </span>
           </h4>
 
           <vs-button color="#cb8016" transparent @click="changeNetwork">
@@ -781,22 +807,16 @@
         <div class="meta_div">
           <div class="eth_acc">
             <vs-avatar size="20">
-              <img src="../assets/images/logo.png" alt="logo" />
+              <img src="../assets/images/solid_token_logo.png" alt="logo" />
             </vs-avatar>
-            <span
-              style="width:100%; text-overflow: ellipsis; overflow-x:hidden;"
-              >{{ activeAccount }}</span
-            >
+            <span class="acc_span">{{ activeAccount }}</span>
           </div>
-
-          <div class="eth_acc">
+          <br />
+          <div class="eth_balance">
             <vs-avatar size="20">
-              <img src="../assets/images/logo.png" alt="logo" />
+              <img src="../assets/images/solid_token_logo.png" alt="logo" />
             </vs-avatar>
-            <span
-              style="width:100%; text-overflow: ellipsis; overflow-x:hidden;"
-              >{{ activeBalance }}</span
-            >
+            <span class="acc_span">{{ toEth(activeBalance) }} Eth</span>
           </div>
 
           <div class="flex-justify-between-center mt-10">
@@ -824,6 +844,32 @@
           </div>
         </div>
       </div>
+    </vs-dialog>
+
+    <vs-dialog width="420px" not-center v-model="showConfirmBundle">
+      <template #header>
+        <h4 class="not-margin">Confirm <b>Bundle</b></h4>
+      </template>
+
+      <div class="con-content">
+        <p v-html="confirmTitle"></p>
+      </div>
+
+      <template #footer>
+        <div class="con-footer">
+          <vs-button
+            @click="showConfirmBundle = false"
+            danger
+            class="cancel_btn"
+          >
+            Cancel
+          </vs-button>
+
+          <vs-button class="buy_now" @click="confirmBuyBundle">
+            Buy now
+          </vs-button>
+        </div>
+      </template>
     </vs-dialog>
 
     <vs-dialog v-model="showNotifyDialog" width="250px" class="notify_dialog">
@@ -861,6 +907,30 @@ const argsSmallBundle = {
   methodArgs: '',
 };
 
+const argsSmallBundleEth = {
+  contractName: 'MaticEscrow',
+  method: 'smallbundleEth',
+  methodArgs: '',
+};
+
+const argsBigBundleEth = {
+  contractName: 'MaticEscrow',
+  method: 'bigbundleEth',
+  methodArgs: '',
+};
+
+const argsSmallBundleMatic = {
+  contractName: 'MaticEscrow',
+  method: 'smallbundle',
+  methodArgs: '',
+};
+
+const argsBigBundleMatic = {
+  contractName: 'MaticEscrow',
+  method: 'bigbundle',
+  methodArgs: '',
+};
+
 export default {
   name: 'Home',
   components: {
@@ -872,78 +942,196 @@ export default {
     Community,
     Footer,
   },
-  data: () => ({
-    percentageOff: 35,
-    active: 0,
-    email: '',
-    showWallects: false,
-    showAccounts: false,
-    activeChain: false,
-    ethBundle: 1,
-    currentEthBundle: 80000,
-    maticBundle: 1,
-    wBundle: 1,
-    showNotifyDialog: false,
-    title: '',
-    currentNetwork: 'eth',
-  }),
+  data() {
+    return {
+      confirmTitle: '',
+      showConfirmBundle: false,
+      percentageOff: 35,
+      active: 0,
+      email: '',
+      showWallects: false,
+      showAccounts: false,
+      activeChain: false,
+      ethBundle: 1,
+      currentEthBundle: 80000,
+      maticBundle: 1,
+      currentMaticBundle: 80000,
+      wBundle: 1,
+      currentwEthBundle: 80000,
+      showNotifyDialog: false,
+      title: '',
+      currentNetTab: 'eth',
+      chain: null,
+      // maticSmallStock: 0,
+      // maticBigStock: 0,
+      // ethSmallStock: 0,
+      // ethBigStock: 0,
+    };
+  },
   created() {
-    this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsbigBundle);
-    this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundle);
+    this.connectToEthContract();
   },
   computed: {
     ...mapGetters('drizzle', ['isDrizzleInitialized']),
     ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
-    ...mapGetters('contracts', ['getContractData']),
+    ...mapGetters('contracts', ['getContractData', 'contractInstances']),
     ...mapGetters('drizzle', ['drizzleInstance']),
 
-    contractBigBundle() {
-      return this.getContractData({
-        contract: argsbigBundle.contractName,
-        method: 'bigbundle',
-      });
-    },
-    contractSmallBundle() {
-      return this.getContractData({
-        contract: argsSmallBundle.contractName,
-        method: 'smallbundle',
-      });
-    },
     onEthNetwork() {
+      this.chain = this.drizzleInstance.web3._provider.networkVersion;
       let chain = this.drizzleInstance.web3._provider.networkVersion;
       let id = parseInt(chain);
+
       if (id == 80001 || id == 137) return false;
       else return true;
     },
+    ethSmallStock() {
+      return this.getContractData({
+        contract: argsbigBundle.contractName,
+        method: argsbigBundle.method,
+      });
+    },
+    ethBigStock() {
+      return this.getContractData({
+        contract: argsSmallBundle.contractName,
+        method: argsSmallBundle.method,
+      });
+    },
+
+    ethMaticSmallStock() {
+      return this.getContractData({
+        contract: argsSmallBundleEth.contractName,
+        method: argsSmallBundleEth.method,
+      });
+    },
+    ethMaticBigStock() {
+      return this.getContractData({
+        contract: argsBigBundleEth.contractName,
+        method: argsBigBundleEth.method,
+      });
+    },
+    maticSmallStock() {
+      return this.getContractData({
+        contract: argsSmallBundleMatic.contractName,
+        method: argsSmallBundleMatic.method,
+      });
+    },
+    maticBigStock() {
+      return this.getContractData({
+        contract: argsBigBundleMatic.contractName,
+        method: argsBigBundleMatic.method,
+      });
+    },
+  },
+  watch: {
+    chain: function(netId) {
+      if (netId == 80001 || netId == 137) {
+        this.connectToMaticContract();
+      } else {
+        this.connectToEthContract();
+      }
+    },
   },
   methods: {
+    connectToMaticContract() {
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundleEth);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsBigBundleEth);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsBigBundleMatic);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundleMatic);
+      console.log(this.contractInstances.MaticEscrow);
+    },
+    connectToEthContract() {
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsbigBundle);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundle);
+      console.log(this.contractInstances);
+    },
     buyTokens() {
-      // check network first
       let chainId = this.drizzleInstance.web3._provider.networkVersion;
       if (this.getNetworkName(chainId) == 'Wrong Network')
         this.errorNotify('top-center', 'danger');
       else this.buyBundleTokens();
     },
     buyBundleTokens() {
-      console.log(this.currentNetwork);
-      if (this.currentNetwork !== 'eth' && this.onEthNetwork) {
+      console.log(this.currentNetTab);
+      if (this.currentNetTab !== 'eth' && this.onEthNetwork) {
         this.title =
-          'You are on <span style="color:#5772ec;">Ethereum</span> chain Please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction';
+          'You are on <span style="color:#5772ec;">Ethereum</span> chain, please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction.';
         this.showNotifyDialog = true;
         return;
-      } else if (this.currentEthBundle == 'eth' && !this.onEthNetwork) {
+      } else if (this.currentNetTab == 'eth' && !this.onEthNetwork) {
         this.title =
-          'You are on <span style="color:#5772ec;">Matic</span> chain Please switch to <span style="color:#5772ec;">Ethereum Chain</span> for this transaction';
+          'You are on <span style="color:#5772ec;">Matic</span> chain, please switch to <span style="color:#5772ec;">Ethereum Chain</span> for this transaction.';
         this.showNotifyDialog = true;
         return;
       }
 
-      console.log('eth', this.currentEthBundle);
-      // this.drizzleInstance.contracts['SolidEscrow'].methods[
-      //   'buySmallBundle'
-      // ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
-      //   value: '72700000000000000',
-      // });
+      if (this.currentNetTab == 'eth') {
+        console.log('eth', this.currentEthBundle);
+        this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
+          this.ethBundle
+        }</b></span> ${
+          this.ethBundle > 1 ? 'bundles' : 'bundle'
+        } at <span style="color:#cb8016"><b>${
+          this.currentEthBundle
+        }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> ETH</b></span> at ${
+          this.percentageOff
+        }% off.`;
+        this.showConfirmBundle = true;
+      }
+
+      if (this.currentNetTab == 'wEth') {
+        console.log('weth', this.currentwEthBundle);
+
+        this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
+          this.wBundle
+        }</b></span> ${
+          this.wBundle > 1 ? 'bundles' : 'bundle'
+        } at <span style="color:#cb8016"><b>${
+          this.currentwEthBundle
+        }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> wETH</b></span> at ${
+          this.percentageOff
+        }% off.`;
+
+        this.showConfirmBundle = true;
+      }
+
+      if (this.currentNetTab == 'matic') {
+        console.log('matic', this.currentMaticBundle);
+        this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
+          this.maticBundle
+        }</b></span> ${
+          this.maticBundle > 1 ? 'bundles' : 'bundle'
+        } at <span style="color:#cb8016"><b>${
+          this.currentMaticBundle
+        }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> matic</b></span> at ${
+          this.percentageOff
+        }% off.`;
+        this.showConfirmBundle = true;
+      }
+    },
+    confirmBuyBundle() {
+      let currentNumberofBundle =
+        this.currentNetTab == 'eth'
+          ? this.ethBundle
+          : this.currentNetTab == 'wEth'
+          ? this.wBundle
+          : this.currentNetTab == 'matic'
+          ? this.maticBundle
+          : 0;
+      if (this.percentageOff == 35 && this.currentNetTab == 'eth')
+        this.buyEthBigBundle(currentNumberofBundle);
+      else if (this.percentageOff == 35 && this.currentNetTab == 'wEth')
+        this.buyWethBigBundle(currentNumberofBundle);
+      else if (this.percentageOff == 35 && this.currentNetTab == 'matic')
+        this.buyMaticBigBundle(currentNumberofBundle);
+
+      // small bundles call
+      if (this.percentageOff == 30 && this.currentNetTab == 'eth')
+        this.buyEthSmallBundle(currentNumberofBundle);
+      else if (this.percentageOff == 30 && this.currentNetTab == 'wEth')
+        this.buyWethSmallBundle(currentNumberofBundle);
+      else if (this.percentageOff == 30 && this.currentNetTab == 'matic')
+        this.buyMaticSmallBundle(currentNumberofBundle);
     },
     changeNetwork() {
       var a = parseInt(this.drizzleInstance.web3._provider.networkVersion);
@@ -952,17 +1140,18 @@ export default {
       this.showWallects = true;
     },
     toEth(weiBalance) {
+      console;
       let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
       let ether = parseFloat(etherValue).toFixed(4);
       return ether;
     },
     toWei(eth) {
       let weiValue = Web3.utils.toWei(eth, 'ether');
-      // let ether = parseFloat(etherValue).toFixed(4);
       return weiValue;
     },
     checkAccounts() {
       this.showAccounts = true;
+      // Web3.eth.net.getId().then(console.log);
     },
     maxBundle(bundle) {
       console.log(bundle);
@@ -988,29 +1177,48 @@ export default {
       }
 
       if (bundle == 'wEth') {
-        if (this.wBundle == 3)
+        if (this.wBundle == 3) {
           this.openNotification(
             'top-center',
             'danger',
             'Bundle Size',
             "Maximum bundle can't exceed 3"
           );
-        else this.wBundle++;
+          this.currentwEthBundle =
+            this.percentageOff == 35
+              ? 80000 * this.wBundle
+              : 40000 * this.wBundle;
+        } else {
+          this.wBundle++;
+          this.currentwEthBundle =
+            this.percentageOff == 35
+              ? 80000 * this.wBundle
+              : 40000 * this.wBundle;
+        }
       }
 
       if (bundle == 'matic') {
-        if (this.maticBundle == 3)
+        if (this.maticBundle == 3) {
           this.openNotification(
             'top-center',
             'danger',
             'Bundle Size',
             "Maximum bundle can't exceed 3"
           );
-        else this.maticBundle++;
+          this.currentMaticBundle =
+            this.percentageOff == 35
+              ? 80000 * this.maticBundle
+              : 40000 * this.maticBundle;
+        } else {
+          this.maticBundle++;
+          this.currentMaticBundle =
+            this.percentageOff == 35
+              ? 80000 * this.maticBundle
+              : 40000 * this.maticBundle;
+        }
       }
     },
     minBundle(bundle) {
-      console.log(bundle);
       if (bundle == 'eth') {
         if (this.ethBundle == 1) {
           this.openNotification(
@@ -1030,35 +1238,62 @@ export default {
       }
 
       if (bundle == 'wEth') {
-        if (this.wBundle == 1)
+        if (this.wBundle == 1) {
           this.openNotification(
             'top-center',
             'danger',
             'Bundle Size',
             "Maximum bundle can't be less than 1"
           );
-        else this.wBundle--;
+          this.currentwEthBundle = this.percentageOff == 35 ? 80000 : 40000;
+        } else {
+          this.wBundle--;
+          this.currentwEthBundle =
+            this.percentageOff == 35
+              ? this.currentwEthBundle - 80000
+              : this.currentwEthBundle - 40000;
+        }
       }
 
       if (bundle == 'matic') {
-        if (this.maticBundle == 1)
+        if (this.maticBundle == 1) {
           this.openNotification(
             'top-center',
             'danger',
             'Bundle Size',
             "Maximum bundle can't be less than 1"
           );
-        else this.maticBundle--;
+          this.currentMaticBundle = this.percentageOff == 35 ? 80000 : 40000;
+        } else {
+          this.maticBundle--;
+          this.currentMaticBundle =
+            this.percentageOff == 35
+              ? this.currentMaticBundle - 80000
+              : this.currentMaticBundle - 40000;
+        }
       }
     },
     changeBundle(r) {
+      console.log(r);
       this.ethBundle = 1;
+      this.wBundle = 1;
+      this.maticBundle = 1;
       let bb = r;
-      this.currentEthBundle = bb == 1 ? 40000 : 80000;
       this.percentageOff = bb == 1 ? 30 : 35;
+      this.currentEthBundle = bb == 1 ? 40000 : 80000;
+      this.currentwEthBundle = bb == 1 ? 40000 : 80000;
+      this.currentMaticBundle = bb == 1 ? 40000 : 80000;
+    },
+    setActiveItem() {
+      console.log(',amd');
+      this.$refs.carouseleth.setActiveItem('bigBundle');
+      this.$refs.carouselweth.setActiveItem('bigBundle');
+      this.$refs.carouselmatic.setActiveItem('bigBundle');
     },
     openCity(evt, cityName) {
-      this.currentNetwork = cityName;
+      this.currentNetTab = cityName;
+      this.setActiveItem();
+      this.percentageOff = 35;
       if ((cityName == 'wEth' || cityName == 'matic') && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain Please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction';

@@ -1,5 +1,66 @@
+import { mapGetters } from 'vuex';
+
 export default {
+  computed: {
+    ...mapGetters('drizzle', ['drizzleInstance']),
+  },
   methods: {
+    buyEthSmallBundle(numberofBundle) {
+      let toWeiBundle = 72700000000000000 * numberofBundle;
+      console.log(toWeiBundle);
+      this.drizzleInstance.contracts['SolidEscrow'].methods[
+        'buySmallBundle'
+      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
+        value: toWeiBundle,
+      });
+    },
+    buyEthBigBundle(numberofBundle) {
+      let toWeiBundle = 135000000000000000 * numberofBundle;
+      console.log(toWeiBundle);
+      this.drizzleInstance.contracts['SolidEscrow'].methods[
+        'buyBigBundle'
+      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
+        value: toWeiBundle,
+      });
+    },
+
+    // wrap eth bundle functions
+    buyWethSmallBundle(numberofBundle) {
+      let ethAddress = '0x1Dc5810Bf9c3CB44c5DE946763402eCD5F05864c'
+      let toWeiBundle = 72700000000000000 * numberofBundle;
+      console.log(toWeiBundle);
+      this.drizzleInstance.contracts['MaticEscrow'].methods[
+        'buySmallBundleEth'
+      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', ethAddress, toWeiBundle);
+    },
+    buyWethBigBundle(numberofBundle) {
+      let ethAddress = '0x1Dc5810Bf9c3CB44c5DE946763402eCD5F05864c'
+      let toWeiBundle = 135000000000000000 * numberofBundle;
+      console.log(toWeiBundle);
+      this.drizzleInstance.contracts['MaticEscrow'].methods[
+        'buyBigBundleEth'
+      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', ethAddress, toWeiBundle);
+    },
+
+    // matic bundles eth
+    buyMaticBigBundle(numberofBundle) {
+      let toWeiBundle = 135000000000000000 * numberofBundle;
+      console.log(toWeiBundle);
+      this.drizzleInstance.contracts['MaticEscrow'].methods[
+        'buyBigBundleMatic'
+      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
+        value: toWeiBundle,
+      });
+    },
+    buyMaticSmallBundle(numberofBundle) {
+      let toWeiBundle = 72700000000000000 * numberofBundle;
+      console.log(toWeiBundle);
+      this.drizzleInstance.contracts['MaticEscrow'].methods[
+        'buySmallBundleMatic'
+      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
+        value: toWeiBundle,
+      });
+    },
     checkNetwork(netId) {
       let id = parseInt(netId);
       let networks = [1, 2, 3, 4, 42, 61, 62, 137, 80001];
@@ -76,7 +137,7 @@ export default {
       this.$vs.notification({
         color,
         position,
-        title: 'Wrong Network.(LocalHost)',
+        title: 'Wrong Network.',
         text: `Choose an appropriate network to connect`,
       });
     },
