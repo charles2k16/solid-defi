@@ -560,6 +560,9 @@ hr.sales_hr {
 .round_token_button span {
   cursor: pointer;
 }
+.round_token_button_weth span {
+  cursor: pointer;
+}
 .eth_div {
   width: 260px;
   background-color: #40444E;
@@ -665,7 +668,19 @@ hr.sales_hr {
   width: 338px;
   padding: 2px;
   border-radius: 45px;
-  margin-bottom: 37.8px;
+  margin-bottom: 40.5px;
+}
+.round_token_button_weth {
+  background: #1A1D29;
+  box-shadow:  6px 6px 12px #636a83,
+  -7px -7px 10px #ffffff, inset -20px -20px 20px #0f102425;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 338px;
+  padding: 7px 2px;
+  border-radius: 45px;
+  margin-bottom: 40.5px;
 }
 .matic_btn {
   width: 100px;
@@ -673,6 +688,17 @@ hr.sales_hr {
   color: rgb(116, 112, 112);
   padding: 1px 5px;
   background: #DDDBEC;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.approve_btn {
+  width: 100px;
+  font-size: 0.9rem;
+  padding: 1px 5px;
+  color: #fff;
+  background: linear-gradient(315deg, #b49b1c, #cb8016);
+  box-shadow:  2px 2px 2px #754a0e,
+               5px 5px 13px #724b15;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -841,6 +867,7 @@ hr.sales_hr {
   color: black;
   padding: 31px 10px;
   width: 100%;
+  height: 167px;
   border: none;
   outline: none;
   text-align: left;

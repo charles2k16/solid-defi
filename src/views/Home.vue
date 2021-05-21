@@ -58,18 +58,32 @@
                       <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-                        <span class="d-block stock"
+                        <span
+                          class="d-block stock"
+                          v-if="ethSmallStock == 'loading'"
+                        >
+                          <span style="color: red;">Connect to eth</span>
+                        </span>
+
+                        <span class="d-block stock" v-else
                           >Stock: {{ ethSmallStock }}</span
                         >
-                        <span class="d-block stock mt-5">Owned: 0</span>
+                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                       <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-                        <span class="d-block stock"
+                        <span
+                          class="d-block stock"
+                          v-if="ethBigStock == 'loading'"
+                        >
+                          <span style="color: red;">Connect to eth</span>
+                        </span>
+
+                        <span class="d-block stock" v-else
                           >Stock: {{ ethBigStock }}</span
                         >
-                        <span class="d-block stock mt-5">Owned: 0</span>
+                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                     </div>
                   </button>
@@ -87,18 +101,38 @@
                       <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-                        <span class="d-block stock"
+
+                        <span
+                          class="d-block stock"
+                          v-if="ethMaticSmallStock == 'loading'"
+                        >
+                          <span style="color: red;">Connect to matic</span>
+                        </span>
+
+                        <span class="d-block stock" v-else
                           >Stock: {{ ethMaticSmallStock }}</span
                         >
-                        <span class="d-block stock mt-5">Owned: 0</span>
+
+                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                       <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-                        <span class="d-block stock"
+
+                        <span
+                          class="d-block stock"
+                          v-if="ethMaticBigStock == 'loading'"
+                        >
+                          <span style="color: red;font-size:"
+                            >Connect to matic</span
+                          >
+                        </span>
+
+                        <span class="d-block stock" v-else
                           >Stock: {{ ethMaticBigStock }}</span
                         >
-                        <span class="d-block stock mt-5">Owned: 0</span>
+
+                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                     </div>
                   </button>
@@ -119,18 +153,32 @@
                       <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-                        <span class="d-block stock"
+                        <span
+                          class="d-block stock"
+                          v-if="maticSmallStock == 'loading'"
+                        >
+                          <span style="color: red;">Connect to matic</span>
+                        </span>
+
+                        <span class="d-block stock" v-else
                           >Stock: {{ maticSmallStock }}</span
                         >
-                        <span class="d-block stock mt-5">Owned: 0</span>
+                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                       <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-                        <span class="d-block stock"
+                        <span
+                          class="d-block stock"
+                          v-if="maticBigStock == 'loading'"
+                        >
+                          <span style="color: red;">Connect to matic</span>
+                        </span>
+
+                        <span class="d-block stock" v-else
                           >Stock: {{ maticBigStock }}</span
                         >
-                        <span class="d-block stock mt-5">Owned: 0</span>
+                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                     </div>
                   </button>
@@ -383,7 +431,7 @@
                         >
                       </div>
 
-                      <div class="round_token_button mt-10">
+                      <div class="round_token_button_weth mt-10">
                         <div
                           class="flex-justify-between-center"
                           v-if="
@@ -456,13 +504,12 @@
                           Connect Wallect
                         </vs-button>
 
-                        <vs-button
-                          class="buy_button"
-                          style="font-size: 1rem;"
-                          @click="buyTokens"
-                        >
-                          <b> BUY</b>
-                        </vs-button>
+                        <span class="approve_btn" @click="buyTokens">
+                          <b>BUY</b>
+                          <p style="font-size: 12px;margin-top:-1px;">
+                            Approve first
+                          </p>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -856,6 +903,7 @@
       </div>
 
       <template #footer>
+        <p>{{ allowanceValue }}</p>
         <div class="con-footer">
           <vs-button
             @click="showConfirmBundle = false"
@@ -865,9 +913,27 @@
             Cancel
           </vs-button>
 
-          <vs-button class="buy_now" @click="confirmBuyBundle">
-            Buy now
-          </vs-button>
+          <div v-if="currentNetTab == 'wEth'">
+            <vs-button
+              v-if="
+                typeof allowanceValue == 'undefined ' || allowanceValue == null
+              "
+              loading
+              warn
+              gradient
+            >
+              loading
+            </vs-button>
+            <vs-button class="buy_now" @click="confirmBuyBundle" v-else>
+              Buy now
+            </vs-button>
+          </div>
+
+          <div v-else>
+            <vs-button class="buy_now" @click="confirmBuyBundle">
+              Buy now
+            </vs-button>
+          </div>
         </div>
       </template>
     </vs-dialog>
@@ -961,14 +1027,12 @@ export default {
       title: '',
       currentNetTab: 'eth',
       chain: null,
-      // maticSmallStock: 0,
-      // maticBigStock: 0,
-      // ethSmallStock: 0,
-      // ethBigStock: 0,
+      serial: null,
     };
   },
   created() {
-    this.connectToEthContract();
+    if (this.onEthNetwork) this.connectToEthContract();
+    else this.connectToMaticContract();
   },
   computed: {
     ...mapGetters('drizzle', ['isDrizzleInitialized']),
@@ -996,7 +1060,6 @@ export default {
         method: argsSmallBundle.method,
       });
     },
-
     ethMaticSmallStock() {
       return this.getContractData({
         contract: argsSmallBundleEth.contractName,
@@ -1021,12 +1084,25 @@ export default {
         method: argsBigBundleMatic.method,
       });
     },
+    allowanceValue() {
+      let escrowAddress = '0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2';
+      let allowance = this.drizzleInstance.contracts['Erc20'].methods[
+        'allowance'
+      ].cacheCall(this.activeAccount, escrowAddress);
+
+      let value = this.contractInstances.Erc20.allowance[allowance].value;
+
+      return value;
+    },
   },
   watch: {
     chain: function(netId) {
+      console.log('chain changed');
       if (netId == 80001 || netId == 137) {
+        console.log('connecting to matic');
         this.connectToMaticContract();
       } else {
+        console.log('connecting to eth');
         this.connectToEthContract();
       }
     },
@@ -1042,7 +1118,6 @@ export default {
     connectToEthContract() {
       this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsbigBundle);
       this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundle);
-      console.log(this.contractInstances);
     },
     buyTokens() {
       let chainId = this.drizzleInstance.web3._provider.networkVersion;
@@ -1076,20 +1151,28 @@ export default {
           this.percentageOff
         }% off.`;
         this.showConfirmBundle = true;
+        return;
       }
 
       if (this.currentNetTab == 'wEth') {
         console.log('weth', this.currentwEthBundle);
-
+        this.getSerial(this.wBundle);
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
           this.wBundle
         }</b></span> ${
           this.wBundle > 1 ? 'bundles' : 'bundle'
-        } at <span style="color:#cb8016"><b>${
+        } of <span style="color:#cb8016"><b>${
           this.currentwEthBundle
-        }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> wETH</b></span> at ${
-          this.percentageOff
-        }% off.`;
+        }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> ${
+          this.serial
+        } of wEth</b></span> at ${this.percentageOff}% off.`;
+
+        let allowValue = this.allowanceValue;
+        if (typeof allowValue == 'undefined') {
+          this.approveTrans();
+        } else if (allowValue == 0 || allowValue == null) {
+          this.approveTrans();
+        }
 
         this.showConfirmBundle = true;
       }
@@ -1120,7 +1203,7 @@ export default {
       if (this.percentageOff == 35 && this.currentNetTab == 'eth')
         this.buyEthBigBundle(currentNumberofBundle);
       else if (this.percentageOff == 35 && this.currentNetTab == 'wEth')
-        this.buyWethBigBundle(currentNumberofBundle);
+        this.buyWrapEthBigBundle(currentNumberofBundle);
       else if (this.percentageOff == 35 && this.currentNetTab == 'matic')
         this.buyMaticBigBundle(currentNumberofBundle);
 
@@ -1137,6 +1220,15 @@ export default {
       console.log(a);
       console.log(this.drizzleInstance.web3._provider.selectedAddress);
       this.showWallects = true;
+    },
+    getSerial(bundle) {
+      let totalAmnt =
+        this.percentageOff == 35
+          ? 135000000000000000 * bundle
+          : 72700000000000000 * bundle;
+      let serial = totalAmnt / 1000000000000000000;
+      console.log(serial);
+      this.serial = serial;
     },
     toEth(weiBalance) {
       // let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
@@ -1278,7 +1370,6 @@ export default {
       this.currentMaticBundle = bb == 1 ? 40000 : 80000;
     },
     setActiveItem() {
-      console.log(',amd');
       this.$refs.carouseleth.setActiveItem('bigBundle');
       this.$refs.carouselweth.setActiveItem('bigBundle');
       this.$refs.carouselmatic.setActiveItem('bigBundle');

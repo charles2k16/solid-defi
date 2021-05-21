@@ -291,32 +291,32 @@
   "networks": {
     "3": {
       "links": {},
-      "address": "0x370fF1A69bC4BaB81AF12d8D12f5B832CA687242",
+      "address": "0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA",
       "transactionHash": ""
     },
     "1": {
       "links": {},
-      "address": "0x370fF1A69bC4BaB81AF12d8D12f5B832CA687242",
+      "address": "0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA",
       "transactionHash": ""
     },
     "4": {
       "links": {},
-      "address": "0x370fF1A69bC4BaB81AF12d8D12f5B832CA687242",
+      "address": "0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA",
       "transactionHash": ""
     },
     "42": {
       "links": {},
-      "address": "0x370fF1A69bC4BaB81AF12d8D12f5B832CA687242",
+      "address": "0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA",
       "transactionHash": ""
     },
     "80001": {
       "links": {},
-      "address": "0x370fF1A69bC4BaB81AF12d8D12f5B832CA687242",
+      "address": "0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA",
       "transactionHash": ""
     },
     "137": {
       "links": {},
-      "address": "0x370fF1A69bC4BaB81AF12d8D12f5B832CA687242",
+      "address": "0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA",
       "transactionHash": ""
     }
   }

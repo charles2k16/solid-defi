@@ -79,6 +79,16 @@
   font-size: 16px;
 }
 
+.buy_button_weth.vs-button--default {
+  border-radius: 80px !important;
+  width: 100px;
+  color: #fff;
+  background: linear-gradient(315deg, #b49b1c, #cb8016);
+  box-shadow:  2px 2px 2px #754a0e,
+               5px 5px 13px #724b15;
+  font-size: 11px;
+}
+
 .cancel_btn.vs-button--default {
   border-radius: 80px !important;
   width: 100px;

@@ -5,7 +5,23 @@ export default {
   computed: {
     ...mapGetters('drizzle', ['drizzleInstance']),
   },
+  data() {
+    return {
+      escrowAddress: '0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2',
+      tokenIdMatic: '0xe44FaB5F1bd279ee8B0D5D4661ABB172Bb21EBb0',
+      tokenIdEth: '0xe88698a89006aa3da3da426a088030cfdcdb65f0',
+      wrapEthAddress: '0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA'
+    }
+  },
   methods: {
+    approveTrans() {
+      let amount = 135000000000000000 * 3;
+      let amt = amount.toString();
+
+      this.drizzleInstance.contracts['Erc20'].methods[
+        'approve'
+      ].cacheSend(this.escrowAddress, amt);
+    },
     toWei(eth) {
       let weiValue = Web3.utils.toWei(eth, 'ether');
       return weiValue;
@@ -15,7 +31,7 @@ export default {
       console.log(toWeiBundle);
       this.drizzleInstance.contracts['SolidEscrow'].methods[
         'buySmallBundle'
-      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
+      ].cacheSend(this.tokenIdEth, {
         value: toWeiBundle,
       });
     },
@@ -24,53 +40,47 @@ export default {
       console.log(toWeiBundle);
       this.drizzleInstance.contracts['SolidEscrow'].methods[
         'buyBigBundle'
-      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
+      ].cacheSend(this.tokenIdEth, {
         value: toWeiBundle,
       });
     },
-
     // wrap eth bundle functions
     async buyWrapEthSmallBundle(numberofBundle) {
-      let wrapEthAddress = '0x1Dc5810Bf9c3CB44c5DE946763402eCD5F05864c'
-      let escrowAddress = '0x4aA35B411d532c4B3a1703060807d03519e0944b'
-      let tokenId = '0x370fF1A69bC4BaB81AF12d8D12f5B832CA687242'
       let amount = 72700000000000000 * numberofBundle;
       let amt = amount.toString();
 
-      await this.drizzleInstance.contracts['Erc20'].methods[
-        'approve'
-      ].cacheSend(escrowAddress, amt);
-
       await this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buySmallBundleEth'
-      ].cacheSend(tokenId, wrapEthAddress, amt);
+      ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, amt);
     },
-    buyWethBigBundle(numberofBundle) {
-      let ethAddress = '0x1Dc5810Bf9c3CB44c5DE946763402eCD5F05864c'
+
+    // warap eth big bundle
+    buyWrapEthBigBundle(numberofBundle) {
       let amount = 135000000000000000 * numberofBundle;
-      console.log(amount);
+      let amt = amount.toString();
+
       this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buyBigBundleEth'
-      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', ethAddress, amount);
+      ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, amt);
     },
 
     // matic bundles eth
     buyMaticBigBundle(numberofBundle) {
-      let toWeiBundle = 135000000000000000 * numberofBundle;
-      console.log(toWeiBundle);
+      let amount = 135000000000000000 * numberofBundle;
+      let amt = amount.toString();
       this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buyBigBundleMatic'
-      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
-        value: toWeiBundle,
+      ].cacheSend(this.tokenIdMatic, {
+        value: amt,
       });
     },
     buyMaticSmallBundle(numberofBundle) {
-      let toWeiBundle = 72700000000000000 * numberofBundle;
-      console.log(toWeiBundle);
+      let amount = 72700000000000000 * numberofBundle;
+      let amt = amount.toString();
       this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buySmallBundleMatic'
-      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', {
-        value: toWeiBundle,
+      ].cacheSend(this.tokenIdMatic, {
+        value: amt,
       });
     },
     checkNetwork(netId) {
