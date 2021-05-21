@@ -2,45 +2,6 @@
   "contractName": "MaticEscrow",
   "abi": [
     {
-      "inputs": [],
-      "name": "ETH_address",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "bigbundle",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "bigbundleEth",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "address",
@@ -127,7 +88,7 @@
           "type": "uint256"
         }
       ],
-      "name": "setBigBundle",
+      "name": "setBigBundleEth",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -140,7 +101,7 @@
           "type": "uint256"
         }
       ],
-      "name": "setBigBundleEth",
+      "name": "setBigBundleMatic",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -166,7 +127,7 @@
           "type": "uint256"
         }
       ],
-      "name": "setSmallBundle",
+      "name": "setSmallBundleEth",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -179,35 +140,9 @@
           "type": "uint256"
         }
       ],
-      "name": "setSmallBundleEth",
+      "name": "setSmallBundleMatic",
       "outputs": [],
       "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "smallbundle",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "smallbundleEth",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -250,42 +185,107 @@
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "bigbundleEth",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "bigbundleMatic",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ETH_address",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "smallbundleEth",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "smallbundleMatic",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
   "networks": {
     "3": {
       "links": {},
-      "address": "0x5011D48D4265b6fB8228600a111b2fAa1fDA3139",
+      "address": "0x4aA35B411d532c4B3a1703060807d03519e0944b",
       "transactionHash": ""
     },
     "1": {
       "links": {},
-      "address": "0x5011D48D4265b6fB8228600a111b2fAa1fDA3139",
+      "address": "0x4aA35B411d532c4B3a1703060807d03519e0944b",
       "transactionHash": ""
     },
     "4": {
       "links": {},
-      "address": "0x5011D48D4265b6fB8228600a111b2fAa1fDA3139",
+      "address": "0x4aA35B411d532c4B3a1703060807d03519e0944b",
       "transactionHash": ""
     },
     "42": {
       "links": {},
-      "address": "0x5011D48D4265b6fB8228600a111b2fAa1fDA3139",
+      "address": "0x4aA35B411d532c4B3a1703060807d03519e0944b",
       "transactionHash": ""
     },
     "80001": {
       "links": {},
-      "address": "0x5011D48D4265b6fB8228600a111b2fAa1fDA3139",
+      "address": "0x4aA35B411d532c4B3a1703060807d03519e0944b",
       "transactionHash": ""
     },
     "137": {
       "links": {},
-      "address": "0x5011D48D4265b6fB8228600a111b2fAa1fDA3139",
+      "address": "0x4aA35B411d532c4B3a1703060807d03519e0944b",
       "transactionHash": ""
     },
     "5777": {
       "links": {},
-      "address": "0x5011D48D4265b6fB8228600a111b2fAa1fDA3139",
+      "address": "0x4aA35B411d532c4B3a1703060807d03519e0944b",
       "transactionHash": ""
     }
   }

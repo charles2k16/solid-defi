@@ -886,7 +886,6 @@
 </template>
 
 <script>
-import Web3 from 'web3';
 import { mapGetters } from 'vuex';
 import NavBar from '@/components/NavBar';
 import ConnectWallect from '../components/ConnectWallect';
@@ -921,13 +920,13 @@ const argsBigBundleEth = {
 
 const argsSmallBundleMatic = {
   contractName: 'MaticEscrow',
-  method: 'smallbundle',
+  method: 'smallbundleMatic',
   methodArgs: '',
 };
 
 const argsBigBundleMatic = {
   contractName: 'MaticEscrow',
-  method: 'bigbundle',
+  method: 'bigbundleMatic',
   methodArgs: '',
 };
 
@@ -1129,7 +1128,7 @@ export default {
       if (this.percentageOff == 30 && this.currentNetTab == 'eth')
         this.buyEthSmallBundle(currentNumberofBundle);
       else if (this.percentageOff == 30 && this.currentNetTab == 'wEth')
-        this.buyWethSmallBundle(currentNumberofBundle);
+        this.buyWrapEthSmallBundle(currentNumberofBundle);
       else if (this.percentageOff == 30 && this.currentNetTab == 'matic')
         this.buyMaticSmallBundle(currentNumberofBundle);
     },
@@ -1140,14 +1139,9 @@ export default {
       this.showWallects = true;
     },
     toEth(weiBalance) {
-      console;
-      let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
-      let ether = parseFloat(etherValue).toFixed(4);
+      // let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
+      let ether = parseFloat(weiBalance).toFixed(4);
       return ether;
-    },
-    toWei(eth) {
-      let weiValue = Web3.utils.toWei(eth, 'ether');
-      return weiValue;
     },
     checkAccounts() {
       this.showAccounts = true;
@@ -1274,7 +1268,6 @@ export default {
       }
     },
     changeBundle(r) {
-      console.log(r);
       this.ethBundle = 1;
       this.wBundle = 1;
       this.maticBundle = 1;

@@ -1,10 +1,15 @@
 import { mapGetters } from 'vuex';
+import Web3 from 'web3';
 
 export default {
   computed: {
     ...mapGetters('drizzle', ['drizzleInstance']),
   },
   methods: {
+    toWei(eth) {
+      let weiValue = Web3.utils.toWei(eth, 'ether');
+      return weiValue;
+    },
     buyEthSmallBundle(numberofBundle) {
       let toWeiBundle = 72700000000000000 * numberofBundle;
       console.log(toWeiBundle);
@@ -25,21 +30,28 @@ export default {
     },
 
     // wrap eth bundle functions
-    buyWethSmallBundle(numberofBundle) {
-      let ethAddress = '0x1Dc5810Bf9c3CB44c5DE946763402eCD5F05864c'
-      let toWeiBundle = 72700000000000000 * numberofBundle;
-      console.log(toWeiBundle);
-      this.drizzleInstance.contracts['MaticEscrow'].methods[
+    async buyWrapEthSmallBundle(numberofBundle) {
+      let wrapEthAddress = '0x1Dc5810Bf9c3CB44c5DE946763402eCD5F05864c'
+      let escrowAddress = '0x4aA35B411d532c4B3a1703060807d03519e0944b'
+      let tokenId = '0x370fF1A69bC4BaB81AF12d8D12f5B832CA687242'
+      let amount = 72700000000000000 * numberofBundle;
+      let amt = amount.toString();
+
+      await this.drizzleInstance.contracts['Erc20'].methods[
+        'approve'
+      ].cacheSend(escrowAddress, amt);
+
+      await this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buySmallBundleEth'
-      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', ethAddress, toWeiBundle);
+      ].cacheSend(tokenId, wrapEthAddress, amt);
     },
     buyWethBigBundle(numberofBundle) {
       let ethAddress = '0x1Dc5810Bf9c3CB44c5DE946763402eCD5F05864c'
-      let toWeiBundle = 135000000000000000 * numberofBundle;
-      console.log(toWeiBundle);
+      let amount = 135000000000000000 * numberofBundle;
+      console.log(amount);
       this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buyBigBundleEth'
-      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', ethAddress, toWeiBundle);
+      ].cacheSend('0xe88698a89006aa3da3da426a088030cfdcdb65f0', ethAddress, amount);
     },
 
     // matic bundles eth
