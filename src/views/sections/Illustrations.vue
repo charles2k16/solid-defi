@@ -23,7 +23,7 @@
             <div class="progress_div"></div>
           </div>
 
-          <p class="mt-20 p_tokens">100 Tokens</p>
+          <p class="mt-20 p_tokens">{{ balanceOf }} Tokens</p>
         </div>
       </vs-col>
     </vs-row>
@@ -64,10 +64,29 @@
 
 <script>
 import FlipCountdown from 'vue2-flip-countdown';
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'Illustrations',
   components: {
     FlipCountdown,
+  },
+  computed: {
+    ...mapGetters('contracts', ['contractInstances']),
+
+    balanceOf() {
+      let erc20 = '0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2';
+      let balance = this.drizzleInstance.contracts['Erc20'].methods[
+        'totalSupply'
+      ].cacheCall(erc20);
+
+      console.log(balance);
+
+      // let value = this.contractInstances.Erc20.totalSupply[balance].value;
+      // console.log(value);
+
+      return balance;
+    },
   },
 };
 </script>
