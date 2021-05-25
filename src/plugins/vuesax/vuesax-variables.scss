@@ -16,11 +16,9 @@
   padding-left: 15px !important;
   padding-right: 15px !important;
   color: #fff;
-  // box-shadow:  11px 11px 0px #080a10,
-  //            -11px -11px 0px #161a2c;
-  box-shadow:  6px 6px 12px #000008,
-  -7px -7px 10px #31364a, inset -20px -20px 20px #0b0c2525,
-  inset 2px 2px 2px rgb(105, 105, 247);
+  box-shadow:  5px 5px 8px #000000,
+  -5px -5px 8px #393e54,
+  inset -2px -2px 20px #200468, inset 2px 2px 2px #7564f5;
   background: rgb(77,26,192) !important;
   background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
 }
@@ -34,15 +32,15 @@
   box-shadow:  8px 8px 24px #0c0e18,
   -8px -8px 24px #121624;
 }
-
+// 1e2229
 .sub_button.vs-button--default {
-  border-radius: 80px !important;
+  border-radius: 70px !important;
   padding-left: 15px !important;
   padding-right: 15px !important;
   color: #fff;
-  box-shadow:  4px 4px 10px #0c0600,
-             -4px -4px 10px #404864, inset -10px -10px 10px #aeaec025,
-             inset 2px 2px 2px rgb(99, 89, 247);
+  box-shadow:  5px 5px 8px #0d0e11,
+  -5px -5px 8px #393e54,
+  inset -2px -2px 20px #200468, inset 2px 2px 2px #7564f5;
 
   background: rgb(77,26,192) !important;
   background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
@@ -66,7 +64,8 @@
   color: #fff;
   background: linear-gradient(315deg, #E1C324, #cb8016);
   box-shadow:  2px 2px 2px #a76912,
-               5px 5px 13px #a76912;
+               2px 2px 5px #a76912;
+  margin-left: 17px;
 }
 
 .buy_now.vs-button--default {
@@ -118,14 +117,19 @@
   font-family: Montserrat;
 }
 
-.tele_avatar .vs-avatar {
+.tele_avatar {
   background: #7D33FC !important;
-  padding: 15px;
+  box-shadow:  10px 10px 15px #080f14,
+  -10px -10px 15px #424961;
+  border: 3px solid rgb(48,49,73);
 }
 
-.twit_avatar .vs-avatar {
+.twit_avatar{
   background: #55ACEE !important;
   padding: 3px;
+  box-shadow:  10px 10px 15px #080f14,
+  -10px -10px 15px #424961;
+  border: 3px solid rgb(48,49,73);
 }
 
 .matic_avatar .vs-avatar {

@@ -19,24 +19,33 @@
           <div class="flex-justify-around-center mt-20">
             <div class="flex-row-center">
               <vs-avatar class="tele_avatar" size="60">
-                <img
-                  src="../../assets/images/telegram_icon.png"
-                  alt="telegram"
-                />
+                <a href="https://t.me/soliddefi" target="_blank">
+                  <img
+                    src="../../assets/images/telegram_icon.png"
+                    alt="telegram"
+                    style="width:25px !important"
+                  />
+                </a>
               </vs-avatar>
               <p class="mt-30 center p_link">
-                Join us on <br />
-                Telegram
+                <a href="https://t.me/soliddefi" target="_blank">
+                  Join us on <br />
+                  Telegram</a
+                >
               </p>
             </div>
 
             <div class="flex-row-center">
               <vs-avatar size="60" class="twit_avatar">
-                <img src="../../assets/images/twitter.png" alt="twitter" />
+                <a href="twitter.com" target="_blank">
+                  <img src="../../assets/images/twitter.png" alt="twitter" />
+                </a>
               </vs-avatar>
               <p class="mt-30 center p_link">
-                Follow us on <br />
-                Twitter
+                <a href="twitter.com" target="_blank">
+                  Follow us on <br />
+                  Twitter
+                </a>
               </p>
             </div>
           </div>

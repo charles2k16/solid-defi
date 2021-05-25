@@ -4,9 +4,7 @@
     <vs-row class="mt-50">
       <vs-col :w="5" :xs="10" :sm="10">
         <div class="flex-align-center">
-          <h1 class="yellow">
-            70M token sold in presale
-          </h1>
+          <h1 class="yellow">{{ getBalance }} token sold in presale</h1>
         </div>
       </vs-col>
       <vs-col :w="2" :xs="2" :sm="2">
@@ -23,7 +21,7 @@
             <div class="progress_div"></div>
           </div>
 
-          <p class="mt-20 p_tokens">{{ balanceOf }} Tokens</p>
+          <p class="mt-20 p_tokens">30M Tokens</p>
         </div>
       </vs-col>
     </vs-row>
@@ -56,7 +54,14 @@
 
     <vs-row class="mt-70">
       <vs-col :w="12" :xs="12" :sm="12">
-        <div class="gif_anime"></div>
+        <div>
+          <video
+            src="../../assets/video/animation.mp4"
+            width="100%"
+            class="gif_anime"
+            autoplay
+          ></video>
+        </div>
       </vs-col>
     </vs-row>
   </div>
@@ -66,27 +71,42 @@
 import FlipCountdown from 'vue2-flip-countdown';
 import { mapGetters } from 'vuex';
 
+const argsBalanceOf = {
+  contractName: 'Erc20',
+  method: 'totalSupply',
+  methodArgs: '',
+};
+
 export default {
   name: 'Illustrations',
   components: {
     FlipCountdown,
   },
+  created() {
+    this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsBalanceOf);
+  },
   computed: {
-    ...mapGetters('contracts', ['contractInstances']),
+    ...mapGetters('drizzle', ['drizzleInstance']),
+    ...mapGetters('contracts', ['contractInstances', 'getContractData']),
 
-    balanceOf() {
-      let erc20 = '0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2';
-      let balance = this.drizzleInstance.contracts['Erc20'].methods[
-        'totalSupply'
-      ].cacheCall(erc20);
-
-      console.log(balance);
-
-      // let value = this.contractInstances.Erc20.totalSupply[balance].value;
-      // console.log(value);
-
-      return balance;
+    getBalance() {
+      return this.getContractData({
+        contract: argsBalanceOf.contractName,
+        method: argsBalanceOf.method,
+      });
     },
+
+    // balanceOf() {
+    //   let erc20Address = '0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA';
+    //   let balance = this.drizzleInstance.contracts['Erc20'].methods[
+    //     'balanceOf'
+    //   ].cacheCall(erc20Address);
+
+    //   let value = this.contractInstances.Erc20.balanceOf[balance].value;
+    //   let fvalue = value !== 'undefined' ? value : 'value';
+
+    //   return fvalue;
+    // },
   },
 };
 </script>

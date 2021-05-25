@@ -9,7 +9,7 @@
       v-model="active"
     >
       <template #left>
-        <img src="../assets/images/logo.png" alt="logo" />
+        <img src="../assets/images/sld.png" alt="logo" width="50px" />
       </template>
       <template #right>
         <vs-button blank style="font-size: 0.9rem" class="nav_button">

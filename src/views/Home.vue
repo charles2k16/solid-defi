@@ -20,6 +20,8 @@
           >
             View SLD on Etherscan
           </vs-button>
+
+          <span style="color:whitesmoke;">0</span>
         </div>
       </div>
 
@@ -27,7 +29,6 @@
         <div class="mt-50">
           <vs-row class="mt-20">
             <vs-col :w="4" :xs="12" :sm="12">
-              <br /><br />
               <img
                 src="../assets/images/solid_bundle_promo.png"
                 alt="log"
@@ -49,7 +50,7 @@
                       <div class="flex-row-center">
                         <img
                           src="../assets/images/eth.png"
-                          alt="telegram"
+                          alt="eth"
                           width="60px"
                         />
 
@@ -62,7 +63,7 @@
                           class="d-block stock"
                           v-if="ethSmallStock == 'loading'"
                         >
-                          <span style="color: red;">Connect to eth</span>
+                          <span style="color: ">Connect to eth</span>
                         </span>
 
                         <span class="d-block stock" v-else
@@ -92,10 +93,20 @@
                     @click="openCity($event, 'wEth')"
                   >
                     <div class="flex-justify-evenly-center">
-                      <div class="flex-row-center">
-                        <vs-avatar size="60">
-                          <img src="../assets/images/eth.png" alt="telegram" />
-                        </vs-avatar>
+                      <div
+                        class="flex-row-center"
+                        :id="
+                          ethMaticSmallStock == 'loading'
+                            ? 'bundle_logo'
+                            : 'none'
+                        "
+                      >
+                        <img
+                          src="../assets/images/eth.png"
+                          alt="weth"
+                          width="60px"
+                        />
+
                         <span class="mt-20"><b>wETH</b></span>
                       </div>
                       <div class="mx-20">
@@ -106,7 +117,7 @@
                           class="d-block stock"
                           v-if="ethMaticSmallStock == 'loading'"
                         >
-                          <span style="color: red;">Connect to matic</span>
+                          <span style="color: #511bb7;">Connect to matic</span>
                         </span>
 
                         <span class="d-block stock" v-else
@@ -123,9 +134,7 @@
                           class="d-block stock"
                           v-if="ethMaticBigStock == 'loading'"
                         >
-                          <span style="color: red;font-size:"
-                            >Connect to matic</span
-                          >
+                          <span style="color: #511bb7;">Connect to matic</span>
                         </span>
 
                         <span class="d-block stock" v-else
@@ -141,13 +150,18 @@
                     @click="openCity($event, 'matic')"
                   >
                     <div class="flex-justify-evenly-center">
-                      <div class="flex-row-center">
-                        <vs-avatar size="60">
-                          <img
-                            src="../assets/images/matic_icon.png"
-                            alt="telegram"
-                          />
-                        </vs-avatar>
+                      <div
+                        class="flex-row-center"
+                        :id="
+                          maticSmallStock == 'loading' ? 'bundle_logo' : 'none'
+                        "
+                      >
+                        <img
+                          src="../assets/images/matic_icon.png"
+                          alt="matic"
+                          width="60px"
+                        />
+
                         <span class="mt-20"><b>MATIC</b></span>
                       </div>
                       <div class="mx-20">
@@ -157,7 +171,7 @@
                           class="d-block stock"
                           v-if="maticSmallStock == 'loading'"
                         >
-                          <span style="color: red;">Connect to matic</span>
+                          <span style="color: #511bb7;">Connect to matic</span>
                         </span>
 
                         <span class="d-block stock" v-else
@@ -172,7 +186,7 @@
                           class="d-block stock"
                           v-if="maticBigStock == 'loading'"
                         >
-                          <span style="color: red;">Connect to matic</span>
+                          <span style="color: #511bb7;">Connect to matic</span>
                         </span>
 
                         <span class="d-block stock" v-else
@@ -213,7 +227,7 @@
                       </div>
                       <div class="bk_bun d-flex-center">
                         <vs-avatar size="35">
-                          <img src="../assets/images/logo.png" alt="token" />
+                          <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
                         <span>80, 000</span>
                       </div>
@@ -229,7 +243,7 @@
                       </div>
                       <div class="bk_bun d-flex-center">
                         <vs-avatar size="35">
-                          <img src="../assets/images/logo.png" alt="token" />
+                          <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
                         <span>40, 000</span>
                       </div>
@@ -297,7 +311,7 @@
 
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
+                            style="color:#B6B6B6;margin-left: 16px;font-size:0.8rem;"
                             v-if="onEthNetwork"
                             >You're <br />
                             <span style="color:#DDDBEC;">
@@ -379,7 +393,7 @@
                       </div>
                       <div class="bk_bun d-flex-center">
                         <vs-avatar size="35">
-                          <img src="../assets/images/logo.png" alt="token" />
+                          <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
                         <span>80, 000</span>
                       </div>
@@ -395,7 +409,7 @@
                       </div>
                       <div class="bk_bun d-flex-center">
                         <vs-avatar size="35">
-                          <img src="../assets/images/logo.png" alt="token" />
+                          <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
                         <span>40, 000</span>
                       </div>
@@ -544,7 +558,7 @@
                       </div>
                       <div class="bk_bun d-flex-center">
                         <vs-avatar size="35">
-                          <img src="../assets/images/logo.png" alt="token" />
+                          <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
                         <span>80, 000</span>
                       </div>
@@ -560,7 +574,7 @@
                       </div>
                       <div class="bk_bun d-flex-center">
                         <vs-avatar size="35">
-                          <img src="../assets/images/logo.png" alt="token" />
+                          <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
                         <span>40, 000</span>
                       </div>
@@ -854,14 +868,14 @@
         <div class="meta_div">
           <div class="eth_acc">
             <vs-avatar size="20">
-              <img src="../assets/images/solid_token_logo.png" alt="logo" />
+              <img src="../assets/images/sld.png" alt="logo" />
             </vs-avatar>
             <span class="acc_span">{{ activeAccount }}</span>
           </div>
           <br />
           <div class="eth_balance">
             <vs-avatar size="20">
-              <img src="../assets/images/solid_token_logo.png" alt="logo" />
+              <img src="../assets/images/sld.png" alt="logo" />
             </vs-avatar>
             <span class="acc_span">{{ toEth(activeBalance) }} Eth</span>
           </div>
@@ -1094,6 +1108,19 @@ export default {
 
       return value;
     },
+    // balance() {
+    //   let erc20Address = '0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA';
+    //   let balance = this.drizzleInstance.contracts['Erc20'].methods[
+    //     'balanceOf'
+    //   ].cacheCall(erc20Address);
+
+    //   console.log(balance);
+
+    //   let value = this.contractInstances.Erc20.balanceOf[balance].value;
+    //   let fvalue = value !== 'undefined' ? value : 'value';
+
+    //   return fvalue;
+    // },
   },
   watch: {
     chain: function(netId) {
@@ -1218,7 +1245,6 @@ export default {
     changeNetwork() {
       var a = parseInt(this.drizzleInstance.web3._provider.networkVersion);
       console.log(a);
-      console.log(this.drizzleInstance.web3._provider.selectedAddress);
       this.showWallects = true;
     },
     getSerial(bundle) {
