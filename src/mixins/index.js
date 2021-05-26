@@ -8,15 +8,14 @@ export default {
   },
   data() {
     return {
-      escrowAddress: '0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8',
-      tokenIdMatic: '0xefC1648108218bF749aA171c9f9C44c65Ca1E0a2',
+      escrowAddress: '0x5011D48D4265b6fB8228600a111b2fAa1fDA3139',
+      tokenIdMatic: '0x498E0A753840075c4925442D4d8863eEe49D61E2',
       tokenIdEth: '0x5011d48d4265b6fb8228600a111b2faa1fda3139',
-      wrapEthAddress: '0x29132195Cf86D3738F7c4503D7CFE182C06c5cC0',
+      wrapEthAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
     }
   },
   methods: {
     getMaticAmount(numberofBundle, price, factor) {
-      console.log('price', price)
       let wei = factor * price
       let amount = wei * numberofBundle;
       let finalAmount = amount / 1000000000000000000;
@@ -81,7 +80,6 @@ export default {
       let amount = wei * numberofBundle;
       let finalAmount = amount.toString();
 
-      console.log('final amount', finalAmount);
       this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buyBigBundleMatic'
       ].cacheSend(this.tokenIdMatic, {
@@ -93,7 +91,6 @@ export default {
       let amount = wei * numberofBundle;
       let finalAmount = amount.toString();
 
-      console.log('final amount', finalAmount);
       this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buySmallBundleMatic'
       ].cacheSend(this.tokenIdMatic, {

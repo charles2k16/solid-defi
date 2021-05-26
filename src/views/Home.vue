@@ -1058,7 +1058,7 @@ export default {
       currentNetTab: 'eth',
       chain: null,
       serial: null,
-      escrowAddress: '0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8',
+      escrowAddress: '0x5011D48D4265b6fB8228600a111b2fAa1fDA3139',
     };
   },
   created() {
