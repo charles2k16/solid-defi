@@ -47,7 +47,12 @@
                     @click="openCity($event, 'eth')"
                   >
                     <div class="flex-justify-evenly-center">
-                      <div class="flex-row-center">
+                      <div
+                        class="flex-row-center"
+                        :id="
+                          ethSmallStock == 'loading' ? 'bundle_logo' : 'none'
+                        "
+                      >
                         <img
                           src="../assets/images/eth.png"
                           alt="eth"
@@ -997,17 +1002,23 @@ const argsBigBundleEth = {
   method: 'bigbundleEth',
   methodArgs: '',
 };
-
 const argsSmallBundleMatic = {
   contractName: 'MaticEscrow',
   method: 'smallbundleMatic',
   methodArgs: '',
 };
-
 const argsBigBundleMatic = {
   contractName: 'MaticEscrow',
   method: 'bigbundleMatic',
   methodArgs: '',
+};
+const argsBigBundleprice = {
+  contractName: 'SolidEscrow',
+  method: 'bigbundleprice',
+};
+const argsSmallBundleprice = {
+  contractName: 'SolidEscrow',
+  method: 'smallbundleprice',
 };
 
 export default {
@@ -1042,6 +1053,8 @@ export default {
       currentNetTab: 'eth',
       chain: null,
       serial: null,
+      bigBundlePrice: 135000000000000000,
+      smallBundlePrice: 72700000000000000,
     };
   },
   created() {
@@ -1108,6 +1121,18 @@ export default {
 
       return value;
     },
+    priceBigBundle() {
+      return this.getContractData({
+        contract: argsBigBundleprice.contractName,
+        method: argsBigBundleprice.method,
+      });
+    },
+    priceSmallBundle() {
+      return this.getContractData({
+        contract: argsSmallBundleprice.contractName,
+        method: argsSmallBundleprice.method,
+      });
+    },
     // balance() {
     //   let erc20Address = '0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA';
     //   let balance = this.drizzleInstance.contracts['Erc20'].methods[
@@ -1145,6 +1170,8 @@ export default {
     connectToEthContract() {
       this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsbigBundle);
       this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundle);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsBigBundleprice);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundleprice);
     },
     buyTokens() {
       let chainId = this.drizzleInstance.web3._provider.networkVersion;
@@ -1153,7 +1180,7 @@ export default {
       else this.buyBundleTokens();
     },
     buyBundleTokens() {
-      console.log(this.currentNetTab);
+      console.log(this.priceSmallBundle);
       if (this.currentNetTab !== 'eth' && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain, please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction.';
@@ -1168,15 +1195,16 @@ export default {
 
       if (this.currentNetTab == 'eth') {
         console.log('eth', this.currentEthBundle);
+        this.getSerial(this.currentEthBundle);
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
           this.ethBundle
         }</b></span> ${
           this.ethBundle > 1 ? 'bundles' : 'bundle'
         } at <span style="color:#cb8016"><b>${
           this.currentEthBundle
-        }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> ETH</b></span> at ${
-          this.percentageOff
-        }% off.`;
+        }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> ${
+          this.serial
+        } of ETH</b></span> at ${this.percentageOff}% off.`;
         this.showConfirmBundle = true;
         return;
       }
@@ -1248,10 +1276,11 @@ export default {
       this.showWallects = true;
     },
     getSerial(bundle) {
+      console.log(this.priceBigBundle);
       let totalAmnt =
         this.percentageOff == 35
-          ? 135000000000000000 * bundle
-          : 72700000000000000 * bundle;
+          ? this.bigBundlePrice * bundle
+          : this.smallBundlePrice * bundle;
       let serial = totalAmnt / 1000000000000000000;
       console.log(serial);
       this.serial = serial;

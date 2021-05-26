@@ -60,6 +60,7 @@
             width="100%"
             class="gif_anime"
             autoplay
+            loop
           ></video>
         </div>
       </vs-col>
@@ -71,42 +72,42 @@
 import FlipCountdown from 'vue2-flip-countdown';
 import { mapGetters } from 'vuex';
 
-const argsBalanceOf = {
-  contractName: 'Erc20',
-  method: 'totalSupply',
-  methodArgs: '',
-};
+// const argsBalanceOf = {
+//   contractName: 'Erc20',
+//   method: 'totalSupply',
+//   methodArgs: '',
+// };
 
 export default {
   name: 'Illustrations',
   components: {
     FlipCountdown,
   },
-  created() {
-    this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsBalanceOf);
-  },
+  // created() {
+  //   this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsBalanceOf);
+  // },
   computed: {
     ...mapGetters('drizzle', ['drizzleInstance']),
     ...mapGetters('contracts', ['contractInstances', 'getContractData']),
 
-    getBalance() {
-      return this.getContractData({
-        contract: argsBalanceOf.contractName,
-        method: argsBalanceOf.method,
-      });
-    },
-
-    // balanceOf() {
-    //   let erc20Address = '0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA';
-    //   let balance = this.drizzleInstance.contracts['Erc20'].methods[
-    //     'balanceOf'
-    //   ].cacheCall(erc20Address);
-
-    //   let value = this.contractInstances.Erc20.balanceOf[balance].value;
-    //   let fvalue = value !== 'undefined' ? value : 'value';
-
-    //   return fvalue;
+    // getBalance() {
+    //   return this.getContractData({
+    //     contract: argsBalanceOf.contractName,
+    //     method: argsBalanceOf.method,
+    //   });
     // },
+
+    balanceOf() {
+      let erc20Address = '0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA';
+      let balance = this.drizzleInstance.contracts['Erc20'].methods[
+        'balanceOf'
+      ].cacheCall(erc20Address);
+
+      let value = this.contractInstances.Erc20.balanceOf[balance].value;
+      let fvalue = typeof value !== 'undefined' ? value : 'value';
+
+      return fvalue;
+    },
   },
 };
 </script>
