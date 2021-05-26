@@ -4,20 +4,25 @@ import Web3 from 'web3';
 export default {
   computed: {
     ...mapGetters('drizzle', ['drizzleInstance']),
+    ...mapGetters('contracts', ['getContractData']),
   },
   data() {
     return {
-      escrowAddress: '0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2',
-      tokenIdMatic: '0xe44FaB5F1bd279ee8B0D5D4661ABB172Bb21EBb0',
+      escrowAddress: '0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8',
+      tokenIdMatic: '0xefC1648108218bF749aA171c9f9C44c65Ca1E0a2',
       tokenIdEth: '0x5011d48d4265b6fb8228600a111b2faa1fda3139',
-      wrapEthAddress: '0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA',
-      bigBundlePrice: 135000000000000000,
-      smallBundlePrice: 72700000000000000
+      wrapEthAddress: '0x29132195Cf86D3738F7c4503D7CFE182C06c5cC0',
     }
   },
   methods: {
+    getMaticAmount(numberofBundle, price, factor) {
+      let wei = factor * price
+      let amount = wei * numberofBundle;
+      let finalAmount = amount / 1000000000000000000;
+      return finalAmount;
+    },
     approveTrans() {
-      let amount = 135000000000000000 * 3;
+      let amount = 10000000000000000000;
       let amt = amount.toString();
 
       this.drizzleInstance.contracts['Erc20'].methods[
@@ -28,16 +33,8 @@ export default {
       let weiValue = Web3.utils.toWei(eth, 'ether');
       return weiValue;
     },
-    // getBigBundlePrice() {
-    //   let bigprice = this.drizzleInstance.contracts['SolidEscrow'].methods[
-    //     'bigbundleprice'
-    //   ].cacheCall();
-
-    //   console.log('big price', bigprice.value)
-    //   return bigprice;
-    // },
-    buyEthSmallBundle(numberofBundle) {
-      let toWeiBundle = this.smallBundlePrice * numberofBundle;
+    buyEthSmallBundle(numberofBundle, smallPrice) {
+      let toWeiBundle = smallPrice * numberofBundle;
       console.log(toWeiBundle);
       this.drizzleInstance.contracts['SolidEscrow'].methods[
         'buySmallBundle'
@@ -45,8 +42,8 @@ export default {
         value: toWeiBundle,
       });
     },
-    buyEthBigBundle(numberofBundle) {
-      let toWeiBundle = this.bigBundlePrice * numberofBundle;
+    buyEthBigBundle(numberofBundle, bigPrice) {
+      let toWeiBundle = bigPrice * numberofBundle;
       console.log(toWeiBundle);
       this.drizzleInstance.contracts['SolidEscrow'].methods[
         'buyBigBundle'
@@ -56,43 +53,51 @@ export default {
     },
 
     // wrap eth bundle functions
-    async buyWrapEthSmallBundle(numberofBundle) {
-      let amount = this.smallBundlePrice * numberofBundle;
-      let amt = amount.toString();
+    async buyWrapEthSmallBundle(numberofBundle, smallPrice) {
+      let amount = smallPrice * numberofBundle;
+      let finalAmount = amount.toString();
+
+      console.log(finalAmount);
 
       await this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buySmallBundleEth'
-      ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, amt);
+      ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, finalAmount);
     },
 
-    // warap eth big bundle
-    buyWrapEthBigBundle(numberofBundle) {
-      let amount = this.bigBundlePrice * numberofBundle;
-      let amt = amount.toString();
+    // wrap eth big bundle
+    buyWrapEthBigBundle(numberofBundle, bigPrice) {
+      let amount = bigPrice * numberofBundle;
+      let finalAmount = amount.toString();
 
       this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buyBigBundleEth'
-      ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, amt);
+      ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, finalAmount);
     },
 
     // matic bundles eth
-    buyMaticBigBundle(numberofBundle) {
-      let amount = this.bigBundlePrice * numberofBundle;
-      let amt = amount.toString();
-      this.drizzleInstance.contracts['MaticEscrow'].methods[
-        'buyBigBundleMatic'
-      ].cacheSend(this.tokenIdMatic, {
-        value: amt,
-      });
+    buyMaticBigBundle(numberofBundle, bigPrice, factor) {
+      let wei = factor * bigPrice
+      let amount = wei * numberofBundle;
+      let finalAmount = amount.toString();
+
+      console.log('final amount', finalAmount);
+      // this.drizzleInstance.contracts['MaticEscrow'].methods[
+      //   'buyBigBundleMatic'
+      // ].cacheSend(this.tokenIdMatic, {
+      //   value: finalAmount,
+      // });
     },
-    buyMaticSmallBundle(numberofBundle) {
-      let amount = this.smallBundlePrice * numberofBundle;
-      let amt = amount.toString();
-      this.drizzleInstance.contracts['MaticEscrow'].methods[
-        'buySmallBundleMatic'
-      ].cacheSend(this.tokenIdMatic, {
-        value: amt,
-      });
+    buyMaticSmallBundle(numberofBundle, smallPrice, factor) {
+      let wei = factor * smallPrice
+      let amount = wei * numberofBundle;
+      let finalAmount = amount.toString();
+
+      console.log('final amount', finalAmount);
+      // this.drizzleInstance.contracts['MaticEscrow'].methods[
+      //   'buySmallBundleMatic'
+      // ].cacheSend(this.tokenIdMatic, {
+      //   value: finalAmount,
+      // });
     },
     checkNetwork(netId) {
       let id = parseInt(netId);

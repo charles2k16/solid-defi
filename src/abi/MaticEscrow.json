@@ -2,6 +2,71 @@
   "contractName": "MaticEscrow",
   "abi": [
     {
+      "inputs": [],
+      "name": "ETH_address",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "bigbundleEth",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "bigbundleMatic",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "bigbundleSolid",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "bigbundlepriceEth",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "address",
@@ -81,6 +146,19 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "ethmaticfactor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "uint256",
@@ -109,12 +187,51 @@
     {
       "inputs": [
         {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setBigBundlePriceEth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setBigBundleSolid",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "address",
           "name": "tokenID",
           "type": "address"
         }
       ],
       "name": "setEthAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setEthMaticFactor",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -143,6 +260,84 @@
       "name": "setSmallBundleMatic",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setSmallBundlePriceEth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setSmallBundleSolid",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "smallbundleEth",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "smallbundleMatic",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "smallbundleSolid",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "smallbundlepriceEth",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -185,107 +380,42 @@
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "bigbundleEth",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "bigbundleMatic",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "ETH_address",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "smallbundleEth",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "smallbundleMatic",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
     }
   ],
   "networks": {
     "3": {
       "links": {},
-      "address": "0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2",
+      "address": "0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8",
       "transactionHash": ""
     },
     "1": {
       "links": {},
-      "address": "0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2",
+      "address": "0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8",
       "transactionHash": ""
     },
     "4": {
       "links": {},
-      "address": "0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2",
+      "address": "0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8",
       "transactionHash": ""
     },
     "42": {
       "links": {},
-      "address": "0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2",
+      "address": "0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8",
       "transactionHash": ""
     },
     "80001": {
       "links": {},
-      "address": "0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2",
+      "address": "0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8",
       "transactionHash": ""
     },
     "137": {
       "links": {},
-      "address": "0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2",
+      "address": "0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8",
       "transactionHash": ""
     },
     "5777": {
       "links": {},
-      "address": "0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2",
+      "address": "0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8",
       "transactionHash": ""
     }
   }

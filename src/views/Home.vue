@@ -49,9 +49,7 @@
                     <div class="flex-justify-evenly-center">
                       <div
                         class="flex-row-center"
-                        :id="
-                          ethSmallStock == 'loading' ? 'bundle_logo' : 'none'
-                        "
+                        :id="smallBundle == 'loading' ? 'bundle_logo' : 'none'"
                       >
                         <img
                           src="../assets/images/eth.png"
@@ -66,13 +64,13 @@
                         <br />
                         <span
                           class="d-block stock"
-                          v-if="ethSmallStock == 'loading'"
+                          v-if="smallBundle == 'loading'"
                         >
-                          <span style="color: ">Connect to eth</span>
+                          <span style="color:#511bb7;">Connect to eth</span>
                         </span>
 
                         <span class="d-block stock" v-else
-                          >Stock: {{ ethSmallStock }}</span
+                          >Stock: {{ smallBundle }}</span
                         >
                         <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
@@ -81,13 +79,13 @@
                         <br />
                         <span
                           class="d-block stock"
-                          v-if="ethBigStock == 'loading'"
+                          v-if="bigBundle == 'loading'"
                         >
-                          <span style="color: red;">Connect to eth</span>
+                          <span style="color: #511bb7;">Connect to eth</span>
                         </span>
 
                         <span class="d-block stock" v-else
-                          >Stock: {{ ethBigStock }}</span
+                          >Stock: {{ bigBundle }}</span
                         >
                         <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
@@ -922,7 +920,7 @@
       </div>
 
       <template #footer>
-        <p>{{ allowanceValue }}</p>
+        <p>allowance {{ allowanceValue }}</p>
         <div class="con-footer">
           <vs-button
             @click="showConfirmBundle = false"
@@ -972,6 +970,11 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import {
+  getSmallBundlePriceEth,
+  getBigBundlePriceEth,
+  getEthMaticFactor,
+} from '@/api/contractGeters';
 import NavBar from '@/components/NavBar';
 import ConnectWallect from '../components/ConnectWallect';
 import Illustrations from './sections/Illustrations.vue';
@@ -980,45 +983,46 @@ import AboutSolid from './sections/AboutSolid.vue';
 import Community from './sections/Community.vue';
 import Footer from './sections/Footer.vue';
 
-const argsbigBundle = {
-  contractName: 'SolidEscrow',
-  method: 'bigbundle',
-  methodArgs: '',
-};
-const argsSmallBundle = {
-  contractName: 'SolidEscrow',
-  method: 'smallbundle',
-  methodArgs: '',
-};
-
-const argsSmallBundleEth = {
+const getSmallBundleEth = {
   contractName: 'MaticEscrow',
   method: 'smallbundleEth',
   methodArgs: '',
 };
 
-const argsBigBundleEth = {
+const getBigBundleEth = {
   contractName: 'MaticEscrow',
   method: 'bigbundleEth',
   methodArgs: '',
 };
-const argsSmallBundleMatic = {
+const getSmallBundleMatic = {
   contractName: 'MaticEscrow',
   method: 'smallbundleMatic',
   methodArgs: '',
 };
-const argsBigBundleMatic = {
+const getBigBundleMatic = {
   contractName: 'MaticEscrow',
   method: 'bigbundleMatic',
   methodArgs: '',
 };
-const argsBigBundleprice = {
+const getBigBundleprice = {
   contractName: 'SolidEscrow',
   method: 'bigbundleprice',
+  methodArgs: '',
 };
-const argsSmallBundleprice = {
+const getSmallBundleprice = {
   contractName: 'SolidEscrow',
   method: 'smallbundleprice',
+  methodArgs: '',
+};
+const getBigBundle = {
+  contractName: 'SolidEscrow',
+  method: 'bigbundle',
+  methodArgs: '',
+};
+const getSmallBundle = {
+  contractName: 'SolidEscrow',
+  method: 'smallbundle',
+  methodArgs: '',
 };
 
 export default {
@@ -1053,8 +1057,7 @@ export default {
       currentNetTab: 'eth',
       chain: null,
       serial: null,
-      bigBundlePrice: 135000000000000000,
-      smallBundlePrice: 72700000000000000,
+      escrowAddress: '0xd27372CEd67E4a290669bBFF5A0D19b8f02Ce8C8',
     };
   },
   created() {
@@ -1075,62 +1078,79 @@ export default {
       if (id == 80001 || id == 137) return false;
       else return true;
     },
-    ethSmallStock() {
+    ethmaticFactor() {
       return this.getContractData({
-        contract: argsbigBundle.contractName,
-        method: argsbigBundle.method,
+        contract: getEthMaticFactor.contractName,
+        method: getEthMaticFactor.method,
       });
     },
-    ethBigStock() {
+    smallBundlePriceEthMatic() {
       return this.getContractData({
-        contract: argsSmallBundle.contractName,
-        method: argsSmallBundle.method,
+        contract: getSmallBundlePriceEth.contractName,
+        method: getSmallBundlePriceEth.method,
+      });
+    },
+    bigBundlePriceEthMatic() {
+      return this.getContractData({
+        contract: getBigBundlePriceEth.contractName,
+        method: getBigBundlePriceEth.method,
+      });
+    },
+    bigBundle() {
+      return this.getContractData({
+        contract: getBigBundle.contractName,
+        method: getBigBundle.method,
+      });
+    },
+    smallBundle() {
+      return this.getContractData({
+        contract: getSmallBundle.contractName,
+        method: getSmallBundle.method,
       });
     },
     ethMaticSmallStock() {
       return this.getContractData({
-        contract: argsSmallBundleEth.contractName,
-        method: argsSmallBundleEth.method,
+        contract: getSmallBundleEth.contractName,
+        method: getSmallBundleEth.method,
       });
     },
     ethMaticBigStock() {
       return this.getContractData({
-        contract: argsBigBundleEth.contractName,
-        method: argsBigBundleEth.method,
+        contract: getBigBundleEth.contractName,
+        method: getBigBundleEth.method,
       });
     },
     maticSmallStock() {
       return this.getContractData({
-        contract: argsSmallBundleMatic.contractName,
-        method: argsSmallBundleMatic.method,
+        contract: getSmallBundleMatic.contractName,
+        method: getSmallBundleMatic.method,
       });
     },
     maticBigStock() {
       return this.getContractData({
-        contract: argsBigBundleMatic.contractName,
-        method: argsBigBundleMatic.method,
+        contract: getBigBundleMatic.contractName,
+        method: getBigBundleMatic.method,
       });
     },
     allowanceValue() {
-      let escrowAddress = '0xc43C2eB8DaC6394ab0Bb4BFC66fEBd351c59FFB2';
       let allowance = this.drizzleInstance.contracts['Erc20'].methods[
         'allowance'
-      ].cacheCall(this.activeAccount, escrowAddress);
+      ].cacheCall(this.activeAccount, this.escrowAddress);
 
       let value = this.contractInstances.Erc20.allowance[allowance].value;
 
       return value;
     },
-    priceBigBundle() {
+    bigBundlePrice() {
       return this.getContractData({
-        contract: argsBigBundleprice.contractName,
-        method: argsBigBundleprice.method,
+        contract: getBigBundleprice.contractName,
+        method: getBigBundleprice.method,
       });
     },
-    priceSmallBundle() {
+    smallBundlePrice() {
       return this.getContractData({
-        contract: argsSmallBundleprice.contractName,
-        method: argsSmallBundleprice.method,
+        contract: getSmallBundleprice.contractName,
+        method: getSmallBundleprice.method,
       });
     },
     // balance() {
@@ -1161,17 +1181,20 @@ export default {
   },
   methods: {
     connectToMaticContract() {
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundleEth);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsBigBundleEth);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsBigBundleMatic);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundleMatic);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundleEth);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundleEth);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundleMatic);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundleMatic);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getEthMaticFactor);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundlePriceEth);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundlePriceEth);
       console.log(this.contractInstances.MaticEscrow);
     },
     connectToEthContract() {
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsbigBundle);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundle);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsBigBundleprice);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', argsSmallBundleprice);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundle);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundle);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundleprice);
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundleprice);
     },
     buyTokens() {
       let chainId = this.drizzleInstance.web3._provider.networkVersion;
@@ -1180,7 +1203,6 @@ export default {
       else this.buyBundleTokens();
     },
     buyBundleTokens() {
-      console.log(this.priceSmallBundle);
       if (this.currentNetTab !== 'eth' && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain, please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction.';
@@ -1194,8 +1216,7 @@ export default {
       }
 
       if (this.currentNetTab == 'eth') {
-        console.log('eth', this.currentEthBundle);
-        this.getSerial(this.currentEthBundle);
+        this.getEthSerial(this.ethBundle);
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
           this.ethBundle
         }</b></span> ${
@@ -1211,7 +1232,7 @@ export default {
 
       if (this.currentNetTab == 'wEth') {
         console.log('weth', this.currentwEthBundle);
-        this.getSerial(this.wBundle);
+        this.getMaticSerial(this.wBundle);
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
           this.wBundle
         }</b></span> ${
@@ -1256,33 +1277,58 @@ export default {
           ? this.maticBundle
           : 0;
       if (this.percentageOff == 35 && this.currentNetTab == 'eth')
-        this.buyEthBigBundle(currentNumberofBundle);
+        this.buyEthBigBundle(currentNumberofBundle, this.bigBundlePrice);
       else if (this.percentageOff == 35 && this.currentNetTab == 'wEth')
-        this.buyWrapEthBigBundle(currentNumberofBundle);
+        this.buyWrapEthBigBundle(
+          currentNumberofBundle,
+          this.bigBundlePriceEthMatic
+        );
       else if (this.percentageOff == 35 && this.currentNetTab == 'matic')
-        this.buyMaticBigBundle(currentNumberofBundle);
+        this.buyMaticBigBundle(
+          currentNumberofBundle,
+          this.bigBundlePriceEthMatic,
+          this.ethmaticFactor
+        );
 
       // small bundles call
       if (this.percentageOff == 30 && this.currentNetTab == 'eth')
-        this.buyEthSmallBundle(currentNumberofBundle);
+        this.buyEthSmallBundle(currentNumberofBundle, this.smallBundlePrice);
       else if (this.percentageOff == 30 && this.currentNetTab == 'wEth')
-        this.buyWrapEthSmallBundle(currentNumberofBundle);
+        this.buyWrapEthSmallBundle(
+          currentNumberofBundle,
+          this.smallBundlePriceEthMatic
+        );
       else if (this.percentageOff == 30 && this.currentNetTab == 'matic')
-        this.buyMaticSmallBundle(currentNumberofBundle);
+        this.buyMaticSmallBundle(
+          currentNumberofBundle,
+          this.smallBundlePriceEthMatic,
+          this.ethmaticFactor
+        );
     },
     changeNetwork() {
       var a = parseInt(this.drizzleInstance.web3._provider.networkVersion);
       console.log(a);
       this.showWallects = true;
     },
-    getSerial(bundle) {
-      console.log(this.priceBigBundle);
+    getEthSerial(bundle) {
       let totalAmnt =
         this.percentageOff == 35
           ? this.bigBundlePrice * bundle
           : this.smallBundlePrice * bundle;
       let serial = totalAmnt / 1000000000000000000;
-      console.log(serial);
+      console.log('serial', serial);
+      this.serial = serial;
+    },
+    getMaticSerial(bundle) {
+      console.log('bigmatic', this.bigBundlePriceEthMatic);
+      // console.log('factor', this.ethmaticFactor);
+      console.log('smallmatic', this.smallBundlePriceEthMatic);
+      let totalAmnt =
+        this.percentageOff == 35
+          ? this.bigBundlePriceEthMatic * bundle
+          : this.smallBundlePriceEthMatic * bundle;
+      let serial = totalAmnt / 1000000000000000000;
+      console.log('serial', serial);
       this.serial = serial;
     },
     toEth(weiBalance) {
