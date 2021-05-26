@@ -920,7 +920,6 @@
       </div>
 
       <template #footer>
-        <p>allowance {{ allowanceValue }}</p>
         <div class="con-footer">
           <vs-button
             @click="showConfirmBundle = false"
@@ -933,7 +932,9 @@
           <div v-if="currentNetTab == 'wEth'">
             <vs-button
               v-if="
-                typeof allowanceValue == 'undefined ' || allowanceValue == null
+                typeof allowanceValue == 'undefined ' ||
+                  allowanceValue == null ||
+                  allowanceValue == 0
               "
               loading
               warn
@@ -1255,15 +1256,22 @@ export default {
 
       if (this.currentNetTab == 'matic') {
         console.log('matic', this.currentMaticBundle);
+        this.getMaticSerial(this.maticBundle);
+        let price =
+          this.percentageOff == 35
+            ? this.bigBundlePriceEthMatic
+            : this.smallBundlePriceEthMatic;
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
           this.maticBundle
         }</b></span> ${
           this.maticBundle > 1 ? 'bundles' : 'bundle'
         } at <span style="color:#cb8016"><b>${
           this.currentMaticBundle
-        }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> matic</b></span> at ${
-          this.percentageOff
-        }% off.`;
+        }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> ${this.getMaticAmount(
+          this.maticBundle,
+          price,
+          this.ethmaticFactor
+        )} Matic</b></span>`;
         this.showConfirmBundle = true;
       }
     },

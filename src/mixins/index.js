@@ -16,6 +16,7 @@ export default {
   },
   methods: {
     getMaticAmount(numberofBundle, price, factor) {
+      console.log('price', price)
       let wei = factor * price
       let amount = wei * numberofBundle;
       let finalAmount = amount / 1000000000000000000;
@@ -81,11 +82,11 @@ export default {
       let finalAmount = amount.toString();
 
       console.log('final amount', finalAmount);
-      // this.drizzleInstance.contracts['MaticEscrow'].methods[
-      //   'buyBigBundleMatic'
-      // ].cacheSend(this.tokenIdMatic, {
-      //   value: finalAmount,
-      // });
+      this.drizzleInstance.contracts['MaticEscrow'].methods[
+        'buyBigBundleMatic'
+      ].cacheSend(this.tokenIdMatic, {
+        value: finalAmount,
+      });
     },
     buyMaticSmallBundle(numberofBundle, smallPrice, factor) {
       let wei = factor * smallPrice
@@ -93,11 +94,11 @@ export default {
       let finalAmount = amount.toString();
 
       console.log('final amount', finalAmount);
-      // this.drizzleInstance.contracts['MaticEscrow'].methods[
-      //   'buySmallBundleMatic'
-      // ].cacheSend(this.tokenIdMatic, {
-      //   value: finalAmount,
-      // });
+      this.drizzleInstance.contracts['MaticEscrow'].methods[
+        'buySmallBundleMatic'
+      ].cacheSend(this.tokenIdMatic, {
+        value: finalAmount,
+      });
     },
     checkNetwork(netId) {
       let id = parseInt(netId);
