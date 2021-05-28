@@ -17,15 +17,37 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 .el-carousel__item:nth-child(2n).is-active {
   margin-left: 90px;
+  background-color: none;
+  opacity: 9
+}
+
+.el-carousel__item:nth-child(2n).is-active .bk_bun .vs-avatar-content{
+  background-color: transparent;
+  opacity: 9;
+}
+
+.el-carousel__item:nth-child(2n) .bk_bun .vs-avatar-content {
+  background-color: rgb(255, 255, 255) !important;
+  opacity: 0.6;
 }
 
 .el-carousel__item:nth-child(2n+1).is-active {
   margin-left: -50px;
 }
 
+.el-carousel__item:nth-child(2n+1).is-active .bk_bun .vs-avatar-content{
+  background-color: none;
+  opacity: 9;
+}
+
 .el-carousel__item:nth-child(2n+1) {
   margin-left: 40px;
   margin-right: 40px;
+}
+
+.el-carousel__item:nth-child(2n+1) .bk_bun .vs-avatar-content {
+  background-color: rgb(255, 255, 255) !important;
+  opacity: 0.6;
 }
 
 .el-carousel__item--card {

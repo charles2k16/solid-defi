@@ -12,7 +12,7 @@
         <img src="../assets/images/sld.png" alt="logo" width="50px" />
       </template>
       <template #right>
-        <vs-button blank style="font-size: 0.9rem" class="nav_button">
+        <vs-button style="font-size: 0.9rem" class="nav_button">
           <b>Read Whitepaper</b>
         </vs-button>
       </template>

@@ -5,7 +5,7 @@
     <div class="hero">
       <div class="wrap">
         <div class="center mt-50">
-          <h1 class="lead_head_text">Get your SLD now</h1>
+          <h1 class="lead_head_text">Get your SOLID now</h1>
         </div>
 
         <div class="d-flex-center mt-30">
@@ -18,10 +18,8 @@
             style="font-size: 15px;color:whitesmoke;"
             transparent
           >
-            View SLD on Etherscan
+            View SOLID on Etherscan
           </vs-button>
-
-          <span style="color:whitesmoke;">0</span>
         </div>
       </div>
 
@@ -44,7 +42,7 @@
                 <div class="tab">
                   <button
                     class="tablinks active"
-                    @click="openCity($event, 'eth')"
+                    @click="openTab($event, 'eth')"
                   >
                     <div class="flex-justify-evenly-center">
                       <div
@@ -93,7 +91,7 @@
                   </button>
                   <button
                     class="tablinks opacity"
-                    @click="openCity($event, 'wEth')"
+                    @click="openTab($event, 'wEth')"
                   >
                     <div class="flex-justify-evenly-center">
                       <div
@@ -150,7 +148,7 @@
                   </button>
                   <button
                     class="tablinks opacity"
-                    @click="openCity($event, 'matic')"
+                    @click="openTab($event, 'matic')"
                   >
                     <div class="flex-justify-evenly-center">
                       <div
@@ -717,60 +715,6 @@
         class="wrap"
         style="z-index: 2; position:relative; margin-top:-250px;"
       >
-        <!-- <vs-card-group>
-          <vs-card>
-            <template #img>
-              <img src="../assets/images/nft.png" alt="blog" />
-            </template>
-            <template #title>
-              <h3>SOLID NFTs</h3>
-            </template>
-
-            <template #text>
-              <p>
-                Earn NFT prizes for staking your SLD tokens
-              </p>
-              <vs-button class="blog_btn" style="font-size: 1rem;">
-                <b>VIEW</b>
-              </vs-button>
-            </template>
-          </vs-card>
-
-          <vs-card>
-            <template #title>
-              <h3>SOLID Governance.</h3>
-            </template>
-            <template #img>
-              <img src="../assets/images/nft.png" alt="blog" />
-            </template>
-            <template #text>
-              <p>
-                SLD Token holder can participate in xyz decisions by voting with
-                their voting powers proportional ...
-              </p>
-              <vs-button class="up_btn" style="font-size: 1rem;">
-                <b>UPCOMING</b>
-              </vs-button>
-            </template>
-          </vs-card>
-
-          <vs-card>
-            <template #title>
-              <h3>SOLID Rewards</h3>
-            </template>
-            <template #img>
-              <img src="../assets/images/nft.png" alt="blog" />
-            </template>
-            <template #text>
-              <p>
-                Stake SLD and provide liquidity on xyz for rewards.
-              </p>
-              <vs-button class="up_btn" style="font-size: 1rem;">
-                <b>UPCOMING</b>
-              </vs-button>
-            </template>
-          </vs-card>
-        </vs-card-group> -->
         <vs-row>
           <vs-col :w="4" :xs="12" :sm="12">
             <div class="blog">
@@ -778,7 +722,7 @@
               <div class="blog_content">
                 <h3>SOLID NFTs</h3>
                 <p>
-                  Earn NFT prizes for staking your SLD tokens
+                  Earn NFT prizes for staking your SOLID tokens
                 </p>
                 <vs-button class="up_btn" style="font-size: 1rem;">
                   <b>UPCOMING</b>
@@ -794,7 +738,7 @@
               <div class="blog_content">
                 <h3>SOLID Governance</h3>
                 <p>
-                  SLD Token holder can participate in xyz decisions by voting
+                  SOLID Token holder can participate in xyz decisions by voting
                   with their voting powers proportional ...
                 </p>
                 <vs-button class="up_btn" style="font-size: 1rem;">
@@ -811,7 +755,7 @@
               <div class="blog_content">
                 <h3>SOLID Rewards</h3>
                 <p>
-                  Stake SLD and provide liquidity on xyz for rewards.
+                  Stake SOLID and provide liquidity on xyz for rewards.
                 </p>
                 <vs-button class="up_btn" style="font-size: 1rem;">
                   <b>UPCOMING</b>
@@ -820,14 +764,6 @@
             </div>
           </vs-col>
         </vs-row>
-
-        <br /><br />
-        <vs-button transparent color="#5b3cc4">
-          <b>READ THE WHITEPAPER</b>
-          <span class="material-icons-outlined ml-10">
-            arrow_right_alt
-          </span>
-        </vs-button>
       </div>
 
       <AboutSolid />
@@ -1041,7 +977,7 @@ export default {
     return {
       confirmTitle: '',
       showConfirmBundle: false,
-      percentageOff: 35,
+      percentageOff: 37,
       active: 0,
       email: '',
       showWallects: false,
@@ -1258,7 +1194,7 @@ export default {
         console.log('matic', this.currentMaticBundle);
         this.getMaticSerial(this.maticBundle);
         let price =
-          this.percentageOff == 35
+          this.percentageOff == 37
             ? this.bigBundlePriceEthMatic
             : this.smallBundlePriceEthMatic;
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
@@ -1284,14 +1220,14 @@ export default {
           : this.currentNetTab == 'matic'
           ? this.maticBundle
           : 0;
-      if (this.percentageOff == 35 && this.currentNetTab == 'eth')
+      if (this.percentageOff == 37 && this.currentNetTab == 'eth')
         this.buyEthBigBundle(currentNumberofBundle, this.bigBundlePrice);
-      else if (this.percentageOff == 35 && this.currentNetTab == 'wEth')
+      else if (this.percentageOff == 37 && this.currentNetTab == 'wEth')
         this.buyWrapEthBigBundle(
           currentNumberofBundle,
           this.bigBundlePriceEthMatic
         );
-      else if (this.percentageOff == 35 && this.currentNetTab == 'matic')
+      else if (this.percentageOff == 37 && this.currentNetTab == 'matic')
         this.buyMaticBigBundle(
           currentNumberofBundle,
           this.bigBundlePriceEthMatic,
@@ -1320,7 +1256,7 @@ export default {
     },
     getEthSerial(bundle) {
       let totalAmnt =
-        this.percentageOff == 35
+        this.percentageOff == 37
           ? this.bigBundlePrice * bundle
           : this.smallBundlePrice * bundle;
       let serial = totalAmnt / 1000000000000000000;
@@ -1332,7 +1268,7 @@ export default {
       // console.log('factor', this.ethmaticFactor);
       console.log('smallmatic', this.smallBundlePriceEthMatic);
       let totalAmnt =
-        this.percentageOff == 35
+        this.percentageOff == 37
           ? this.bigBundlePriceEthMatic * bundle
           : this.smallBundlePriceEthMatic * bundle;
       let serial = totalAmnt / 1000000000000000000;
@@ -1359,13 +1295,13 @@ export default {
             "Maximum bundle can't exceed 3"
           );
           this.currentEthBundle =
-            this.percentageOff == 35
+            this.percentageOff == 37
               ? 80000 * this.ethBundle
               : 40000 * this.ethBundle;
         } else {
           this.ethBundle++;
           this.currentEthBundle =
-            this.percentageOff == 35
+            this.percentageOff == 37
               ? 80000 * this.ethBundle
               : 40000 * this.ethBundle;
         }
@@ -1380,13 +1316,13 @@ export default {
             "Maximum bundle can't exceed 3"
           );
           this.currentwEthBundle =
-            this.percentageOff == 35
+            this.percentageOff == 37
               ? 80000 * this.wBundle
               : 40000 * this.wBundle;
         } else {
           this.wBundle++;
           this.currentwEthBundle =
-            this.percentageOff == 35
+            this.percentageOff == 37
               ? 80000 * this.wBundle
               : 40000 * this.wBundle;
         }
@@ -1401,13 +1337,13 @@ export default {
             "Maximum bundle can't exceed 3"
           );
           this.currentMaticBundle =
-            this.percentageOff == 35
+            this.percentageOff == 37
               ? 80000 * this.maticBundle
               : 40000 * this.maticBundle;
         } else {
           this.maticBundle++;
           this.currentMaticBundle =
-            this.percentageOff == 35
+            this.percentageOff == 37
               ? 80000 * this.maticBundle
               : 40000 * this.maticBundle;
         }
@@ -1422,11 +1358,11 @@ export default {
             'Bundle Size',
             "Maximum bundle can't be less than 1"
           );
-          this.currentEthBundle = this.percentageOff == 35 ? 80000 : 40000;
+          this.currentEthBundle = this.percentageOff == 37 ? 80000 : 40000;
         } else {
           this.ethBundle--;
           this.currentEthBundle =
-            this.percentageOff == 35
+            this.percentageOff == 37
               ? this.currentEthBundle - 80000
               : this.currentEthBundle - 40000;
         }
@@ -1440,11 +1376,11 @@ export default {
             'Bundle Size',
             "Maximum bundle can't be less than 1"
           );
-          this.currentwEthBundle = this.percentageOff == 35 ? 80000 : 40000;
+          this.currentwEthBundle = this.percentageOff == 37 ? 80000 : 40000;
         } else {
           this.wBundle--;
           this.currentwEthBundle =
-            this.percentageOff == 35
+            this.percentageOff == 37
               ? this.currentwEthBundle - 80000
               : this.currentwEthBundle - 40000;
         }
@@ -1458,11 +1394,11 @@ export default {
             'Bundle Size',
             "Maximum bundle can't be less than 1"
           );
-          this.currentMaticBundle = this.percentageOff == 35 ? 80000 : 40000;
+          this.currentMaticBundle = this.percentageOff == 37 ? 80000 : 40000;
         } else {
           this.maticBundle--;
           this.currentMaticBundle =
-            this.percentageOff == 35
+            this.percentageOff == 37
               ? this.currentMaticBundle - 80000
               : this.currentMaticBundle - 40000;
         }
@@ -1473,20 +1409,21 @@ export default {
       this.wBundle = 1;
       this.maticBundle = 1;
       let bb = r;
-      this.percentageOff = bb == 1 ? 30 : 35;
+      this.percentageOff = bb == 1 ? 30 : 37;
       this.currentEthBundle = bb == 1 ? 40000 : 80000;
       this.currentwEthBundle = bb == 1 ? 40000 : 80000;
       this.currentMaticBundle = bb == 1 ? 40000 : 80000;
+      this.addAnimate();
     },
     setActiveItem() {
       this.$refs.carouseleth.setActiveItem('bigBundle');
       this.$refs.carouselweth.setActiveItem('bigBundle');
       this.$refs.carouselmatic.setActiveItem('bigBundle');
     },
-    openCity(evt, cityName) {
+    openTab(evt, cityName) {
       this.currentNetTab = cityName;
       this.setActiveItem();
-      this.percentageOff = 35;
+      this.percentageOff = 37;
       if ((cityName == 'wEth' || cityName == 'matic') && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain Please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction';

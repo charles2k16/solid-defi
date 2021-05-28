@@ -57,7 +57,6 @@
         <div>
           <video
             src="../../assets/video/animation.mp4"
-            width="100%"
             class="gif_anime"
             autoplay
             loop
@@ -65,6 +64,14 @@
         </div>
       </vs-col>
     </vs-row>
+
+    <br /><br />
+    <vs-button transparent color="#5b3cc4">
+      <b>READ THE WHITEPAPER</b>
+      <span class="material-icons-outlined ml-10">
+        arrow_right_alt
+      </span>
+    </vs-button>
   </div>
 </template>
 

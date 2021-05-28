@@ -9,7 +9,7 @@
               Community
             </h2>
             <p class="lead_text mt-15">
-              You can be the first to know about SLD token. <br />
+              You can be the first to know about SOLID token. <br />
               Don’t miss the opportunity !
             </p>
           </div>

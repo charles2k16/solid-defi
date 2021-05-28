@@ -2,7 +2,7 @@
   <vs-row class="mt-100">
     <vs-col :w="7" :xs="12" :sm="12">
       <span class="insights">
-        SLD TOKEN
+        SOLID TOKEN
       </span>
 
       <div class="mt-20">
@@ -12,7 +12,7 @@
         </h1>
 
         <p class="lead_text mt-20">
-          The SLD Token. A fungible ERC-20 utility token built on Ethereum.
+          The SOLID Token. A fungible ERC-20 utility token built on Ethereum.
           <br />
           Leave us your email here to be the first one to get new information.
         </p>
@@ -44,8 +44,12 @@
       </div>
     </vs-col>
     <vs-col :w="5" :xs="12" :sm="12">
-      <div class="promo_div2"></div>
-      <!-- <img src="../assets/images/game.png" alt="" /> -->
+      <!-- <div class="promo_div2"></div> -->
+      <img
+        src="../../assets/images/SLD_promo_pic.webp"
+        alt="promo"
+        width="470px"
+      />
     </vs-col>
   </vs-row>
 </template>

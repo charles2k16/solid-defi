@@ -15,6 +15,21 @@ export default {
     }
   },
   methods: {
+    addAnimate() {
+      let i, percentage
+      percentage = document.getElementsByClassName('percentage_off');
+
+      for (i = 0; i < percentage.length; i++) {
+        percentage[i].classList.add('animate');
+      }
+
+      setTimeout(function () {
+        for (i = 0; i < percentage.length; i++) {
+          percentage[i].classList.remove('animate');
+        }
+      }, 4000);
+
+    },
     getMaticAmount(numberofBundle, price, factor) {
       let wei = factor * price
       let amount = wei * numberofBundle;
