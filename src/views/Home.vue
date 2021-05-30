@@ -363,6 +363,20 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="notify_div" v-if="showChainWarning">
+                    <div class="flex-justify-between-center">
+                      <h4>Warning</h4>
+                      <span
+                        class="material-icons-sharp"
+                        @click="showChainWarning = false"
+                      >
+                        cancel
+                      </span>
+                    </div>
+
+                    <b><p class="notify_txt mt-5" v-html="title"></p> </b>
+                  </div>
                 </div>
 
                 <div id="wEth" class="tabcontent">
@@ -478,7 +492,7 @@
 
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
+                            style="color:#B6B6B6;margin:0 -5px 0 10px;font-size:0.8rem;"
                             v-if="onEthNetwork"
                             >You're <br />
                             <span style="color:#DDDBEC;">
@@ -521,12 +535,26 @@
 
                         <span class="approve_btn" @click="buyTokens">
                           <b>BUY</b>
-                          <p style="font-size: 12px;margin-top:-1px;">
+                          <p style="font-size: 11px;margin-top:-1px;">
                             Approve first
                           </p>
                         </span>
                       </div>
                     </div>
+                  </div>
+
+                  <div class="notify_div" v-if="showChainWarning">
+                    <div class="flex-justify-between-center">
+                      <h4>Warning</h4>
+                      <span
+                        class="material-icons-sharp"
+                        @click="showChainWarning = false"
+                      >
+                        cancel
+                      </span>
+                    </div>
+
+                    <b><p class="notify_txt mt-5" v-html="title"></p> </b>
                   </div>
                 </div>
 
@@ -694,6 +722,20 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="notify_div" v-if="showChainWarning">
+                    <div class="flex-justify-between-center">
+                      <h4>Warning</h4>
+                      <span
+                        class="material-icons-sharp"
+                        @click="showChainWarning = false"
+                      >
+                        cancel
+                      </span>
+                    </div>
+
+                    <b><p class="notify_txt mt-5" v-html="title"></p> </b>
+                  </div>
                 </div>
               </div>
             </vs-col>
@@ -703,6 +745,52 @@
     </div>
     <div class="ilustrations">
       <div class="wrap">
+        <vs-row class="mt-50">
+          <vs-col :w="5" :xs="10" :sm="10">
+            <div class="flex-align-center" v-if="onEthNetwork">
+              <h1 class="yellow" v-if="bigBundle !== 'loading'">
+                {{ getEthBalance(ethbalance) }} token sold in presale
+              </h1>
+            </div>
+
+            <div class="flex-align-center" v-else>
+              <h1 class="yellow" v-if="ethMaticSmallStock !== 'loading'">
+                {{ getMaticBalance(maticbalance) }} token sold in presale
+              </h1>
+            </div>
+          </vs-col>
+          <vs-col :w="2" :xs="2" :sm="2">
+            <div
+              class="flex-align-center"
+              style="text-align:center;margin-left:40px;"
+            >
+              <div class="rule"></div>
+            </div>
+          </vs-col>
+          <vs-col :w="5" :xs="12" :sm="12">
+            <div v-if="onEthNetwork">
+              <div class="progress">
+                <div
+                  class="progress_token"
+                  :style="{ width: `${ethPercentPurchased}%` }"
+                ></div>
+              </div>
+
+              <p class="mt-20 p_tokens">14M Tokens</p>
+            </div>
+
+            <div v-else>
+              <div class="progress">
+                <div
+                  class="progress_token"
+                  :style="{ width: `${maticPercentPurchased}%` }"
+                ></div>
+              </div>
+
+              <p class="mt-20 p_tokens">16M Tokens</p>
+            </div>
+          </vs-col>
+        </vs-row>
         <Illustrations />
         <br />
         <Subscribe />
@@ -715,55 +803,7 @@
         class="wrap"
         style="z-index: 2; position:relative; margin-top:-250px;"
       >
-        <vs-row>
-          <vs-col :w="4" :xs="12" :sm="12">
-            <div class="blog">
-              <div class="blog_img"></div>
-              <div class="blog_content">
-                <h3>SOLID NFTs</h3>
-                <p>
-                  Earn NFT prizes for staking your SOLID tokens
-                </p>
-                <vs-button class="up_btn" style="font-size: 1rem;">
-                  <b>UPCOMING</b>
-                </vs-button>
-              </div>
-            </div>
-          </vs-col>
-          <vs-col :w="4" :xs="12" :sm="12">
-            <div class="blog">
-              <div class="blog_img">
-                <!-- <img src="../assets/images/nft.png" alt="blog" /> -->
-              </div>
-              <div class="blog_content">
-                <h3>SOLID Governance</h3>
-                <p>
-                  SOLID Token holder can participate in xyz decisions by voting
-                  with their voting powers proportional ...
-                </p>
-                <vs-button class="up_btn" style="font-size: 1rem;">
-                  <b>UPCOMING</b>
-                </vs-button>
-              </div>
-            </div>
-          </vs-col>
-          <vs-col :w="4" :xs="12" :sm="12">
-            <div class="blog">
-              <div class="blog_img">
-                <!-- <img src="../assets/images/nft.png" alt="blog" /> -->
-              </div>
-              <div class="blog_content">
-                <h3>SOLID Rewards</h3>
-                <p>
-                  Stake SOLID and provide liquidity on xyz for rewards.
-                </p>
-                <vs-button class="up_btn" style="font-size: 1rem;">
-                  <b>UPCOMING</b>
-                </vs-button>
-              </div>
-            </div>
-          </vs-col>
-        </vs-row>
+        <BlogSection />
       </div>
 
       <AboutSolid />
@@ -891,76 +931,32 @@
         </div>
       </template>
     </vs-dialog>
-
-    <vs-dialog v-model="showNotifyDialog" width="250px" class="notify_dialog">
-      <template #header>
-        <h4 class="not-margin">
-          Warning
-        </h4>
-      </template>
-      <div>
-        <b><p class="notify_txt" v-html="title"></p> </b>
-      </div>
-    </vs-dialog>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import {
+  getSmallBundleEth,
+  getBigBundleEth,
   getSmallBundlePriceEth,
   getBigBundlePriceEth,
   getEthMaticFactor,
+  getSmallBundleMatic,
+  getBigBundleMatic,
+  getBigBundle,
+  getSmallBundle,
+  getSmallBundleprice,
+  getBigBundleprice,
 } from '@/api/contractGeters';
 import NavBar from '@/components/NavBar';
 import ConnectWallect from '../components/ConnectWallect';
 import Illustrations from './sections/Illustrations.vue';
+import BlogSection from './sections/BlogSection.vue';
 import Subscribe from './sections/Subscribe.vue';
 import AboutSolid from './sections/AboutSolid.vue';
 import Community from './sections/Community.vue';
 import Footer from './sections/Footer.vue';
-
-const getSmallBundleEth = {
-  contractName: 'MaticEscrow',
-  method: 'smallbundleEth',
-  methodArgs: '',
-};
-
-const getBigBundleEth = {
-  contractName: 'MaticEscrow',
-  method: 'bigbundleEth',
-  methodArgs: '',
-};
-const getSmallBundleMatic = {
-  contractName: 'MaticEscrow',
-  method: 'smallbundleMatic',
-  methodArgs: '',
-};
-const getBigBundleMatic = {
-  contractName: 'MaticEscrow',
-  method: 'bigbundleMatic',
-  methodArgs: '',
-};
-const getBigBundleprice = {
-  contractName: 'SolidEscrow',
-  method: 'bigbundleprice',
-  methodArgs: '',
-};
-const getSmallBundleprice = {
-  contractName: 'SolidEscrow',
-  method: 'smallbundleprice',
-  methodArgs: '',
-};
-const getBigBundle = {
-  contractName: 'SolidEscrow',
-  method: 'bigbundle',
-  methodArgs: '',
-};
-const getSmallBundle = {
-  contractName: 'SolidEscrow',
-  method: 'smallbundle',
-  methodArgs: '',
-};
 
 export default {
   name: 'Home',
@@ -968,6 +964,7 @@ export default {
     NavBar,
     ConnectWallect,
     Illustrations,
+    BlogSection,
     Subscribe,
     AboutSolid,
     Community,
@@ -975,6 +972,7 @@ export default {
   },
   data() {
     return {
+      tokenSale: 0,
       confirmTitle: '',
       showConfirmBundle: false,
       percentageOff: 37,
@@ -989,12 +987,14 @@ export default {
       currentMaticBundle: 80000,
       wBundle: 1,
       currentwEthBundle: 80000,
-      showNotifyDialog: false,
+      showChainWarning: false,
       title: '',
       currentNetTab: 'eth',
       chain: null,
       serial: null,
       escrowAddress: '0x5011D48D4265b6fB8228600a111b2fAa1fDA3139',
+      ethSolidEscrowAddress: '0x27662EC00573DcA447F5F2c50Af1724B63679b29',
+      maticEscrowAddress: '0x5011D48D4265b6fB8228600a111b2fAa1fDA3139',
     };
   },
   created() {
@@ -1070,11 +1070,12 @@ export default {
       });
     },
     allowanceValue() {
-      let allowance = this.drizzleInstance.contracts['Erc20'].methods[
+      let allowance = this.drizzleInstance.contracts['WrapEthErc20'].methods[
         'allowance'
       ].cacheCall(this.activeAccount, this.escrowAddress);
 
-      let value = this.contractInstances.Erc20.allowance[allowance].value;
+      let value = this.contractInstances.WrapEthErc20.allowance[allowance]
+        .value;
 
       return value;
     },
@@ -1090,23 +1091,29 @@ export default {
         method: getSmallBundleprice.method,
       });
     },
-    // balance() {
-    //   let erc20Address = '0x0F26BE4f5A74d6FAe6A45af0EAf1CB97AE8Cd0bA';
-    //   let balance = this.drizzleInstance.contracts['Erc20'].methods[
-    //     'balanceOf'
-    //   ].cacheCall(erc20Address);
+    ethbalance() {
+      let balance = this.drizzleInstance.contracts['EthErc20'].methods[
+        'balanceOf'
+      ].cacheCall(this.ethSolidEscrowAddress);
 
-    //   console.log(balance);
+      console.log(balance);
+      let value = this.contractInstances.EthErc20.balanceOf[balance].value;
 
-    //   let value = this.contractInstances.Erc20.balanceOf[balance].value;
-    //   let fvalue = value !== 'undefined' ? value : 'value';
+      return value;
+    },
+    maticbalance() {
+      let balance = this.drizzleInstance.contracts['MaticErc20'].methods[
+        'balanceOf'
+      ].cacheCall(this.maticEscrowAddress);
 
-    //   return fvalue;
-    // },
+      console.log(balance);
+      let value = this.contractInstances.MaticErc20.balanceOf[balance].value;
+
+      return value;
+    },
   },
   watch: {
     chain: function(netId) {
-      console.log('chain changed');
       if (netId == 80001 || netId == 137) {
         console.log('connecting to matic');
         this.connectToMaticContract();
@@ -1125,7 +1132,6 @@ export default {
       this.$store.dispatch('drizzle/REGISTER_CONTRACT', getEthMaticFactor);
       this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundlePriceEth);
       this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundlePriceEth);
-      console.log(this.contractInstances.MaticEscrow);
     },
     connectToEthContract() {
       this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundle);
@@ -1143,12 +1149,12 @@ export default {
       if (this.currentNetTab !== 'eth' && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain, please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction.';
-        this.showNotifyDialog = true;
+        this.showChainWarning = true;
         return;
       } else if (this.currentNetTab == 'eth' && !this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Matic</span> chain, please switch to <span style="color:#5772ec;">Ethereum Chain</span> for this transaction.';
-        this.showNotifyDialog = true;
+        this.showChainWarning = true;
         return;
       }
 
@@ -1427,11 +1433,11 @@ export default {
       if ((cityName == 'wEth' || cityName == 'matic') && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain Please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction';
-        this.showNotifyDialog = true;
+        this.showChainWarning = true;
       } else if (cityName == 'eth' && !this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Matic</span> chain Please switch to <span style="color:#5772ec;">Ethereum Chain</span> for this transaction';
-        this.showNotifyDialog = true;
+        this.showChainWarning = true;
       }
       let i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName('tabcontent');

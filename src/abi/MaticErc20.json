@@ -1,5 +1,5 @@
 {
-  "contractName": "Erc20",
+  "contractName": "MaticErc20",
   "abi": [
     {
       "inputs": [
@@ -289,34 +289,29 @@
     }
   ],
   "networks": {
-    "3": {
-      "links": {},
-      "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
-      "transactionHash": ""
-    },
-    "1": {
-      "links": {},
-      "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
-      "transactionHash": ""
-    },
-    "4": {
-      "links": {},
-      "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
-      "transactionHash": ""
-    },
-    "42": {
-      "links": {},
-      "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
-      "transactionHash": ""
-    },
     "80001": {
       "links": {},
-      "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+      "address": "0x498E0A753840075c4925442D4d8863eEe49D61E2",
       "transactionHash": ""
     },
     "137": {
       "links": {},
-      "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+      "address": "0x498E0A753840075c4925442D4d8863eEe49D61E2",
+      "transactionHash": ""
+    },
+    "1": {
+      "links": {},
+      "address": "0x498E0A753840075c4925442D4d8863eEe49D61E2",
+      "transactionHash": ""
+    },
+    "4": {
+      "links": {},
+      "address": "0x498E0A753840075c4925442D4d8863eEe49D61E2",
+      "transactionHash": ""
+    },
+    "42": {
+      "links": {},
+      "address": "0x498E0A753840075c4925442D4d8863eEe49D61E2",
       "transactionHash": ""
     }
   }

@@ -12,9 +12,42 @@ export default {
       tokenIdMatic: '0x498E0A753840075c4925442D4d8863eEe49D61E2',
       tokenIdEth: '0x5011d48d4265b6fb8228600a111b2faa1fda3139',
       wrapEthAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+      ethTotalToken: 14000000,
+      maticTotalToken: 16000000,
+      ethPercentPurchased: 0,
+      maticPercentPurchased: 0
     }
   },
   methods: {
+    // getEthPercentage(currentBalance) {
+    //   let getBalance = this.getEthBalance(currentBalance)
+    //   let percentPurchased = (100 * getBalance) / this.ethTotalToken;
+
+    //   return percentPurchased;
+    // },
+    // getMaticPercentage(currentBalance) {
+    //   let getBalance = this.getMaticBalance(currentBalance)
+    //   let percentPurchased = (100 * getBalance) / this.maticTotalToken;
+
+    //   return percentPurchased;
+    // },
+    getEthBalance(currentBalance) {
+      let balanceOf = this.ethTotalToken;
+      let currBalance = this.getSerial(currentBalance)
+      let balance = balanceOf - currBalance
+      this.ethPercentPurchased = (100 * balance) / this.ethTotalToken;
+
+      return balance;
+    },
+    getMaticBalance(currentBalance) {
+      let balanceOf = this.maticTotalToken
+      let currBalance = this.getSerial(currentBalance)
+      let balance = balanceOf - currBalance
+      console.log(balance)
+      this.maticPercentPurchased = (100 * balance) / this.maticTotalToken;
+
+      return balance;
+    },
     addAnimate() {
       let i, percentage
       percentage = document.getElementsByClassName('percentage_off');
@@ -28,7 +61,6 @@ export default {
           percentage[i].classList.remove('animate');
         }
       }, 4000);
-
     },
     getMaticAmount(numberofBundle, price, factor) {
       let wei = factor * price
@@ -36,11 +68,15 @@ export default {
       let finalAmount = amount / 1000000000000000000;
       return finalAmount;
     },
+    getSerial(amount) {
+      let finalAmount = amount / 1000000000000000000;
+      return finalAmount;
+    },
     approveTrans() {
       let amount = 10000000000000000000;
       let amt = amount.toString();
 
-      this.drizzleInstance.contracts['Erc20'].methods[
+      this.drizzleInstance.contracts['WrapEthErc20'].methods[
         'approve'
       ].cacheSend(this.escrowAddress, amt);
     },

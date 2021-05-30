@@ -33,6 +33,8 @@ export const getBigBundleEth = {
   method: 'bigbundleEth',
   methodArgs: '',
 };
+
+// matic chain 
 export const getSmallBundleMatic = {
   contractName: 'MaticEscrow',
   method: 'smallbundleMatic',
@@ -43,7 +45,6 @@ export const getBigBundleMatic = {
   method: 'bigbundleMatic',
   methodArgs: '',
 };
-
 
 //  eth chain
 export const getBigBundleprice = {

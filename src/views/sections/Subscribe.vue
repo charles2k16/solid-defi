@@ -44,9 +44,8 @@
       </div>
     </vs-col>
     <vs-col :w="5" :xs="12" :sm="12">
-      <!-- <div class="promo_div2"></div> -->
       <img
-        src="../../assets/images/SLD_promo_pic.webp"
+        src="../../assets/images/sld_promo_pic.png"
         alt="promo"
         width="470px"
       />

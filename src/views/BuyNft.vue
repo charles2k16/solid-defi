@@ -9,7 +9,7 @@
           <vs-col :w="7" :xs="12" :sm="12">
             <div class="nft_img">
               <img
-                src="../assets/images/sld_promo_pic_02.png"
+                src="../assets/images/sld_promo_pic.png"
                 alt="promo"
                 width="470px"
               />
