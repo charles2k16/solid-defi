@@ -2,19 +2,20 @@
   <div class="main_container">
     <NavBar />
     <div id="overlay">
-      <br /><br /><br />
-      <div class="center mt-100">
-        <h1>Countdown to<br /></h1>
-        <br />
-        <br />
-        <h2>Community Sale!</h2>
-      </div>
-      <br /><br /><br />
-      <div class="sales">
-        <flip-countdown
-          deadline="2021-06-11 00:00:00"
-          class="timerr"
-        ></flip-countdown>
+      <div class="overlay_div">
+        <div class="center">
+          <h1>Countdown to<br /></h1>
+          <br />
+          <br />
+          <h2>Community Sale!</h2>
+        </div>
+        <br /><br /><br />
+        <div class="sales">
+          <flip-countdown
+            deadline="2021-06-11 00:00:00"
+            class="timerr"
+          ></flip-countdown>
+        </div>
       </div>
     </div>
     <div class="hero">

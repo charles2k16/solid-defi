@@ -827,6 +827,14 @@ hr.sales_hr {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+/* remove after community */
+/* .caro_image-1 {
+  width: 100%;
+  opacity: 0.1;
+  background: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+} */
 .bk_bun {
   background:#EEEEEE;
   margin-top:-5px;
@@ -1001,7 +1009,12 @@ hr.sales_hr {
   background-color: rgba(1, 1, 10, 0.9);
   z-index: 2;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 #overlay .sales {
   background: rgb(245, 240, 240);
   padding: 25px 15px;
