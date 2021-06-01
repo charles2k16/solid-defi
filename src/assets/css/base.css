@@ -455,9 +455,18 @@ hr.sales_hr {
 }
 .progress_token {
   background: linear-gradient(315deg, #e1be24, #FCB42A);
-  height: 20px;
-  border-radius: 40px;
+  height: 23px;
+  border-radius: 10px;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.progress_token span {
+  color: rgb(114, 110, 110);
+  font-weight: 600;
+  font-size: 11px;
+  padding: 2px;
 }
 .progress_time {
   background: linear-gradient(315deg, #6D21DF, #501BC4);
@@ -531,19 +540,23 @@ hr.sales_hr {
 }
 .flip-card__top[data-v-78efe7f6], .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__back[data-v-78efe7f6]::before, .flip-card__back[data-v-78efe7f6]::after {
   color: #6649FB !important;
-  height: 0.70em !important;
+  /* height: 0.70em !important; */
+  height: 0.80em !important;
   background: #1e2257 !important;
-  width: 1.5em !important;
+  /* width: 1.5em !important; */
+  width: 1.9em !important;
 }
 .flip-card[data-v-78efe7f6] {
   line-height: 1 !important;
 }
 .flip-card[data-v-78efe7f6] {
-  font-size: 2.3rem !important;
+  /* font-size: 2.3rem !important; */
+  font-size: 2.6rem !important;
 }
 .flip-clock__slot[data-v-78efe7f6] {
   font-size: 0.8rem !important;
-  color: rgb(201, 193, 193) !important;
+  color: rgb(104, 101, 101) !important;
+  font-weight: 500;
 }
 .partner_div {
   margin-top:64px;
@@ -660,6 +673,7 @@ hr.sales_hr {
   align-items: center;
   justify-content: space-around;
   width: 338px;
+  height: 54px;
   padding: 2px 2px 2px 7px;
   border-radius: 45px;
   margin-bottom: 40.5px;
@@ -671,8 +685,9 @@ hr.sales_hr {
   -7px -7px 10px #ffffff, inset -20px -20px 20px #0f102425;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 338px;
+  height: 54px;
   padding: 7px 2px;
   border-radius: 45px;
   margin-bottom: 40.5px;
@@ -700,7 +715,7 @@ hr.sales_hr {
                5px 5px 13px #724b15;
   border-radius: 20px;
   cursor: pointer;
-  margin-left: 17px;
+  margin-right: -15px;
 }
 .bun_p {
   font-size: 16px;
@@ -776,8 +791,11 @@ hr.sales_hr {
   z-index: 2; 
   position:relative; 
   margin-top:-205px;
-  animation: bounce 1s ease 1s;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  animation: bounce 1s ease;
+  animation-iteration-count: 2;
+  box-shadow:  15px 15px 30px #a5a5ce,
+  -1px -1px 30px #a5a5ce;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
 }
 .notify_div::after {
   content: " ";
@@ -792,6 +810,9 @@ hr.sales_hr {
   color: rgb(199, 34, 34);
   cursor: pointer;
 }
+/* .notify_bouce {
+  animation: bounce2 1s ease;
+} */
 @keyframes bounce {
   70% { transform:translateY(0%); }
   80% { transform:translateY(-15%); }
@@ -934,6 +955,7 @@ hr.sales_hr {
   padding: 0px 4px;
   border: 1px solid #DDDBEC;
   width: 50%;
+  height: 507px;
   border-left: none;
   background-color: #DDDBEC;
   border-bottom-right-radius: 15px;
@@ -967,6 +989,40 @@ hr.sales_hr {
   color: grey;
   margin-top:10px;
 }
+#overlay {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 900px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(1, 1, 10, 0.9);
+  z-index: 2;
+  cursor: pointer;
+}
+#overlay .sales {
+  background: rgb(245, 240, 240);
+  padding: 25px 15px;
+  width: 400px;
+  margin: 0 auto;
+}
+#overlay h1 {
+  color: rgb(185, 142, 61);
+  font-size: 75px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: Montserrat;
+}
+#overlay h2 {
+  color: rgb(218, 183, 89);
+  font-size: 55px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: Montserrat;
+}
+
 
 /* ----------- iPhone 12 pro max ----------- */
 @media only screen 

@@ -8,10 +8,11 @@
         <div class="blog_content">
           <h3>SOLID NFTs</h3>
           <p>
-            Earn NFT prizes for staking your SOLID tokens
+            NFT prizes bases on earn performance for using the Solid Bonding
+            curve.
           </p>
-          <vs-button class="up_btn" style="font-size: 1rem;">
-            <b>UPCOMING</b>
+          <vs-button class="blog_btn" style="font-size: 1rem;">
+            <b>VIEW</b>
           </vs-button>
         </div>
       </div>
@@ -24,8 +25,8 @@
         <div class="blog_content">
           <h3>SOLID Governance</h3>
           <p>
-            SOLID Token holder can participate in xyz decisions by voting with
-            their voting powers proportional ...
+            SOLID holders determine the future of Solid Defi. Vote on future SB
+            curves, collateral and fee dynamics
           </p>
           <vs-button class="up_btn" style="font-size: 1rem;">
             <b>UPCOMING</b>
@@ -41,7 +42,8 @@
         <div class="blog_content">
           <h3>SOLID Rewards</h3>
           <p>
-            Stake SOLID and provide liquidity on xyz for rewards.
+            SolidUSDT minted from the Solid Protocol will be awarded to pre-sale
+            SOLID Holders
           </p>
           <vs-button class="up_btn" style="font-size: 1rem;">
             <b>UPCOMING</b>

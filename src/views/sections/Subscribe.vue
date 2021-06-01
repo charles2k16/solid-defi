@@ -7,14 +7,15 @@
 
       <div class="mt-20">
         <h1 class="lead_head_text1">
-          Fight inflation, <br />
-          Earn rewards!
+          Eat up the market.
         </h1>
 
         <p class="lead_text mt-20">
-          The SOLID Token. A fungible ERC-20 utility token built on Ethereum.
+          With inflation getting hyper and markets quick to panic sell, Solid
+          Defi is creating tokens that protect holders from both.
           <br />
-          Leave us your email here to be the first one to get new information.
+          Read more on our Medium and Leave us your email here to be the first
+          one to get new information.
         </p>
 
         <div class="d-flex mt-30">

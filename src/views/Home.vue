@@ -1,30 +1,51 @@
 <template>
   <div class="main_container">
     <NavBar />
-
+    <div id="overlay">
+      <br /><br /><br />
+      <div class="center mt-100">
+        <h1>Countdown to<br /></h1>
+        <br />
+        <br />
+        <h2>Community Sale!</h2>
+      </div>
+      <br /><br /><br />
+      <div class="sales">
+        <flip-countdown
+          deadline="2021-06-11 00:00:00"
+          class="timerr"
+        ></flip-countdown>
+      </div>
+    </div>
     <div class="hero">
       <div class="wrap">
         <div class="center mt-50">
-          <h1 class="lead_head_text">Get your SOLID now</h1>
+          <!-- <h1 class="lead_head_text">Get your SOLID now</h1> -->
         </div>
 
         <div class="d-flex-center mt-30">
-          <!-- <vs-button transparent style="font-size:1.2rem; color:whitesmoke;">
-            via Uniswap
-          </vs-button> -->
+          <!-- <vs-button
+            href="https://explorer-mainnet.maticvigil.com/tokens/0x498E0A753840075c4925442D4d8863eEe49D61E2/token-transfers"
+            blank
+            style="font-size: 15px;color:whitesmoke;"
+            transparent
+          >
+            View SOLID on Matic
+          </vs-button>
           <vs-button
-            href="https://ropsten.etherscan.io/address/0x687422eea2cb73b5d3e242ba5456b782919afc85"
+            href="https://etherscan.io/token/0x5011d48d4265b6fb8228600a111b2faa1fda3139"
             blank
             style="font-size: 15px;color:whitesmoke;"
             transparent
           >
             View SOLID on Etherscan
-          </vs-button>
+          </vs-button> -->
         </div>
       </div>
 
       <div class="wrap_bundle">
-        <div class="mt-50">
+        <!-- change back to mt-50 -->
+        <div class="mt-100">
           <vs-row class="mt-20">
             <vs-col :w="4" :xs="12" :sm="12">
               <img
@@ -301,7 +322,7 @@
                           </span>
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;font-size:0.8rem;"
+                            style="color:#B6B6B6;font-size:0.8rem;margin-left:5px;"
                             v-else
                             >You're <br />
                             ON
@@ -320,7 +341,8 @@
                             ></span
                           >
                           <span
-                            class="matic_btn ml-15"
+                            class="matic_btn"
+                            style="margin-left:20px"
                             v-else
                             @click="changeNetwork"
                           >
@@ -364,10 +386,11 @@
                     </div>
                   </div>
 
-                  <div class="notify_div" v-if="showChainWarning">
+                  <div class="notify_div notify_bouce" v-if="showChainWarning">
                     <div class="flex-justify-between-center">
                       <h4>Warning</h4>
                       <span
+                        style="margin-right:-4px;"
                         class="material-icons-sharp"
                         @click="showChainWarning = false"
                       >
@@ -479,9 +502,10 @@
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
                           </span>
+
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;font-size:0.8rem;"
+                            style="color:#B6B6B6;font-size:0.8rem;margin-left:3px;"
                             v-else
                             >You're <br />
                             ON
@@ -499,10 +523,12 @@
                               <b>ON Etherum </b></span
                             ></span
                           >
+
                           <span
-                            class="matic_btn ml-15"
+                            class="matic_btn"
                             v-else
                             @click="changeNetwork"
+                            style="margin-left:20px"
                           >
                             Connect to <br />
                             <span style="color:blue;"> <b>Etherum </b></span>
@@ -535,7 +561,9 @@
 
                         <span class="approve_btn" @click="buyTokens">
                           <b>BUY</b>
-                          <p style="font-size: 11px;margin-top:-1px;">
+                          <p
+                            style="font-size: 11px;margin-top:-1px;text-align:center;"
+                          >
                             Approve first
                           </p>
                         </span>
@@ -543,10 +571,11 @@
                     </div>
                   </div>
 
-                  <div class="notify_div" v-if="showChainWarning">
+                  <div class="notify_div notify_bouce" v-if="showChainWarning">
                     <div class="flex-justify-between-center">
                       <h4>Warning</h4>
                       <span
+                        style="margin-right:-4px;"
                         class="material-icons-sharp"
                         @click="showChainWarning = false"
                       >
@@ -658,9 +687,10 @@
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
                           </span>
+
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;font-size:0.8rem;"
+                            style="color:#B6B6B6;font-size:0.8rem;margin-left:5px;"
                             v-else
                             >You're <br />
                             ON
@@ -678,8 +708,10 @@
                               <b>ON Etherum </b></span
                             ></span
                           >
+
                           <span
-                            class="matic_btn ml-15"
+                            class="matic_btn"
+                            style="margin-left:20px"
                             v-else
                             @click="changeNetwork"
                           >
@@ -723,10 +755,11 @@
                     </div>
                   </div>
 
-                  <div class="notify_div" v-if="showChainWarning">
+                  <div class="notify_div notify_bouce" v-if="showChainWarning">
                     <div class="flex-justify-between-center">
                       <h4>Warning</h4>
                       <span
+                        style="margin-right:-4px;"
                         class="material-icons-sharp"
                         @click="showChainWarning = false"
                       >
@@ -743,9 +776,10 @@
         </div>
       </div>
     </div>
+
     <div class="ilustrations">
       <div class="wrap">
-        <vs-row class="mt-50">
+        <!-- <vs-row class="mt-50">
           <vs-col :w="5" :xs="10" :sm="10">
             <div class="flex-align-center" v-if="onEthNetwork">
               <h1 class="yellow" v-if="bigBundle !== 'loading'">
@@ -755,8 +789,12 @@
 
             <div class="flex-align-center" v-else>
               <h1 class="yellow" v-if="ethMaticSmallStock !== 'loading'">
-                {{ getMaticBalance(maticbalance) }} token sold in presale
+                {{ getMaticBalance(maticbalance) }} tokens sold in presale
               </h1>
+            </div>
+
+            <div class="flex-align-center" v-if="!isDrizzleInitialized">
+              <h1 class="yellow">{{ tokenSale }} tokens sold in presale</h1>
             </div>
           </vs-col>
           <vs-col :w="2" :xs="2" :sm="2">
@@ -773,7 +811,9 @@
                 <div
                   class="progress_token"
                   :style="{ width: `${ethPercentPurchased}%` }"
-                ></div>
+                >
+                  <span>{{ Math.trunc(ethPercentPurchased) }}%</span>
+                </div>
               </div>
 
               <p class="mt-20 p_tokens">14M Tokens</p>
@@ -784,13 +824,15 @@
                 <div
                   class="progress_token"
                   :style="{ width: `${maticPercentPurchased}%` }"
-                ></div>
+                >
+                  <span>{{ Math.trunc(maticPercentPurchased) }}%</span>
+                </div>
               </div>
 
               <p class="mt-20 p_tokens">16M Tokens</p>
             </div>
           </vs-col>
-        </vs-row>
+        </vs-row> -->
         <Illustrations />
         <br />
         <Subscribe />
@@ -936,6 +978,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import FlipCountdown from 'vue2-flip-countdown';
 import {
   getSmallBundleEth,
   getBigBundleEth,
@@ -962,6 +1005,7 @@ export default {
   name: 'Home',
   components: {
     NavBar,
+    FlipCountdown,
     ConnectWallect,
     Illustrations,
     BlogSection,

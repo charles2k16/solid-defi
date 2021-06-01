@@ -12,7 +12,12 @@
         <img src="../assets/images/sld.png" alt="logo" width="50px" />
       </template>
       <template #right>
-        <vs-button style="font-size: 0.9rem" class="nav_button">
+        <vs-button
+          style="font-size: 0.9rem"
+          class="nav_button"
+          blank
+          href="https://solid-defi.gitbook.io/solid-whitepaper/"
+        >
           <b>Read Whitepaper</b>
         </vs-button>
       </template>

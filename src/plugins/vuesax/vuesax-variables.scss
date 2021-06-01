@@ -48,7 +48,7 @@
   margin-left:30px;
 }
 
-.connect_button.vs-button--default {
+.connect_button {
   border-radius: 80px !important;
   padding-left: 15px !important;
   padding-right: 15px !important;
@@ -59,13 +59,13 @@
 }
 
 .buy_button.vs-button--default {
-  border-radius: 80px !important;
+  border-radius: 70px !important;
   width: 100px;
   color: #fff;
   background: linear-gradient(315deg, #E1C324, #cb8016);
   box-shadow:  2px 2px 2px #a76912,
                2px 2px 5px #a76912;
-  margin-left: 17px;
+  margin-right: -3px;
 }
 
 .buy_now.vs-button--default {
@@ -96,12 +96,15 @@
 }
 
 .blog_btn.vs-button--default {
+  padding-top: 2px;
   border-radius: 80px !important;
   width: 140px;
   color: #fff;
   background: linear-gradient(315deg, #E1C324, #cb8016);
   box-shadow:  2px 2px 2px #a76912,
                5px 5px 13px #a76912;
+  font-family: Montserrat;
+  margin-bottom: 15px;
 }
 
 .up_btn.vs-button--default {
@@ -143,9 +146,21 @@
   font-family: Avenir, Helvetica, Arial, sans-serif; 
 }
 
+.vs-dialog__header {
+  padding: 20px 25px 10px 25px !important;
+}
+.vs-dialog__content {
+  padding: 10px 25px !important;
+}
+.vs-dialog__close  {
+  background: #89889a !important;
+}
+
 .con-footer {
   display: flex;
+  justify-content: space-evenly;
   margin-top: 10px;
+  margin-bottom: 12px;
 }
 
 .vs-input {
