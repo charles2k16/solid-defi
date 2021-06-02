@@ -19,8 +19,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
   margin-left: 90px;
   background-color: none;
   opacity: 9;
-  // box-shadow:  4px 3px 5px #7777a8,
-  // 0px 0px 0px #ffffff;
+  box-shadow:  3px 3px 5px 0px #b7b6d1;
 }
 
 .el-carousel__item:nth-child(2n).is-active .bk_bun .vs-avatar-content{
@@ -34,18 +33,17 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 }
 
 .el-carousel__item:nth-child(2n) {
-  // box-shadow:  4px 3px 5px #7777a8,
-  // 0px 0px 0px #ffffff;
+  box-shadow:  3px 3px 5px 0px #b7b6d1;
 }
 
 .el-carousel__item:nth-child(2n+1).is-active {
   margin-left: -50px;
 
   // remove after sales
-  background-color: rgb(255, 255, 255) !important;
-  opacity: 0.1;
-  // box-shadow:  4px 3px 5px #7777a8,
-  // 0px 0px 0px #ffffff;
+  // background-color: white !important;
+  // opacity: 0.1;
+  // height: 215px !important;
+  box-shadow:  3px 3px 5px 0px #b7b6d1;
 }
 
 .el-carousel__item:nth-child(2n+1).is-active .bk_bun .vs-avatar-content{
@@ -56,8 +54,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 .el-carousel__item:nth-child(2n+1) {
   margin-left: 40px;
   margin-right: 40px;
-  // box-shadow:  4px 3px 5px #7777a8,
-  // 0px 0px 0px #ffffff;
+  box-shadow:  3px 3px 5px 0px #b7b6d1;
 }
 
 .el-carousel__item:nth-child(2n+1) .bk_bun .vs-avatar-content {

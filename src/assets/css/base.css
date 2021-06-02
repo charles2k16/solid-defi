@@ -540,26 +540,32 @@ hr.sales_hr {
 }
 .flip-card__top[data-v-78efe7f6], .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__back[data-v-78efe7f6]::before, .flip-card__back[data-v-78efe7f6]::after {
   color: #6649FB !important;
-  /* height: 0.70em !important; */
-  height: 0.80em !important;
+  height: 0.70em !important;
   background: #1e2257 !important;
-  /* width: 1.5em !important; */
-  width: 1.9em !important;
+  width: 1.5em !important;
+  
+  /* community sale */
+  /* color: #664aff !important;
+  width: 2.2em !important;
+  border: 2px solid #424473;
+  background: #000000ff !important;
+  height: 0.90em !important; */
 }
 .flip-card[data-v-78efe7f6] {
   line-height: 1 !important;
 }
 .flip-card[data-v-78efe7f6] {
+  font-size: 2.3rem !important;
   /* font-size: 2.3rem !important; */
-  font-size: 2.6rem !important;
 }
 .flip-clock__slot[data-v-78efe7f6] {
   font-size: 0.8rem !important;
-  color: rgb(104, 101, 101) !important;
-  font-weight: 500;
+  color: #838386 !important;
+  font-weight: bold;
+  /* margin-top:20px; */
 }
 .partner_div {
-  margin-top:64px;
+  margin-top:85px;
 }
 .partner_div2 {
   display: none;
@@ -710,12 +716,13 @@ hr.sales_hr {
   font-size: 0.9rem;
   padding: 1px 5px 1px 5px;
   color: #fff;
-  background: linear-gradient(315deg, #e0c426, #e07825);
-  box-shadow:  2px 2px 2px #754a0e,
-               5px 5px 13px #724b15;
+  background: linear-gradient(315deg, #E1C324, #cb8016);
+  box-shadow:  2px 2px 2px #a76912,
+              2px 2px 5px #a76912;
   border-radius: 20px;
   cursor: pointer;
-  margin-right: -15px;
+  margin-right: -13px;
+  margin-top: -2px;
 }
 .bun_p {
   font-size: 16px;
@@ -793,7 +800,7 @@ hr.sales_hr {
   margin-top:-205px;
   animation: bounce 1s ease;
   animation-iteration-count: 2;
-  box-shadow:  15px 15px 30px #a5a5ce,
+  box-shadow:  10px 10px 30px #a5a5ce,
   -1px -1px 30px #a5a5ce;
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */
 }
@@ -810,9 +817,6 @@ hr.sales_hr {
   color: rgb(199, 34, 34);
   cursor: pointer;
 }
-/* .notify_bouce {
-  animation: bounce2 1s ease;
-} */
 @keyframes bounce {
   70% { transform:translateY(0%); }
   80% { transform:translateY(-15%); }
@@ -875,8 +879,8 @@ hr.sales_hr {
   font-size: 0.85rem;
   padding: 30px 25px 15px 25px;
   border-radius: 30px;
-  background: #c4d0fa;
-  border: 1px solid #b9c6f7;
+  background: #c4d0faff;
+  border: 1px solid #c4d0faff;
   text-align: center;
   height: 250px;
   display: flex;
@@ -906,7 +910,7 @@ hr.sales_hr {
   border-top-right-radius: 40px;
 }
 .blog_content h3 {
-  color: #5b3cc4;
+  color: #664aff;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -966,6 +970,7 @@ hr.sales_hr {
   height: 507px;
   border-left: none;
   background-color: #DDDBEC;
+  /* background-color: rgba(10, 10, 10, 0.9); */
   border-bottom-right-radius: 15px;
 }
 .bundle_container {
@@ -999,41 +1004,55 @@ hr.sales_hr {
 }
 #overlay {
   position: absolute;
-  display: block;
   width: 100%;
-  height: 900px;
+  height: 980px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(1, 1, 10, 0.9);
+  background-color: rgba(0, 0, 3, 0.9);
   z-index: 2;
   cursor: pointer;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: -1px 10px 30px -2px #040409
 }
-
-#overlay .sales {
-  background: rgb(245, 240, 240);
-  padding: 25px 15px;
-  width: 400px;
-  margin: 0 auto;
+.overlay_div {
+  border: 2px solid #664aff;
+  width: 600px;
+}
+.overlay_div2 {
+  margin: 0px 17px 17px 17px;
+  border: 2px solid #664aff;
+  padding: 70px 15px 55px 15px;
+  width: 562px;
+}
+.yellow_bar {
+  display: inline-block;
+  height: 17px;
+  margin:0 auto;
+  width: 170px;
+  border-radius: 20px;
+  background:#fcb420ff;
+  border: 2px solid #fcb420ff;
+  display: flex;
+  align-self: center;
 }
 #overlay h1 {
-  color: rgb(185, 142, 61);
-  font-size: 75px;
+  color: #cbc8ff;
+  font-size: 2.5rem;
   line-height: 1;
-  font-weight: bold;
-  font-family: Montserrat;
 }
 #overlay h2 {
-  color: rgb(218, 183, 89);
-  font-size: 55px;
+  color: #cbc8ff;
+  font-size: 30px;
   line-height: 1;
-  font-weight: bold;
   font-family: Montserrat;
+}
+.overlay {
+  background-color: rgba(21, 21, 27, 0.9);
 }
 
 

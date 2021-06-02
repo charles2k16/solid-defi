@@ -2,30 +2,35 @@
   <div class="main_container">
     <NavBar />
     <div id="overlay">
-      <div class="overlay_div">
-        <div class="center">
-          <h1>Countdown to<br /></h1>
-          <br />
-          <br />
-          <h2>Community Sale!</h2>
-        </div>
-        <br /><br /><br />
-        <div class="sales">
-          <flip-countdown
-            deadline="2021-06-11 00:00:00"
-            class="timerr"
-          ></flip-countdown>
+      <div style="width:560px">
+        <div class="overlay_div">
+          <span class="yellow_bar"></span>
+          <div class="overlay_div2">
+            <div class="center">
+              <h1>COUNTDOWN TO</h1>
+              <br />
+              <br />
+              <h2>COMMUNITY PRESALE!</h2>
+            </div>
+            <br /><br />
+            <div>
+              <flip-countdown
+                deadline="2021-06-11 00:00:00"
+                class="timerr"
+              ></flip-countdown>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="hero">
       <div class="wrap">
         <div class="center mt-50">
-          <!-- <h1 class="lead_head_text">Get your SOLID now</h1> -->
+          <h1 class="lead_head_text">Get your SOLID now</h1>
         </div>
 
         <div class="d-flex-center mt-30">
-          <!-- <vs-button
+          <vs-button
             href="https://explorer-mainnet.maticvigil.com/tokens/0x498E0A753840075c4925442D4d8863eEe49D61E2/token-transfers"
             blank
             style="font-size: 15px;color:whitesmoke;"
@@ -40,13 +45,13 @@
             transparent
           >
             View SOLID on Etherscan
-          </vs-button> -->
+          </vs-button>
         </div>
       </div>
 
       <div class="wrap_bundle">
         <!-- change back to mt-50 -->
-        <div class="mt-100">
+        <div class="mt-50">
           <vs-row class="mt-20">
             <vs-col :w="4" :xs="12" :sm="12">
               <img
@@ -86,7 +91,9 @@
                           class="d-block stock"
                           v-if="smallBundle == 'loading'"
                         >
-                          <span style="color:#511bb7;">Connect to eth</span>
+                          <span style="color:#511bb7;"
+                            >Wallet not connected to eth</span
+                          >
                         </span>
 
                         <span class="d-block stock" v-else
@@ -101,7 +108,9 @@
                           class="d-block stock"
                           v-if="bigBundle == 'loading'"
                         >
-                          <span style="color: #511bb7;">Connect to eth</span>
+                          <span style="color: #511bb7;"
+                            >Wallet not connected to eth</span
+                          >
                         </span>
 
                         <span class="d-block stock" v-else
@@ -140,7 +149,9 @@
                           class="d-block stock"
                           v-if="ethMaticSmallStock == 'loading'"
                         >
-                          <span style="color: #511bb7;">Connect to matic</span>
+                          <span style="color: #511bb7;"
+                            >Wallect not connected to Matic</span
+                          >
                         </span>
 
                         <span class="d-block stock" v-else
@@ -157,7 +168,9 @@
                           class="d-block stock"
                           v-if="ethMaticBigStock == 'loading'"
                         >
-                          <span style="color: #511bb7;">Connect to matic</span>
+                          <span style="color: #511bb7;"
+                            >Wallect not connected to Matic</span
+                          >
                         </span>
 
                         <span class="d-block stock" v-else
@@ -194,7 +207,9 @@
                           class="d-block stock"
                           v-if="maticSmallStock == 'loading'"
                         >
-                          <span style="color: #511bb7;">Connect to matic</span>
+                          <span style="color: #511bb7;"
+                            >Wallect not connected to Matic</span
+                          >
                         </span>
 
                         <span class="d-block stock" v-else
@@ -209,7 +224,9 @@
                           class="d-block stock"
                           v-if="maticBigStock == 'loading'"
                         >
-                          <span style="color: #511bb7;">Connect to matic</span>
+                          <span style="color: #511bb7;"
+                            >Wallect not connected to Matic</span
+                          >
                         </span>
 
                         <span class="d-block stock" v-else
@@ -317,6 +334,7 @@
                             class="matic_btn"
                             v-if="onEthNetwork"
                             @click="changeNetwork"
+                            style="margin-left:-4px"
                           >
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
@@ -334,7 +352,7 @@
 
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;margin-left: 16px;font-size:0.8rem;"
+                            style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
                             v-if="onEthNetwork"
                             >You're <br />
                             <span style="color:#DDDBEC;">
@@ -387,7 +405,7 @@
                     </div>
                   </div>
 
-                  <div class="notify_div notify_bouce" v-if="showChainWarning">
+                  <div class="notify_div" v-if="showChainWarning">
                     <div class="flex-justify-between-center">
                       <h4>Warning</h4>
                       <span
@@ -499,6 +517,7 @@
                             class="matic_btn"
                             v-if="onEthNetwork"
                             @click="changeNetwork"
+                            style="margin-left:-10px"
                           >
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
@@ -506,7 +525,7 @@
 
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;font-size:0.8rem;margin-left:3px;"
+                            style="color:#B6B6B6;font-size:0.8rem;margin-left:-1px;"
                             v-else
                             >You're <br />
                             ON
@@ -517,7 +536,7 @@
 
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;margin:0 -5px 0 10px;font-size:0.8rem;"
+                            style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
                             v-if="onEthNetwork"
                             >You're <br />
                             <span style="color:#DDDBEC;">
@@ -572,7 +591,7 @@
                     </div>
                   </div>
 
-                  <div class="notify_div notify_bouce" v-if="showChainWarning">
+                  <div class="notify_div" v-if="showChainWarning">
                     <div class="flex-justify-between-center">
                       <h4>Warning</h4>
                       <span
@@ -684,6 +703,7 @@
                             class="matic_btn"
                             v-if="onEthNetwork"
                             @click="changeNetwork"
+                            style="margin-left:-4px"
                           >
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
@@ -702,7 +722,7 @@
 
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;margin-left: 10px;font-size:0.8rem;"
+                            style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
                             v-if="onEthNetwork"
                             >You're <br />
                             <span style="color:#DDDBEC;">
@@ -756,7 +776,7 @@
                     </div>
                   </div>
 
-                  <div class="notify_div notify_bouce" v-if="showChainWarning">
+                  <div class="notify_div" v-if="showChainWarning">
                     <div class="flex-justify-between-center">
                       <h4>Warning</h4>
                       <span
@@ -780,7 +800,7 @@
 
     <div class="ilustrations">
       <div class="wrap">
-        <!-- <vs-row class="mt-50">
+        <vs-row class="mt-50">
           <vs-col :w="5" :xs="10" :sm="10">
             <div class="flex-align-center" v-if="onEthNetwork">
               <h1 class="yellow" v-if="bigBundle !== 'loading'">
@@ -813,7 +833,7 @@
                   class="progress_token"
                   :style="{ width: `${ethPercentPurchased}%` }"
                 >
-                  <span>{{ Math.trunc(ethPercentPurchased) }}%</span>
+                  <!-- <span>{{ Math.trunc(ethPercentPurchased) }}%</span> -->
                 </div>
               </div>
 
@@ -826,14 +846,14 @@
                   class="progress_token"
                   :style="{ width: `${maticPercentPurchased}%` }"
                 >
-                  <span>{{ Math.trunc(maticPercentPurchased) }}%</span>
+                  <!-- <span>{{ Math.trunc(maticPercentPurchased) }}%</span> -->
                 </div>
               </div>
 
               <p class="mt-20 p_tokens">16M Tokens</p>
             </div>
           </vs-col>
-        </vs-row> -->
+        </vs-row>
         <Illustrations />
         <br />
         <Subscribe />

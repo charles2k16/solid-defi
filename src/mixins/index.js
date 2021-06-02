@@ -118,7 +118,6 @@ export default {
       ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, finalAmount);
     },
 
-    // wrap eth big bundle
     buyWrapEthBigBundle(numberofBundle, bigPrice) {
       let amount = bigPrice * numberofBundle;
       let finalAmount = amount.toString();

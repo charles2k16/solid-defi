@@ -13,6 +13,18 @@
       </template>
       <template #right>
         <vs-button
+          blank
+          class="medium_button"
+          href="https://solid-defi.gitbook.io/solid-whitepaper/"
+          icon
+        >
+          <img
+            src="../assets/images/medium_icon.png"
+            alt="medium"
+            style="width:18px !important"
+          />
+        </vs-button>
+        <vs-button
           style="font-size: 0.9rem"
           class="nav_button"
           blank

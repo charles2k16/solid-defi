@@ -7,10 +7,11 @@
 
       <div class="mt-20">
         <h1 class="lead_head_text1">
-          Eat up the market.
+          Fight inflation, <br />
+          Earn Rewards!
         </h1>
 
-        <p class="lead_text mt-20">
+        <p class="lead_text mt-30">
           With inflation getting hyper and markets quick to panic sell,
           <br />
           Solid Defi is creating tokens that protect holders from both.
@@ -28,7 +29,7 @@
         </div>
 
         <div class="mt-30">
-          <vs-button transparent style="font-size:18px">
+          <vs-button style="font-size:18px" blank href="https://t.me/soliddefi">
             <img
               src="../../assets/images/telegram2.png"
               alt="telegram"
@@ -50,7 +51,7 @@
       <img
         src="../../assets/images/sld_promo_pic.png"
         alt="promo"
-        width="480px"
+        width="540px"
       />
     </vs-col>
   </vs-row>

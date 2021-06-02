@@ -32,7 +32,6 @@
   box-shadow:  8px 8px 24px #0c0e18,
   -8px -8px 24px #121624;
 }
-// 1e2229
 .sub_button.vs-button--default {
   border-radius: 70px !important;
   padding-left: 15px !important;
@@ -41,13 +40,11 @@
   box-shadow:  5px 5px 8px #0d0e11,
   -5px -5px 8px #393e54,
   inset -2px -2px 20px #200468, inset 2px 2px 2px #7564f5;
-
   background: rgb(77,26,192) !important;
   background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
   font-size: 13px;
   margin-left:30px;
 }
-
 .connect_button {
   border-radius: 80px !important;
   padding-left: 15px !important;
@@ -120,6 +117,14 @@
   font-family: Montserrat;
 }
 
+.medium_button.vs-button--default {
+  border-radius: 70px !important;
+  box-shadow:  5px 5px 8px #000000,
+  -5px -5px 8px #393e54;
+  margin-right: 30px;
+  border: 2px solid #2c2f36;
+}
+
 .tele_avatar {
   background: #7D33FC !important;
   box-shadow:  10px 10px 15px #080f14,
@@ -135,6 +140,12 @@
   border: 3px solid rgb(48,49,73);
 }
 
+.medium_avatar {
+  background: #091116 !important;
+  box-shadow:  10px 10px 15px #080f14,
+  -10px -10px 15px #424961;
+  border: 3px solid rgb(48,49,73);
+}
 .matic_avatar .vs-avatar {
   background:  #1E264D !important;
 }
@@ -168,17 +179,19 @@
   height: 37px;
   padding: 5px 12px !important;
   border-radius: 80px !important;
-  background: linear-gradient(315deg, #171a25, #1c1f2c) !important;
-  box-shadow:  -5px -5px 13px #141620,
-               2px 2px 2px #1c1f2c;
+  // color: #33394e;
+  border: none !important;
+  background: #313843 !important;
+  box-shadow:  0px 0px 0px #06090e,
+               0px 0px 0px #06090e, inset -1px -3px 3px #33394e, inset 2px 5px 15px #07080e;
   font-size: 0.8rem !important;
   color: rgb(165, 162, 162) !important; 
   font-family: Avenir, Helvetica, Arial, sans-serif; 
 }
 
 .vs-input__label {
-  font-size: 0.7rem !important;
-  color: rgb(146, 145, 145);
+  font-size: 0.8rem !important;
+  color: #f3f4f7;
 }
 
 .vs-avatar-content {

@@ -6,9 +6,7 @@
           <div>
             <h1 class="lead_head_text_black">
               What is the <br />
-              Solid Bonding
-              <br />
-              Curve?
+              Solid Protocol?
             </h1>
             <div class="partner_div">
               <img
@@ -25,12 +23,11 @@
         </vs-col>
         <vs-col :w="6" :xs="12" :sm="12">
           <p class="lead_text_black">
-            The Solid Bonding Curve or SBC is the core idea Solid Defi is built
-            around. The initial SBC accepts USDC and mints SolidUSDT. The SBC
-            sets the price of SolidUSDT to the square root of supply. The SBC
-            rebuys SolidUSDT at the same price minus a dynamic selling fee that
-            is distributed to SolidUSDT holders. Read more details in our Medium
-            article.
+            The Solid Protocol acts as a bridge that could take any supply of
+            any market and convert it into a “Solid version” of the market. It
+            creates a stable market that the price is adjusted non-linearly, in
+            which it is a more stabilized market and could be considered as a
+            subset of the original market.
           </p>
           <p class="lead_text_black mt-50">
             Our vision is to create a new kind of “stablecoin” that has the

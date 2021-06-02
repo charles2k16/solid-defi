@@ -11,8 +11,8 @@
             NFT prizes bases on earn performance for using the Solid Bonding
             curve.
           </p>
-          <vs-button class="blog_btn" style="font-size: 1rem;">
-            <b>VIEW</b>
+          <vs-button class="up_btn" style="font-size: 1rem;">
+            <b>UPCOMING</b>
           </vs-button>
         </div>
       </div>

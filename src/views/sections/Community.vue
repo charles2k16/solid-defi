@@ -20,6 +20,24 @@
         <vs-col :w="6" :xs="12" :sm="12">
           <div class="flex-justify-around-center mt-20">
             <div class="flex-row-center">
+              <vs-avatar size="60" class="medium_avatar">
+                <a href="https://soliddefi.medium.com/" target="_blank">
+                  <img
+                    src="../../assets/images/medium_icon.png"
+                    alt="medium"
+                    style="width:25px !important"
+                  />
+                </a>
+              </vs-avatar>
+              <p class="mt-30 center p_link">
+                <a href="https://soliddefi.medium.com/" target="_blank">
+                  Read more on <br />
+                  Medium
+                </a>
+              </p>
+            </div>
+
+            <div class="flex-row-center">
               <vs-avatar class="tele_avatar" size="60">
                 <a href="https://t.me/soliddefi" target="_blank">
                   <img
@@ -39,12 +57,12 @@
 
             <div class="flex-row-center">
               <vs-avatar size="60" class="twit_avatar">
-                <a href="twitter.com" target="_blank">
+                <a href="https://twitter.com/soliddefi" target="_blank">
                   <img src="../../assets/images/twitter.png" alt="twitter" />
                 </a>
               </vs-avatar>
               <p class="mt-30 center p_link">
-                <a href="twitter.com" target="_blank">
+                <a href="https://twitter.com/soliddefi" target="_blank">
                   Follow us on <br />
                   Twitter
                 </a>
