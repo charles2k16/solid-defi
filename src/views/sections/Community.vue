@@ -42,9 +42,9 @@
               <a href="https://t.me/soliddefi" target="_blank">
                 <vs-avatar class="tele_avatar" size="60">
                   <img
-                    src="../../assets/images/telegram_icon.png"
+                    src="../../assets/images/telegram2.png"
                     alt="telegram"
-                    style="width:25px !important"
+                    style="width:28px !important"
                   />
                 </vs-avatar>
               </a>

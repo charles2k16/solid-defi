@@ -25,8 +25,7 @@
           />
         </vs-button>
         <vs-button
-          style="font-size: 0.9rem"
-          class="nav_button"
+          class="def_button"
           blank
           href="https://solid-defi.gitbook.io/solid-whitepaper/"
         >

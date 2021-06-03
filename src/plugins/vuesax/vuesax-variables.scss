@@ -1,7 +1,6 @@
 .vs-navbar__item {
   font-size: 1.3rem !important;
 }
-
 .vs-navbar {
   padding: 0px 20px !important;
   min-height: 70px !important;
@@ -10,8 +9,8 @@
   margin-right: auto;
   margin-left: auto;
 }
-
-.nav_button {
+.def_button.vs-button--default {
+  font-size: 0.9rem;
   border-radius: 70px !important;
   padding-left: 15px !important;
   padding-right: 15px !important;
@@ -21,6 +20,11 @@
   inset -2px -2px 20px #200468, inset 2px 2px 2px #7564f5;
   background: rgb(77,26,192) !important;
   background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
+}
+.def_button.vs-button--default:hover {
+  transform: none !important;
+  box-shadow:  5px 5px 8px #000000,
+  -5px -5px 8px #393e54 !important;
 }
 
 .eth_button.vs-button--default {
@@ -117,7 +121,7 @@
   font-family: Montserrat;
 }
 
-.medium_button {
+.medium_button.vs-button--default {
   border-radius: 70px !important;
   box-shadow:  5px 5px 8px #000000,
   -5px -5px 8px #393e54;
@@ -125,14 +129,19 @@
   border: 2px solid #2c2f36;
   margin-right:30px !important;
 }
-
-.nav_button:active, .medium_button:active, .sub_button:active {
-  box-shadow: inset -1px -1px 1px #cecef5, inset 2px 2px 2px #363541;
-}
-.nav_button:hover, .medium_button:hover, .sub_button:hover {
+.medium_button.vs-button--default:hover {
+  transform: none !important;
   box-shadow:  5px 5px 8px #000000,
   -5px -5px 8px #393e54 !important;
 }
+.def_button.vs-button--default:active, .medium_button.vs-button--default:active {
+  box-shadow: inset -1px -1px 1px #cecef5, inset 2px 2px 2px #363541 !important;
+}
+
+// .def_button:hover {
+//   background: linear-gradient(151deg, rgb(81, 52, 212) 47%, rgb(144, 73, 226) 64%);
+//   opacity: 0.9;
+// }
 .tele_avatar {
   background: #7D33FC !important;
   box-shadow:  10px 10px 15px #080f14,

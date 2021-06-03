@@ -23,7 +23,7 @@
 
         <div class="d-flex mt-30">
           <vs-input v-model="email" placeholder="Enter your email" />
-          <vs-button class="sub_button">
+          <vs-button class="def_button">
             <b>SUBSCRIBE</b>
           </vs-button>
         </div>
