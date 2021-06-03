@@ -16,7 +16,10 @@
           <br />
           Solid Defi is creating tokens that protect holders from both.
 
-          <a href="https://soliddefi.medium.com/" target="_blank"
+          <a
+            href="https://soliddefi.medium.com/"
+            target="_blank"
+            class="a_links"
             >Read more on Medium.</a
           >
           and Leave us your email here to be the first one to get new
@@ -25,17 +28,17 @@
 
         <div class="d-flex mt-30">
           <vs-input v-model="email" placeholder="Enter your email" />
-          <vs-button class="def_button" style="margin-left:30px">
+          <vs-button class="def_button" style="margin-left:35px">
             <b>SUBSCRIBE</b>
           </vs-button>
         </div>
 
-        <div class="mt-30">
+        <div>
           <vs-button
-            style="font-size:18px"
+            class="small_text_primary"
+            style="font-size:18px;"
             blank
             href="https://t.me/soliddefi"
-            transparent
           >
             <img
               src="../../assets/images/telegram2.png"
@@ -43,20 +46,19 @@
               width="23px"
               class="mr-10"
             />
-            <b style="color:#731cd8;">Join us on Telegram</b>
+            <b>Join us on Telegram</b>
           </vs-button>
           <p class="small_text1">
             For news, early access & special prizes
           </p>
-          <h2 class="mt-30 small_text_primary">
-            <a
-              href="https://solid-defi.gitbook.io/solid-whitepaper/"
-              target="_blank"
-              class="none"
-            >
-              Learn more in Solid Protocol Whitepaper</a
-            >
-          </h2>
+          <vs-button
+            style="font-size: 1.1rem"
+            class="small_text_primary"
+            blank
+            href="https://solid-defi.gitbook.io/solid-whitepaper/"
+          >
+            <b>Learn more in Solid Protocol Whitepaper</b>
+          </vs-button>
         </div>
       </div>
     </vs-col>

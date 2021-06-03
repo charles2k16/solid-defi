@@ -80,12 +80,18 @@ hr.sales_hr {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .small_text_primary {
-  color: #731cd8;
-  font-size: 1.1rem;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #731cd8 !important;
+  background:transparent !important;
+  margin-left:-12px !important;
+  margin-top: 26px !important;
 }
-.none {
-  text-decoration: none;
+.a_links {
+  transition: top ease 0.4s;
+  top:0;
+  position: relative;
+}
+.a_links:hover {
+  top: -2px;
 }
 .small_text {
   font-size: 0.8rem;
@@ -558,7 +564,7 @@ hr.sales_hr {
   font-weight: bold;
   
   /* color:  #664aff !important; */
-  margin-top:20px;
+  margin-top:15px;
 }
 .partner_div {
   margin-top:85px;

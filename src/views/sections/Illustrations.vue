@@ -39,11 +39,10 @@
         </div>
       </vs-col>
     </vs-row>
-
-    <br /><br />
+    <br />
     <vs-button
-      transparent
-      color="#731cd8"
+      class="small_text_primary"
+      style="font-size:14px"
       blank
       href="https://solid-defi.gitbook.io/solid-whitepaper/"
     >
