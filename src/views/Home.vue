@@ -15,7 +15,7 @@
             <br /><br />
             <div>
               <flip-countdown
-                deadline="2021-06-11 00:00:00"
+                deadline="2021-06-8 00:00:00"
                 class="timerr"
               ></flip-countdown>
             </div>

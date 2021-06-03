@@ -34,6 +34,7 @@
             class="gif_anime"
             autoplay
             loop
+            controls
           ></video>
         </div>
       </vs-col>
