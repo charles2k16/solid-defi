@@ -29,6 +29,7 @@
                   />
                 </a>
               </vs-avatar>
+
               <p class="mt-30 center p_link">
                 <a href="https://soliddefi.medium.com/" target="_blank">
                   Read more on <br />
@@ -38,15 +39,15 @@
             </div>
 
             <div class="flex-row-center">
-              <vs-avatar class="tele_avatar" size="60">
-                <a href="https://t.me/soliddefi" target="_blank">
+              <a href="https://t.me/soliddefi" target="_blank">
+                <vs-avatar class="tele_avatar" size="60">
                   <img
                     src="../../assets/images/telegram_icon.png"
                     alt="telegram"
                     style="width:25px !important"
                   />
-                </a>
-              </vs-avatar>
+                </vs-avatar>
+              </a>
               <p class="mt-30 center p_link">
                 <a href="https://t.me/soliddefi" target="_blank">
                   Join us on <br />
@@ -56,11 +57,11 @@
             </div>
 
             <div class="flex-row-center">
-              <vs-avatar size="60" class="twit_avatar">
-                <a href="https://twitter.com/soliddefi" target="_blank">
+              <a href="https://twitter.com/soliddefi" target="_blank">
+                <vs-avatar size="60" class="twit_avatar">
                   <img src="../../assets/images/twitter.png" alt="twitter" />
-                </a>
-              </vs-avatar>
+                </vs-avatar>
+              </a>
               <p class="mt-30 center p_link">
                 <a href="https://twitter.com/soliddefi" target="_blank">
                   Follow us on <br />

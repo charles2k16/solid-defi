@@ -22,19 +22,21 @@
           </div>
         </vs-col>
         <vs-col :w="6" :xs="12" :sm="12">
-          <p class="lead_text_black">
-            The Solid Protocol acts as a bridge that could take any supply of
-            any market and convert it into a “Solid version” of the market. It
-            creates a stable market that the price is adjusted non-linearly, in
-            which it is a more stabilized market and could be considered as a
-            subset of the original market.
-          </p>
-          <p class="lead_text_black mt-50">
-            Our vision is to create a new kind of “stablecoin” that has the
-            ability to absorb and rise with inflation. As well as a built in
-            “shorting” mechanism that lets holders earn on red candle days. Read
-            more on Medium.
-          </p>
+          <div class="solid_text">
+            <p class="lead_text_black">
+              The Solid Protocol acts as a bridge that could take any supply of
+              any market and convert it into a “Solid version” of the market. It
+              creates a stable market that the price is adjusted non-linearly,
+              in which it is a more stabilized market and could be considered as
+              a subset of the original market.
+            </p>
+            <p class="lead_text_black mt-50">
+              Our vision is to create a new kind of “stablecoin” that has the
+              ability to absorb and rise with inflation. As well as a built in
+              “shorting” mechanism that lets holders earn on red candle days.
+              Read more on Medium.
+            </p>
+          </div>
 
           <div class="partner_div2">
             <img src="../../assets/images/polygon_logo.png" alt="polygon" />

@@ -11,7 +11,7 @@
   margin-left: auto;
 }
 
-.nav_button.vs-button--default {
+.nav_button {
   border-radius: 70px !important;
   padding-left: 15px !important;
   padding-right: 15px !important;
@@ -32,7 +32,7 @@
   box-shadow:  8px 8px 24px #0c0e18,
   -8px -8px 24px #121624;
 }
-.sub_button.vs-button--default {
+.sub_button {
   border-radius: 70px !important;
   padding-left: 15px !important;
   padding-right: 15px !important;
@@ -109,7 +109,7 @@
   border-radius: 80px !important;
   width: 140px;
   color: #acace2;
-  border: 1px solid rgb(172, 169, 169);
+  border: 1px solid #b7bed5;
   background: #c4d0fa;
   box-shadow:  -25px -25px 100px #bebeef,
              25px 25px 100px #d6d6ff;
@@ -117,21 +117,28 @@
   font-family: Montserrat;
 }
 
-.medium_button.vs-button--default {
+.medium_button {
   border-radius: 70px !important;
   box-shadow:  5px 5px 8px #000000,
   -5px -5px 8px #393e54;
   margin-right: 30px;
   border: 2px solid #2c2f36;
+  margin-right:30px !important;
 }
 
+.nav_button:active, .medium_button:active, .sub_button:active {
+  box-shadow: inset -1px -1px 1px #cecef5, inset 2px 2px 2px #363541;
+}
+.nav_button:hover, .medium_button:hover, .sub_button:hover {
+  box-shadow:  5px 5px 8px #000000,
+  -5px -5px 8px #393e54 !important;
+}
 .tele_avatar {
   background: #7D33FC !important;
   box-shadow:  10px 10px 15px #080f14,
   -10px -10px 15px #424961;
   border: 3px solid rgb(48,49,73);
 }
-
 .twit_avatar{
   background: #55ACEE !important;
   padding: 3px;
@@ -139,7 +146,6 @@
   -10px -10px 15px #424961;
   border: 3px solid rgb(48,49,73);
 }
-
 .medium_avatar {
   background: #091116 !important;
   box-shadow:  10px 10px 15px #080f14,

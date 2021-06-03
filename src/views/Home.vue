@@ -91,7 +91,7 @@
                           class="d-block stock"
                           v-if="smallBundle == 'loading'"
                         >
-                          <span style="color:#511bb7;"
+                          <span class="wallet-not"
                             >Wallet not connected to eth</span
                           >
                         </span>
@@ -108,7 +108,7 @@
                           class="d-block stock"
                           v-if="bigBundle == 'loading'"
                         >
-                          <span style="color: #511bb7;"
+                          <span class="wallet-not"
                             >Wallet not connected to eth</span
                           >
                         </span>
@@ -116,7 +116,6 @@
                         <span class="d-block stock" v-else
                           >Stock: {{ bigBundle }}</span
                         >
-                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                     </div>
                   </button>
@@ -149,7 +148,7 @@
                           class="d-block stock"
                           v-if="ethMaticSmallStock == 'loading'"
                         >
-                          <span style="color: #511bb7;"
+                          <span class="wallet-not"
                             >Wallect not connected to Matic</span
                           >
                         </span>
@@ -168,7 +167,7 @@
                           class="d-block stock"
                           v-if="ethMaticBigStock == 'loading'"
                         >
-                          <span style="color: #511bb7;"
+                          <span class="wallet-not"
                             >Wallect not connected to Matic</span
                           >
                         </span>
@@ -176,8 +175,6 @@
                         <span class="d-block stock" v-else
                           >Stock: {{ ethMaticBigStock }}</span
                         >
-
-                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                     </div>
                   </button>
@@ -207,7 +204,7 @@
                           class="d-block stock"
                           v-if="maticSmallStock == 'loading'"
                         >
-                          <span style="color: #511bb7;"
+                          <span class="wallet-not"
                             >Wallect not connected to Matic</span
                           >
                         </span>
@@ -215,7 +212,6 @@
                         <span class="d-block stock" v-else
                           >Stock: {{ maticSmallStock }}</span
                         >
-                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                       <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
@@ -224,15 +220,14 @@
                           class="d-block stock"
                           v-if="maticBigStock == 'loading'"
                         >
-                          <span style="color: #511bb7;"
-                            >Wallect not connected to Matic</span
+                          <span class="wallet-not"
+                            >Connect wallet to Matic</span
                           >
                         </span>
 
                         <span class="d-block stock" v-else
                           >Stock: {{ maticBigStock }}</span
                         >
-                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
                       </div>
                     </div>
                   </button>

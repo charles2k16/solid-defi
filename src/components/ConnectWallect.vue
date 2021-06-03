@@ -98,26 +98,32 @@ export default {
     },
     async connectToMetaMask() {
       if (window.ethereum) {
-        let address = '0x802f19580D9F00C31BdfdaE3A2831d5Dd4a5B6D9';
+        // let address = '0x802f19580D9F00C31BdfdaE3A2831d5Dd4a5B6D9';
 
-        let provider = 'metamask';
-        let web3Provider = new Web3.providers.HttpProvider(provider);
-        let web3 = new Web3(web3Provider);
+        // let provider = 'metamask';
+        // let web3Provider = new Web3.providers.HttpProvider(provider);
+        // let web3 = new Web3(web3Provider);
 
-        const accounts = await window.ethereum.request({
-          method: 'eth_requestAccounts',
-        });
-        const account = accounts[0];
-        console.log(account);
+        // const accounts = await window.ethereum.request({
+        //   method: 'eth_requestAccounts',
+        // });
+        // const account = accounts[0];
+        // console.log(account);
 
-        web3.eth.defaultAccount = account;
+        // web3.eth.defaultAccount = account;
 
-        const myContractInstance = new web3.eth.Contract(abi, address);
+        // const myContractInstance = new web3.eth.Contract(abi, address);
 
-        myContractInstance.methods.setTx('meta tx').send({
-          from: web3.eth.defaultAccount,
-          gasPrice: 0,
-        });
+        // myContractInstance.methods.setTx('meta tx').send({
+        //   from: web3.eth.defaultAccount,
+        //   gasPrice: 0,
+        // });
+        this.openNotification(
+          'top-right',
+          '#2c2f44',
+          'Connect to Metamask.',
+          'Connect your wallect to metamask to continue'
+        );
       } else {
         this.openNotification(
           'top-center',
