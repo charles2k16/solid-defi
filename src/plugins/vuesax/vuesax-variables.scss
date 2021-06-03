@@ -65,9 +65,10 @@
   width: 100px;
   color: #fff;
   background: linear-gradient(315deg, #E1C324, #cb8016);
-  box-shadow:  2px 2px 2px #a76912,
+  box-shadow:  3px 3px 1px #a46820,
                2px 2px 5px #a76912;
   margin-right: -3px;
+  // border: 3px solid #946602;
 }
 
 .buy_now.vs-button--default {
@@ -136,7 +137,9 @@
   -5px -5px 8px #393e54 !important;
 }
 .def_button.vs-button--default:active, .medium_button.vs-button--default:active {
-  box-shadow: inset -1px -1px 1px #cecef5, inset 2px 2px 2px #363541 !important;
+  box-shadow:  5px 5px 8px #000000,
+  -5px -5px 8px #393e54,
+  inset -1px -1px 1px #cecef5, inset 2px 2px 2px #363541 !important;
 }
 
 // .def_button:hover {

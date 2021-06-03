@@ -143,7 +143,6 @@
                       <div class="mx-20">
                         <h3 class="stock_bold">40,000</h3>
                         <br />
-
                         <span
                           class="d-block stock"
                           v-if="ethMaticSmallStock == 'loading'"
@@ -162,7 +161,6 @@
                       <div style="margin-right:10px">
                         <h3 class="stock_bold">80,000</h3>
                         <br />
-
                         <span
                           class="d-block stock"
                           v-if="ethMaticBigStock == 'loading'"
@@ -218,10 +216,10 @@
                         <br />
                         <span
                           class="d-block stock"
-                          v-if="maticBigStock == 'loading'"
+                          v-if="ethMaticBigStock == 'loading'"
                         >
                           <span class="wallet-not"
-                            >Connect wallet to Matic</span
+                            >Wallect not connected to Matic</span
                           >
                         </span>
 

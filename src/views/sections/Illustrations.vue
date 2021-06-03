@@ -30,7 +30,7 @@
       <vs-col :w="12" :xs="12" :sm="12">
         <div>
           <video
-            src="../../assets/video/animation.mp4"
+            src="../../assets/video/animation1.mp4"
             class="gif_anime"
             autoplay
             loop

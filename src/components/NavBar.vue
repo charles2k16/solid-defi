@@ -15,7 +15,7 @@
         <vs-button
           blank
           class="medium_button"
-          href="https://solid-defi.gitbook.io/solid-whitepaper/"
+          href="https://soliddefi.medium.com/"
           icon
         >
           <img
