@@ -524,30 +524,34 @@ hr.sales_hr {
   border-top: none !important;
 }
 .flip-card__top[data-v-78efe7f6], .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__back[data-v-78efe7f6]::before, .flip-card__back[data-v-78efe7f6]::after {
-  color: #6649FB !important;
-  height: 0.70em !important;
+  /* color: #6649FB !important; */
+  /* height: 0.70em !important;
   background: #1e2257 !important;
-  width: 1.5em !important;
+  width: 1.5em !important; */
   
   /* community sale */
-  /* color: #664aff !important;
+  color: #664aff !important;
   width: 2.2em !important;
   border: 2px solid #424473;
   background: #000000ff !important;
-  height: 0.90em !important; */
+  height: 0.90em !important;
 }
 .flip-card[data-v-78efe7f6] {
   line-height: 1 !important;
 }
 .flip-card[data-v-78efe7f6] {
-  font-size: 2.3rem !important;
   /* font-size: 2.3rem !important; */
+
+  /* community sale */
+  font-size: 2.3rem !important;
 }
 .flip-clock__slot[data-v-78efe7f6] {
   font-size: 0.8rem !important;
-  color: #838386 !important;
+  /* color: #838386 !important; */
   font-weight: bold;
-  /* margin-top:20px; */
+  
+  color:  #664aff !important;
+  margin-top:20px;
 }
 .partner_div {
   margin-top:85px;
@@ -693,7 +697,7 @@ hr.sales_hr {
   border-radius: 20px;
   cursor: pointer;
 }
-.matic_btn:active, .twit_avatar:active, .tele_avatar:active, .medium_avatar:active {
+.matic_btn:active {
   box-shadow: inset -1px -1px 1px #ededff, inset 2px 2px 2px #363541;
 }
 .approve_btn {
@@ -952,12 +956,12 @@ hr.sales_hr {
 .tabcontent {
   float: left;
   padding: 0px 4px;
-  border: 1px solid #DDDBEC;
+  /* border: 1px solid #DDDBEC; */
   width: 50%;
   height: 507px;
   border-left: none;
-  background-color: #DDDBEC;
-  /* background-color: rgba(10, 10, 10, 0.9); */
+  /* background-color: #DDDBEC; */
+  background-color: rgba(10, 10, 10, 0.9);
   border-bottom-right-radius: 15px;
 }
 .bundle_container {
@@ -1000,7 +1004,7 @@ hr.sales_hr {
   background-color: rgba(0, 0, 3, 0.9);
   z-index: 2;
   cursor: pointer;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;

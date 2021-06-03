@@ -155,7 +155,10 @@
 .matic_avatar .vs-avatar {
   background:  #1E264D !important;
 }
-
+.twit_avatar:active, .tele_avatar:active, .medium_avatar:active {
+  box-shadow:  10px 10px 15px #080f14,
+  -10px -10px 15px #424961, inset -1px -1px 1px #ededff, inset 2px 2px 2px #363541;
+}
 .vs-dialog {
   background: #1B1F2F !important;
   color: white !important;
