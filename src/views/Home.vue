@@ -383,10 +383,9 @@
                         <vs-button
                           v-else
                           class="connect_button"
-                          style="font-size: 0.8rem;"
                           @click="changeNetwork"
                         >
-                          Connect Wallect
+                          Connect Wallet
                         </vs-button>
 
                         <vs-button
@@ -566,12 +565,12 @@
                         </vs-button>
 
                         <vs-button
+                          style="margin-left:-7px;"
                           v-else
                           class="connect_button"
-                          style="font-size: 0.8rem;"
                           @click="changeNetwork"
                         >
-                          Connect Wallect
+                          Connect Wallet
                         </vs-button>
 
                         <span class="approve_btn" @click="buyTokens">
@@ -754,10 +753,9 @@
                         <vs-button
                           v-else
                           class="connect_button"
-                          style="font-size: 0.8rem;"
                           @click="changeNetwork"
                         >
-                          Connect Wallect
+                          Connect Wallet
                         </vs-button>
 
                         <vs-button
@@ -795,7 +793,6 @@
 
     <div class="ilustrations">
       <div class="wrap">
-        <!--         
         <vs-row class="mt-50">
           <vs-col :w="5" :xs="10" :sm="10">
             <div class="flex-align-center" v-if="onEthNetwork">
@@ -829,7 +826,7 @@
                   class="progress_token"
                   :style="{ width: `${ethPercentPurchased}%` }"
                 >
-                  <span>{{ Math.trunc(ethPercentPurchased) }}%</span>
+                  <!-- <span>{{ Math.trunc(ethPercentPurchased) }}%</span> -->
                 </div>
               </div>
 
@@ -842,14 +839,14 @@
                   class="progress_token"
                   :style="{ width: `${maticPercentPurchased}%` }"
                 >
-                  <span>{{ Math.trunc(maticPercentPurchased) }}%</span>
+                  <!-- <span>{{ Math.trunc(maticPercentPurchased) }}%</span> -->
                 </div>
               </div>
 
               <p class="mt-20 p_tokens">16M Tokens</p>
             </div>
           </vs-col>
-        </vs-row> -->
+        </vs-row>
 
         <Illustrations />
         <br />

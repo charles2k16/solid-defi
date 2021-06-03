@@ -49,14 +49,15 @@
   font-size: 13px;
   margin-left:30px;
 }
-.connect_button {
+.connect_button.vs-button--default {
   border-radius: 80px !important;
   padding-left: 15px !important;
   padding-right: 15px !important;
   color: #fff;
-  background: linear-gradient(145deg, #1e2024, #23272b);
+  background: rgb(242, 19, 93) !important;
   box-shadow:  5px 5px 11px #141618,
              -5px -5px 11px #2e3238;
+  font-size: 0.8rem;
 }
 
 .buy_button.vs-button--default {
@@ -197,7 +198,6 @@
   height: 37px;
   padding: 5px 12px !important;
   border-radius: 80px !important;
-  // color: #33394e;
   border: none !important;
   background: #313843 !important;
   box-shadow:  0px 0px 0px #06090e,
@@ -209,6 +209,7 @@
 
 .vs-input__label {
   font-size: 0.8rem !important;
+  padding-left: 8px;
   color: #f3f4f7;
 }
 

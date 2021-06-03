@@ -32,12 +32,12 @@ export default {
     //   return percentPurchased;
     // },
     getEthBalance(currentBalance) {
-      console.log('currentbalance', currentBalance)
+      // console.log('currentbalance', currentBalance)
       let balanceOf = this.ethTotalToken;
-      let currBalance = 13005000
+      let currBalance = this.getSerial(currentBalance)
       let balance = balanceOf - currBalance
       this.ethPercentPurchased = 100 * balance / this.ethTotalToken;
-      console.log(this.ethPercentPurchased);
+      // console.log(this.ethPercentPurchased);
 
       return balance;
     },

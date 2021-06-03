@@ -8,7 +8,7 @@
         <div class="blog_content">
           <h3>SOLID NFTs</h3>
           <p>
-            NFT prizes bases on earn performance for using the Solid Bonding
+            NFT prizes bases on earn performance when using the Solid Bonding
             curve.
           </p>
           <vs-button class="up_btn" style="font-size: 1rem;">
@@ -26,7 +26,7 @@
           <h3>SOLID Governance</h3>
           <p>
             SOLID holders determine the future of Solid Defi. Vote on future SB
-            curves, collateral and fee dynamics
+            curves, collateral and fee dynamics.
           </p>
           <vs-button class="up_btn" style="font-size: 1rem;">
             <b>UPCOMING</b>
@@ -42,8 +42,8 @@
         <div class="blog_content">
           <h3>SOLID Rewards</h3>
           <p>
-            SolidUSDT minted from the Solid Protocol will be awarded to pre-sale
-            SOLID Holders
+            A portion of SolidUSDT minted from the Solid Protocol will be
+            awarded to pre-sale SOLID Holders.
           </p>
           <vs-button class="up_btn" style="font-size: 1rem;">
             <b>UPCOMING</b>

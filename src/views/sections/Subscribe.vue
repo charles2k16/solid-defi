@@ -12,37 +12,50 @@
         </h1>
 
         <p class="lead_text mt-30">
-          With inflation getting hyper and markets quick to panic sell,
+          With inflation getting hyper and markets quick to panic sell, Solid
           <br />
-          Solid Defi is creating tokens that protect holders from both.
+          Defi is creating tokens that protect holders from both.
 
           <br />
-          Read more on our Medium and Leave us your email here to <br />
-          be the first one to get new information.
+          <a href="https://soliddefi.medium.com/" target="_blank"
+            >Read more on Medium.</a
+          >
+          and Leave us your email here to be<br />
+          the first one to get new information.
         </p>
 
         <div class="d-flex mt-30">
           <vs-input v-model="email" placeholder="Enter your email" />
-          <vs-button class="def_button">
+          <vs-button class="def_button" style="margin-left:28px">
             <b>SUBSCRIBE</b>
           </vs-button>
         </div>
 
         <div class="mt-30">
-          <vs-button style="font-size:18px" blank href="https://t.me/soliddefi">
+          <vs-button
+            style="font-size:18px"
+            blank
+            href="https://t.me/soliddefi"
+            transparent
+          >
             <img
               src="../../assets/images/telegram2.png"
               alt="telegram"
               width="23px"
               class="mr-10"
             />
-            <b style="color:#5b3cc4;">Join us on Telegram</b>
+            <b style="color:#731cd8;">Join us on Telegram</b>
           </vs-button>
           <p class="small_text1">
             For news, early access & special prizes
           </p>
           <h2 class="mt-30 small_text_primary">
-            Learn more in Solid Protocol Whitepaper
+            <a
+              href="https://solid-defi.gitbook.io/solid-whitepaper/"
+              target="_blank"
+            >
+              Learn more in Solid Protocol Whitepaper</a
+            >
           </h2>
         </div>
       </div>

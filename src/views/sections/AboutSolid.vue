@@ -34,7 +34,9 @@
               Our vision is to create a new kind of “stablecoin” that has the
               ability to absorb and rise with inflation. As well as a built in
               “shorting” mechanism that lets holders earn on red candle days.
-              Read more on Medium.
+              <a href="https://soliddefi.medium.com/" target="_blank"
+                >Read more on Medium.</a
+              >
             </p>
           </div>
 
