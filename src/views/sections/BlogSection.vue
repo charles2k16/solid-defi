@@ -37,7 +37,11 @@
     <vs-col :w="4" :xs="12" :sm="12">
       <div class="blog">
         <div class="blog_img">
-          <img src="../../assets/images/rewards_icon.png" alt="rewards" />
+          <img
+            src="../../assets/images/rewards_icon.png"
+            alt="rewards"
+            style="margin-left:-10px;"
+          />
         </div>
         <div class="blog_content">
           <h3>SOLID Rewards</h3>

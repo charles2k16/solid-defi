@@ -42,7 +42,7 @@
     <br />
     <vs-button
       class="small_text_primary"
-      style="font-size:14px"
+      style="font-size:14px;"
       blank
       href="https://solid-defi.gitbook.io/solid-whitepaper/"
     >

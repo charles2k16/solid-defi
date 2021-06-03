@@ -253,7 +253,7 @@
                     <el-carousel-item name="bigBundle">
                       <div>
                         <img
-                          src="../assets/images/solid_voucher_80000.png"
+                          src="../assets/images/sLD_Token_voucher_80k_eth.png"
                           alt="tkbundles"
                           class="caro_image"
                         />
@@ -269,7 +269,7 @@
                     <el-carousel-item name="smallBundle">
                       <div>
                         <img
-                          src="../assets/images/sLD_Token_voucher_40k.png"
+                          src="../assets/images/sLD_Token_voucher_40k_eth.jpg"
                           alt="tkbundles"
                           class="caro_image"
                         />
@@ -435,7 +435,7 @@
                     <el-carousel-item name="bigBundle">
                       <div>
                         <img
-                          src="../assets/images/solid_voucher_80000.png"
+                          src="../assets/images/sLD_Token_voucher_80k_matic.png"
                           alt="tkbundles"
                           class="caro_image"
                         />
@@ -451,7 +451,7 @@
                     <el-carousel-item name="smallBundle">
                       <div>
                         <img
-                          src="../assets/images/sLD_Token_voucher_40k.png"
+                          src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
                           alt="tkbundles"
                           class="caro_image"
                         />
@@ -621,7 +621,7 @@
                     <el-carousel-item name="bigBundle">
                       <div>
                         <img
-                          src="../assets/images/solid_voucher_80000.png"
+                          src="../assets/images/sLD_Token_voucher_80k_matic.png"
                           alt="tkbundles"
                           class="caro_image"
                         />
@@ -637,7 +637,7 @@
                     <el-carousel-item name="smallBundle">
                       <div>
                         <img
-                          src="../assets/images/sLD_Token_voucher_40k.png"
+                          src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
                           alt="tkbundles"
                           class="caro_image"
                         />
