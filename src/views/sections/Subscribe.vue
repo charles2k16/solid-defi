@@ -12,23 +12,24 @@
         </h1>
 
         <p class="lead_text mt-30">
-          With inflation getting hyper and markets quick to panic sell, Solid
+          With inflation getting hyper and markets quick to panic sell,
           <br />
           Solid Defi is creating tokens that protect holders from both.
 
+          <br />
           <a
             href="https://soliddefi.medium.com/"
             target="_blank"
             class="a_links"
             >Read more on Medium.</a
           >
-          and Leave us your email here to be the first one to get new
-          information.
+          and Leave us your email here to <br />
+          be the first one to get new information.
         </p>
 
         <div class="d-flex mt-30">
           <vs-input v-model="email" placeholder="Enter your email" />
-          <vs-button class="def_button" style="margin-left:35px">
+          <vs-button class="def_button" style="margin-left:27px">
             <b>SUBSCRIBE</b>
           </vs-button>
         </div>
