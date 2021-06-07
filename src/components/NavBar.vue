@@ -12,9 +12,12 @@
         <img src="../assets/images/sld.png" alt="logo" width="50px" />
       </template>
       <template #right>
+        <vs-button class="airdrop_btn btn_hover" blank>
+          <b>AirDrop</b>
+        </vs-button>
         <vs-button
           blank
-          class="medium_button"
+          class="medium_button btn_hover"
           href="https://soliddefi.medium.com/"
           icon
         >
@@ -25,7 +28,7 @@
           />
         </vs-button>
         <vs-button
-          class="def_button"
+          class="def_button btn_hover"
           blank
           href="https://solid-defi.gitbook.io/solid-whitepaper/"
         >

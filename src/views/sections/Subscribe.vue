@@ -29,7 +29,7 @@
 
         <div class="d-flex mt-30">
           <vs-input v-model="email" placeholder="Enter your email" />
-          <vs-button class="def_button" style="margin-left:27px">
+          <vs-button class="def_button btn_hover" style="margin-left:36px">
             <b>SUBSCRIBE</b>
           </vs-button>
         </div>

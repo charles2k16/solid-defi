@@ -21,12 +21,20 @@
   background: rgb(77,26,192) !important;
   background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
 }
-.def_button.vs-button--default:hover {
+.btn_hover.vs-button--default:hover {
   transform: none !important;
   box-shadow:  5px 5px 8px #000000,
   -5px -5px 8px #393e54 !important;
 }
-
+.airdrop_btn.vs-button--default {
+  border-radius: 70px !important;
+  box-shadow:  5px 5px 8px #000000,
+  -5px -5px 8px #393e54;
+  margin-right: 30px;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  font-size: 0.8rem;
+}
 .eth_button.vs-button--default {
   border-radius: 70px !important;
   padding-left: 15px !important;
@@ -36,19 +44,7 @@
   box-shadow:  8px 8px 24px #0c0e18,
   -8px -8px 24px #121624;
 }
-.sub_button {
-  border-radius: 70px !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-  color: #fff;
-  box-shadow:  5px 5px 8px #0d0e11,
-  -5px -5px 8px #393e54,
-  inset -2px -2px 20px #200468, inset 2px 2px 2px #7564f5;
-  background: rgb(77,26,192) !important;
-  background: linear-gradient(151deg, rgba(77,26,192,1) 47%, rgba(121,34,220,1) 64%) !important;
-  font-size: 13px;
-  margin-left:30px;
-}
+
 .connect_button.vs-button--default {
   border-radius: 80px !important;
   padding-left: 15px !important;
@@ -137,21 +133,11 @@
   border: 2px solid #2c2f36;
   margin-right:30px !important;
 }
-.medium_button.vs-button--default:hover {
-  transform: none !important;
-  box-shadow:  5px 5px 8px #000000,
-  -5px -5px 8px #393e54 !important;
-}
-.def_button.vs-button--default:active, .medium_button.vs-button--default:active {
+.btn_hover.vs-button--default:active {
   box-shadow:  5px 5px 8px #000000,
   -5px -5px 8px #393e54,
   inset -1px -1px 1px #cecef5, inset 2px 2px 2px #363541 !important;
 }
-
-// .def_button:hover {
-//   background: linear-gradient(151deg, rgb(81, 52, 212) 47%, rgb(144, 73, 226) 64%);
-//   opacity: 0.9;
-// }
 .tele_avatar {
   background: #7D33FC !important;
   box-shadow:  10px 10px 15px #080f14,
@@ -201,9 +187,8 @@
   margin-top: 10px;
   margin-bottom: 12px;
 }
-
 .vs-input {
-  width: 270px !important;
+  width: 276px !important;
   height: 37px;
   padding: 5px 12px !important;
   border-radius: 80px !important;
@@ -215,13 +200,11 @@
   color: rgb(165, 162, 162) !important; 
   font-family: Avenir, Helvetica, Arial, sans-serif; 
 }
-
 .vs-input__label {
   font-size: 0.8rem !important;
   padding-left: 8px;
   color: #f3f4f7;
 }
-
 .vs-avatar-content {
   --vs-color: none !important;
 }
