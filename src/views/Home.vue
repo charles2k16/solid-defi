@@ -334,7 +334,7 @@
                           </span>
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;font-size:0.8rem;margin-left:5px;"
+                            style="color:#B6B6B6;font-size:0.8rem;margin-left:7px;"
                             v-else
                             >You're <br />
                             ON
@@ -354,7 +354,7 @@
                           >
                           <span
                             class="matic_btn"
-                            style="margin-left:20px"
+                            style="margin-left:27px"
                             v-else
                             @click="changeNetwork"
                           >
@@ -518,7 +518,7 @@
 
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;font-size:0.8rem;margin-left:-1px;"
+                            style="color:#B6B6B6;font-size:0.8rem;margin-left:12px;"
                             v-else
                             >You're <br />
                             ON
@@ -541,7 +541,7 @@
                             class="matic_btn"
                             v-else
                             @click="changeNetwork"
-                            style="margin-left:20px"
+                            style="margin-left:27px"
                           >
                             Connect to <br />
                             <span style="color:blue;"> <b>Etherum </b></span>
@@ -704,7 +704,7 @@
 
                           <span
                             @click="checkAccounts"
-                            style="color:#B6B6B6;font-size:0.8rem;margin-left:5px;"
+                            style="color:#B6B6B6;font-size:0.8rem;margin-left:7px;"
                             v-else
                             >You're <br />
                             ON
@@ -725,7 +725,7 @@
 
                           <span
                             class="matic_btn"
-                            style="margin-left:20px"
+                            style="margin-left:27px"
                             v-else
                             @click="changeNetwork"
                           >
