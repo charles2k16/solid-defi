@@ -691,7 +691,7 @@ hr.sales_hr {
   -7px -7px 10px #ffffff, inset -10px -10px 10px #000000;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 338px;
   height: 54px;
   padding: 2px 2px 2px 7px;
@@ -705,7 +705,7 @@ hr.sales_hr {
   -7px -7px 10px #ffffff, inset -20px -20px 20px #0f102425;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 338px;
   height: 54px;
   padding: 7px 2px;
@@ -735,7 +735,7 @@ hr.sales_hr {
                0px 0px 0px #a76912;
   border-radius: 20px;
   cursor: pointer;
-  margin-right: -13px;
+  margin-right: 5px;
   margin-top: -2px;
   transition: all 0.25s ease;
 }

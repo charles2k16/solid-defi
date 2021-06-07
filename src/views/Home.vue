@@ -327,7 +327,7 @@
                             class="matic_btn"
                             v-if="onEthNetwork"
                             @click="changeNetwork"
-                            style="margin-left:-4px"
+                            style="margin-left:2px"
                           >
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
@@ -379,6 +379,7 @@
                         </vs-button>
 
                         <vs-button
+                          style="margin-left:0px;"
                           v-else
                           class="connect_button"
                           @click="changeNetwork"
@@ -509,7 +510,7 @@
                             class="matic_btn"
                             v-if="onEthNetwork"
                             @click="changeNetwork"
-                            style="margin-left:-10px"
+                            style="margin-left:7px"
                           >
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
@@ -563,7 +564,7 @@
                         </vs-button>
 
                         <vs-button
-                          style="margin-left:-7px;"
+                          style="margin-left:5px;"
                           v-else
                           class="connect_button"
                           @click="changeNetwork"
@@ -695,7 +696,7 @@
                             class="matic_btn"
                             v-if="onEthNetwork"
                             @click="changeNetwork"
-                            style="margin-left:-4px"
+                            style="margin-left:2px"
                           >
                             Connect to <br />
                             <span style="color:blue;"> <b>Matic </b></span>
@@ -749,6 +750,7 @@
                         </vs-button>
 
                         <vs-button
+                          style="margin-left:0px;"
                           v-else
                           class="connect_button"
                           @click="changeNetwork"
