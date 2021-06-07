@@ -364,7 +364,7 @@
                         </div>
 
                         <vs-button
-                          danger
+                          class="connect_button"
                           @click="changeNetwork"
                           v-else-if="
                             isDrizzleInitialized &&

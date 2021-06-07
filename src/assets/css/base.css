@@ -691,7 +691,7 @@ hr.sales_hr {
   -7px -7px 10px #ffffff, inset -10px -10px 10px #000000;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 338px;
   height: 54px;
   padding: 2px 2px 2px 7px;
