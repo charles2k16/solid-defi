@@ -74,7 +74,7 @@
           </div>
 
           <vs-tooltip shadow>
-            <div class="welcome_btn">
+            <div class="welcome_btn" @click="copyToClip(reffId)">
               <p>
                 <span>{{ reffId }}</span>
               </p>
