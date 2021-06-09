@@ -15,7 +15,8 @@ export default {
       ethTotalToken: 14000000,
       maticTotalToken: 16000000,
       ethPercentPurchased: 0,
-      maticPercentPurchased: 0
+      maticPercentPurchased: 0,
+      clipboard: 'Copy to clipboard'
     }
   },
   methods: {
@@ -200,6 +201,7 @@ export default {
       return netName;
     },
     copyToClip(text) {
+      let self = this;
       let textArea = document.createElement("textarea");
       textArea.value = text;
 
@@ -217,6 +219,9 @@ export default {
       // document.execCommand("copy");
 
       // alert("Copied the text: " + text);
+      this.clipboard = 'Copied!'
+
+      setTimeout(function () { self.clipboard = 'Copy to clipboard' }, 3000);
     },
     openNotification(position = null, color, title, text) {
       this.$vs.notification({

@@ -3,7 +3,7 @@
     <NavBar />
     <div class="hero">
       <div class="wrap">
-        <div class="airdrop_container" v-if="!airdrop_sent">
+        <div class="airdrop_container">
           <div class="airdrop_welcome center">
             <h2>Welcome</h2>
           </div>
@@ -69,7 +69,12 @@
             />
 
             <div class="flex-justify-between-center air_text_div">
-              <span class="air_text">Your personal referral link</span>
+              <span class="air_text" style="color: #fcb420;"
+                >Your personal referral link</span
+              >
+              <span class="material-icons ic" style="color:#fcb420;">
+                help
+              </span>
             </div>
           </div>
 
@@ -80,7 +85,7 @@
               </p>
             </div>
             <template #tooltip>
-              Copy to clipboard
+              {{ clipboard }}
             </template>
           </vs-tooltip>
 
@@ -91,48 +96,63 @@
               :loading="btn_loading"
               @click="sendReferral"
             >
-              <b> Finish</b>
+              <b> Submit</b>
             </vs-button>
           </div>
 
+          <!-- <div class="content-tooltip-med" v-if="showHelper">
+            <span class="material-icons air_cancel" @click="showHelper = false">
+              cancel
+            </span>
+            To see how you can
+            <span class="earn_more">earn more,</span> please see our Medium
+            posts or join our Telegram channel !
+          </div> -->
+
           <div class="flex-justify-evenly-center mt-50">
-            <vs-avatar size="60" class="medium_avatar">
-              <a href="https://soliddefi.medium.com/" target="_blank">
-                <img
-                  src="../assets/images/medium_icon.png"
-                  alt="medium"
-                  style="width:25px !important"
-                />
-              </a>
-            </vs-avatar>
-            <a href="https://t.me/soliddefi" target="_blank">
-              <vs-avatar class="tele_avatar" size="60">
-                <img
-                  src="../assets/images/telegram2.png"
-                  alt="telegram"
-                  style="width:28px !important"
-                />
+            <vs-tooltip left color="#56585F">
+              <vs-avatar size="60" class="medium_avatar">
+                <a href="https://soliddefi.medium.com/" target="_blank">
+                  <img
+                    src="../assets/images/medium_icon.png"
+                    alt="medium"
+                    style="width:25px !important"
+                  />
+                </a>
               </vs-avatar>
-            </a>
+              <template #tooltip>
+                <div class="content-tooltip-med ">
+                  To see how you can
+                  <span class="earn_more">earn more,</span> please see our
+                  Medium posts or join our Telegram channel !
+                </div>
+              </template>
+            </vs-tooltip>
+
+            <vs-tooltip right color="#56585F">
+              <a href="https://t.me/soliddefi" target="_blank">
+                <vs-avatar class="tele_avatar" size="60">
+                  <img
+                    src="../assets/images/telegram2.png"
+                    alt="telegram"
+                    style="width:28px !important"
+                  />
+                </vs-avatar>
+              </a>
+              <template #tooltip>
+                <div class="content-tooltip-med ">
+                  To see how you can
+                  <span class="earn_more">earn more,</span> please see our
+                  Medium posts or join our Telegram channel !
+                </div>
+              </template>
+            </vs-tooltip>
           </div>
 
-          <div class="mt-50">
+          <div class="mt-40">
             <p class="air_smalltxt">
-              NoteL: SOLID Token reserves the rights on how the air drop tokens
-              will be distributed, if frauds are detected
-            </p>
-          </div>
-        </div>
-
-        <div class="airdrop_container" v-else>
-          <div class="airdrop_welcome center">
-            <h2>Thank You</h2>
-          </div>
-
-          <div class="mt-30">
-            <p class="air_finish_txt">
-              Thanks for joining in. You have been added to the Solid
-              whitelisted list.
+              Note: SOLID Token reserves the rights on how the air drop tokens
+              will be distributed, if frauds are detected.
             </p>
           </div>
         </div>

@@ -1036,6 +1036,14 @@ hr.sales_hr {
   justify-content: center;
   /* box-shadow: -1px 10px 30px -2px #040409 */
 }
+.blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: ' ';
+}
 .overlay_div {
   border: 2px solid #664aff;
   width: 600px;
@@ -1047,12 +1055,13 @@ hr.sales_hr {
   width: 562px;
 }
 .overlay_cancel {
-  color: #465a70;
-  font-size: 40px;
+  color: #3b4972;
+  font-size: 45px;
   display: flex;
   align-self: flex-end;
-  margin-top: -60px;
-  margin-right: -10px;
+  float: right;
+  margin-top: -45px;
+  margin-right: -45px;
 }
 .yellow_bar {
   display: inline-block;
@@ -1090,7 +1099,7 @@ hr.sales_hr {
 .airdrop_container {
   width: 400px;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 40px 20px;
   border-radius: 10px;
   background: #0F121E;
 box-shadow:  5px 5px 8px #06070c,
@@ -1129,7 +1138,7 @@ box-shadow:  5px 5px 8px #06070c,
   font-size: 15px;
 }
 .air_text {
-  color: rgb(115, 172, 247);
+  color: #cbc8ff;
   font-size: 15px;
   font-weight: 600;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -1140,16 +1149,52 @@ box-shadow:  5px 5px 8px #06070c,
 }
 .air_text_div .ic{
   font-size: 20px;
-  color: #b197f8;
+  color: #731cd8ff;
   cursor: pointer;
+}
+.content-tooltip-med {
+  /* z-index: 2;
+  top: 70px;
+  right: 250px;
+  position:relative; */
+  background: #56585F;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  color: rgb(200, 214, 219);
+  /* width: 280px; */
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+/* .content-tooltip-med::after {
+  content: " ";
+  position: absolute;
+  right: -12px;
+  top: 25px;
+  border-top: 15px solid transparent;
+  border-right: none;
+  border-left: 15px solid #56585F;
+  border-bottom: 15px solid transparent
+} */
+.air_cancel {
+  float: right;
+  margin-top: -20px;
+  margin-right: -20px;
+  color: #fcb420;
+  font-weight: bold;
+  cursor: pointer;
+}
+.content-tooltip-med .earn_more {
+  color: #fcb420;
+  font-weight: bold;
+  font-size: 16px;
 }
 .welcome_btn {
   border-radius: 10px;
   background-color: #242738;
-  width: 310px;
+  width: 315px;
   margin: 15px auto;
   padding: 10px;
-  color: #d89612;
+  color: #fcb420;
   font-size: 13px;
   cursor: pointer;
 }
@@ -1158,10 +1203,13 @@ box-shadow:  5px 5px 8px #06070c,
   font-size: 16px;
 }
 .air_smalltxt {
-  font-size: 10px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 15px;
   color: grey;
   width:280px;
   margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 

@@ -13,14 +13,14 @@
           <vs-col :w="8" :xs="12" :sm="12">
             <div class="bundle_container">
               <div id="overlay" v-show="showOverlay">
-                <span
-                  class="material-icons overlay_cancel"
-                  @click="closeOverlay"
-                >
-                  cancel
-                </span>
-                <br /><br />
+                <div @click="closeOverlay" class="blocker"></div>
                 <div>
+                  <span
+                    class="material-icons overlay_cancel"
+                    @click="closeOverlay"
+                  >
+                    cancel
+                  </span>
                   <div class="overlay_div">
                     <span class="yellow_bar"></span>
                     <div class="overlay_div2">
