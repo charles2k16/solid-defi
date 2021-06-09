@@ -31,6 +31,11 @@ export default {
 
     //   return percentPurchased;
     // },
+    getReferralString() {
+      let randomString = Math.random().toString(36).substr(2);
+      let reffId = `soliddefi.com/airdrop?ref=SLD-${randomString}`
+      return reffId;
+    },
     getEthBalance(currentBalance) {
       // console.log('currentbalance', currentBalance)
       let balanceOf = this.ethTotalToken;
@@ -198,11 +203,20 @@ export default {
       let textArea = document.createElement("textarea");
       textArea.value = text;
 
-      textArea.select();
-      textArea.setSelectionRange(0, 99999); /* For mobile devices */
-      document.execCommand("copy");
+      textArea.setAttribute('readonly', '');
+      textArea.style.position = 'absolute';
 
-      alert("Copied the text: " + text);
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+
+      // textArea.select();
+      // textArea.setSelectionRange(0, 99999); /* For mobile devices */
+      // document.execCommand("copy");
+
+      // alert("Copied the text: " + text);
     },
     openNotification(position = null, color, title, text) {
       this.$vs.notification({

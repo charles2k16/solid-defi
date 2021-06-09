@@ -9,10 +9,12 @@
       v-model="active"
     >
       <template #left>
-        <img src="../assets/images/sld.png" alt="logo" width="50px" />
+        <a href="http://localhost:8080"
+          ><img src="../assets/images/sld.png" alt="logo" width="50px"
+        /></a>
       </template>
       <template #right>
-        <vs-button class="airdrop_btn btn_hover" blank>
+        <vs-button class="airdrop_btn btn_hover" blank to="/airdrop">
           <b>AirDrop</b>
         </vs-button>
         <vs-button

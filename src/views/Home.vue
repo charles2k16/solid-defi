@@ -2,7 +2,7 @@
   <div class="main_container">
     <NavBar />
     <div class="hero">
-      <!-- <GetSolidHeader /> -->
+      <GetSolidHeader />
 
       <sales-bundle />
       <!-- <air-drop-form /> -->
@@ -94,7 +94,7 @@
 <script>
 import NavBar from '@/components/NavBar';
 // import AirDropForm from '@/components/AirDropForm.vue';
-// import GetSolidHeader from './sections/GetSolidHeader.vue';
+import GetSolidHeader from './sections/GetSolidHeader.vue';
 import SalesBundle from './sections/SalesBundle.vue';
 import Illustrations from './sections/Illustrations.vue';
 import BlogSection from './sections/BlogSection.vue';
@@ -107,6 +107,7 @@ export default {
   name: 'Home',
   components: {
     NavBar,
+    GetSolidHeader,
     SalesBundle,
     Illustrations,
     BlogSection,

@@ -12,8 +12,11 @@
           </vs-col>
           <vs-col :w="8" :xs="12" :sm="12">
             <div class="bundle_container">
-              <div id="overlay">
-                <span class="material-icons overlay_cancel">
+              <div id="overlay" v-show="showOverlay">
+                <span
+                  class="material-icons overlay_cancel"
+                  @click="closeOverlay"
+                >
                   cancel
                 </span>
                 <br /><br />
@@ -144,6 +147,7 @@
                   :autoplay="false"
                   class="mt-15"
                   @change="changeBundle"
+                  id="hideEbundle"
                 >
                   <el-carousel-item name="bigBundle">
                     <div>
@@ -178,7 +182,7 @@
                   </el-carousel-item>
                 </el-carousel>
 
-                <div class="center d-flex-center mt-15">
+                <div class="center d-flex-center mt-15" @click="openOverlay">
                   <div>
                     <div class="d-flex-center">
                       <div class="flex-align-center">
@@ -258,6 +262,7 @@
                   class="mt-15"
                   @change="changeBundle"
                   ref="carouselweth"
+                  id="hideWbundle"
                 >
                   <el-carousel-item name="bigBundle">
                     <div>
@@ -292,7 +297,7 @@
                   </el-carousel-item>
                 </el-carousel>
 
-                <div class="center d-flex-center mt-15">
+                <div class="center d-flex-center mt-15" @click="openOverlay">
                   <div>
                     <div class="d-flex-center">
                       <div class="flex-align-center">
@@ -377,6 +382,7 @@
                   class="mt-15"
                   @change="changeBundle"
                   ref="carouselmatic"
+                  id="hideMbundle"
                 >
                   <el-carousel-item name="bigBundle">
                     <div>
@@ -411,7 +417,7 @@
                   </el-carousel-item>
                 </el-carousel>
 
-                <div class="center d-flex-center mt-15">
+                <div class="center d-flex-center mt-15" @click="openOverlay">
                   <div>
                     <div class="d-flex-center">
                       <div class="flex-align-center">
@@ -490,6 +496,7 @@ export default {
   },
   data() {
     return {
+      showOverlay: false,
       tokenSale: 0,
       percentageOff: 37,
       ethBundle: 1,
@@ -499,6 +506,26 @@ export default {
     };
   },
   methods: {
+    openOverlay() {
+      let eb = document.getElementById('hideEbundle');
+      let wb = document.getElementById('hideWbundle');
+      let mb = document.getElementById('hideMbundle');
+      eb.style.display = 'none';
+      wb.style.display = 'none';
+      mb.style.display = 'none';
+
+      this.showOverlay = true;
+    },
+    closeOverlay() {
+      let eb = document.getElementById('hideEbundle');
+      let wb = document.getElementById('hideWbundle');
+      let mb = document.getElementById('hideMbundle');
+      eb.style.display = 'block';
+      wb.style.display = 'block';
+      mb.style.display = 'block';
+
+      this.showOverlay = false;
+    },
     changeBundle(r) {
       console.log(r);
       let bb = r;
