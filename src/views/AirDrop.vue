@@ -147,7 +147,7 @@
                 </vs-avatar>
               </a>
               <template #tooltip>
-                <div class="content-tooltip-med ">
+                <div class="content-tooltip-med">
                   To see how you can
                   <span class="earn_more">earn more,</span> please see our
                   Medium posts or join our Telegram channel !
@@ -207,7 +207,7 @@ export default {
     let reffString = this.getReferralString();
     this.airdropForm.referredBy = this.$route.query.ref;
     this.airdropForm.referralId = reffString;
-    this.reffLink = `soliddefi.com/airdrop?ref=${reffString}`;
+    this.reffLink = `soliddefi.com/airdrop#?ref=${reffString}`;
   },
   methods: {
     sendReferral() {
