@@ -233,7 +233,7 @@ export default {
             'top-center',
             'danger',
             'Error',
-            'Email has already been taken.'
+            'Invalid email address or email address already used.'
           );
         });
     },
