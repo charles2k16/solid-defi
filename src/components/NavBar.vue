@@ -9,7 +9,7 @@
       v-model="active"
     >
       <template #left>
-        <a href="http://localhost:8080"
+        <a href="https://soliddefi.com/"
           ><img src="../assets/images/sld.png" alt="logo" width="50px"
         /></a>
       </template>

@@ -26,7 +26,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  linkActiveClass: "open active",
   base: process.env.BASE_URL,
   routes,
 });
