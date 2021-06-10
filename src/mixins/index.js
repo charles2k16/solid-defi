@@ -34,8 +34,7 @@ export default {
     // },
     getReferralString() {
       let randomString = Math.random().toString(36).substr(2);
-      let reffId = `soliddefi.com/airdrop?ref=SLD-${randomString}`
-      return reffId;
+      return `SLD-${randomString}`;
     },
     getEthBalance(currentBalance) {
       // console.log('currentbalance', currentBalance)
@@ -44,7 +43,6 @@ export default {
       let balance = balanceOf - currBalance
       this.ethPercentPurchased = 100 * balance / this.ethTotalToken;
       // console.log(this.ethPercentPurchased);
-
       return balance;
     },
     getMaticBalance(currentBalance) {
@@ -226,6 +224,7 @@ export default {
     openNotification(position = null, color, title, text) {
       this.$vs.notification({
         progress: 'auto',
+        duration: '10s',
         color,
         position,
         title,

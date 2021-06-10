@@ -1482,10 +1482,6 @@ box-shadow:  5px 5px 8px #06070c,
     .tabcontent { 
       width: 100%;
     }
-    .sales_div {
-      width: 400px !important;
-      margin-bottom: 25px;
-    }
     .tab {
       width: 100%;
       border-top-left-radius: 15px;
@@ -1515,6 +1511,9 @@ box-shadow:  5px 5px 8px #06070c,
     }
     .time_left {
       width: 15%;
+    }
+    .gif_anime {
+      border-radius: 20px;
     }
     .d-flex {
       display: block;

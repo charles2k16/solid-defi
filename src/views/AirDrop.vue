@@ -52,7 +52,7 @@
               type="text"
               placeholder="Public address"
               class="air_input"
-              v-model="airdropForm.metamask_address"
+              v-model="airdropForm.metamaskAddress"
             />
 
             <div class="flex-justify-between-center air_text_div">
@@ -79,9 +79,9 @@
           </div>
 
           <vs-tooltip shadow>
-            <div class="welcome_btn" @click="copyToClip(reffId)">
+            <div class="welcome_btn" @click="copyToClip(reffLink)">
               <p>
-                <span>{{ reffId }}</span>
+                <span>{{ reffLink }}</span>
               </p>
             </div>
             <template #tooltip>
@@ -91,12 +91,19 @@
 
           <div class="mt-50">
             <vs-button
-              block
+              v-if="!btn_loading"
               class="finish_btn"
-              :loading="btn_loading"
               @click="sendReferral"
             >
               <b> Submit</b>
+            </vs-button>
+            <vs-button
+              v-else
+              :loading="btn_loading"
+              @click="sendReferral"
+              class="loading_btn"
+            >
+              <b> Loading</b>
             </vs-button>
           </div>
 
@@ -121,7 +128,7 @@
                 </a>
               </vs-avatar>
               <template #tooltip>
-                <div class="content-tooltip-med ">
+                <div class="content-tooltip-med">
                   To see how you can
                   <span class="earn_more">earn more,</span> please see our
                   Medium posts or join our Telegram channel !
@@ -156,6 +163,16 @@
             </p>
           </div>
         </div>
+
+        <vs-dialog width="300px" not-center v-model="airdrop_sent">
+          <template #header>
+            <h4 class="not-margin">Successfully Sent</h4>
+          </template>
+
+          <div class="con-content">
+            <p>Thank You</p>
+          </div>
+        </vs-dialog>
       </div>
     </div>
   </div>
@@ -163,6 +180,7 @@
 
 <script>
 import NavBar from '@/components/NavBar';
+import referralsApi from '@/api/referrals.js';
 
 export default {
   name: 'AirDrop',
@@ -173,7 +191,7 @@ export default {
     return {
       btn_loading: false,
       airdrop_sent: false,
-      reffId: '',
+      reffLink: '',
       airdropForm: {
         email: '',
         telegram_name: '',
@@ -185,13 +203,39 @@ export default {
     };
   },
   created() {
-    console.log(this.$route.query);
-    this.reffId = this.getReferralString();
+    console.log(this.$route.query.ref);
+    let reffString = this.getReferralString();
+    this.airdropForm.referredBy = this.$route.query.ref;
+    this.airdropForm.referralId = reffString;
+    this.reffLink = `soliddefi.com/airdrop?ref=${reffString}`;
   },
   methods: {
     sendReferral() {
       console.log(this.airdropForm);
       this.btn_loading = true;
+
+      referralsApi
+        .addReferral(this.airdropForm)
+        .then(response => {
+          console.log(response);
+          this.btn_loading = false;
+          this.openNotification(
+            'top-center',
+            '#fcb420',
+            'Referral Sent',
+            'You have been successfully added to our referral rewards program.'
+          );
+        })
+        .catch(error => {
+          console.log(error);
+          this.btn_loading = false;
+          this.openNotification(
+            'top-center',
+            'danger',
+            'Error',
+            'Email has already been taken.'
+          );
+        });
     },
   },
 };
