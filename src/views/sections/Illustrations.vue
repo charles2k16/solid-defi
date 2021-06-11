@@ -46,7 +46,7 @@
     <br />
     <vs-button
       class="small_text_primary"
-      style="font-size:14px;color:#2f29b7"
+      style="font-size:14px;color:#332dc5 !important;"
       blank
       href="https://soliddefi.gitbook.io/solid-whitepaper/"
     >

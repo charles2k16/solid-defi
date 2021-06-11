@@ -225,6 +225,9 @@ export default {
 
       setTimeout(function () { self.clipboard = 'Copy to clipboard' }, 3000);
     },
+    goHome() {
+      this.$router.push("/")
+    },
     openNotification(position = null, color, title, text) {
       this.$vs.notification({
         sticky: true,

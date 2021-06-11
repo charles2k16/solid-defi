@@ -9,9 +9,12 @@
       v-model="active"
     >
       <template #left>
-        <a href="https://soliddefi.com/"
-          ><img src="../assets/images/sld.png" alt="logo" width="50px"
-        /></a>
+        <img
+          src="../assets/images/sld.png"
+          alt="logo"
+          width="50px"
+          @click="goHome"
+        />
       </template>
       <template #right>
         <vs-button class="airdrop_btn" blank to="/airdrop">
