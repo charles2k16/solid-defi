@@ -228,13 +228,21 @@
   box-shadow:  10px 10px 15px #080f14,
   -10px -10px 15px #424961, inset -1px -1px 1px #ededff, inset 2px 2px 2px #363541;
 }
-.vs-dialog {
-  background: #1B1F2F !important;
-  color: white !important;
-  min-width: 400px !important;
+// .vs-dialog {
+//   background: #1B1F2F !important;
+//   color: white !important;
+//   min-width: 400px !important;
+//   font-family: Avenir, Helvetica, Arial, sans-serif; 
+// }
+
+.sub_dialog .vs-dialog {
+  background: #bbbbbe !important;
+  color: rgb(59, 56, 56) !important;
+  min-width: 200px !important;
+  width: 300px !important;
+  opacity: 0.9;
   font-family: Avenir, Helvetica, Arial, sans-serif; 
 }
-
 .vs-dialog__header {
   padding: 20px 25px 10px 25px !important;
 }

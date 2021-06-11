@@ -141,13 +141,16 @@
           </div>
         </div>
 
-        <vs-dialog width="300px" not-center v-model="airdrop_sent">
+        <vs-dialog v-model="airdrop_sent" class="sub_dialog" not-close>
           <template #header>
-            <h4 class="not-margin">Successfully Sent</h4>
+            <h4 style="color:#731cd8ff">
+              Successfully Joined
+            </h4>
           </template>
-
-          <div class="con-content">
-            <p>Thank You</p>
+          <div>
+            <p>
+              Thank you for joining our Referral Rewards Program!
+            </p>
           </div>
         </vs-dialog>
       </div>
@@ -188,6 +191,7 @@ export default {
   methods: {
     sendReferral() {
       console.log(this.airdropForm);
+      let self = this;
       this.btn_loading = true;
 
       referralsApi
@@ -195,12 +199,11 @@ export default {
         .then(response => {
           console.log(response);
           this.btn_loading = false;
-          this.openNotification(
-            'top-center',
-            '#fcb420',
-            'Referral Sent',
-            'You have been successfully added to our referral rewards program.'
-          );
+          this.airdrop_sent = true;
+
+          setTimeout(function() {
+            self.airdrop_sent = false;
+          }, 3000);
         })
         .catch(error => {
           console.log(error);
