@@ -14,7 +14,7 @@
         /></a>
       </template>
       <template #right>
-        <vs-button class="airdrop_btn btn_hover" blank to="/airdrop">
+        <vs-button class="airdrop_btn" blank to="/airdrop">
           <b>AirDrop</b>
         </vs-button>
         <vs-button
@@ -32,7 +32,7 @@
         <vs-button
           class="def_button btn_hover"
           blank
-          href="https://solid-defi.gitbook.io/solid-whitepaper/"
+          href="https://soliddefi.gitbook.io/solid-whitepaper/"
         >
           <b>Read Whitepaper</b>
         </vs-button>

@@ -1153,28 +1153,27 @@ box-shadow:  5px 5px 8px #06070c,
   cursor: pointer;
 }
 .content-tooltip-med {
-  /* z-index: 2;
-  top: 70px;
-  right: 250px;
-  position:relative; */
+  z-index: 2;
+  position:relative;
   background: #56585F;
-  padding: 10px;
-  font-size: 14px;
+  padding: 15px;
+  font-size: 13px;
   border-radius: 10px;
-  color: rgb(200, 214, 219);
-  /* width: 280px; */
+  color: rgb(169, 181, 196);
+  width: 315px;
+  margin: 0 auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
-/* .content-tooltip-med::after {
+.content-tooltip-med::after {
   content: " ";
   position: absolute;
-  right: -12px;
-  top: 25px;
-  border-top: 15px solid transparent;
-  border-right: none;
-  border-left: 15px solid #56585F;
-  border-bottom: 15px solid transparent
-} */
+  right: 145px;
+  top: -13px;
+  border-top: none;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid #56585F;
+}
 .air_cancel {
   float: right;
   margin-top: -20px;
@@ -1210,6 +1209,24 @@ box-shadow:  5px 5px 8px #06070c,
   width:280px;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
+}
+#def_def {
+  margin-left:36px
+}
+.promo_ghost_pic {
+  width: 540px;
+}
+.telegram_icon {
+  background: #7D33FC !important;
+  box-shadow:  7px 7px 10px black,
+  -5px -5px 15px #424961;
+  border: 3px solid rgb(48,49,73);
+}
+.medium_icon {
+  background: #091116 !important;
+  box-shadow:  7px 7px 10px black,
+  -5px -5px 15px #424961;
+  border: 3px solid rgb(48,49,73);
 }
 
 
@@ -1518,9 +1535,12 @@ box-shadow:  5px 5px 8px #06070c,
     .d-flex {
       display: block;
     }
-    .sub_button.vs-button--default {
+    #def_def {
       margin-left:5px !important;
-      margin-top: 25px;
+      /* margin-top: 25px; */
+    }
+    .promo_ghost_pic {
+      width: 100%;
     }
     .partner_div {
       display: none;

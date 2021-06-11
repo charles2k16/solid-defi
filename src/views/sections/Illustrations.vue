@@ -44,7 +44,7 @@
       class="small_text_primary"
       style="font-size:14px;"
       blank
-      href="https://solid-defi.gitbook.io/solid-whitepaper/"
+      href="https://soliddefi.gitbook.io/solid-whitepaper/"
     >
       <b>READ THE WHITEPAPER</b>
       <span class="material-icons-outlined ml-10">

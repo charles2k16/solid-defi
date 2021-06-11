@@ -89,6 +89,16 @@
             </template>
           </vs-tooltip>
 
+          <div class="content-tooltip-med">
+            <!-- <span class="material-icons">
+              cancel
+            </span> -->
+            Please share your referral link to others, so you can
+            <span class="earn_more">earn more,</span> ! Please see our
+            <a href="https://soliddefi.medium.com/">Medium</a> posts or join our
+            <a href="https://t.me/soliddefi">Telegram</a> channel for details.
+          </div>
+
           <div class="mt-50">
             <vs-button
               v-if="!btn_loading"
@@ -107,53 +117,25 @@
             </vs-button>
           </div>
 
-          <!-- <div class="content-tooltip-med" v-if="showHelper">
-            <span class="material-icons air_cancel" @click="showHelper = false">
-              cancel
-            </span>
-            To see how you can
-            <span class="earn_more">earn more,</span> please see our Medium
-            posts or join our Telegram channel !
-          </div> -->
-
           <div class="flex-justify-evenly-center mt-50">
-            <vs-tooltip left color="#56585F">
-              <vs-avatar size="60" class="medium_avatar">
-                <a href="https://soliddefi.medium.com/" target="_blank">
-                  <img
-                    src="../assets/images/medium_icon.png"
-                    alt="medium"
-                    style="width:25px !important"
-                  />
-                </a>
-              </vs-avatar>
-              <template #tooltip>
-                <div class="content-tooltip-med">
-                  To see how you can
-                  <span class="earn_more">earn more,</span> please see our
-                  Medium posts or join our Telegram channel !
-                </div>
-              </template>
-            </vs-tooltip>
-
-            <vs-tooltip right color="#56585F">
-              <a href="https://t.me/soliddefi" target="_blank">
-                <vs-avatar class="tele_avatar" size="60">
-                  <img
-                    src="../assets/images/telegram2.png"
-                    alt="telegram"
-                    style="width:28px !important"
-                  />
-                </vs-avatar>
+            <vs-avatar size="60" class="medium_icon">
+              <a href="https://soliddefi.medium.com/" target="_blank">
+                <img
+                  src="../assets/images/medium_icon.png"
+                  alt="medium"
+                  style="width:25px !important"
+                />
               </a>
-              <template #tooltip>
-                <div class="content-tooltip-med">
-                  To see how you can
-                  <span class="earn_more">earn more,</span> please see our
-                  Medium posts or join our Telegram channel !
-                </div>
-              </template>
-            </vs-tooltip>
+            </vs-avatar>
+            <a href="https://t.me/soliddefi" target="_blank">
+              <vs-avatar class="telegram_icon" size="60">
+                <img
+                  src="../assets/images/telegram2.png"
+                  alt="telegram"
+                  style="width:28px !important"
+                />
+              </vs-avatar>
+            </a>
           </div>
 
           <div class="mt-40">
@@ -203,11 +185,10 @@ export default {
     };
   },
   created() {
-    console.log(this.$route.query.ref);
     let reffString = this.getReferralString();
     this.airdropForm.referredBy = this.$route.query.ref;
     this.airdropForm.referralId = reffString;
-    this.reffLink = `soliddefi.com/airdrop#?ref=${reffString}`;
+    this.reffLink = `soliddefi.com/#/airdrop?ref=${reffString}`;
   },
   methods: {
     sendReferral() {
