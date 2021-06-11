@@ -21,7 +21,7 @@
           <p class="mt-20 p_tokens">5 days</p> -->
 
           <flip-countdown
-            deadline="2021-06-15 00:00:00"
+            deadline="2021-06-21 00:00:00"
             class="timerr"
           ></flip-countdown>
 
