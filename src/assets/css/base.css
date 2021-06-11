@@ -542,7 +542,19 @@ hr.sales_hr {
 }
 .time_left {
   color:#6649FB;
-  font-size: 29px;
+  font-size: 45px;
+}
+.time_left-2 {
+  color:#6649FB;
+  font-size: 34px;
+  margin-top:15px;
+}
+.june-dd {
+  font-size: 30px;
+  line-height: 1;
+  color: #fcb420ff;
+  margin-top: 15px;
+  margin-left: 20px;
 }
 .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__bottom-4digits[data-v-78efe7f6], .flip-card__back-bottom-4digits[data-v-78efe7f6] {
   color: #6649FB !important;
@@ -1087,7 +1099,6 @@ hr.sales_hr {
   margin-top: 30px;
 }
 #overlay h3 {
-  color: #cbc8ff;
   font-size: 30px;
   line-height: 1;
   margin-top: 35px;
