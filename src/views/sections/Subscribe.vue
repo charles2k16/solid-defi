@@ -131,7 +131,7 @@ export default {
   },
   data() {
     return {
-      sub_success: true,
+      sub_success: false,
     };
   },
   methods: {
