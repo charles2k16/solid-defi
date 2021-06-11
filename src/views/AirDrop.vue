@@ -94,7 +94,7 @@
               cancel
             </span> -->
             Please share your referral link to others, so you can
-            <span class="earn_more">earn more,</span> ! Please see our
+            <span class="earn_more">earn more.</span> And also see our
             <a href="https://soliddefi.medium.com/">Medium</a> posts or join our
             <a href="https://t.me/soliddefi">Telegram</a> channel for details.
           </div>

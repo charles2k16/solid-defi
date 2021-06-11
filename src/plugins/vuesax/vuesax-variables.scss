@@ -38,7 +38,6 @@
     background-position: 1% 0%;
   }
 }
-
 .airdrop_btn.vs-button--default {
   border-radius: 70px !important;
   box-shadow:  5px 5px 8px #000000,
@@ -48,40 +47,16 @@
   padding-right: 15px !important;
   font-size: 0.8rem;
   position: relative;
-  background-image: (linear-gradient(280deg, #e5a914, #15222b));
+  background-image: (linear-gradient(180deg, #e5a914, #15222b));
   background-size: 400% 400%;
   animation: TransitioningBackground 10s ease infinite;
   transition: 30s;
 }
-// .airdrop_btn.vs-button--default::before {
-//   content: '';
-//     display: block;
-//     position: absolute;
-//     background: rgba(238, 4, 4, 0.932);
-//     width: 60px;
-//     height: 100%;
-//     top: 0;
-//     filter: blur(30px);
-//     transform: translateX(-100px) skewX(-15deg);
-// }
-// .airdrop_btn.vs-button--default::after {
-//   content: '';
-//     display: block;
-//     position: absolute;
-//     background: rgba(216, 2, 2, 0.589);
-//     width: 30px;
-//     height: 100%;
-//     top: 0;
-//     filter: blur(5px);
-//     transform: translateX(-100px) skewX(-15deg);
-// }
 .airdrop_btn.vs-button--default:hover {
   transition: 1s ease-in-out;
   box-shadow:  5px 5px 8px #000000,
   -5px -5px 8px #393e54;
 }
-
-
 .eth_button.vs-button--default {
   border-radius: 70px !important;
   padding-left: 15px !important;

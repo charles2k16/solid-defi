@@ -92,7 +92,7 @@ hr.sales_hr {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .small_text_primary {
-  color: #2f29b7 !important;
+  color: #731cd8 !important;
   background:transparent !important;
   margin-left:-12px !important;
   margin-top: 26px !important;
@@ -180,6 +180,9 @@ hr.sales_hr {
 }
 .ml-10 {
   margin-left: 10px;
+}
+.ml-5 {
+  margin-left: 5px;
 }
 .ml-15 {
   margin-left: 18px;
@@ -542,11 +545,11 @@ hr.sales_hr {
 }
 .time_left {
   color:#6649FB;
-  font-size: 45px;
+  font-size: 41px;
 }
 .time_left-2 {
   color:#6649FB;
-  font-size: 34px;
+  font-size: 31px;
   margin-top:15px;
 }
 .june-dd {
@@ -773,8 +776,7 @@ hr.sales_hr {
   color: #091750;
 }
 .animate {
-  background-image: 
-  linear-gradient(to right, #4417b6,#7a1eda,#4417b6,#2c1254,#2c1254);
+  background-image:linear-gradient(to right, #4417b6,#7a1eda,#4417b6,#2c1254,#2c1254);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;  
   animation: move 200s linear infinite;
@@ -1113,7 +1115,7 @@ hr.sales_hr {
   padding: 40px 20px;
   border-radius: 10px;
   background: #0F121E;
-box-shadow:  5px 5px 8px #06070c,
+  box-shadow:  5px 5px 8px #06070c,
              -5px -5px 10px #181d30;
 }
 .airdrop_welcome h2{
@@ -1166,12 +1168,13 @@ box-shadow:  5px 5px 8px #06070c,
 .content-tooltip-med {
   z-index: 2;
   position:relative;
-  background: #56585F;
+  background: #505165;
   padding: 15px;
   font-size: 13px;
   border-radius: 10px;
   color: rgb(169, 181, 196);
   width: 315px;
+  text-align: justify;
   margin: 25px auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
@@ -1183,7 +1186,7 @@ box-shadow:  5px 5px 8px #06070c,
   border-top: none;
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
-  border-bottom: 15px solid #56585F;
+  border-bottom: 15px solid #505165;
 }
 .air_cancel {
   float: right;

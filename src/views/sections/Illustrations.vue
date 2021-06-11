@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- timer for tokens -->
-    <vs-row class="mt-50">
+    <vs-row class="mt-50 ml-5">
       <vs-col :w="6" :xs="12" :sm="12">
         <div>
           <h1 class="time_left">COUNTDOWN TO</h1>
@@ -9,7 +9,7 @@
         </div>
       </vs-col>
       <vs-col :w="1" :xs="2" :sm="2">
-        <div style="text-align:center;margin-left:-40px;padding-top:40px">
+        <div style="text-align:center;margin-left:-60px;padding-top:40px">
           <div class="green_rule"></div>
         </div>
       </vs-col>
@@ -25,7 +25,7 @@
             class="timerr"
           ></flip-countdown>
 
-          <h3 class="june-dd">JUNE 21 2021 5pm UTC</h3>
+          <h2 class="june-dd">JUNE 21 2021 5pm UTC</h2>
         </div>
       </vs-col>
     </vs-row>
@@ -46,7 +46,7 @@
     <br />
     <vs-button
       class="small_text_primary"
-      style="font-size:14px;"
+      style="font-size:14px;color:#2f29b7"
       blank
       href="https://soliddefi.gitbook.io/solid-whitepaper/"
     >
