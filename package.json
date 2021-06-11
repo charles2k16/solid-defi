@@ -19,6 +19,7 @@
     "material-icons": "^0.6.1",
     "maticjs": "^1.0.1",
     "vue": "^2.6.11",
+    "vue-mailchimp-subscribe": "^1.1.0",
     "vue-router": "^3.1.6",
     "vue2-flip-countdown": "^0.11.1",
     "vuesax": "^4.0.1-alpha.25",

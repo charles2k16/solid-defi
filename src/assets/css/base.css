@@ -1228,7 +1228,39 @@ box-shadow:  5px 5px 8px #06070c,
   -5px -5px 15px #424961;
   border: 3px solid rgb(48,49,73);
 }
-
+.sub_input {
+  width: 276px;
+  height: 37px;
+  padding:10px 10px 10px 15px;
+  border-radius: 80px;
+  border: none;
+  background: #313843;
+  box-shadow:  0px 0px 0px #06090e,
+               0px 0px 0px #06090e, inset -1px -3px 3px #33394e, inset 2px 5px 15px #07080e;
+  font-size: 0.9rem;
+  color: #f3f4f7;
+  font-family: Avenir, Helvetica, Arial, sans-serif; 
+}
+.sub_input::placeholder {
+  font-size: 0.9rem;
+  color: #f3f4f7;
+}
+.sub_input:focus {
+  color: #f3f4f7;
+  font-size: 0.9rem;
+}
+.sub_error {
+  color: rgb(247, 43, 43);
+  font-size: 12px;
+  margin-top: 10px;
+  width: 260px;
+}
+.sub_success {
+  color: rgba(64, 145, 64, 0.918);
+  font-size: 12px;
+  margin-top: 10px;
+  width: 260px;
+}
 
 /* ----------- iPhone 12 pro max ----------- */
 @media only screen 
@@ -1269,7 +1301,7 @@ box-shadow:  5px 5px 8px #06070c,
       .d-flex {
         display: block;
       }
-      .sub_button.vs-button--default {
+      .sub_button{
         margin-left:5px !important;
         margin-top: 25px;
       }
@@ -1324,7 +1356,7 @@ box-shadow:  5px 5px 8px #06070c,
     .d-flex {
       display: block;
     }
-    .sub_button.vs-button--default {
+    .sub_button{
       margin-left:5px !important;
       margin-top: 25px;
     }
@@ -1392,7 +1424,7 @@ box-shadow:  5px 5px 8px #06070c,
       .d-flex {
         display: block;
       }
-      .sub_button.vs-button--default {
+      .sub_button {
         margin-left:5px !important;
         margin-top: 25px;
       }
@@ -1448,7 +1480,7 @@ box-shadow:  5px 5px 8px #06070c,
   .d-flex {
     display: block;
   }
-  .sub_button.vs-button--default {
+  .sub_button {
     margin-left:5px !important;
     margin-top: 25px;
   }
@@ -1593,7 +1625,7 @@ box-shadow:  5px 5px 8px #06070c,
     .d-flex {
       display: block;
     }
-    .sub_button.vs-button--default {
+    .sub_button {
       margin-left:5px !important;
       margin-top: 25px;
     }
@@ -1648,7 +1680,7 @@ box-shadow:  5px 5px 8px #06070c,
     .d-flex {
       display: block;
     }
-    .sub_button.vs-button--default {
+    .sub_button {
       margin-left:5px !important;
       margin-top: 25px;
     }

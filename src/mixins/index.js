@@ -32,6 +32,10 @@ export default {
 
     //   return percentPurchased;
     // },
+    subscribeErrorResponse(errorString) {
+      let extractError = errorString.split("<")
+      return extractError[0];
+    },
     getReferralString() {
       let randomString = Math.random().toString(36).substr(2);
       return `SLD-${randomString}`;
@@ -223,8 +227,7 @@ export default {
     },
     openNotification(position = null, color, title, text) {
       this.$vs.notification({
-        progress: 'auto',
-        duration: '10s',
+        sticky: true,
         color,
         position,
         title,

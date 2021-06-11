@@ -48,7 +48,7 @@
   padding-right: 15px !important;
   font-size: 0.8rem;
   position: relative;
-  background-image: (linear-gradient(280deg, #15222b , #e5a914));
+  background-image: (linear-gradient(280deg, #e5a914, #15222b));
   background-size: 400% 400%;
   animation: TransitioningBackground 10s ease infinite;
   transition: 30s;
@@ -197,9 +197,9 @@
 }
 .loading_btn.vs-button--default {
   border-radius: 70px !important;
-  width: 200px !important;
+  width: 150px !important;
   color: #fff;
-  font-size: 18px;
+  font-size: 17px;
   margin: 0 auto;
 }
 .tele_avatar {
@@ -250,24 +250,6 @@
   justify-content: space-evenly;
   margin-top: 10px;
   margin-bottom: 12px;
-}
-.vs-input {
-  width: 276px !important;
-  height: 37px;
-  padding: 5px 12px !important;
-  border-radius: 80px !important;
-  border: none !important;
-  background: #313843 !important;
-  box-shadow:  0px 0px 0px #06090e,
-               0px 0px 0px #06090e, inset -1px -3px 3px #33394e, inset 2px 5px 15px #07080e;
-  font-size: 0.8rem !important;
-  color: rgb(165, 162, 162) !important; 
-  font-family: Avenir, Helvetica, Arial, sans-serif; 
-}
-.vs-input__label {
-  font-size: 0.8rem !important;
-  padding-left: 8px;
-  color: #f3f4f7;
 }
 .vs-avatar-content {
   --vs-color: none !important;

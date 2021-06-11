@@ -107,12 +107,7 @@
             >
               <b> Submit</b>
             </vs-button>
-            <vs-button
-              v-else
-              :loading="btn_loading"
-              @click="sendReferral"
-              class="loading_btn"
-            >
+            <vs-button v-else :loading="btn_loading" class="loading_btn">
               <b> Loading</b>
             </vs-button>
           </div>

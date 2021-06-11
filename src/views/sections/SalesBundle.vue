@@ -29,7 +29,7 @@
 
                         <h2>COMMUNITY PRESALE!</h2>
 
-                        <h3>JUNE 15 2021 5pm UTC</h3>
+                        <h3>JUNE 20 2021 5pm UTC</h3>
                       </div>
                       <br /><br />
                       <div>

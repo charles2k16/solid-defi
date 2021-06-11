@@ -12,23 +12,59 @@
         </h1>
 
         <p class="lead_text mt-30">
-          With inflation getting hyper and markets quick to panic sell, Solid
-          Defi is creating tokens that protect holders from both.
+          With inflation getting hyper and markets quick to panic sell, <br />
+          Solid Defi is creating tokens that protect holders from both. <br />
           <a
             href="https://soliddefi.medium.com/"
             target="_blank"
             class="a_links"
             >Read more on Medium.</a
           >
-          and Leave us your email here to <br />
-          be the first one to get new information.
+          and Leave us your email here to be <br />
+          the first one to get new information.
         </p>
 
-        <div class="d-flex mt-30">
-          <vs-input v-model="email" placeholder="Enter your email" />
-          <vs-button class="def_button btn_hover" id="def_def">
-            <b>SUBSCRIBE</b>
-          </vs-button>
+        <div class="mt-30">
+          <mailchimp-subscribe
+            url="https://soliddefi.us6.list-manage.com/subscribe/post-json"
+            user-id="9ef822000faa9c1b124d03058"
+            list-id="ec6d9e9063"
+            @error="onError"
+            @success="onSuccess"
+          >
+            <template v-slot="{ subscribe, setEmail, error, success, loading }">
+              <form @submit.prevent="subscribe">
+                <div class="d-flex">
+                  <input
+                    type="email"
+                    @input="setEmail($event.target.value)"
+                    class="sub_input"
+                    placeholder="Email"
+                  />
+                  <button
+                    v-if="!loading"
+                    class="vs-button def_button btn_hover vs-button--null vs-button--size-null vs-button--primary vs-button--default"
+                    id="def_def"
+                    type="submit"
+                  >
+                    <div class="vs-button__content">
+                      <b>SUBSCRIBE</b>
+                    </div>
+                  </button>
+                  <vs-button v-else :loading="loading" class="loading_btn">
+                    <b> Loading</b>
+                  </vs-button>
+                </div>
+                <div v-if="error" class="sub_error">
+                  {{ subscribeErrorResponse(error) }}
+                </div>
+
+                <div v-if="success" class="sub_success">
+                  You are successfully subscribed to the Solid Defi community
+                </div>
+              </form>
+            </template>
+          </mailchimp-subscribe>
         </div>
 
         <div>
@@ -71,12 +107,28 @@
 </template>
 
 <script>
+import MailchimpSubscribe from 'vue-mailchimp-subscribe';
+
 export default {
   name: 'Subscribe',
+  components: {
+    MailchimpSubscribe,
+  },
   data() {
-    return {
-      email: '',
-    };
+    return {};
+  },
+  methods: {
+    onError() {
+      console.log('errrroorrrrrrrr is lit');
+    },
+    onSuccess() {
+      this.openNotification(
+        'top-center',
+        '#7d33ff',
+        'Successfully Subscribed',
+        'You are successfully subscribed to the Solid Defi community'
+      );
+    },
   },
 };
 </script>
