@@ -1161,7 +1161,7 @@ box-shadow:  5px 5px 8px #06070c,
   border-radius: 10px;
   color: rgb(169, 181, 196);
   width: 315px;
-  margin: 0 auto;
+  margin: 25px auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .content-tooltip-med::after {

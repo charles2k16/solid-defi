@@ -48,11 +48,10 @@
   padding-right: 15px !important;
   font-size: 0.8rem;
   position: relative;
-  overflow: hidden;
-  background-image: (linear-gradient(270deg, #3f3db4, #ca9f50));
+  background-image: (linear-gradient(280deg, #15222b , #e5a914));
   background-size: 400% 400%;
-  animation: TransitioningBackground 6s ease infinite;
-  transition: 0.3s;
+  animation: TransitioningBackground 10s ease infinite;
+  transition: 30s;
 }
 // .airdrop_btn.vs-button--default::before {
 //   content: '';
