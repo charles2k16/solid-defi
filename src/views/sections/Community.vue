@@ -18,7 +18,7 @@
         </vs-col>
 
         <vs-col :w="6" :xs="12" :sm="12">
-          <div class="flex-justify-around-center mt-20">
+          <div class="flex-justify-around-center mt-20" id="comm_icons">
             <div class="flex-row-center">
               <vs-avatar size="60" class="medium_avatar">
                 <a href="https://soliddefi.medium.com/" target="_blank">

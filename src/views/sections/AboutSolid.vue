@@ -39,9 +39,13 @@
               >
             </p>
           </div>
-
+          <br />
           <div class="partner_div2">
-            <img src="../../assets/images/polygon_logo.png" alt="polygon" />
+            <img
+              src="../../assets/images/polygon_logo.png"
+              alt="polygon"
+              width="350px;"
+            />
             <br />
             <p class="mt-20 small_text">
               SOLID COLLABORATES WITH POLYGON
@@ -61,7 +65,7 @@
           <img
             src="../../assets/images/Tokenom.png"
             alt="chart"
-            style="width:80%; height:auto;"
+            class="chart_pic"
           />
         </div>
       </div>

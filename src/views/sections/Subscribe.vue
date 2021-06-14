@@ -12,9 +12,22 @@
             Earn Rewards!
           </h1>
 
-          <p class="lead_text mt-30">
+          <p class="lead_text mt-30" id="sub-text">
             With inflation getting hyper and markets quick to panic sell, <br />
             Solid Defi is creating tokens that protect holders from both. <br />
+            <a
+              href="https://soliddefi.medium.com/"
+              target="_blank"
+              class="a_links"
+              >Read more on Medium.</a
+            >
+            and Leave us your email here to be <br />
+            the first one to get new information.
+          </p>
+
+          <p class="lead_text-mob mt-30">
+            With inflation getting hyper and markets quick to panic sell, Solid
+            Defi is creating tokens that protect holders from both.
             <a
               href="https://soliddefi.medium.com/"
               target="_blank"

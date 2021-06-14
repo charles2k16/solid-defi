@@ -17,7 +17,7 @@
         />
       </template>
       <template #right>
-        <vs-button class="airdrop_btn" blank to="/airdrop">
+        <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn">
           <b>AirDrop</b>
         </vs-button>
         <vs-button
@@ -25,6 +25,7 @@
           class="medium_button btn_hover"
           href="https://soliddefi.medium.com/"
           icon
+          id="medium_btn"
         >
           <img
             src="../assets/images/medium_icon.png"
