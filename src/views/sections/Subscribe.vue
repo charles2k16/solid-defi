@@ -67,7 +67,12 @@
                         <b>SUBSCRIBE</b>
                       </div>
                     </button>
-                    <vs-button v-else :loading="loading" class="loading_btn">
+                    <vs-button
+                      v-else
+                      :loading="loading"
+                      class="loading_btn"
+                      id="def_def"
+                    >
                       <b> Loading</b>
                     </vs-button>
                   </div>
@@ -101,7 +106,7 @@
               For news, early access & special prizes
             </p>
             <vs-button
-              style="font-size: 1.1rem"
+              id="learn_btn"
               class="small_text_primary"
               blank
               href="https://soliddefi.gitbook.io/solid-whitepaper/"

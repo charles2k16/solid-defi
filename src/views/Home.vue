@@ -81,7 +81,7 @@
     <!-- blog news section -->
     <div class="sec_div">
       <div
-        class="wrap"
+        class="wrap_blog"
         style="z-index: 2; position:relative; margin-top:-250px;"
       >
         <BlogSection />
