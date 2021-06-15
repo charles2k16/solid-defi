@@ -1,5 +1,5 @@
 <template>
-  <div class="center">
+  <div>
     <vs-navbar
       text-black
       color="#0F121E"
@@ -17,7 +17,7 @@
         />
       </template>
       <template #right>
-        <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn">
+        <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn_nav">
           <b>AirDrop</b>
         </vs-button>
         <vs-button

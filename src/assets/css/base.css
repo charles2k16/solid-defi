@@ -1282,7 +1282,9 @@ hr.sales_hr {
   margin-top: 10px;
   width: 260px;
 }
-
+#airdrop_btn {
+  display: none;
+}
 /* ----------- iPhone 12 pro max ----------- */
 @media only screen 
     and (device-width: 428px) 
@@ -1517,13 +1519,14 @@ hr.sales_hr {
     }
     .wrap {
       width: 100% !important;
-      padding: 0 9px;
+      padding: 0 10px !important;
     }
     .wrap_bundle {
       width: 100% !important;
     }
     .vs-navbar {
       width: 100% !important;
+      padding: 0px 3px 0px 8px !important;
     }
     .solid_bundle_promo {
       width: 100%;
@@ -1608,15 +1611,19 @@ hr.sales_hr {
     .flip-card__top[data-v-78efe7f6], .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__back[data-v-78efe7f6]::before, .flip-card__back[data-v-78efe7f6]::after {
       width: 2.0em !important;
     }
-    #airdrop_btn {
+    #airdrop_btn_nav {
       display: none;
+    }
+    #airdrop_btn {
+      display: block;
     }
     #medium_btn {
-      display: none;
+      margin-left: 15px;
     }
     .lead_text_black {
-      font-size: 1.4rem;
+      font-size: 1.2rem !important;
       line-height: 2.2rem;
+      padding: 5px;
     }
     #sub-text {
       display: none;
@@ -1630,6 +1637,11 @@ hr.sales_hr {
     }
     .sub_input {
       width: 320px;
+    }
+    .blog_div {
+      display: flex !important;
+      justify-content: space-around !important;
+      overflow-x: hidden !important;
     }
     .blog {
       max-width: 300px;
@@ -1656,7 +1668,7 @@ hr.sales_hr {
       width:100%;
     }
     .comm_icons {
-      margin-top: 100px !important;
+      margin-top: 50px !important;
     }
 }
 

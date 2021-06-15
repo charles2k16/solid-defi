@@ -1,5 +1,5 @@
 <template>
-  <vs-row>
+  <vs-row class="blog_div">
     <vs-col :w="4" :xs="12" :sm="12">
       <div class="blog">
         <div class="blog_img">

@@ -48,28 +48,30 @@
 
               <div class="tab">
                 <button class="tablinks active" @click="openTab($event, 'eth')">
-                  <div class="flex-justify-evenly-center">
-                    <div class="flex-row-center">
-                      <img
-                        src="../../assets/images/eth.png"
-                        alt="eth"
-                        width="60px"
-                      />
+                  <a href="#eth" style="text-decoration:none;">
+                    <div class="flex-justify-evenly-center">
+                      <div class="flex-row-center">
+                        <img
+                          src="../../assets/images/eth.png"
+                          alt="eth"
+                          width="60px"
+                        />
 
-                      <span class="mt-20"><b>ETH</b></span>
-                    </div>
-                    <div class="mx-20">
-                      <h3 class="stock_bold">40,000</h3>
-                      <br />
+                        <span class="mt-20"><b>ETH</b></span>
+                      </div>
+                      <div class="mx-20">
+                        <h3 class="stock_bold">40,000</h3>
+                        <br />
 
-                      <span class="d-block stock">Stock: 210</span>
+                        <span class="d-block stock">Stock: 210</span>
+                      </div>
+                      <div style="margin-right:10px">
+                        <h3 class="stock_bold">80,000</h3>
+                        <br />
+                        <span class="d-block stock">Stock: 70</span>
+                      </div>
                     </div>
-                    <div style="margin-right:10px">
-                      <h3 class="stock_bold">80,000</h3>
-                      <br />
-                      <span class="d-block stock">Stock: 70</span>
-                    </div>
-                  </div>
+                  </a>
                 </button>
                 <button
                   class="tablinks opacity"
@@ -130,311 +132,314 @@
               </div>
 
               <div id="eth" class="tabcontent">
-                <div id="eth1">
-                  <p class="center bun_p">
-                    Don’t miss out on the SOLID bundle sale! <br />
-                  </p>
-                  <br />
-                  <p class="center bun_p2">
-                    <span class="percentage_off"
-                      ><b>{{ percentageOff }}% off</b></span
-                    >
-                    from the IDO price
-                  </p>
-
-                  <el-carousel
-                    ref="carouseleth"
-                    type="card"
-                    :autoplay="false"
-                    class="mt-15"
-                    @change="changeBundle"
-                    id="hideEbundle"
+                <p class="center bun_p">
+                  Don’t miss out on the SOLID bundle sale! <br />
+                </p>
+                <br />
+                <p class="center bun_p2">
+                  <span class="percentage_off"
+                    ><b>{{ percentageOff }}% off</b></span
                   >
-                    <el-carousel-item name="bigBundle">
-                      <div>
-                        <img
-                          src="../../assets/images/sLD_Token_voucher_80k_eth.png"
-                          alt="tkbundles"
-                          class="caro_image"
-                        />
-                      </div>
-                      <div class="bk_bun d-flex-center">
-                        <vs-avatar size="35">
-                          <img src="../../assets/images/sld.png" alt="token" />
-                        </vs-avatar>
-                        <span>80, 000</span>
-                      </div>
-                    </el-carousel-item>
+                  from the IDO price
+                </p>
 
-                    <el-carousel-item name="smallBundle">
-                      <div>
-                        <img
-                          src="../../assets/images/sLD_Token_voucher_40k_eth.jpg"
-                          alt="tkbundles"
-                          class="caro_image"
-                        />
-                      </div>
-                      <div class="bk_bun d-flex-center">
-                        <vs-avatar size="35">
-                          <img src="../../assets/images/sld.png" alt="token" />
-                        </vs-avatar>
-                        <span>40, 000</span>
-                      </div>
-                    </el-carousel-item>
-                  </el-carousel>
-
-                  <div class="center d-flex-center mt-15" @click="openOverlay">
+                <el-carousel
+                  ref="carouseleth"
+                  type="card"
+                  :autoplay="false"
+                  class="mt-15"
+                  @change="changeBundle"
+                  id="hideEbundle"
+                >
+                  <el-carousel-item name="bigBundle">
                     <div>
-                      <div class="d-flex-center">
-                        <div class="flex-align-center">
-                          <span class="material-icons mi">
-                            remove_circle
-                          </span>
-                          <input
-                            class="num_input"
-                            placeholder="1"
-                            v-model="ethBundle"
-                          />
-                          <span class="material-icons mi">
-                            add_circle
-                          </span>
-                        </div>
+                      <img
+                        src="../../assets/images/sLD_Token_voucher_80k_eth.png"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>80, 000</span>
+                    </div>
+                  </el-carousel-item>
+
+                  <el-carousel-item name="smallBundle">
+                    <div>
+                      <img
+                        src="../../assets/images/sLD_Token_voucher_40k_eth.jpg"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>40, 000</span>
+                    </div>
+                  </el-carousel-item>
+                </el-carousel>
+
+                <div
+                  class="center d-flex-center mt-15"
+                  @click="openOverlay('eth')"
+                >
+                  <div>
+                    <div class="d-flex-center">
+                      <div class="flex-align-center">
+                        <span class="material-icons mi">
+                          remove_circle
+                        </span>
+                        <input
+                          class="num_input"
+                          placeholder="1"
+                          v-model="ethBundle"
+                        />
+                        <span class="material-icons mi">
+                          add_circle
+                        </span>
                       </div>
-                      <div class="mt-5">
-                        <span style="font-size:12px;color:#625f81;"
-                          >*Maximum 3 bundles in a single transaction.</span
+                    </div>
+                    <div class="mt-5">
+                      <span style="font-size:12px;color:#625f81;"
+                        >*Maximum 3 bundles in a single transaction.</span
+                      >
+                    </div>
+
+                    <div class="round_token_button mt-10">
+                      <div class="flex-justify-between-center">
+                        <span class="matic_btn" style="margin-left:2px">
+                          Connect to <br />
+                          <span style="color:blue;"> <b>Matic </b></span>
+                        </span>
+
+                        <span
+                          style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
+                          >You're <br />
+                          <span style="color:#DDDBEC;">
+                            <b>ON Etherum </b></span
+                          ></span
                         >
                       </div>
 
-                      <div class="round_token_button mt-10">
-                        <div class="flex-justify-between-center">
-                          <span class="matic_btn" style="margin-left:2px">
-                            Connect to <br />
-                            <span style="color:blue;"> <b>Matic </b></span>
-                          </span>
-
-                          <span
-                            style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
-                            >You're <br />
-                            <span style="color:#DDDBEC;">
-                              <b>ON Etherum </b></span
-                            ></span
-                          >
-                        </div>
-
-                        <vs-button class="buy_button" style="font-size: 1rem;">
-                          <b> BUY</b>
-                        </vs-button>
-                      </div>
+                      <vs-button class="buy_button" style="font-size: 1rem;">
+                        <b> BUY</b>
+                      </vs-button>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div id="wEth" class="tabcontent">
-                <div id="wEth1">
-                  <p class="center bun_p">
-                    Don’t miss out on the SOLID bundle sale! <br />
-                  </p>
-                  <br />
-                  <p class="center bun_p2">
-                    <span class="percentage_off"
-                      ><b>{{ percentageOff }}% off</b></span
-                    >
-                    from the IDO price
-                  </p>
-
-                  <el-carousel
-                    type="card"
-                    :autoplay="false"
-                    class="mt-15"
-                    @change="changeBundle"
-                    ref="carouselweth"
-                    id="hideWbundle"
+                <p class="center bun_p">
+                  Don’t miss out on the SOLID bundle sale! <br />
+                </p>
+                <br />
+                <p class="center bun_p2">
+                  <span class="percentage_off"
+                    ><b>{{ percentageOff }}% off</b></span
                   >
-                    <el-carousel-item name="bigBundle">
-                      <div>
-                        <img
-                          src="../../assets/images/sLD_Token_voucher_80k_matic.png"
-                          alt="tkbundles"
-                          class="caro_image"
-                        />
-                      </div>
-                      <div class="bk_bun d-flex-center">
-                        <vs-avatar size="35">
-                          <img src="../../assets/images/sld.png" alt="token" />
-                        </vs-avatar>
-                        <span>80, 000</span>
-                      </div>
-                    </el-carousel-item>
+                  from the IDO price
+                </p>
 
-                    <el-carousel-item name="smallBundle">
-                      <div>
-                        <img
-                          src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
-                          alt="tkbundles"
-                          class="caro_image"
-                        />
-                      </div>
-                      <div class="bk_bun d-flex-center">
-                        <vs-avatar size="35">
-                          <img src="../../assets/images/sld.png" alt="token" />
-                        </vs-avatar>
-                        <span>40, 000</span>
-                      </div>
-                    </el-carousel-item>
-                  </el-carousel>
-
-                  <div class="center d-flex-center mt-15" @click="openOverlay">
+                <el-carousel
+                  type="card"
+                  :autoplay="false"
+                  class="mt-15"
+                  @change="changeBundle"
+                  ref="carouselweth"
+                  id="hideWbundle"
+                >
+                  <el-carousel-item name="bigBundle">
                     <div>
-                      <div class="d-flex-center">
-                        <div class="flex-align-center">
-                          <span class="material-icons mi">
-                            remove_circle
-                          </span>
-                          <input
-                            class="num_input"
-                            placeholder="1"
-                            v-model="wBundle"
-                          />
-                          <span class="material-icons mi">
-                            add_circle
-                          </span>
-                        </div>
+                      <img
+                        src="../../assets/images/sLD_Token_voucher_80k_matic.png"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>80, 000</span>
+                    </div>
+                  </el-carousel-item>
+
+                  <el-carousel-item name="smallBundle">
+                    <div>
+                      <img
+                        src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>40, 000</span>
+                    </div>
+                  </el-carousel-item>
+                </el-carousel>
+
+                <div
+                  class="center d-flex-center mt-15"
+                  @click="openOverlay('weth')"
+                >
+                  <div>
+                    <div class="d-flex-center">
+                      <div class="flex-align-center">
+                        <span class="material-icons mi">
+                          remove_circle
+                        </span>
+                        <input
+                          class="num_input"
+                          placeholder="1"
+                          v-model="wBundle"
+                        />
+                        <span class="material-icons mi">
+                          add_circle
+                        </span>
                       </div>
-                      <div class="mt-5">
-                        <small style="font-size:12px;color:#625f81;"
-                          >*Maximum 3 bundles in a single transaction.</small
+                    </div>
+                    <div class="mt-5">
+                      <small style="font-size:12px;color:#625f81;"
+                        >*Maximum 3 bundles in a single transaction.</small
+                      >
+                    </div>
+
+                    <div class="round_token_button_weth mt-10">
+                      <div class="flex-justify-between-center">
+                        <span class="matic_btn" style="margin-left:7px">
+                          Connect to <br />
+                          <span style="color:blue;"> <b>Matic </b></span>
+                        </span>
+
+                        <span
+                          style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
+                          >You're <br />
+                          <span style="color:#DDDBEC;">
+                            <b>ON Etherum </b></span
+                          ></span
                         >
                       </div>
 
-                      <div class="round_token_button_weth mt-10">
-                        <div class="flex-justify-between-center">
-                          <span class="matic_btn" style="margin-left:7px">
-                            Connect to <br />
-                            <span style="color:blue;"> <b>Matic </b></span>
-                          </span>
-
-                          <span
-                            style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
-                            >You're <br />
-                            <span style="color:#DDDBEC;">
-                              <b>ON Etherum </b></span
-                            ></span
-                          >
-                        </div>
-
-                        <span class="approve_btn">
-                          <b>BUY</b>
-                          <p
-                            style="font-size: 11px;margin-top:-1px;text-align:center;"
-                          >
-                            Approve first
-                          </p>
-                        </span>
-                      </div>
+                      <span class="approve_btn">
+                        <b>BUY</b>
+                        <p
+                          style="font-size: 11px;margin-top:-1px;text-align:center;"
+                        >
+                          Approve first
+                        </p>
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div id="matic" class="tabcontent">
-                <div id="matic1">
-                  <p class="center bun_p">
-                    Don’t miss out on the SOLID bundle sale! <br />
-                  </p>
-                  <br />
-                  <p class="center bun_p2">
-                    <span class="percentage_off"
-                      ><b>{{ percentageOff }}% off</b></span
-                    >
-                    from the IDO price
-                  </p>
-
-                  <el-carousel
-                    type="card"
-                    :autoplay="false"
-                    class="mt-15"
-                    @change="changeBundle"
-                    ref="carouselmatic"
-                    id="hideMbundle"
+                <p class="center bun_p">
+                  Don’t miss out on the SOLID bundle sale! <br />
+                </p>
+                <br />
+                <p class="center bun_p2">
+                  <span class="percentage_off"
+                    ><b>{{ percentageOff }}% off</b></span
                   >
-                    <el-carousel-item name="bigBundle">
-                      <div>
-                        <img
-                          src="../../assets/images/sLD_Token_voucher_80k_matic.png"
-                          alt="tkbundles"
-                          class="caro_image"
-                        />
-                      </div>
-                      <div class="bk_bun d-flex-center">
-                        <vs-avatar size="35">
-                          <img src="../../assets/images/sld.png" alt="token" />
-                        </vs-avatar>
-                        <span>80, 000</span>
-                      </div>
-                    </el-carousel-item>
+                  from the IDO price
+                </p>
 
-                    <el-carousel-item name="smallBundle">
-                      <div>
-                        <img
-                          src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
-                          alt="tkbundles"
-                          class="caro_image"
-                        />
-                      </div>
-                      <div class="bk_bun d-flex-center">
-                        <vs-avatar size="35">
-                          <img src="../../assets/images/sld.png" alt="token" />
-                        </vs-avatar>
-                        <span>40, 000</span>
-                      </div>
-                    </el-carousel-item>
-                  </el-carousel>
-
-                  <div class="center d-flex-center mt-15" @click="openOverlay">
+                <el-carousel
+                  type="card"
+                  :autoplay="false"
+                  class="mt-15"
+                  @change="changeBundle"
+                  ref="carouselmatic"
+                  id="hideMbundle"
+                >
+                  <el-carousel-item name="bigBundle">
                     <div>
-                      <div class="d-flex-center">
-                        <div class="flex-align-center">
-                          <span class="material-icons mi">
-                            remove_circle
-                          </span>
-                          <input
-                            class="num_input"
-                            placeholder="1"
-                            v-model="maticBundle"
-                          />
-                          <span class="material-icons mi">
-                            add_circle
-                          </span>
-                        </div>
+                      <img
+                        src="../../assets/images/sLD_Token_voucher_80k_matic.png"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>80, 000</span>
+                    </div>
+                  </el-carousel-item>
+
+                  <el-carousel-item name="smallBundle">
+                    <div>
+                      <img
+                        src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>40, 000</span>
+                    </div>
+                  </el-carousel-item>
+                </el-carousel>
+
+                <div
+                  class="center d-flex-center mt-15"
+                  @click="openOverlay('matic')"
+                >
+                  <div>
+                    <div class="d-flex-center">
+                      <div class="flex-align-center">
+                        <span class="material-icons mi">
+                          remove_circle
+                        </span>
+                        <input
+                          class="num_input"
+                          placeholder="1"
+                          v-model="maticBundle"
+                        />
+                        <span class="material-icons mi">
+                          add_circle
+                        </span>
                       </div>
-                      <div class="mt-5">
-                        <small style="font-size:12px;color:#625f81;"
-                          >*Maximum 3 bundles in a single transaction.</small
+                    </div>
+                    <div class="mt-5">
+                      <small style="font-size:12px;color:#625f81;"
+                        >*Maximum 3 bundles in a single transaction.</small
+                      >
+                    </div>
+
+                    <div class="round_token_button mt-10">
+                      <div class="flex-justify-between-center">
+                        <span class="matic_btn" style="margin-left:2px">
+                          Connect to <br />
+                          <span style="color:blue;"> <b>Matic </b></span>
+                        </span>
+
+                        <span
+                          style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
+                          >You're <br />
+                          <span style="color:#DDDBEC;">
+                            <b>ON Etherum </b></span
+                          ></span
                         >
                       </div>
 
-                      <div class="round_token_button mt-10">
-                        <div class="flex-justify-between-center">
-                          <span class="matic_btn" style="margin-left:2px">
-                            Connect to <br />
-                            <span style="color:blue;"> <b>Matic </b></span>
-                          </span>
-
-                          <span
-                            style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
-                            >You're <br />
-                            <span style="color:#DDDBEC;">
-                              <b>ON Etherum </b></span
-                            ></span
-                          >
-                        </div>
-
-                        <vs-button class="buy_button" style="font-size: 1rem;">
-                          <b> BUY</b>
-                        </vs-button>
-                      </div>
+                      <vs-button class="buy_button" style="font-size: 1rem;">
+                        <b> BUY</b>
+                      </vs-button>
                     </div>
                   </div>
                 </div>
@@ -464,26 +469,30 @@ export default {
       maticBundle: 1,
       wBundle: 1,
       title: '',
+      chainNetwork: 'null',
     };
   },
   methods: {
-    openOverlay() {
-      let eb = document.getElementById('eth1');
-      let wb = document.getElementById('wEth1');
-      let mb = document.getElementById('matic1');
-      eb.style.display = 'none';
-      wb.style.display = 'none';
-      mb.style.display = 'none';
+    openOverlay(net) {
+      this.chainNetwork = net;
+      let eb = document.getElementById('eth');
+      let wb = document.getElementById('wEth');
+      let mb = document.getElementById('matic');
+
+      if (net == 'eth') eb.style.display = 'none';
+      else if (net == 'weth') wb.style.display = 'none';
+      else if (net == 'matic') mb.style.display = 'none';
 
       this.showOverlay = true;
     },
     closeOverlay() {
-      let eb = document.getElementById('eth1');
-      let wb = document.getElementById('wEth1');
-      let mb = document.getElementById('matic1');
-      eb.style.display = 'block';
-      wb.style.display = 'block';
-      mb.style.display = 'block';
+      let eb = document.getElementById('eth');
+      let wb = document.getElementById('wEth');
+      let mb = document.getElementById('matic');
+
+      if (this.chainNetwork == 'eth') eb.style.display = 'block';
+      else if (this.chainNetwork == 'weth') wb.style.display = 'block';
+      else if (this.chainNetwork == 'matic') mb.style.display = 'block';
 
       this.showOverlay = false;
     },

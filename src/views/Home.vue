@@ -2,6 +2,11 @@
   <div class="main_container">
     <NavBar />
     <div class="hero">
+      <div class="d-flex-center">
+        <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn">
+          <b>Get AirDrop</b>
+        </vs-button>
+      </div>
       <GetSolidHeader />
 
       <sales-bundle />
