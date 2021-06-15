@@ -1313,6 +1313,180 @@ hr.sales_hr {
   display: none;
 }
 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .vs-dialog {
+    width: 90% !important;
+  }
+  .wrap {
+    width: 100% !important;
+    padding: 0 10px;
+  }
+  .wrap_blog {
+    width: 100% !important;
+  }
+  .wrap_bundle {
+    width: 100% !important;
+  }
+  .vs-navbar {
+    width: 100% !important;
+    padding: 0px 3px 0px 8px !important;
+  }
+  .solid_bundle_promo {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 15px;
+    margin-top:30px
+  }
+  .bundle_container {
+    width:100%;
+    margin: 0 5px;
+  }
+  .tab {
+    width: 100%;
+  }
+  .tabcontent { 
+    width: 100%;
+  }
+  .tab {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+  }
+  .tabcontent {
+    width: 100%;
+    padding: 5px;
+  }
+  .el-carousel__item--card {
+    width: 80% !important;
+    border-radius: 13px;
+  }
+  .rule {
+    display: none;
+  }
+  .green_rule {
+    display: none;
+  }
+  .progress {
+    width: 95%;
+    margin-top: 5px;
+  }
+  .p_tokens {
+    margin-right: 20px;
+  }
+  .gif_anime {
+    border-radius: 20px;
+  }
+  .d-flex {
+    display: block;
+  }
+  #def_def {
+    margin-left:5px !important;
+    margin-top: 25px;
+  }
+  .promo_ghost_pic {
+    width: 95%;
+    margin-top: 35px;
+  }
+  #overlay {
+    width: 100%;
+    height: auto;
+  }
+  .overlay_div {
+    width: 99%;
+  }
+  .overlay_div2 {
+    width: 92%;
+    padding: 40px 14px 55px 14px;
+  }
+  #overlay h1 {
+    font-size: 1.9rem;
+  }
+  #overlay h2 {
+    font-size: 24px;
+  }
+  #overlay h3 {
+    font-size: 24px;
+  }
+  .overlay_cancel {
+    display: none;
+  }
+  .flip-card__top[data-v-78efe7f6], .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__back[data-v-78efe7f6]::before, .flip-card__back[data-v-78efe7f6]::after {
+    width: 2.0em !important;
+  }
+  #airdrop_btn_nav {
+    display: none;
+  }
+  #airdrop_btn {
+    display: block;
+  }
+  #medium_btn {
+    margin-left: 15px;
+  }
+  .lead_text_black {
+    font-size: 1.2rem !important;
+    line-height: 2.2rem;
+    padding: 5px;
+  }
+  #sub-text {
+    display: none;
+  }
+  .lead_text-mob {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.90rem;
+    color: rgb(214, 213, 213);
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+  }
+  .sub_input {
+    width: 320px;
+  }
+  .blog {
+    margin-right: 35px;
+  }
+  .solid_text {
+    width: 100%;
+    margin-top:15px;
+  }
+  .partner_div {
+    display: none;
+  }
+  .partner_div2 {
+    display: block;
+    margin-top: 50px;
+  }
+  .text_p {
+    font-size: 1.1rem;
+    width: 100%;
+  }
+  .chart_pic {
+    width:100%;
+  }
+  .comm_icons {
+    margin-top: 50px !important;
+  }
+
+  /* add ons specific */
+  .time_left {
+    font-size: 37px;
+  }
+  .time_left-2 {
+    font-size: 28px;
+  }
+  .june-dd {
+    font-size: 26px;
+  }
+  #learn_btn {
+    font-size: 1rem
+  }
+  .el-carousel__item  {
+    height: 88% !important;
+  }
+}
+
 /* ----------- iPhone 12 pro max ----------- */
 @media only screen 
     and (device-width: 428px) 
@@ -1980,8 +2154,7 @@ hr.sales_hr {
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 @media only screen 
   and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+  and (max-device-width: 736px)  { 
     .vs-dialog {
       width: 90% !important;
     }
@@ -2133,6 +2306,9 @@ hr.sales_hr {
     }
     .comm_icons {
       margin-top: 50px !important;
+    }
+    .el-carousel__item{
+      height:215px !important;
     }
 }
 
@@ -2307,6 +2483,9 @@ hr.sales_hr {
     #learn_btn {
       font-size: 1rem
     }
+    .el-carousel__item  {
+      height: 0;
+    }
 }
 
 /* ----------- iPhone 5 ----------- */
@@ -2480,13 +2659,16 @@ hr.sales_hr {
     #learn_btn {
       font-size: 1rem
     }
+    .el-carousel__item  {
+      height: 80% !important;
+    }
 }
 
 /* ----------- Galaxy S6 s5 ----------- */
 @media screen 
-  and (min-device-width: 360px) 
-  and (max-device-height: 640px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
     .vs-dialog {
       width: 90% !important;
     }
@@ -2654,5 +2836,166 @@ hr.sales_hr {
       font-size: 1rem
     }
 }
+
+/* ----------- pixel 2 xl ----------- */
+@media screen 
+  and (device-width: 411px) {
+    .vs-dialog {
+      width: 90% !important;
+    }
+    .wrap {
+      width: 100% !important;
+      padding: 0 10px;
+    }
+    .wrap_blog {
+      width: 100% !important;
+    }
+    .wrap_bundle {
+      width: 100% !important;
+    }
+    .vs-navbar {
+      width: 100% !important;
+      padding: 0px 3px 0px 8px !important;
+    }
+    .solid_bundle_promo {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      margin-bottom: 15px;
+      margin-top:30px
+    }
+    .bundle_container {
+      width:100%;
+      margin: 0 5px;
+    }
+    .tab {
+      width: 100%;
+    }
+    .tabcontent { 
+      width: 100%;
+    }
+    .tab {
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-left-radius: 0px;
+    }
+    .tabcontent {
+      width: 100%;
+      padding: 5px;
+    }
+    .el-carousel__item--card {
+      width: 80% !important;
+      border-radius: 13px;
+    }
+    .rule {
+      display: none;
+    }
+    .green_rule {
+      display: none;
+    }
+    .progress {
+      width: 95%;
+      margin-top: 5px;
+    }
+    .p_tokens {
+      margin-right: 20px;
+    }
+    .gif_anime {
+      border-radius: 20px;
+    }
+    .d-flex {
+      display: block;
+    }
+    #def_def {
+      margin-left:5px !important;
+      margin-top: 25px;
+    }
+    .promo_ghost_pic {
+      width: 95%;
+      margin-top: 35px;
+    }
+    #overlay {
+      width: 100%;
+      height: auto;
+    }
+    .overlay_div {
+      width: 99%;
+    }
+    .overlay_div2 {
+      width: 92%;
+      padding: 40px 14px 55px 14px;
+    }
+    #overlay h1 {
+      font-size: 2rem;
+    }
+    #overlay h2 {
+      font-size: 24px;
+    }
+    #overlay h3 {
+      font-size: 24px;
+    }
+    .overlay_cancel {
+      display: none;
+    }
+    .flip-card__top[data-v-78efe7f6], .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__back[data-v-78efe7f6]::before, .flip-card__back[data-v-78efe7f6]::after {
+      width: 2.0em !important;
+    }
+    #airdrop_btn_nav {
+      display: none;
+    }
+    #airdrop_btn {
+      display: block;
+    }
+    #medium_btn {
+      margin-left: 15px;
+    }
+    .lead_text_black {
+      font-size: 1.2rem !important;
+      line-height: 2.2rem;
+      padding: 5px;
+    }
+    #sub-text {
+      display: none;
+    }
+    .lead_text-mob {
+      display: block;
+      font-size: 1.2rem;
+      line-height: 1.90rem;
+      color: rgb(214, 213, 213);
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+    }
+    .sub_input {
+      width: 320px;
+    }
+    .blog {
+      margin-right: 35px;
+    }
+    .solid_text {
+      width: 100%;
+      margin-top:15px;
+    }
+    .partner_div {
+      display: none;
+    }
+    .partner_div2 {
+      display: block;
+      margin-top: 50px;
+    }
+    .text_p {
+      font-size: 1.1rem;
+      width: 100%;
+    }
+    .chart_pic {
+      width:100%;
+    }
+    .comm_icons {
+      margin-top: 50px !important;
+    }
+    .el-carousel__item  {
+      height: 98% !important;
+    }
+}
+
 
 
