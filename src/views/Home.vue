@@ -2,11 +2,11 @@
   <div class="main_container">
     <NavBar />
     <div class="hero">
-      <!-- <div class="d-flex-center">
+      <div class="d-flex-center">
         <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn">
           <b>Get AirDrop</b>
         </vs-button>
-      </div> -->
+      </div>
       <GetSolidHeader />
 
       <div class="wrap_bundle">
@@ -790,7 +790,7 @@
                 </div>
               </div>
 
-              <p class="mt-20 p_tokens">14M Tokens</p>
+              <p class="mt-20 p_tokens">2.8M Tokens</p>
             </div>
 
             <div v-else>
@@ -803,7 +803,7 @@
                 </div>
               </div>
 
-              <p class="mt-20 p_tokens">16M Tokens</p>
+              <p class="mt-20 p_tokens">3.2M Tokens</p>
             </div>
           </vs-col>
         </vs-row>

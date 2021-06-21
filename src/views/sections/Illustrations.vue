@@ -6,7 +6,7 @@
         <div class="d-flex">
           <h2 class="time_left-2">Time Left</h2>
           <flip-countdown
-            deadline="2021-06-26 00:00:00"
+            deadline="2021-06-26 08:00:00"
             class="timerr"
           ></flip-countdown>
         </div>

@@ -12,6 +12,8 @@ export default {
       tokenIdMatic: '0x498E0A753840075c4925442D4d8863eEe49D61E2',
       tokenIdEth: '0x5011d48d4265b6fb8228600a111b2faa1fda3139',
       wrapEthAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+      ethNewTotalToken: 2800000,
+      maticNewTotalToken: 3200000,
       ethTotalToken: 14000000,
       maticTotalToken: 16000000,
       ethPercentPurchased: 0,
@@ -22,13 +24,13 @@ export default {
   methods: {
     // getEthPercentage(currentBalance) {
     //   let getBalance = this.getEthBalance(currentBalance)
-    //   let percentPurchased = (100 * getBalance) / this.ethTotalToken;
+    //   let percentPurchased = (100 * getBalance) / this.ethNewTotalToken;
 
     //   return percentPurchased;
     // },
     // getMaticPercentage(currentBalance) {
     //   let getBalance = this.getMaticBalance(currentBalance)
-    //   let percentPurchased = (100 * getBalance) / this.maticTotalToken;
+    //   let percentPurchased = (100 * getBalance) / this.maticNewTotalToken;
 
     //   return percentPurchased;
     // },
@@ -41,23 +43,22 @@ export default {
       return `SLD-${randomString}`;
     },
     getEthBalance(currentBalance) {
-      // console.log('currentbalance', currentBalance)
+      console.log('currentbalance', currentBalance)
       let balanceOf = this.ethTotalToken;
       let currBalance = this.getSerial(currentBalance)
       let balance = balanceOf - currBalance
-      this.ethPercentPurchased = 100 * balance / this.ethTotalToken;
-      // console.log(this.ethPercentPurchased);
-      return balance;
+      this.ethPercentPurchased = 100 * balance / this.ethNewTotalToken;
+
+      return Math.round(balance);
     },
     getMaticBalance(currentBalance) {
+      console.log('currentbalance', currentBalance)
       let balanceOf = this.maticTotalToken
       let currBalance = this.getSerial(currentBalance)
       let balance = balanceOf - currBalance
-      console.log(balance)
-      this.maticPercentPurchased = 100 * balance / this.maticTotalToken;
-      console.log(this.maticPercentPurchased);
+      this.maticPercentPurchased = 100 * balance / this.maticNewTotalToken;
 
-      return balance;
+      return Math.round(balance);
     },
     addAnimate() {
       let i, percentage
