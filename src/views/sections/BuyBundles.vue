@@ -25,7 +25,7 @@
                       :id="smallBundle == 'loading' ? 'bundle_logo' : 'none'"
                     >
                       <img
-                        src="../assets/images/eth.png"
+                        src="../../assets/images/eth.png"
                         alt="eth"
                         width="60px"
                       />
@@ -76,7 +76,7 @@
                       "
                     >
                       <img
-                        src="../assets/images/eth.png"
+                        src="../../assets/images/eth.png"
                         alt="weth"
                         width="60px"
                       />
@@ -131,7 +131,7 @@
                       "
                     >
                       <img
-                        src="../assets/images/matic_icon.png"
+                        src="../../assets/images/matic_icon.png"
                         alt="matic"
                         width="60px"
                       />
@@ -196,14 +196,14 @@
                   <el-carousel-item name="bigBundle">
                     <div>
                       <img
-                        src="../assets/images/sLD_Token_voucher_80k_eth.png"
+                        src="../../assets/images/sLD_Token_voucher_80k_eth.png"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../assets/images/sld.png" alt="token" />
+                        <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>80, 000</span>
                     </div>
@@ -212,14 +212,14 @@
                   <el-carousel-item name="smallBundle">
                     <div>
                       <img
-                        src="../assets/images/sLD_Token_voucher_40k_eth.jpg"
+                        src="../../assets/images/sLD_Token_voucher_40k_eth.jpg"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../assets/images/sld.png" alt="token" />
+                        <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>40, 000</span>
                     </div>
@@ -377,14 +377,14 @@
                   <el-carousel-item name="bigBundle">
                     <div>
                       <img
-                        src="../assets/images/sLD_Token_voucher_80k_matic.png"
+                        src="../../assets/images/sLD_Token_voucher_80k_matic.png"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../assets/images/sld.png" alt="token" />
+                        <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>80, 000</span>
                     </div>
@@ -393,14 +393,14 @@
                   <el-carousel-item name="smallBundle">
                     <div>
                       <img
-                        src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../assets/images/sld.png" alt="token" />
+                        <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>40, 000</span>
                     </div>
@@ -561,14 +561,14 @@
                   <el-carousel-item name="bigBundle">
                     <div>
                       <img
-                        src="../assets/images/sLD_Token_voucher_80k_matic.png"
+                        src="../../assets/images/sLD_Token_voucher_80k_matic.png"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../assets/images/sld.png" alt="token" />
+                        <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>80, 000</span>
                     </div>
@@ -577,14 +577,14 @@
                   <el-carousel-item name="smallBundle">
                     <div>
                       <img
-                        src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../assets/images/sld.png" alt="token" />
+                        <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>40, 000</span>
                     </div>
@@ -727,6 +727,65 @@
       </div>
     </div>
 
+    <div class="ilustrations">
+      <div class="wrap">
+        <vs-row class="mt-50">
+          <vs-col :w="5" :xs="10" :sm="10">
+            <div class="flex-align-center" v-if="onEthNetwork">
+              <h1 class="yellow" v-if="bigBundle !== 'loading'">
+                {{ getEthBalance(ethbalance) }} token sold in presale
+              </h1>
+            </div>
+
+            <div class="flex-align-center" v-else>
+              <h1 class="yellow" v-if="ethMaticSmallStock !== 'loading'">
+                {{ getMaticBalance(maticbalance) }} tokens sold in presale
+              </h1>
+            </div>
+
+            <div class="flex-align-center" v-if="!isDrizzleInitialized">
+              <h1 class="yellow">{{ tokenSale }} tokens sold in presale</h1>
+            </div>
+          </vs-col>
+          <vs-col :w="2" :xs="2" :sm="2">
+            <div
+              class="flex-align-center"
+              style="text-align:center;margin-left:40px;"
+            >
+              <div class="rule"></div>
+            </div>
+          </vs-col>
+          <vs-col :w="5" :xs="12" :sm="12">
+            <div v-if="onEthNetwork">
+              <div class="progress">
+                <div
+                  class="progress_token"
+                  :style="{ width: `${ethPercentPurchased}%` }"
+                >
+                  <span>{{ Math.trunc(ethPercentPurchased) }}%</span>
+                </div>
+              </div>
+
+              <p class="mt-20 p_tokens">14M Tokens</p>
+            </div>
+
+            <div v-else>
+              <div class="progress">
+                <div
+                  class="progress_token"
+                  :style="{ width: `${maticPercentPurchased}%` }"
+                >
+                  <span>{{ Math.trunc(maticPercentPurchased) }}%</span>
+                </div>
+              </div>
+
+              <p class="mt-20 p_tokens">16M Tokens</p>
+            </div>
+          </vs-col>
+        </vs-row>
+      </div>
+    </div>
+
     <vs-dialog v-model="showWallects" width="420px">
       <template #header>
         <h4 class="not-margin">
@@ -761,14 +820,14 @@
         <div class="meta_div">
           <div class="eth_acc">
             <vs-avatar size="20">
-              <img src="../assets/images/sld.png" alt="logo" />
+              <img src="../../assets/images/sld.png" alt="logo" />
             </vs-avatar>
             <span class="acc_span">{{ activeAccount }}</span>
           </div>
           <br />
           <div class="eth_balance">
             <vs-avatar size="20">
-              <img src="../assets/images/sld.png" alt="logo" />
+              <img src="../../assets/images/sld.png" alt="logo" />
             </vs-avatar>
             <span class="acc_span">{{ toEth(activeBalance) }} Eth</span>
           </div>
@@ -875,7 +934,7 @@ export default {
       tokenSale: 0,
       confirmTitle: '',
       showConfirmBundle: false,
-      percentageOff: 37,
+      percentageOff: 70,
       active: 0,
       email: '',
       showWallects: false,
@@ -1100,7 +1159,7 @@ export default {
         console.log('matic', this.currentMaticBundle);
         this.getMaticSerial(this.maticBundle);
         let price =
-          this.percentageOff == 37
+          this.percentageOff == 70
             ? this.bigBundlePriceEthMatic
             : this.smallBundlePriceEthMatic;
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
@@ -1126,14 +1185,14 @@ export default {
           : this.currentNetTab == 'matic'
           ? this.maticBundle
           : 0;
-      if (this.percentageOff == 37 && this.currentNetTab == 'eth')
+      if (this.percentageOff == 70 && this.currentNetTab == 'eth')
         this.buyEthBigBundle(currentNumberofBundle, this.bigBundlePrice);
-      else if (this.percentageOff == 37 && this.currentNetTab == 'wEth')
+      else if (this.percentageOff == 70 && this.currentNetTab == 'wEth')
         this.buyWrapEthBigBundle(
           currentNumberofBundle,
           this.bigBundlePriceEthMatic
         );
-      else if (this.percentageOff == 37 && this.currentNetTab == 'matic')
+      else if (this.percentageOff == 70 && this.currentNetTab == 'matic')
         this.buyMaticBigBundle(
           currentNumberofBundle,
           this.bigBundlePriceEthMatic,
@@ -1141,14 +1200,14 @@ export default {
         );
 
       // small bundles call
-      if (this.percentageOff == 30 && this.currentNetTab == 'eth')
+      if (this.percentageOff == 60 && this.currentNetTab == 'eth')
         this.buyEthSmallBundle(currentNumberofBundle, this.smallBundlePrice);
-      else if (this.percentageOff == 30 && this.currentNetTab == 'wEth')
+      else if (this.percentageOff == 60 && this.currentNetTab == 'wEth')
         this.buyWrapEthSmallBundle(
           currentNumberofBundle,
           this.smallBundlePriceEthMatic
         );
-      else if (this.percentageOff == 30 && this.currentNetTab == 'matic')
+      else if (this.percentageOff == 60 && this.currentNetTab == 'matic')
         this.buyMaticSmallBundle(
           currentNumberofBundle,
           this.smallBundlePriceEthMatic,
@@ -1162,7 +1221,7 @@ export default {
     },
     getEthSerial(bundle) {
       let totalAmnt =
-        this.percentageOff == 37
+        this.percentageOff == 70
           ? this.bigBundlePrice * bundle
           : this.smallBundlePrice * bundle;
       let serial = totalAmnt / 1000000000000000000;
@@ -1174,7 +1233,7 @@ export default {
       // console.log('factor', this.ethmaticFactor);
       console.log('smallmatic', this.smallBundlePriceEthMatic);
       let totalAmnt =
-        this.percentageOff == 37
+        this.percentageOff == 70
           ? this.bigBundlePriceEthMatic * bundle
           : this.smallBundlePriceEthMatic * bundle;
       let serial = totalAmnt / 1000000000000000000;
@@ -1201,13 +1260,13 @@ export default {
             "Maximum bundle can't exceed 3"
           );
           this.currentEthBundle =
-            this.percentageOff == 37
+            this.percentageOff == 70
               ? 80000 * this.ethBundle
               : 40000 * this.ethBundle;
         } else {
           this.ethBundle++;
           this.currentEthBundle =
-            this.percentageOff == 37
+            this.percentageOff == 70
               ? 80000 * this.ethBundle
               : 40000 * this.ethBundle;
         }
@@ -1222,13 +1281,13 @@ export default {
             "Maximum bundle can't exceed 3"
           );
           this.currentwEthBundle =
-            this.percentageOff == 37
+            this.percentageOff == 70
               ? 80000 * this.wBundle
               : 40000 * this.wBundle;
         } else {
           this.wBundle++;
           this.currentwEthBundle =
-            this.percentageOff == 37
+            this.percentageOff == 70
               ? 80000 * this.wBundle
               : 40000 * this.wBundle;
         }
@@ -1243,13 +1302,13 @@ export default {
             "Maximum bundle can't exceed 3"
           );
           this.currentMaticBundle =
-            this.percentageOff == 37
+            this.percentageOff == 70
               ? 80000 * this.maticBundle
               : 40000 * this.maticBundle;
         } else {
           this.maticBundle++;
           this.currentMaticBundle =
-            this.percentageOff == 37
+            this.percentageOff == 70
               ? 80000 * this.maticBundle
               : 40000 * this.maticBundle;
         }
@@ -1264,11 +1323,11 @@ export default {
             'Bundle Size',
             "Maximum bundle can't be less than 1"
           );
-          this.currentEthBundle = this.percentageOff == 37 ? 80000 : 40000;
+          this.currentEthBundle = this.percentageOff == 70 ? 80000 : 40000;
         } else {
           this.ethBundle--;
           this.currentEthBundle =
-            this.percentageOff == 37
+            this.percentageOff == 70
               ? this.currentEthBundle - 80000
               : this.currentEthBundle - 40000;
         }
@@ -1282,11 +1341,11 @@ export default {
             'Bundle Size',
             "Maximum bundle can't be less than 1"
           );
-          this.currentwEthBundle = this.percentageOff == 37 ? 80000 : 40000;
+          this.currentwEthBundle = this.percentageOff == 70 ? 80000 : 40000;
         } else {
           this.wBundle--;
           this.currentwEthBundle =
-            this.percentageOff == 37
+            this.percentageOff == 70
               ? this.currentwEthBundle - 80000
               : this.currentwEthBundle - 40000;
         }
@@ -1300,11 +1359,11 @@ export default {
             'Bundle Size',
             "Maximum bundle can't be less than 1"
           );
-          this.currentMaticBundle = this.percentageOff == 37 ? 80000 : 40000;
+          this.currentMaticBundle = this.percentageOff == 70 ? 80000 : 40000;
         } else {
           this.maticBundle--;
           this.currentMaticBundle =
-            this.percentageOff == 37
+            this.percentageOff == 70
               ? this.currentMaticBundle - 80000
               : this.currentMaticBundle - 40000;
         }
@@ -1315,7 +1374,7 @@ export default {
       this.wBundle = 1;
       this.maticBundle = 1;
       let bb = r;
-      this.percentageOff = bb == 1 ? 30 : 37;
+      this.percentageOff = bb == 1 ? 60 : 70;
       this.currentEthBundle = bb == 1 ? 40000 : 80000;
       this.currentwEthBundle = bb == 1 ? 40000 : 80000;
       this.currentMaticBundle = bb == 1 ? 40000 : 80000;
@@ -1329,7 +1388,7 @@ export default {
     openTab(evt, cityName) {
       this.currentNetTab = cityName;
       this.setActiveItem();
-      this.percentageOff = 37;
+      this.percentageOff = 70;
       if ((cityName == 'wEth' || cityName == 'matic') && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain Please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction';

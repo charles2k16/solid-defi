@@ -17,9 +17,9 @@
         />
       </template>
       <template #right>
-        <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn_nav">
+        <!-- <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn_nav">
           <b>AirDrop</b>
-        </vs-button>
+        </vs-button> -->
         <vs-button
           blank
           class="medium_button btn_hover"

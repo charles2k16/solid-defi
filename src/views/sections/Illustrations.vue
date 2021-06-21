@@ -3,30 +3,24 @@
     <!-- timer for tokens -->
     <vs-row class="mt-50 ml-5">
       <vs-col :w="6" :xs="12" :sm="12">
-        <div>
-          <h1 class="time_left">COUNTDOWN TO</h1>
-          <h2 class="time_left-2">COMMUNITY PRESALE</h2>
+        <div class="d-flex">
+          <h2 class="time_left-2">Time Left</h2>
+          <flip-countdown
+            deadline="2021-06-26 00:00:00"
+            class="timerr"
+          ></flip-countdown>
         </div>
       </vs-col>
       <vs-col :w="1" :xs="2" :sm="2">
-        <div style="text-align:center;margin-left:-60px;padding-top:40px">
+        <div style="text-align:center;margin-left:-40px;">
           <div class="green_rule"></div>
         </div>
       </vs-col>
       <vs-col :w="5" :xs="12" :sm="12">
-        <div style="margin-top:-15px">
-          <!-- <div class="progress">
-            <div class="progress_time"></div>
-          </div>
-          <p class="mt-20 p_tokens">5 days</p> -->
-
-          <flip-countdown
-            deadline="2021-06-21 00:00:00"
-            class="timerr"
-          ></flip-countdown>
-
-          <h2 class="june-dd">JUNE 21 2021 5pm UTC</h2>
+        <div class="progress">
+          <div class="progress_time"></div>
         </div>
+        <p class="mt-20 p_tokens">5 days</p>
       </vs-col>
     </vs-row>
 

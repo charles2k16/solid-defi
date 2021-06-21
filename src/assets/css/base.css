@@ -471,7 +471,7 @@ hr.sales_hr {
 }
 .progress {
   background-color: #0F1422;
-  width: 85%;
+  width: 95%;
   border-radius: 50px;
   box-shadow: inset 7px 7px 8px #020414,
             inset -7px -7px 8px #292f3e;
@@ -493,7 +493,7 @@ hr.sales_hr {
 }
 .progress_time {
   background: linear-gradient(315deg, #6D21DF, #501BC4);
-  width: 80%;
+  width: 20%;
   height: 20px;
   border-radius: 40px;
   margin-top: 10px;
@@ -559,8 +559,7 @@ hr.sales_hr {
 }
 .time_left-2 {
   color:#6649FB;
-  font-size: 31px;
-  margin-top:15px;
+  font-size: 28px;
 }
 .june-dd {
   font-size: 30px;
@@ -577,34 +576,31 @@ hr.sales_hr {
   border-top: none !important;
 }
 .flip-card__top[data-v-78efe7f6], .flip-card__bottom[data-v-78efe7f6], .flip-card__back-bottom[data-v-78efe7f6], .flip-card__back[data-v-78efe7f6]::before, .flip-card__back[data-v-78efe7f6]::after {
-  /* color: #6649FB !important;
+  color: #6649FB !important;
   height: 0.70em !important;
   background: #1e2257 !important;
-  width: 1.5em !important; */
+  width: 1.6em !important;
   
   /* community sale */
-  color: #664aff !important;
+  /* color: #664aff !important;
   width: 2.2em !important;
   border: 2px solid #424473;
   background: #000000ff !important;
-  height: 0.90em !important;
+  height: 0.90em !important; */
 }
 .flip-card[data-v-78efe7f6] {
   line-height: 1 !important;
 }
 .flip-card[data-v-78efe7f6] {
-  /* font-size: 2.3rem !important; */
-
-  /* community sale */
-  font-size: 2.3rem !important;
+  font-size: 2.2rem !important;
 }
 .flip-clock__slot[data-v-78efe7f6] {
   font-size: 0.8rem !important;
-  /* color: #838386 !important; */
+  color: #838386 !important;
   font-weight: bold;
   
-  color:  #664aff !important;
-  margin-top:20px;
+  /* color:  #664aff !important; */
+  margin-top:15px;
 }
 .partner_div {
   margin-top:85px;
@@ -879,14 +875,6 @@ hr.sales_hr {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-/* remove after community */
-/* .caro_image-1 {
-  width: 100%;
-  opacity: 0.1;
-  background: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-} */
 .bk_bun {
   background:#EEEEEE;
   margin-top:-5px;
@@ -1372,7 +1360,7 @@ hr.sales_hr {
   }
   .progress {
     width: 95%;
-    margin-top: 5px;
+    margin-top: 15px;
   }
   .p_tokens {
     margin-right: 20px;
@@ -1474,7 +1462,8 @@ hr.sales_hr {
     font-size: 37px;
   }
   .time_left-2 {
-    font-size: 28px;
+    font-size: 30px;
+    margin-bottom: 13px;
   }
   .june-dd {
     font-size: 26px;
@@ -1548,7 +1537,7 @@ hr.sales_hr {
       }
       .progress {
         width: 95%;
-        margin-top: 5px;
+        margin-top: 15px;
       }
       .p_tokens {
         margin-right: 20px;
@@ -1707,7 +1696,7 @@ hr.sales_hr {
       }
       .progress {
         width: 95%;
-        margin-top: 5px;
+        margin-top: 15px;
       }
       .p_tokens {
         margin-right: 20px;
@@ -1880,7 +1869,7 @@ hr.sales_hr {
       }
       .progress {
         width: 95%;
-        margin-top: 5px;
+        margin-top: 15px;
       }
       .p_tokens {
         margin-right: 20px;
@@ -2039,7 +2028,7 @@ hr.sales_hr {
     }
     .progress {
       width: 95%;
-      margin-top: 5px;
+      margin-top: 15px;
     }
     .p_tokens {
       margin-right: 20px;
@@ -2211,7 +2200,7 @@ hr.sales_hr {
     }
     .progress {
       width: 95%;
-      margin-top: 5px;
+      margin-top: 15px;
     }
     .p_tokens {
       margin-right: 20px;
@@ -2310,6 +2299,9 @@ hr.sales_hr {
     .el-carousel__item{
       height:215px !important;
     }
+    .time_left-2 {
+      margin-bottom: 13px;
+    }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
@@ -2373,7 +2365,7 @@ hr.sales_hr {
     }
     .progress {
       width: 95%;
-      margin-top: 5px;
+      margin-top: 15px;
     }
     .p_tokens {
       margin-right: 20px;
@@ -2549,7 +2541,7 @@ hr.sales_hr {
     }
     .progress {
       width: 95%;
-      margin-top: 5px;
+      margin-top: 15px;
     }
     .p_tokens {
       margin-right: 20px;
@@ -2725,7 +2717,7 @@ hr.sales_hr {
     }
     .progress {
       width: 95%;
-      margin-top: 5px;
+      margin-top: 15px;
     }
     .p_tokens {
       margin-right: 20px;
@@ -2896,7 +2888,7 @@ hr.sales_hr {
     }
     .progress {
       width: 95%;
-      margin-top: 5px;
+      margin-top: 15px;
     }
     .p_tokens {
       margin-right: 20px;
