@@ -69,7 +69,6 @@
               placeholder="His/her Referral ID"
               class="air_input"
               v-model="airdropForm.referredBy"
-              :disabled="idDisabled"
             />
 
             <div class="flex-justify-between-center air_text_div">
@@ -173,7 +172,6 @@ export default {
   },
   data() {
     return {
-      idDisabled: true,
       btn_loading: false,
       airdrop_sent: false,
       reffLink: '',
