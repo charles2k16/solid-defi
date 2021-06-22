@@ -56,7 +56,10 @@
             />
 
             <div class="flex-justify-between-center air_text_div">
-              <span class="air_text">Who referred you</span>
+              <span class="air_text"
+                >Who referred you
+                <span style="font-size:11px">(Optional)</span></span
+              >
               <span class="material-icons ic">
                 help
               </span>
@@ -66,6 +69,7 @@
               placeholder="His/her Referral ID"
               class="air_input"
               v-model="airdropForm.referredBy"
+              :disabled="idDisabled"
             />
 
             <div class="flex-justify-between-center air_text_div">
@@ -169,6 +173,7 @@ export default {
   },
   data() {
     return {
+      idDisabled: true,
       btn_loading: false,
       airdrop_sent: false,
       reffLink: '',
