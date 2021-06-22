@@ -31,53 +31,57 @@
                     class="tablinks active"
                     @click="openTab($event, 'eth')"
                   >
-                    <div class="flex-justify-evenly-center">
-                      <div
-                        class="flex-row-center"
-                        :id="smallBundle == 'loading' ? 'bundle_logo' : 'none'"
-                      >
-                        <img
-                          src="../assets/images/eth.png"
-                          alt="eth"
-                          width="60px"
-                        />
-
-                        <span class="mt-20"><b>ETH</b></span>
-                      </div>
-                      <div class="mx-20">
-                        <h3 class="stock_bold">40,000</h3>
-                        <br />
-                        <span
-                          class="d-block stock"
-                          v-if="smallBundle == 'loading'"
+                    <a href="#eth" style="text-decoration:none;">
+                      <div class="flex-justify-evenly-center">
+                        <div
+                          class="flex-row-center"
+                          :id="
+                            smallBundle == 'loading' ? 'bundle_logo' : 'none'
+                          "
                         >
-                          <span class="wallet-not"
-                            >Wallet not connected to eth</span
+                          <img
+                            src="../assets/images/eth.png"
+                            alt="eth"
+                            width="60px"
+                          />
+
+                          <span class="mt-20"><b>ETH</b></span>
+                        </div>
+                        <div class="mx-20">
+                          <h3 class="stock_bold">40,000</h3>
+                          <br />
+                          <span
+                            class="d-block stock"
+                            v-if="smallBundle == 'loading'"
                           >
-                        </span>
+                            <span class="wallet-not"
+                              >Wallet not connected to eth</span
+                            >
+                          </span>
 
-                        <span class="d-block stock" v-else
-                          >Stock: {{ smallBundle }}</span
-                        >
-                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
-                      </div>
-                      <div style="margin-right:10px">
-                        <h3 class="stock_bold">80,000</h3>
-                        <br />
-                        <span
-                          class="d-block stock"
-                          v-if="bigBundle == 'loading'"
-                        >
-                          <span class="wallet-not"
-                            >Wallet not connected to eth</span
+                          <span class="d-block stock" v-else
+                            >Stock: {{ smallBundle }}</span
                           >
-                        </span>
+                          <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
+                        </div>
+                        <div style="margin-right:10px">
+                          <h3 class="stock_bold">80,000</h3>
+                          <br />
+                          <span
+                            class="d-block stock"
+                            v-if="bigBundle == 'loading'"
+                          >
+                            <span class="wallet-not"
+                              >Wallet not connected to eth</span
+                            >
+                          </span>
 
-                        <span class="d-block stock" v-else
-                          >Stock: {{ bigBundle }}</span
-                        >
+                          <span class="d-block stock" v-else
+                            >Stock: {{ bigBundle }}</span
+                          >
+                        </div>
                       </div>
-                    </div>
+                    </a>
                   </button>
                   <button
                     class="tablinks opacity"
@@ -140,54 +144,58 @@
                     class="tablinks opacity"
                     @click="openTab($event, 'matic')"
                   >
-                    <div class="flex-justify-evenly-center">
-                      <div
-                        class="flex-row-center"
-                        :id="
-                          maticSmallStock == 'loading' ? 'bundle_logo' : 'none'
-                        "
-                      >
-                        <img
-                          src="../assets/images/matic_icon.png"
-                          alt="matic"
-                          width="60px"
-                        />
-
-                        <span class="mt-20"><b>MATIC</b></span>
-                      </div>
-                      <div class="mx-20">
-                        <h3 class="stock_bold">40,000</h3>
-                        <br />
-                        <span
-                          class="d-block stock"
-                          v-if="maticSmallStock == 'loading'"
+                    <a href="#matic" style="text-decoration:none;">
+                      <div class="flex-justify-evenly-center">
+                        <div
+                          class="flex-row-center"
+                          :id="
+                            maticSmallStock == 'loading'
+                              ? 'bundle_logo'
+                              : 'none'
+                          "
                         >
-                          <span class="wallet-not"
-                            >Wallect not connected to Matic</span
+                          <img
+                            src="../assets/images/matic_icon.png"
+                            alt="matic"
+                            width="60px"
+                          />
+
+                          <span class="mt-20"><b>MATIC</b></span>
+                        </div>
+                        <div class="mx-20">
+                          <h3 class="stock_bold">40,000</h3>
+                          <br />
+                          <span
+                            class="d-block stock"
+                            v-if="maticSmallStock == 'loading'"
                           >
-                        </span>
+                            <span class="wallet-not"
+                              >Wallect not connected to Matic</span
+                            >
+                          </span>
 
-                        <span class="d-block stock" v-else
-                          >Stock: {{ maticSmallStock }}</span
-                        >
-                      </div>
-                      <div style="margin-right:10px">
-                        <h3 class="stock_bold">80,000</h3>
-                        <br />
-                        <span
-                          class="d-block stock"
-                          v-if="ethMaticBigStock == 'loading'"
-                        >
-                          <span class="wallet-not"
-                            >Wallect not connected to Matic</span
+                          <span class="d-block stock" v-else
+                            >Stock: {{ maticSmallStock }}</span
                           >
-                        </span>
+                        </div>
+                        <div style="margin-right:10px">
+                          <h3 class="stock_bold">80,000</h3>
+                          <br />
+                          <span
+                            class="d-block stock"
+                            v-if="ethMaticBigStock == 'loading'"
+                          >
+                            <span class="wallet-not"
+                              >Wallect not connected to Matic</span
+                            >
+                          </span>
 
-                        <span class="d-block stock" v-else
-                          >Stock: {{ maticBigStock }}</span
-                        >
+                          <span class="d-block stock" v-else
+                            >Stock: {{ maticBigStock }}</span
+                          >
+                        </div>
                       </div>
-                    </div>
+                    </a>
                   </button>
                 </div>
 
