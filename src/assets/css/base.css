@@ -1112,7 +1112,7 @@ hr.sales_hr {
   border:none;
   color: rgb(103, 119, 139);
   font-size: 15px;
-  border-bottom:1px solid rgb(102, 123, 151);
+  /* border-bottom:1px solid rgb(102, 123, 151); */
 }
 .air_input:focus { 
   outline:none; 
@@ -1122,6 +1122,10 @@ hr.sales_hr {
 .air_input::placeholder {
   color: rgb(103, 119, 139);
   font-size: 15px;
+}
+.airdrop_input_cont {
+  border-bottom:1px solid rgb(102, 123, 151);
+  width:260px;
 }
 .air_text {
   color: #cbc8ff;

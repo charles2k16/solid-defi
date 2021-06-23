@@ -9,12 +9,15 @@
           </div>
 
           <div class="airdrop_form">
-            <input
-              type="text"
-              placeholder="Email"
-              class="air_input"
-              v-model="airdropForm.email"
-            />
+            <div class="flex-justify-between airdrop_input_cont">
+       
+              <input
+                type="text"
+                placeholder="Email"
+                class="air_input"
+                v-model="airdropForm.email"
+              />
+            </div>
 
             <div class="flex-justify-between-center air_text_div">
               <span class="air_text">Please follow us on Twitter</span>
@@ -22,18 +25,12 @@
                 help
               </span>
             </div>
-            <input
-                type="text"
-                placeholder="Twitter username"
-                class="air_input"
-                v-model="airdropForm.twitter_name"
-              />
-            <!-- <div class="flex-justify-between">
-              <vs-avatar size="40">
+            <div class="flex-justify-between airdrop_input_cont">
+              <vs-avatar size="35">
                 <img
                   src="../assets/images/twitter.png"
                   alt="medium"
-                  style="width:20px !important"
+                  style="width:20px"
                 />
               </vs-avatar>
               <input
@@ -41,9 +38,8 @@
                 placeholder="Twitter username"
                 class="air_input"
                 v-model="airdropForm.twitter_name"
-                style="width:230px"
               />
-            </div> -->
+            </div>
             
             <div class="flex-justify-between-center air_text_div">
               <span class="air_text">Please join us on Telegram</span>
@@ -51,13 +47,21 @@
                 help
               </span>
             </div>
-            <input
-              type="text"
-              placeholder="Telegram username"
-              class="air_input"
-              v-model="airdropForm.telegram_name"
-              required
-            />
+            <div class="flex-justify-between airdrop_input_cont">
+              <vs-avatar size="35">
+                <img
+                  src="../assets/images/telegram2.png"
+                  alt="medium"
+                  style="width:20px;"
+                />
+              </vs-avatar>
+              <input
+                type="text"
+                placeholder="Telegram username"
+                class="air_input"
+                v-model="airdropForm.telegram_name"
+              />
+            </div>
 
             <div class="flex-justify-between-center air_text_div">
               <span class="air_text">Metamask address</span>
@@ -65,12 +69,21 @@
                 help
               </span>
             </div>
-            <input
-              type="text"
-              placeholder="Public address"
-              class="air_input"
-              v-model="airdropForm.metamaskAddress"
-            />
+            <div class="flex-justify-between airdrop_input_cont">
+              <vs-avatar size="35">
+                <img
+                  src="../assets/images/metamask.png"
+                  alt="medium"
+                  style="width:20px;"
+                />
+              </vs-avatar>
+              <input
+                type="text"
+                placeholder="Public address"
+                class="air_input"
+                v-model="airdropForm.metamaskAddress"
+              />
+            </div>
 
             <div class="flex-justify-between-center air_text_div">
               <span class="air_text"

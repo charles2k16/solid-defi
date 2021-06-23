@@ -238,9 +238,12 @@
 }
 
 .reff-table {
-  color: whitesmoke;
-  background:#181C2A;
+  color: #ea8402;
+    background: transparent;
 }
 .reff-table .vs-table__header {
-  background: #181C2A !important;
+  background: #161b33 !important;
+}
+.vs-table__thead .vs-table__th {
+  background: transparent !important;
 }
