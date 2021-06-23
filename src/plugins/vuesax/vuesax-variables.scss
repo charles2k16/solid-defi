@@ -227,7 +227,6 @@
 .vs-dialog__close  {
   background: #89889a !important;
 }
-
 .con-footer {
   display: flex;
   justify-content: space-evenly;
@@ -236,4 +235,12 @@
 }
 .vs-avatar-content {
   --vs-color: none !important;
+}
+
+.reff-table {
+  color: whitesmoke;
+  background:#181C2A;
+}
+.reff-table .vs-table__header {
+  background: #181C2A !important;
 }

@@ -282,51 +282,7 @@ hr.sales_hr {
   border-radius: 10px;
   width: 170px;
   color: #0D132A;
-
   padding: 5px;
-}
-.swap {
-  width: 480px;
-}
-.swap_form {
-  background-color: #1B1F2F;
-  height: 280px;
-  border-radius: 25px;
-  padding: 10px;
-  color: rgb(179, 177, 177);
-}
-.swap_token_table {
-  height: 100vh;
-  overflow-y: scroll;
-}
-.swap_metrics {
-  color: rgb(136, 135, 135);
-  margin-top: 40px;
-  background-color: #1B1F2F;
-  border-radius: 20px;
-  padding: 10px;
-}
-.pool {
-  width: 630px;
-  color: whitesmoke;
-}
-.liquidity {
-  background-color: #242a3f;
-  padding: 10px;
-  border-radius: 15px;
-}
-.liquidity-tip {
-  background-color: #242a3f;
-  color: #5a5f70;
-  padding: 10px;
-  border-radius: 15px;
-}
-.add-liquidity {
-  background-color: #1B1F2F;
-  width: 420px;
-  padding: 15px;
-  color: whitesmoke;
-  border-radius: 25px;
 }
 .footer_container {
   background:#121728;
