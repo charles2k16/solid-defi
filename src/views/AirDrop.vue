@@ -23,12 +23,28 @@
               </span>
             </div>
             <input
-              type="text"
-              placeholder="Twitter username"
-              class="air_input"
-              v-model="airdropForm.twitter_name"
-            />
-
+                type="text"
+                placeholder="Twitter username"
+                class="air_input"
+                v-model="airdropForm.twitter_name"
+              />
+            <!-- <div class="flex-justify-between">
+              <vs-avatar size="40">
+                <img
+                  src="../assets/images/twitter.png"
+                  alt="medium"
+                  style="width:20px !important"
+                />
+              </vs-avatar>
+              <input
+                type="text"
+                placeholder="Twitter username"
+                class="air_input"
+                v-model="airdropForm.twitter_name"
+                style="width:230px"
+              />
+            </div> -->
+            
             <div class="flex-justify-between-center air_text_div">
               <span class="air_text">Please join us on Telegram</span>
               <span class="material-icons-outlined ic">
@@ -40,6 +56,7 @@
               placeholder="Telegram username"
               class="air_input"
               v-model="airdropForm.telegram_name"
+              required
             />
 
             <div class="flex-justify-between-center air_text_div">
@@ -106,7 +123,7 @@
             <vs-button
               v-if="!btn_loading"
               class="finish_btn"
-              @click="sendReferral"
+              @click="checkReferral"
             >
               <b> Submit</b>
             </vs-button>
@@ -192,9 +209,21 @@ export default {
     this.reffLink = `soliddefi.com/#/airdrop?ref=${reffString}`;
   },
   methods: {
-    sendReferral() {
-      console.log(this.airdropForm);
-      let self = this;
+    checkReferral() {
+      if (this.airdropForm.email == "" || this.airdropForm.telegram_name == "" || this.airdropForm.metamaskAddress == "") {
+        this.openNotification(
+          'top-center',
+          'danger',
+          'Error',
+          'Make sure all fileds are filled before submitting'
+        );
+        return false;
+      } else {
+        this.sendRefferal()
+      }
+    },
+    sendRefferal() {
+      let self = this
       this.btn_loading = true;
 
       referralsApi
@@ -206,7 +235,7 @@ export default {
 
           setTimeout(function() {
             self.airdrop_sent = false;
-          }, 3000);
+          }, 5000);
         })
         .catch(error => {
           console.log(error);
@@ -218,7 +247,7 @@ export default {
             'Invalid email address or email address already used.'
           );
         });
-    },
+    }
   },
 };
 </script>

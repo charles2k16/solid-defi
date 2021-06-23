@@ -6,7 +6,7 @@
 
     <div class="d-flex-center mt-30">
       <vs-button
-        href="https://explorer-mainnet.maticvigil.com/tokens/0x498E0A753840075c4925442D4d8863eEe49D61E2/token-transfers"
+        href="https://polygonscan.com/token/0x498e0a753840075c4925442d4d8863eee49d61e2?a=0x5011d48d4265b6fb8228600a111b2faa1fda3139"
         blank
         style="font-size: 15px;color:whitesmoke;"
         transparent
