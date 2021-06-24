@@ -445,7 +445,7 @@
 
 <script>
 export default {
-  name: 'SalesBundle',
+  name: 'AditionalBundle',
   data() {
     return {
       showOverlay: false,

@@ -10,7 +10,6 @@
       <GetSolidHeader />
 
       <div class="wrap_bundle">
-        <!-- change back to mt-50 -->
         <div class="mt-50">
           <vs-row class="mt-20">
             <vs-col :w="4" :xs="12" :sm="12">
