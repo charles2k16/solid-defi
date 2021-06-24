@@ -317,7 +317,7 @@
                             v-if="onEthNetwork"
                             >You're <br />
                             <span style="color:#DDDBEC;">
-                              <b>ON Etherum </b></span
+                              <b>ON Ethereum </b></span
                             ></span
                           >
                           <span
@@ -327,7 +327,7 @@
                             @click="changeNetwork"
                           >
                             Connect to <br />
-                            <span style="color:blue;"> <b>Etherum </b></span>
+                            <span style="color:blue;"> <b>Ethereum </b></span>
                           </span>
                         </div>
 
@@ -501,7 +501,7 @@
                             v-if="onEthNetwork"
                             >You're <br />
                             <span style="color:#DDDBEC;">
-                              <b>ON Etherum </b></span
+                              <b>ON Ethereum </b></span
                             ></span
                           >
 
@@ -512,7 +512,7 @@
                             style="margin-left:27px"
                           >
                             Connect to <br />
-                            <span style="color:blue;"> <b>Etherum </b></span>
+                            <span style="color:blue;"> <b>Ethereum </b></span>
                           </span>
                         </div>
 
@@ -687,7 +687,7 @@
                             v-if="onEthNetwork"
                             >You're <br />
                             <span style="color:#DDDBEC;">
-                              <b>ON Etherum </b></span
+                              <b>ON Ethereum </b></span
                             ></span
                           >
 
@@ -698,7 +698,7 @@
                             @click="changeNetwork"
                           >
                             Connect to <br />
-                            <span style="color:blue;"> <b>Etherum </b></span>
+                            <span style="color:blue;"> <b>Ethereum </b></span>
                           </span>
                         </div>
 

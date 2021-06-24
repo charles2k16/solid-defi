@@ -1,12 +1,11 @@
 <template>
   <div>
     <div class="wrap_bundle">
-      <!-- change back to mt-50 -->
       <div class="mt-50">
         <vs-row class="mt-20">
           <vs-col :w="4" :xs="12" :sm="12">
             <img
-              src="../../assets/images/solid_bundle_promo.png"
+              src="../assets/images/solid_bundle_promo.png"
               alt="log"
               class="solid_bundle_promo"
             />
@@ -19,50 +18,55 @@
 
               <div class="tab">
                 <button class="tablinks active" @click="openTab($event, 'eth')">
-                  <div class="flex-justify-evenly-center">
-                    <div
-                      class="flex-row-center"
-                      :id="smallBundle == 'loading' ? 'bundle_logo' : 'none'"
-                    >
-                      <img
-                        src="../../assets/images/eth.png"
-                        alt="eth"
-                        width="60px"
-                      />
-
-                      <span class="mt-20"><b>ETH</b></span>
-                    </div>
-                    <div class="mx-20">
-                      <h3 class="stock_bold">40,000</h3>
-                      <br />
-                      <span
-                        class="d-block stock"
-                        v-if="smallBundle == 'loading'"
+                  <a href="#eth" style="text-decoration:none;">
+                    <div class="flex-justify-evenly-center">
+                      <div
+                        class="flex-row-center"
+                        :id="smallBundle == 'loading' ? 'bundle_logo' : 'none'"
                       >
-                        <span class="wallet-not"
-                          >Wallet not connected to eth</span
+                        <img
+                          src="../assets/images/eth.png"
+                          alt="eth"
+                          width="60px"
+                        />
+
+                        <span class="mt-20"><b>ETH</b></span>
+                      </div>
+                      <div class="mx-20">
+                        <h3 class="stock_bold">40,000</h3>
+                        <br />
+                        <span
+                          class="d-block stock"
+                          v-if="smallBundle == 'loading'"
                         >
-                      </span>
+                          <span class="wallet-not"
+                            >Wallet not connected to eth</span
+                          >
+                        </span>
 
-                      <span class="d-block stock" v-else
-                        >Stock: {{ smallBundle }}</span
-                      >
-                      <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
-                    </div>
-                    <div style="margin-right:10px">
-                      <h3 class="stock_bold">80,000</h3>
-                      <br />
-                      <span class="d-block stock" v-if="bigBundle == 'loading'">
-                        <span class="wallet-not"
-                          >Wallet not connected to eth</span
+                        <span class="d-block stock" v-else
+                          >Stock: {{ smallBundle }}</span
                         >
-                      </span>
+                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
+                      </div>
+                      <div style="margin-right:10px">
+                        <h3 class="stock_bold">80,000</h3>
+                        <br />
+                        <span
+                          class="d-block stock"
+                          v-if="bigBundle == 'loading'"
+                        >
+                          <span class="wallet-not"
+                            >Wallet not connected to eth</span
+                          >
+                        </span>
 
-                      <span class="d-block stock" v-else
-                        >Stock: {{ bigBundle }}</span
-                      >
+                        <span class="d-block stock" v-else
+                          >Stock: {{ bigBundle }}</span
+                        >
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </button>
                 <button
                   class="tablinks opacity"
@@ -76,7 +80,7 @@
                       "
                     >
                       <img
-                        src="../../assets/images/eth.png"
+                        src="../assets/images/eth.png"
                         alt="weth"
                         width="60px"
                       />
@@ -123,54 +127,56 @@
                   class="tablinks opacity"
                   @click="openTab($event, 'matic')"
                 >
-                  <div class="flex-justify-evenly-center">
-                    <div
-                      class="flex-row-center"
-                      :id="
-                        maticSmallStock == 'loading' ? 'bundle_logo' : 'none'
-                      "
-                    >
-                      <img
-                        src="../../assets/images/matic_icon.png"
-                        alt="matic"
-                        width="60px"
-                      />
-
-                      <span class="mt-20"><b>MATIC</b></span>
-                    </div>
-                    <div class="mx-20">
-                      <h3 class="stock_bold">40,000</h3>
-                      <br />
-                      <span
-                        class="d-block stock"
-                        v-if="maticSmallStock == 'loading'"
+                  <a href="#matic" style="text-decoration:none;">
+                    <div class="flex-justify-evenly-center">
+                      <div
+                        class="flex-row-center"
+                        :id="
+                          maticSmallStock == 'loading' ? 'bundle_logo' : 'none'
+                        "
                       >
-                        <span class="wallet-not"
-                          >Wallect not connected to Matic</span
+                        <img
+                          src="../assets/images/matic_icon.png"
+                          alt="matic"
+                          width="60px"
+                        />
+
+                        <span class="mt-20"><b>MATIC</b></span>
+                      </div>
+                      <div class="mx-20">
+                        <h3 class="stock_bold">40,000</h3>
+                        <br />
+                        <span
+                          class="d-block stock"
+                          v-if="maticSmallStock == 'loading'"
                         >
-                      </span>
+                          <span class="wallet-not"
+                            >Wallect not connected to Matic</span
+                          >
+                        </span>
 
-                      <span class="d-block stock" v-else
-                        >Stock: {{ maticSmallStock }}</span
-                      >
-                    </div>
-                    <div style="margin-right:10px">
-                      <h3 class="stock_bold">80,000</h3>
-                      <br />
-                      <span
-                        class="d-block stock"
-                        v-if="ethMaticBigStock == 'loading'"
-                      >
-                        <span class="wallet-not"
-                          >Wallect not connected to Matic</span
+                        <span class="d-block stock" v-else
+                          >Stock: {{ maticSmallStock }}</span
                         >
-                      </span>
+                      </div>
+                      <div style="margin-right:10px">
+                        <h3 class="stock_bold">80,000</h3>
+                        <br />
+                        <span
+                          class="d-block stock"
+                          v-if="ethMaticBigStock == 'loading'"
+                        >
+                          <span class="wallet-not"
+                            >Wallect not connected to Matic</span
+                          >
+                        </span>
 
-                      <span class="d-block stock" v-else
-                        >Stock: {{ maticBigStock }}</span
-                      >
+                        <span class="d-block stock" v-else
+                          >Stock: {{ maticBigStock }}</span
+                        >
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </button>
               </div>
 
@@ -196,14 +202,14 @@
                   <el-carousel-item name="bigBundle">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_80k_eth.png"
+                        src="../assets/images/sLD_Token_voucher_80k_eth.png"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../../assets/images/sld.png" alt="token" />
+                        <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>80, 000</span>
                     </div>
@@ -212,14 +218,14 @@
                   <el-carousel-item name="smallBundle">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_40k_eth.jpg"
+                        src="../assets/images/sLD_Token_voucher_40k_eth.jpg"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../../assets/images/sld.png" alt="token" />
+                        <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>40, 000</span>
                     </div>
@@ -377,14 +383,14 @@
                   <el-carousel-item name="bigBundle">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_80k_matic.png"
+                        src="../assets/images/sLD_Token_voucher_80k_matic.png"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../../assets/images/sld.png" alt="token" />
+                        <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>80, 000</span>
                     </div>
@@ -393,14 +399,14 @@
                   <el-carousel-item name="smallBundle">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../../assets/images/sld.png" alt="token" />
+                        <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>40, 000</span>
                     </div>
@@ -561,14 +567,14 @@
                   <el-carousel-item name="bigBundle">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_80k_matic.png"
+                        src="../assets/images/sLD_Token_voucher_80k_matic.png"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../../assets/images/sld.png" alt="token" />
+                        <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>80, 000</span>
                     </div>
@@ -577,14 +583,14 @@
                   <el-carousel-item name="smallBundle">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
                         alt="tkbundles"
                         class="caro_image"
                       />
                     </div>
                     <div class="bk_bun d-flex-center">
                       <vs-avatar size="35">
-                        <img src="../../assets/images/sld.png" alt="token" />
+                        <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>40, 000</span>
                     </div>
@@ -721,65 +727,6 @@
                   <b><p class="notify_txt mt-5" v-html="title"></p> </b>
                 </div>
               </div>
-            </div>
-          </vs-col>
-        </vs-row>
-      </div>
-    </div>
-
-    <div class="ilustrations">
-      <div class="wrap">
-        <vs-row class="mt-50">
-          <vs-col :w="5" :xs="10" :sm="10">
-            <div class="flex-align-center" v-if="onEthNetwork">
-              <h1 class="yellow" v-if="bigBundle !== 'loading'">
-                {{ getEthBalance(ethbalance) }} token sold in presale
-              </h1>
-            </div>
-
-            <div class="flex-align-center" v-else>
-              <h1 class="yellow" v-if="ethMaticSmallStock !== 'loading'">
-                {{ getMaticBalance(maticbalance) }} tokens sold in presale
-              </h1>
-            </div>
-
-            <div class="flex-align-center" v-if="!isDrizzleInitialized">
-              <h1 class="yellow">{{ tokenSale }} tokens sold in presale</h1>
-            </div>
-          </vs-col>
-          <vs-col :w="2" :xs="2" :sm="2">
-            <div
-              class="flex-align-center"
-              style="text-align:center;margin-left:40px;"
-            >
-              <div class="rule"></div>
-            </div>
-          </vs-col>
-          <vs-col :w="5" :xs="12" :sm="12">
-            <div v-if="onEthNetwork">
-              <div class="progress">
-                <div
-                  class="progress_token"
-                  :style="{ width: `${ethPercentPurchased}%` }"
-                >
-                  <span>{{ Math.trunc(ethPercentPurchased) }}%</span>
-                </div>
-              </div>
-
-              <p class="mt-20 p_tokens">14M Tokens</p>
-            </div>
-
-            <div v-else>
-              <div class="progress">
-                <div
-                  class="progress_token"
-                  :style="{ width: `${maticPercentPurchased}%` }"
-                >
-                  <span>{{ Math.trunc(maticPercentPurchased) }}%</span>
-                </div>
-              </div>
-
-              <p class="mt-20 p_tokens">16M Tokens</p>
             </div>
           </vs-col>
         </vs-row>

@@ -21,69 +21,51 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
   opacity: 9;
   box-shadow:  3px 3px 5px 0px #b7b6d1;
 }
-
 .el-carousel__item:nth-child(2n).is-active .bk_bun .vs-avatar-content{
   background-color: transparent;
   opacity: 9;
 }
-
 .el-carousel__item:nth-child(2n) .bk_bun .vs-avatar-content {
   background-color: rgb(255, 255, 255) !important;
   opacity: 0.6;
 }
-
 .el-carousel__item:nth-child(2n) {
   box-shadow:  3px 3px 5px 0px #b7b6d1;
 }
-
 .el-carousel__item:nth-child(2n+1).is-active {
   margin-left: -50px;
   box-shadow:  3px 3px 5px 0px #b7b6d1;
-
-  // remove after sales
-  // background-color: white !important;
-  // opacity: 0.1;
-  // height: 215px !important;
 }
-
 .el-carousel__item:nth-child(2n+1).is-active .bk_bun .vs-avatar-content{
   background-color: none;
   opacity: 9;
 }
-
 .el-carousel__item:nth-child(2n+1) {
   margin-left: 40px;
   margin-right: 40px;
   box-shadow:  3px 3px 5px 0px #b7b6d1;
 }
-
 .el-carousel__item:nth-child(2n+1) .bk_bun .vs-avatar-content {
   background-color: rgb(255, 255, 255) !important;
   opacity: 0.6;
 }
-
 .el-carousel__item--card {
   width: 42% !important;
   border-radius: 13px;
 }
-
 .el-carousel__item  {
   height: 215px;
 }
-
 .el-carousel__container {
   position: relative;
   height: 220px;
 }
-
 .el-carousel__arrow, .el-carousel__arrow--left {
   display: none !important;
 }
-
 .el-carousel__indicator {
   display: none;
 }
-
 .el-carousel__mask {
   background-color: rgb(255, 255, 255) !important;
   opacity: 0.6 !important;
