@@ -449,7 +449,7 @@ hr.sales_hr {
 }
 .progress_time {
   background: linear-gradient(315deg, #6D21DF, #501BC4);
-  width: 90%;
+  width: 50%;
   height: 20px;
   border-radius: 40px;
   margin-top: 10px;
@@ -515,7 +515,12 @@ hr.sales_hr {
 }
 .time_left-2 {
   color:#6649FB;
-  font-size: 28px;
+  font-size: 25px;
+}
+.second_presale {
+  font-size:15px;
+  color:#6649FB;
+  font-weight: bold;
 }
 .june-dd {
   font-size: 30px;

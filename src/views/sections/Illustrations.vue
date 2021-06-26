@@ -4,9 +4,14 @@
     <vs-row class="mt-50 ml-5">
       <vs-col :w="6" :xs="12" :sm="12">
         <div class="d-flex">
-          <h2 class="time_left-2">Time Left</h2>
+          <div>
+            <h2 class="time_left-2">
+              Time Left
+            </h2>
+            <span class="second_presale">(Second Presale)</span>
+          </div>
           <flip-countdown
-            deadline="2021-06-26 08:00:00"
+            deadline="2021-06-28 08:00:00"
             class="timerr"
           ></flip-countdown>
         </div>
@@ -20,7 +25,7 @@
         <div class="progress">
           <div class="progress_time"></div>
         </div>
-        <p class="mt-20 p_tokens">5 days</p>
+        <p class="mt-20 p_tokens">2 days for second presale</p>
       </vs-col>
     </vs-row>
 

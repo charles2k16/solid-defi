@@ -1160,6 +1160,8 @@ export default {
           this.smallBundlePriceEthMatic,
           this.ethmaticFactor
         );
+
+      this.showConfirmBundle = false;
     },
     changeNetwork() {
       var a = parseInt(this.drizzleInstance.web3._provider.networkVersion);

@@ -12,7 +12,7 @@
           </vs-col>
           <vs-col :w="8" :xs="12" :sm="12">
             <div class="bundle_container">
-              <!-- <div id="overlay" v-show="showOverlay">
+              <div id="overlay" v-show="showOverlay">
                 <div @click="closeOverlay" class="blocker"></div>
                 <div>
                   <span
@@ -29,19 +29,22 @@
 
                         <h2>COMMUNITY PRESALE!</h2>
 
-                        <h3>JUNE 21 2021 5pm UTC</h3>
+                        <h3>JUNE 28 2021 5pm UTC</h3>
+                        <span class="second_presale mt-10 d-block"
+                          >(Second Presale)</span
+                        >
                       </div>
                       <br /><br />
                       <div>
                         <flip-countdown
-                          deadline="2021-06-21 00:00:00"
+                          deadline="2021-06-28 08:00:00"
                           class="timerr"
                         ></flip-countdown>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div> -->
+              </div>
               <div class="bundle_tab">
                 <h4 class="insights center">SOLID Token Bundle</h4>
               </div>
@@ -184,7 +187,10 @@
                   </el-carousel-item>
                 </el-carousel>
 
-                <div class="center d-flex-center mt-15">
+                <div
+                  class="center d-flex-center mt-15"
+                  @click="openOverlay('eth')"
+                >
                   <div>
                     <div class="d-flex-center">
                       <div class="flex-align-center">
@@ -284,7 +290,10 @@
                   </el-carousel-item>
                 </el-carousel>
 
-                <div class="center d-flex-center mt-15">
+                <div
+                  class="center d-flex-center mt-15"
+                  @click="openOverlay('weth')"
+                >
                   <div>
                     <div class="d-flex-center">
                       <div class="flex-align-center">
@@ -389,7 +398,10 @@
                   </el-carousel-item>
                 </el-carousel>
 
-                <div class="center d-flex-center mt-15">
+                <div
+                  class="center d-flex-center mt-15"
+                  @click="openOverlay('matic')"
+                >
                   <div>
                     <div class="d-flex-center">
                       <div class="flex-align-center">
@@ -444,13 +456,18 @@
 </template>
 
 <script>
+import FlipCountdown from 'vue2-flip-countdown';
+
 export default {
   name: 'SalesBundle',
+  components: {
+    FlipCountdown,
+  },
   data() {
     return {
       showOverlay: false,
       tokenSale: 0,
-      percentageOff: 37,
+      percentageOff: 70,
       ethBundle: 1,
       maticBundle: 1,
       wBundle: 1,
@@ -485,7 +502,7 @@ export default {
     changeBundle(r) {
       console.log(r);
       let bb = r;
-      this.percentageOff = bb == 1 ? 30 : 37;
+      this.percentageOff = bb == 1 ? 60 : 70;
       this.addAnimate();
     },
     setActiveItem() {
@@ -495,7 +512,7 @@ export default {
     },
     openTab(evt, cityName) {
       this.setActiveItem();
-      this.percentageOff = 37;
+      this.percentageOff = 70;
 
       let i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName('tabcontent');
