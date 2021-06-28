@@ -25,7 +25,7 @@
         <div class="progress">
           <div class="progress_time"></div>
         </div>
-        <p class="mt-20 p_tokens">2 days for second presale</p>
+        <p class="mt-20 p_tokens">2 days</p>
       </vs-col>
     </vs-row>
 

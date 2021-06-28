@@ -32,7 +32,7 @@
                           ROUND 2
                         </h2>
 
-                        <h3>JUNE 28 2021 5pm UTC</h3>
+                        <h3>JUNE 29 2021 5pm UTC</h3>
                         <!-- <span class="second_presale mt-10 d-block"
                           >(Second Presale)</span
                         > -->
