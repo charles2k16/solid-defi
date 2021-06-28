@@ -11,7 +11,7 @@
             <span class="second_presale">(Second Presale)</span>
           </div>
           <flip-countdown
-            deadline="2021-06-28 08:00:00"
+            deadline="2021-06-29 08:00:00"
             class="timerr"
           ></flip-countdown>
         </div>
