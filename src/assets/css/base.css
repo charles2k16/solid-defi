@@ -1440,7 +1440,7 @@ hr.sales_hr {
     font-size: 1rem
   }
   .el-carousel__item  {
-    height: 88% !important;
+    height: 80% !important;
   }
 }
 
@@ -2264,8 +2264,8 @@ hr.sales_hr {
     .comm_icons {
       margin-top: 50px !important;
     }
-    .el-carousel__item{
-      height:215px !important;
+    .el-carousel__item {
+      height:180px !important;
     }
     .time_left-2 {
       margin-bottom: 13px;
@@ -2620,7 +2620,7 @@ hr.sales_hr {
       font-size: 1rem
     }
     .el-carousel__item  {
-      height: 80% !important;
+      height: 69% !important;
     }
 }
 
@@ -2795,6 +2795,9 @@ hr.sales_hr {
     #learn_btn {
       font-size: 1rem
     }
+    .el-carousel__item  {
+      height: 76% !important;
+    }
 }
 
 /* ----------- pixel 2 xl ----------- */
@@ -2953,6 +2956,6 @@ hr.sales_hr {
       margin-top: 50px !important;
     }
     .el-carousel__item  {
-      height: 98% !important;
+      height: 85% !important;
     }
 }

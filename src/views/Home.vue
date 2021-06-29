@@ -80,64 +80,66 @@
                     class="tablinks opacity"
                     @click="openTab($event, 'wEth')"
                   >
-                    <div class="flex-justify-evenly-center">
-                      <div
-                        class="flex-row-center"
-                        :id="
-                          ethMaticSmallStock == 'loading'
-                            ? 'bundle_logo'
-                            : 'none'
-                        "
-                      >
-                        <img
-                          src="../assets/images/eth.png"
-                          alt="weth"
-                          width="60px"
-                        />
+                    <a href="#wEth" style="text-decoration:none;">
+                      <div class="flex-justify-evenly-center">
+                        <div
+                          class="flex-row-center"
+                          :id="
+                            ethMaticSmallStock == 'loading'
+                              ? 'bundle_logo'
+                              : 'none'
+                          "
+                        >
+                          <img
+                            src="../assets/images/eth.png"
+                            alt="weth"
+                            width="60px"
+                          />
 
-                        <span class="mt-20"><b>wETH</b></span>
+                          <span class="mt-20"><b>wETH</b></span>
+                        </div>
+                        <div class="mx-10">
+                          <div>
+                            <span class="stock1">20K - </span>
+                            <span
+                              class="wallet-not"
+                              v-if="ethMaticBigStock == 'loading'"
+                            >
+                              Connect to Matic
+                            </span>
+                            <span class="stock" v-else>
+                              Stock: {{ ethMaticBigStock }}</span
+                            >
+                          </div>
+
+                          <div class="mt-12">
+                            <span class="stock1">10K - </span>
+                            <span
+                              class="wallet-not"
+                              v-if="ethMaticMediumStock == 'loading'"
+                            >
+                              Connect to Matic
+                            </span>
+                            <span class="stock" v-else
+                              >Stock: {{ ethMaticMediumStock }}</span
+                            >
+                          </div>
+
+                          <div class="mt-12">
+                            <span class="stock1">5K - </span>
+                            <span
+                              class="wallet-not"
+                              v-if="ethMaticSmallStock == 'loading'"
+                            >
+                              Connect to Matic
+                            </span>
+                            <span class="stock" v-else
+                              >Stock: {{ ethMaticSmallStock }}</span
+                            >
+                          </div>
+                        </div>
                       </div>
-                      <div class="mx-10">
-                        <div>
-                          <span class="stock1">20K - </span>
-                          <span
-                            class="wallet-not"
-                            v-if="ethMaticBigStock == 'loading'"
-                          >
-                            Connect to Matic
-                          </span>
-                          <span class="stock" v-else>
-                            Stock: {{ ethMaticBigStock }}</span
-                          >
-                        </div>
-
-                        <div class="mt-12">
-                          <span class="stock1">10K - </span>
-                          <span
-                            class="wallet-not"
-                            v-if="ethMaticMediumStock == 'loading'"
-                          >
-                            Connect to Matic
-                          </span>
-                          <span class="stock" v-else
-                            >Stock: {{ ethMaticMediumStock }}</span
-                          >
-                        </div>
-
-                        <div class="mt-12">
-                          <span class="stock1">5K - </span>
-                          <span
-                            class="wallet-not"
-                            v-if="ethMaticSmallStock == 'loading'"
-                          >
-                            Connect to Matic
-                          </span>
-                          <span class="stock" v-else
-                            >Stock: {{ ethMaticSmallStock }}</span
-                          >
-                        </div>
-                      </div>
-                    </div>
+                    </a>
                   </button>
                   <button
                     class="tablinks opacity"
@@ -236,7 +238,7 @@
                         <vs-avatar size="35">
                           <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
-                        <span>20, 000</span>
+                        <span>20,000</span>
                       </div>
                     </el-carousel-item>
 
@@ -252,7 +254,7 @@
                         <vs-avatar size="35">
                           <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
-                        <span>5, 000</span>
+                        <span>5,000</span>
                       </div>
                     </el-carousel-item>
                   </el-carousel>
@@ -419,7 +421,7 @@
                         <vs-avatar size="35">
                           <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
-                        <span>20, 000</span>
+                        <span>20,000</span>
                       </div>
                     </el-carousel-item>
 
@@ -435,7 +437,7 @@
                         <vs-avatar size="35">
                           <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
-                        <span>10, 000</span>
+                        <span>10,000</span>
                       </div>
                     </el-carousel-item>
 
@@ -451,7 +453,7 @@
                         <vs-avatar size="35">
                           <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
-                        <span>5, 000</span>
+                        <span>5,000</span>
                       </div>
                     </el-carousel-item>
                   </el-carousel>
@@ -621,7 +623,7 @@
                         <vs-avatar size="35">
                           <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
-                        <span>20, 000</span>
+                        <span>20,000</span>
                       </div>
                     </el-carousel-item>
 
@@ -637,7 +639,7 @@
                         <vs-avatar size="35">
                           <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
-                        <span>10, 000</span>
+                        <span>10,000</span>
                       </div>
                     </el-carousel-item>
 
@@ -653,7 +655,7 @@
                         <vs-avatar size="35">
                           <img src="../assets/images/sld.png" alt="token" />
                         </vs-avatar>
-                        <span>5, 000</span>
+                        <span>5,000</span>
                       </div>
                     </el-carousel-item>
                   </el-carousel>
