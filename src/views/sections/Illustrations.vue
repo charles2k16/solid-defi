@@ -8,10 +8,10 @@
             <h2 class="time_left-2">
               Time Left
             </h2>
-            <span class="second_presale">(Second Presale)</span>
+            <!-- <span class="second_presale">(Second Presale)</span> -->
           </div>
           <flip-countdown
-            deadline="2021-06-29 12:00:00"
+            deadline="2021-07-13 12:00:00"
             class="timerr"
           ></flip-countdown>
         </div>
@@ -25,7 +25,7 @@
         <div class="progress">
           <div class="progress_time"></div>
         </div>
-        <p class="mt-20 p_tokens">2 days</p>
+        <p class="mt-20 p_tokens">14 days</p>
       </vs-col>
     </vs-row>
 

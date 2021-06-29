@@ -11,6 +11,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
+    alias: ['/eth', '/matic'],
     name: 'Home',
     component: Home,
   },

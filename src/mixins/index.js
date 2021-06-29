@@ -8,12 +8,12 @@ export default {
   },
   data() {
     return {
-      escrowAddress: '0x5011D48D4265b6fB8228600a111b2fAa1fDA3139',
+      maticEscrowAddress: '0x7fB34A69B92eE66673e5bC4D1908ABa257e60648',
       tokenIdMatic: '0x498E0A753840075c4925442D4d8863eEe49D61E2',
       tokenIdEth: '0x5011d48d4265b6fb8228600a111b2faa1fda3139',
       wrapEthAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
-      ethNewTotalToken: 2800000,
-      maticNewTotalToken: 3200000,
+      ethNewTotalToken: 680000,
+      maticNewTotalToken: 1480000,
       ethTotalToken: 14000000,
       maticTotalToken: 16000000,
       ethPercentPurchased: 0,
@@ -43,8 +43,8 @@ export default {
       return `SLD-${randomString}`;
     },
     getEthBalance(currentBalance) {
-      console.log('currentbalance', currentBalance)
-      let balanceOf = this.ethTotalToken;
+      console.log('currentETHbalance', currentBalance)
+      let balanceOf = 13160000;
       let currBalance = this.getSerial(currentBalance)
       let balance = balanceOf - currBalance
       this.ethPercentPurchased = 100 * balance / this.ethNewTotalToken;
@@ -52,13 +52,53 @@ export default {
       return Math.round(balance);
     },
     getMaticBalance(currentBalance) {
-      console.log('currentbalance', currentBalance)
-      let balanceOf = this.maticTotalToken
+      console.log('currentbalanceMatic', currentBalance)
+      let balanceOf = this.maticNewTotalToken
       let currBalance = this.getSerial(currentBalance)
       let balance = balanceOf - currBalance
+      console.log('BAL', balance)
       this.maticPercentPurchased = 100 * balance / this.maticNewTotalToken;
 
       return Math.round(balance);
+    },
+    setDefaultBundle(r) {
+      let i;
+      let smallB = document.getElementsByClassName('smallB');
+      let bigB = document.getElementsByClassName('bigB');
+      let mediumB = document.getElementsByClassName('mediumB');
+
+      if (r == 1) {
+        for (i = 0; i < smallB.length; i++) {
+          smallB[i].style.marginLeft = '35px';
+        }
+        for (i = 0; i < bigB.length; i++) {
+          bigB[i].style.marginLeft = '20px';
+        }
+        for (i = 0; i < mediumB.length; i++) {
+          mediumB[i].style.marginLeft = '50px';
+        }
+      } else if (r == 0) {
+        for (i = 0; i < smallB.length; i++) {
+          smallB[i].style.marginLeft = '50px';
+        }
+        for (i = 0; i < bigB.length; i++) {
+          bigB[i].style.marginLeft = '35px';
+        }
+        for (i = 0; i < mediumB.length; i++) {
+          mediumB[i].style.marginLeft = '20px';
+        }
+      } else if (r == 2) {
+        for (i = 0; i < smallB.length; i++) {
+          smallB[i].style.marginLeft = '20px';
+        }
+        for (i = 0; i < bigB.length; i++) {
+          bigB[i].style.marginLeft = '50px';
+        }
+        for (i = 0; i < mediumB.length; i++) {
+          mediumB[i].style.marginLeft = '35px';
+        }
+      }
+      this.addAnimate();
     },
     addAnimate() {
       let i, percentage
@@ -90,7 +130,7 @@ export default {
 
       this.drizzleInstance.contracts['WrapEthErc20'].methods[
         'approve'
-      ].cacheSend(this.escrowAddress, amt);
+      ].cacheSend(this.maticEscrowAddress, amt);
     },
     toWei(eth) {
       let weiValue = Web3.utils.toWei(eth, 'ether');
@@ -116,17 +156,14 @@ export default {
     },
 
     // wrap eth bundle functions
-    async buyWrapEthSmallBundle(numberofBundle, smallPrice) {
+    buyWrapEthSmallBundle(numberofBundle, smallPrice) {
       let amount = smallPrice * numberofBundle;
       let finalAmount = amount.toString();
 
-      console.log(finalAmount);
-
-      await this.drizzleInstance.contracts['MaticEscrow'].methods[
+      this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buySmallBundleEth'
       ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, finalAmount);
     },
-
     buyWrapEthBigBundle(numberofBundle, bigPrice) {
       let amount = bigPrice * numberofBundle;
       let finalAmount = amount.toString();
@@ -135,8 +172,16 @@ export default {
         'buyBigBundleEth'
       ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, finalAmount);
     },
+    buyWrapEthMediumBundle(numberofBundle, bigPrice) {
+      let amount = bigPrice * numberofBundle;
+      let finalAmount = amount.toString();
 
-    // matic bundles eth
+      this.drizzleInstance.contracts['MaticEscrow'].methods[
+        'buyMediumBundleEth'
+      ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, finalAmount);
+    },
+
+    // matic bundles functions
     buyMaticBigBundle(numberofBundle, bigPrice, factor) {
       let wei = factor * bigPrice
       let amount = wei * numberofBundle;
@@ -155,6 +200,17 @@ export default {
 
       this.drizzleInstance.contracts['MaticEscrow'].methods[
         'buySmallBundleMatic'
+      ].cacheSend(this.tokenIdMatic, {
+        value: finalAmount,
+      });
+    },
+    buyMaticMediumBundle(numberofBundle, smallPrice, factor) {
+      let wei = factor * smallPrice
+      let amount = wei * numberofBundle;
+      let finalAmount = amount.toString();
+
+      this.drizzleInstance.contracts['MaticEscrow'].methods[
+        'buyMediumBundleMatic'
       ].cacheSend(this.tokenIdMatic, {
         value: finalAmount,
       });

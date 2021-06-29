@@ -12,36 +12,6 @@
           </vs-col>
           <vs-col :w="8" :xs="12" :sm="12">
             <div class="bundle_container">
-              <!-- <div id="overlay" v-show="showOverlay">
-                <div @click="closeOverlay" class="blocker"></div>
-                <div>
-                  <span
-                    class="material-icons overlay_cancel"
-                    @click="closeOverlay"
-                  >
-                    cancel
-                  </span>
-                  <div class="overlay_div">
-                    <span class="yellow_bar"></span>
-                    <div class="overlay_div2">
-                      <div class="center">
-                        <h1>COUNTDOWN TO</h1>
-
-                        <h2>COMMUNITY PRESALE!</h2>
-
-                        <h3>JUNE 21 2021 5pm UTC</h3>
-                      </div>
-                      <br /><br />
-                      <div>
-                        <flip-countdown
-                          deadline="2021-06-21 00:00:00"
-                          class="timerr"
-                        ></flip-countdown>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
               <div class="bundle_tab">
                 <h4 class="insights center">SOLID Token Bundle</h4>
               </div>
@@ -60,15 +30,21 @@
                         <span class="mt-20"><b>ETH</b></span>
                       </div>
                       <div class="mx-20">
-                        <h3 class="stock_bold">40,000</h3>
+                        <div>
+                          <span class="stock1">20K - </span>
+                          <span class="stock"> Stock: 23</span>
+                        </div>
+                        <div class="mt-12">
+                          <span class="stock1">10K - </span>
+                          <span class="stock">Stock: 20</span>
+                        </div>
+                        <div class="mt-12">
+                          <span class="stock1">5K - </span>
+                          <span class="stock">Stock: 8</span>
+                        </div>
+                        <!-- <h3 class="stock_bold">Packages</h3>
                         <br />
-
-                        <span class="d-block stock">Stock: 210</span>
-                      </div>
-                      <div style="margin-right:10px">
-                        <h3 class="stock_bold">80,000</h3>
-                        <br />
-                        <span class="d-block stock">Stock: 70</span>
+                        <span class="d-block stock">210</span> -->
                       </div>
                     </div>
                   </a>
@@ -88,18 +64,21 @@
                       <span class="mt-20"><b>wETH</b></span>
                     </div>
                     <div class="mx-20">
-                      <h3 class="stock_bold">40,000</h3>
-                      <br />
-
-                      <span class="d-block stock">Stock: 120</span>
-
-                      <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
-                    </div>
-                    <div style="margin-right:10px">
-                      <h3 class="stock_bold">80,000</h3>
-                      <br />
-
-                      <span class="d-block stock">Stock: 40</span>
+                      <div>
+                        <span class="stock1">80,000 - </span>
+                        <span class="stock"> Stock: 23</span>
+                      </div>
+                      <div class="mt-12">
+                        <span class="stock1">40,000 - </span>
+                        <span class="stock">Stock: 20</span>
+                      </div>
+                      <div class="mt-12">
+                        <span class="stock1">10,000 - </span>
+                        <span class="stock">Stock: 8</span>
+                      </div>
+                      <!-- <h3 class="stock_bold">Packages</h3>
+                        <br />
+                        <span class="d-block stock">210</span> -->
                     </div>
                   </div>
                 </button>
@@ -118,14 +97,9 @@
                       <span class="mt-20"><b>MATIC</b></span>
                     </div>
                     <div class="mx-20">
-                      <h3 class="stock_bold">40,000</h3>
+                      <h3 class="stock_bold">Packages</h3>
                       <br />
-                      <span class="d-block stock">Stock: 120</span>
-                    </div>
-                    <div style="margin-right:10px">
-                      <h3 class="stock_bold">80,000</h3>
-                      <br />
-                      <span class="d-block stock">Stock: 40</span>
+                      <span class="d-block stock">120</span>
                     </div>
                   </div>
                 </button>
@@ -149,9 +123,8 @@
                   :autoplay="false"
                   class="mt-15"
                   @change="changeBundle"
-                  id="hideEbundle"
                 >
-                  <el-carousel-item name="bigBundle">
+                  <el-carousel-item name="bigBundle" class="bigB">
                     <div>
                       <img
                         src="../../assets/images/sLD_Token_voucher_80k_eth.png"
@@ -163,11 +136,11 @@
                       <vs-avatar size="35">
                         <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
-                      <span>80, 000</span>
+                      <span>20, 000</span>
                     </div>
                   </el-carousel-item>
 
-                  <el-carousel-item name="smallBundle">
+                  <el-carousel-item name="smallBundle" class="smallB">
                     <div>
                       <img
                         src="../../assets/images/sLD_Token_voucher_40k_eth.jpg"
@@ -180,6 +153,22 @@
                         <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>40, 000</span>
+                    </div>
+                  </el-carousel-item>
+
+                  <el-carousel-item name="mediumBundle" class="mediumB">
+                    <div>
+                      <img
+                        src="../../assets/images/sLD_Token_voucher_80k_eth.png"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>10, 000</span>
                     </div>
                   </el-carousel-item>
                 </el-carousel>
@@ -249,12 +238,11 @@
                   class="mt-15"
                   @change="changeBundle"
                   ref="carouselweth"
-                  id="hideWbundle"
                 >
-                  <el-carousel-item name="bigBundle">
+                  <el-carousel-item name="bigBundle" class="bigB">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_80k_matic.png"
+                        src="../../assets/images/sLD_Token_voucher_80k_eth.png"
                         alt="tkbundles"
                         class="caro_image"
                       />
@@ -267,10 +255,10 @@
                     </div>
                   </el-carousel-item>
 
-                  <el-carousel-item name="smallBundle">
+                  <el-carousel-item name="smallBundle" class="smallB">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        src="../../assets/images/sLD_Token_voucher_40k_eth.jpg"
                         alt="tkbundles"
                         class="caro_image"
                       />
@@ -280,6 +268,22 @@
                         <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>40, 000</span>
+                    </div>
+                  </el-carousel-item>
+
+                  <el-carousel-item name="mediumBundle" class="mediumB">
+                    <div>
+                      <img
+                        src="../../assets/images/sLD_Token_voucher_80k_eth.png"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>10, 000</span>
                     </div>
                   </el-carousel-item>
                 </el-carousel>
@@ -354,12 +358,11 @@
                   class="mt-15"
                   @change="changeBundle"
                   ref="carouselmatic"
-                  id="hideMbundle"
                 >
-                  <el-carousel-item name="bigBundle">
+                  <el-carousel-item name="bigBundle" class="bigB">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_80k_matic.png"
+                        src="../../assets/images/sLD_Token_voucher_80k_eth.png"
                         alt="tkbundles"
                         class="caro_image"
                       />
@@ -372,10 +375,10 @@
                     </div>
                   </el-carousel-item>
 
-                  <el-carousel-item name="smallBundle">
+                  <el-carousel-item name="smallBundle" class="smallB">
                     <div>
                       <img
-                        src="../../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        src="../../assets/images/sLD_Token_voucher_40k_eth.jpg"
                         alt="tkbundles"
                         class="caro_image"
                       />
@@ -385,6 +388,22 @@
                         <img src="../../assets/images/sld.png" alt="token" />
                       </vs-avatar>
                       <span>40, 000</span>
+                    </div>
+                  </el-carousel-item>
+
+                  <el-carousel-item name="mediumBundle" class="mediumB">
+                    <div>
+                      <img
+                        src="../../assets/images/sLD_Token_voucher_80k_eth.png"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>10, 000</span>
                     </div>
                   </el-carousel-item>
                 </el-carousel>
@@ -459,18 +478,6 @@ export default {
     };
   },
   methods: {
-    openOverlay(net) {
-      this.chainNetwork = net;
-      let eb = document.getElementById('eth');
-      let wb = document.getElementById('wEth');
-      let mb = document.getElementById('matic');
-
-      if (net == 'eth') eb.style.display = 'none';
-      else if (net == 'weth') wb.style.display = 'none';
-      else if (net == 'matic') mb.style.display = 'none';
-
-      this.showOverlay = true;
-    },
     closeOverlay() {
       let eb = document.getElementById('eth');
       let wb = document.getElementById('wEth');
@@ -483,9 +490,45 @@ export default {
       this.showOverlay = false;
     },
     changeBundle(r) {
-      console.log(r);
+      console.log('rt', r);
       let bb = r;
       this.percentageOff = bb == 1 ? 30 : 37;
+      let i;
+      let smallB = document.getElementsByClassName('smallB');
+      let bigB = document.getElementsByClassName('bigB');
+      let mediumB = document.getElementsByClassName('mediumB');
+
+      if (r == 1) {
+        for (i = 0; i < smallB.length; i++) {
+          smallB[i].style.marginLeft = '35px';
+        }
+        for (i = 0; i < bigB.length; i++) {
+          bigB[i].style.marginLeft = '20px';
+        }
+        for (i = 0; i < mediumB.length; i++) {
+          mediumB[i].style.marginLeft = '50px';
+        }
+      } else if (r == 0) {
+        for (i = 0; i < smallB.length; i++) {
+          smallB[i].style.marginLeft = '50px';
+        }
+        for (i = 0; i < bigB.length; i++) {
+          bigB[i].style.marginLeft = '35px';
+        }
+        for (i = 0; i < mediumB.length; i++) {
+          mediumB[i].style.marginLeft = '20px';
+        }
+      } else if (r == 2) {
+        for (i = 0; i < smallB.length; i++) {
+          smallB[i].style.marginLeft = '20px';
+        }
+        for (i = 0; i < bigB.length; i++) {
+          bigB[i].style.marginLeft = '50px';
+        }
+        for (i = 0; i < mediumB.length; i++) {
+          mediumB[i].style.marginLeft = '35px';
+        }
+      }
       this.addAnimate();
     },
     setActiveItem() {
