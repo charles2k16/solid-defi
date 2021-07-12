@@ -53,6 +53,9 @@ hr.sales_hr {
 .d-block {
   display: block;
 }
+.d-none {
+  display: none;
+}
 
 .material-icons.bg {
   background-color: #3A506F;
@@ -96,12 +99,25 @@ hr.sales_hr {
   line-height: 3.5rem;
   font-weight: bold;
 }
+.lead_head_text2 {
+  color: rgb(223, 219, 219);
+  font-size: 35px;
+  line-height: 3.5rem;
+  font-weight: bold;
+}
 
 .lead_text {
   font-size: 1rem;
   text-align: justify;
   line-height: 1.90rem;
   color: rgb(214, 213, 213);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+.lead_text_inf {
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.60rem;
+  color: rgb(160, 157, 157);
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
@@ -168,6 +184,9 @@ hr.sales_hr {
 .mt-100 {
   margin-top: 100px;
 }
+.mt-150 {
+  margin-top: 150px;
+}
 
 .mt-20 {
   margin-top: 20px;
@@ -200,7 +219,12 @@ hr.sales_hr {
 .mt-50 {
   margin-top: 50px;
 }
-
+.mb-50 {
+  margin-bottom: 50px;
+}
+.mb-100 {
+  margin-bottom: 350px;
+}
 .mt-70 {
   margin-top: 70px;
 }
@@ -217,6 +241,10 @@ hr.sales_hr {
 .mx-20 {
   margin-left: 20px;
   margin-right: 20px;
+}
+.my-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .mr {
@@ -242,6 +270,9 @@ hr.sales_hr {
 
 .ml-20 {
   margin-left: 30px;
+}
+.mr-20 {
+  margin-right: 30px;
 }
 
 .pt-50 {
@@ -416,7 +447,6 @@ hr.sales_hr {
   /* #303149ff 191b23  */
   background: linear-gradient(180deg, #181C20 40%, #191b23 81%, #27293A 92%);
   /* background-color:#181C20; */
-  padding-bottom: 350px;
   padding-top: 50px;
   display: block;
   align-items: center;
@@ -567,6 +597,12 @@ hr.sales_hr {
 .community {
   background: rgb(48, 49, 73);
   background: linear-gradient(153deg, rgba(48, 49, 73, 1) 25%, rgba(23, 27, 31, 1) 68%);
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
+.faqs {
+  background: #1F232B;
+  background: linear-gradient(153deg, rgb(33, 33, 53) 25%, rgb(4, 19, 48) 68%);
   padding-top: 30px;
   padding-bottom: 80px;
 }
@@ -1500,6 +1536,16 @@ hr.sales_hr {
 #airdrop_btn {
   display: none;
 }
+.head_background {
+  background-image: url('../images/globe-particle.png');
+  background-size: cover;
+}
+.inflation {
+  background-color: white;;
+}
+
+/* timeline */
+
 
 
 /* Extra small devices (phones, 600px and down) */

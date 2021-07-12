@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Home from '@/views/Home';
 import AirDrop from '@/views/AirDrop';
 import BuyNft from '@/views/BuyNft';
+import Presale from '@/views/Presale';
 import RefferalCount from '@/views/RefferalCount';
 
 Vue.use(VueRouter);
@@ -24,6 +25,11 @@ const routes = [
     path: '/buynft',
     name: 'Nft',
     component: BuyNft,
+  },
+  {
+    path: '/presale',
+    name: 'Presale',
+    component: Presale,
   },
   {
     path: '/refferal-airdropcount',
