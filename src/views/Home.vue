@@ -2,167 +2,211 @@
   <div class="main_container">
     <NavBar />
     <div class="hero">
-      <div class="wrap">
-        <vs-row class="mt-70">
-          <vs-col :w="7" :xs="12" :sm="12">
-            <div>
-              <span class="insights" style="color: #FCB42A;"
-                >WELCOME TO SOLID DEFI
-              </span>
+      <div class="home_bg">
+        <div class="wrap">
+          <vs-row>
+            <vs-col :w="6" :xs="12" :sm="12">
+              <div class="mt-70">
+                <div class="flex-justify-between-center">
+                  <h1 class="lead_head_text2" style="color: #FCB42A;">
+                    SOLID DEFI
+                  </h1>
 
-              <div class="mt-20">
-                <h1 class="lead_head_text1">
-                  Home of Inflation Resistant Tokenomics.
-                </h1>
-              </div>
+                  <span class="material-icons icx">
+                    clear
+                  </span>
 
-              <div class="mt-20">
-                <p class="lead_text">
-                  Solid Defi is a Bonding Curve based Token protocol that aims
-                  to protect holders from With inflation getting hyper and
-                  markets quick to panic sell, Solid Defi is creating tokens
-                  that protect holders from both.
-                </p>
-              </div>
-              <br />
-              <div class="mt-20 d-flex">
-                <vs-button
-                  blank
-                  href="https://soliddefi.gitbook.io/solid-whitepaper/"
-                >
-                  <b>Learn more</b>
-                </vs-button>
-                <vs-button class="buy_button" blank to="/presale">
-                  <b>BUY NOW</b>
-                </vs-button>
-              </div>
-            </div>
-          </vs-col>
-
-          <vs-col :w="5" :xs="12" :sm="12">
-            <div
-              style="
-                width: 100%;
-                border: 1px solid grey;
-                height: 400px;
-                margin-left: 15px;
-              "
-            ></div>
-          </vs-col>
-        </vs-row>
-
-        <div>
-          <div class="mt-150">
-            <h1 class="lead_head_text2">
-              Solid Defi vs. Hyperinflation
-            </h1>
-            <vs-row class="mt-50">
-              <vs-col :w="6" :xs="12" :sm="12">
-                <div class="inflation">
                   <img
-                    src="../assets/images/inflation.png"
-                    alt=""
-                    width="470px"
+                    src="../assets/images/polygon.png"
+                    alt="polygon"
+                    width="180px"
                   />
                 </div>
-              </vs-col>
 
-              <vs-col :w="6" :xs="12" :sm="12">
-                <div class="ml-20">
-                  <p class="lead_text_inf">
-                    Solid Defi is a Bonding Curve based Token protocol The first
-                    product schedule for release after the Community Presale
-                    will be SolidUSDT SolidUSDT reinvents the stablecoin Where
-                    USDT is boned 1:1 with a US dollar. SolidUSDT is bonded
-                    according to the square root of its supply. An increase in
-                    the supply of SolidUSDT increase its value. This is in
-                    contrast to a 1:1 stablecoin that loses its relative value
-                    as its supply increases.
+                <div class="mt-50">
+                  <p class="lead_head_text2">
+                    The first stablecoin <br />To profit from inflation
                   </p>
                 </div>
-              </vs-col>
-            </vs-row>
 
-            <vs-row class="mt-50">
-              <vs-col :w="6" :xs="12" :sm="12">
-                <div class="mr-20">
-                  <p class="lead_text_inf">
-                    If the FED wants to make the printers go Brrrrrr that’s just
-                    more USD to feed to SolidUSDT. This is the Solid Bonding
-                    Curve formula that ensures that as the supply of SolidUSDT
-                    increases, so does the price: Buy Price =
-                    (3/2*x+s**(3/2))**(2/3)-s Sell Price = Integral of x**(½) dx
-                    = ⅔*x**(3/2) + c x = The amount in USDt you are sending to
-                    the Solid Bonding Curve Contract s = The current supply of
-                    solidUSDt
-                  </p>
+                <div class="mt-50">
+                  <vs-button class="buy_button" blank to="/presale">
+                    <b>BUY NOW!</b>
+                  </vs-button>
                 </div>
-              </vs-col>
-
-              <vs-col :w="6" :xs="12" :sm="12">
-                <div class="inflation">
-                  <img
-                    src="../assets/images/inflation.png"
-                    alt=""
-                    width="470px"
-                  />
-                </div>
-              </vs-col>
-            </vs-row>
-          </div>
+              </div>
+            </vs-col>
+          </vs-row>
         </div>
       </div>
     </div>
 
-    <div class="ilustrations">
+    <div class="hero2">
       <div class="wrap">
-        <!-- <vs-row class="mt-50">
-          <vs-col :w="5" :xs="12" :sm="12">
-            <div class="flex-align-center">
-              <h1 class="yellow">
-                {{ tokenSale }} tokens sold in first presale
-              </h1>
-            </div>
-          </vs-col>
-          <vs-col :w="2" :xs="2" :sm="2">
-            <div
-              class="flex-align-center"
-              style="text-align: center; margin-left: 40px"
-            >
-              <div class="rule"></div>
-            </div>
-          </vs-col>
-          <vs-col :w="5" :xs="12" :sm="12">
-            <div>
-              <div class="progress">
-                <div class="progress_token" :style="{ width: `${10.2}%` }">
-                  <span>10.2%</span>
-                </div>
+        <div>
+          <div class="d-flex-center">
+            <img
+              src="../assets/images/money_printing.png"
+              alt="money"
+              class="problem_image"
+            />
+            <h1 class="lead_head_text2">
+              PROBLEM
+            </h1>
+          </div>
+          <hr class="hd_rule" />
+
+          <vs-row class="mt-70">
+            <vs-col :w="7" :xs="12" :sm="12">
+              <div>
+                <img src="../assets/images/raw2.png" alt="" width="450px" />
               </div>
+            </vs-col>
 
-              <p class="mt-20 p_tokens">20M Tokens</p>
-            </div>
-          </vs-col>
-        </vs-row> -->
+            <vs-col :w="5" :xs="12" :sm="12">
+              <div class="ml-20">
+                <h2 class="white">USDT ≠ STABLECOIN</h2>
+                <p class="lead_text_inf mt-20">
+                  It’s ironic that a token pegged 1:1 to USD should be called a
+                  “stablecoin”. Nothing about this USD chart implies stability.
+                  Since its inception, the dollar has lost over 96% of its
+                  value. The only sure thing about the dollar is that it’s
+                  purchasing power will continue to decrease.
+                </p>
+              </div>
+            </vs-col>
+          </vs-row>
 
-        <Illustrations />
-        <br />
-        <Subscribe />
-        <RoadMap />
+          <vs-row class="mt-50">
+            <vs-col :w="7" :xs="12" :sm="12">
+              <div class="mr-20">
+                <img src="../assets/images/rew.png" alt="" width="450px" />
+              </div>
+            </vs-col>
+
+            <vs-col :w="5" :xs="12" :sm="12">
+              <div class="ml-20">
+                <h2 class="white">MONEY PRINTING MANIA</h2>
+
+                <p class="lead_text_inf mt-20">
+                  The Fed printed 65% of the entire supply of USD in the last 18
+                  months. In response the price of Lumber hit 5x and Gasoline 2x
+                  and stablecoins have printed exponential charts:
+                </p>
+                <br /><br />
+                <p class="lead_text_inf">
+                  Janet Yellen just admitted USD inflation in the month of June
+                  2021 alone was 5% and that’s with massaged numbers. How safe
+                  is it to hold stablecoins that lozok to be losing half their
+                  buying power every six months? It’s time for a legitimate
+                  “stablecoin”.
+                </p>
+              </div>
+            </vs-col>
+          </vs-row>
+        </div>
+
+        <div>
+          <div class="d-flex-center mt-70">
+            <img
+              src="../assets/images/coin.png"
+              alt="money"
+              class="solution_image"
+            />
+            <h1 class="lead_head_text2">
+              SOLUTION
+            </h1>
+          </div>
+          <hr class="hd_rule" />
+
+          <vs-row class="mt-70">
+            <vs-col :w="6" :xs="12" :sm="12">
+              <div>
+                <div class="solution_head d-flex-center">
+                  <span>USDt vs solidUSDT as supply increases </span>
+                </div>
+                <br />
+                <img src="../assets/images/usdt.png" alt="" width="450px" />
+              </div>
+            </vs-col>
+
+            <vs-col :w="6" :xs="12" :sm="12">
+              <div class="ml-20">
+                <h2 class="white">
+                  SolidUSDT: PURCHASING POWER INCREASES WITH INFLATION
+                </h2>
+                <p class="lead_text_inf mt-20">
+                  With Solid Defi, the Fed can print all they want, it just
+                  gives the market more USDt to add to the Solid Bonding curve.
+                  Since the Solid Bonding Curve issues SolidUSDT priced at the
+                  square root of supply the more the SolidUSDT supply inflates,
+                  the greater the purchasing power will be for each SolidUSDT.
+                </p>
+              </div>
+            </vs-col>
+          </vs-row>
+
+          <vs-row class="mt-50">
+            <vs-col :w="6" :xs="12" :sm="12">
+              <div class="solution_txt">
+                <p>
+                  Buy Price =
+                  <span class="white">(3/2*x+s**(3/2))**(2/3)-s</span> = The
+                  square root of supply Sell Price =
+                  <span class="white"
+                    >Integral of x**(½) dx = ⅔*x**(3/2) + c x</span
+                  >
+                  = The amount in USDt you are sending to the Solid Bonding
+                  Curve Contract s = The current supply of solidUSDt
+                </p>
+              </div>
+            </vs-col>
+
+            <vs-col :w="6" :xs="12" :sm="12">
+              <div class="ml-20">
+                <p class="lead_text_inf mt-20">
+                  While the Solid Bonding Curve will eventually accept USDT. We
+                  like to support native crypto currency projects so the initial
+                  Solid Bonding Curve will accept DAI and mint SolidDAI
+                  according to this formula:
+                </p>
+              </div>
+            </vs-col>
+          </vs-row>
+
+          <vs-row class="mt-50">
+            <vs-col :w="6" :xs="12" :sm="12">
+              <div class="mr-20">
+                <img
+                  src="../assets/images/coin_on_a_curve_02.jpg"
+                  alt=""
+                  width="450px"
+                />
+              </div>
+            </vs-col>
+
+            <vs-col :w="6" :xs="12" :sm="12">
+              <div class="ml-20">
+                <h2 class="white">
+                  SOLIDDAI REWARDS UP TO 20% OF VALUE OF CRYPTO SHAKEOUT
+                </h2>
+
+                <p class="lead_text_inf mt-20">
+                  $1 Trillion dollars in market cap evaporated in the massive
+                  May 19th 2021 sell off. People lost $300 billion because of a
+                  single tweet from Elon Musk. What if there was a market
+                  manipulators tax that went to holders? With SolidDAI there is.
+                  Up to 20% of massive sell offs go to Solid token holders.
+                </p>
+              </div>
+            </vs-col>
+          </vs-row>
+        </div>
       </div>
     </div>
 
-    <!-- blog news section -->
-    <div class="sec_div">
-      <div
-        class="wrap_blog"
-        style="z-index: 2; position: relative; margin-top: -250px"
-      >
-        <BlogSection />
-      </div>
-
-      <AboutSolid />
-    </div>
+    <!-- Roadmap -->
+    <road-map />
     <Faqs />
     <Community />
 
@@ -172,27 +216,19 @@
 
 <script>
 import NavBar from '@/components/NavBar';
-import Illustrations from './sections/Illustrations.vue';
-import BlogSection from './sections/BlogSection.vue';
-import Subscribe from './sections/Subscribe.vue';
-import RoadMap from './sections/RoadMap.vue';
-import AboutSolid from './sections/AboutSolid.vue';
 import Faqs from './sections/Faqs.vue';
 import Community from './sections/Community.vue';
 import Footer from './sections/Footer.vue';
+import RoadMap from './sections/RoadMap.vue';
 
 export default {
   name: 'Home',
   components: {
     NavBar,
-    Illustrations,
-    BlogSection,
-    Subscribe,
-    RoadMap,
-    AboutSolid,
     Faqs,
     Community,
     Footer,
+    RoadMap,
   },
   data() {
     return {
