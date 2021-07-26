@@ -104,15 +104,16 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
   padding-bottom: 25px;
   padding-left: 10px;
   border-bottom: none !important;
-  color: rgb(206, 207, 207);
+  color: rgb(83, 35, 196);
   line-height: 24px;
+  font-weight: bold;
 }
 .el-collapse-item__wrap {
   background-color: transparent;
 }
 .el-collapse-item {
   margin-bottom: 15px;
-  border: 1px solid rgb(30, 39, 78);
+  border: 1px solid #cbc8ff;
   padding: 5px;
 }
 .el-collapse {
@@ -120,9 +121,12 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
   border-bottom: none !important;
 }
 .el-collapse-item__content {
-  padding-bottom: 25px;
+  padding-bottom: 20px !important;
   padding-left: 10px;
-  font-size: 13px;
-  color: #c1c2c4;
+  font-size: 14px;
+  color: #7c5cf3;
   line-height: 1.769230769230769;
+}
+.el-collapse-item__wrap {
+  border-bottom: none !important;
 }

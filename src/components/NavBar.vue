@@ -17,10 +17,26 @@
         />
       </template>
       <template #right>
-        <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn_nav">
+        <vs-button
+          v-if="routeName == 'Home'"
+          class="airdrop_btn"
+          blank
+          to="/airdrop"
+          id="airdrop_btn_nav"
+        >
+          <b>Go to App</b>
+        </vs-button>
+        <vs-button
+          v-if="routeName == 'Presale'"
+          class="airdrop_btn"
+          blank
+          to="/airdrop"
+          id="airdrop_btn_nav"
+        >
           <b>AirDrop</b>
         </vs-button>
         <vs-button
+          v-if="routeName == 'Home'"
           blank
           class="medium_button btn_hover"
           href="https://soliddefi.medium.com/"
@@ -34,6 +50,7 @@
           />
         </vs-button>
         <vs-button
+          v-if="routeName == 'Home'"
           class="def_button btn_hover"
           blank
           href="https://soliddefi.gitbook.io/solid-whitepaper/"
@@ -50,6 +67,16 @@ export default {
   name: 'NavBar',
   data: () => ({
     active: '',
+    routeName: 'Home',
   }),
+  created() {
+    console.log(this.$route.name);
+    this.routeName =
+      this.$route.name == 'Home'
+        ? 'Home'
+        : this.$route.name == 'Presale'
+        ? 'Presale'
+        : 'Foundary';
+  },
 };
 </script>

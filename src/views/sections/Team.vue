@@ -1,0 +1,71 @@
+<template>
+  <div class="wrap">
+    <div class="d-flex-center mt-70">
+      <h1 class="lead_head_text2" style="color: rgb(77,26,192);">
+        SOLID DEFI TEAM
+      </h1>
+    </div>
+
+    <div class="blog_div mt-50">
+      <div class="team_div" id="blog1">
+        <div class="team_img">
+          <img
+            src="../../assets/images/charles_dp.png"
+            alt="dp"
+            height="150px"
+          />
+        </div>
+        <div class="team_cont">
+          <span class="d-block">DOT</span>
+          <span class="d-block">@VALUE2VALUE</span>
+          <span class="d-block">CTO</span>
+        </div>
+      </div>
+
+      <div class="team_div">
+        <div class="team_img">
+          <img
+            src="../../assets/images/charles_dp.png"
+            alt="dp"
+            height="150px"
+          />
+        </div>
+        <div class="team_cont">
+          <span class="d-block">CHARLES</span>
+          <span class="d-block">@CHARLES2K16</span>
+          <span class="d-block">CDO</span>
+        </div>
+      </div>
+
+      <div class="team_div">
+        <div class="team_img">
+          <img
+            src="../../assets/images/kam_profile.png"
+            alt="dp"
+            height="150px"
+          />
+        </div>
+        <div class="team_cont">
+          <span class="d-block">KAM</span>
+          <span class="d-block">@KAM</span>
+          <span class="d-block">COO</span>
+        </div>
+      </div>
+
+      <div class="team_div">
+        <div class="team_img">
+          <img
+            src="../../assets/images/woody_profile_pic.png"
+            alt="dp"
+            height="150px"
+          />
+        </div>
+        <div class="team_cont">
+          <span class="d-block">DOT</span>
+          <span class="d-block">@VALUE2VALUE</span>
+          <span class="d-block">CTO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

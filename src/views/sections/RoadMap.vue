@@ -1,5 +1,5 @@
 <template>
-  <div class="sec_div">
+  <div>
     <div class="d-flex-center mt-70">
       <img
         src="../../assets/images/roadmap.png"
