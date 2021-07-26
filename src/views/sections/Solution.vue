@@ -19,17 +19,38 @@
             <span>USDt vs solidUSDT as supply increases </span>
           </div>
           <br />
-          <img src="../../assets/images/usdt.png" alt="" width="450px" />
+          <!-- <img src="../../assets/images/usdt.png" alt="" width="450px" /> -->
 
-          <!-- <div>
-            <div>
-              <img
-                src="../../assets/images/print_cash_icon.png"
-                alt="icon"
-                width="90px"
-              />
+          <div class="flex-justify-around-center">
+            <div class="flex-row-center sol_img">
+              <img src="../../assets/images/print_cash_icon.png" alt="icon" />
+
+              <span class="white mt-10">More USDt money supply</span>
             </div>
-          </div> -->
+
+            <div class="flex-row-center sol_img">
+              <img src="../../assets/images/deflation_icon.png" alt="icon" />
+
+              <span class="white mt-10">More USDt money supply</span>
+            </div>
+          </div>
+
+          <div class="flex-justify-around-center mt-20">
+            <div class="flex-row-center sol_img">
+              <img
+                src="../../assets/images/protocol_input_icon.png"
+                alt="icon"
+              />
+
+              <span class="white mt-10">More USDt money supply</span>
+            </div>
+
+            <div class="flex-row-center sol_img">
+              <img src="../../assets/images/appreciate_icon.png" alt="icon" />
+
+              <span class="white mt-10">More USDt money supply</span>
+            </div>
+          </div>
         </div>
       </vs-col>
 
@@ -104,3 +125,9 @@
     </vs-row>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.sol_img img {
+  width: 90px;
+}
+</style>
