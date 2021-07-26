@@ -1,7 +1,7 @@
 <template>
   <vs-row>
     <vs-col :w="6" :xs="12" :sm="12">
-      <div class="mt-100">
+      <div class="mt-120">
         <div class="flex-justify-between-center">
           <h1 class="lead_head_text2" style="color: #FCB42A;">
             SOLID DEFI
@@ -31,7 +31,7 @@
           <!-- <vs-button class="airdrop_btn" blank to="/presale">
             <b>BUY NOW!</b>
           </vs-button> -->
-          <vs-button class="buy_button" blank to="/presale">
+          <vs-button class="buy_button_home" blank to="/presale">
             <b>BUY NOW!</b>
           </vs-button>
         </div>

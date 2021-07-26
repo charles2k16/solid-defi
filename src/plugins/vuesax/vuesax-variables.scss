@@ -95,6 +95,23 @@
                0px 0px 0px #a76912 !important;
 }
 
+.buy_button_home.vs-button--default {
+  border-radius: 70px !important;
+  width: 120px;
+  color: #fff;
+  background: linear-gradient(315deg, #E1C324, #cb8016);
+  // box-shadow: 0px 3px 1px #ab5d0b,
+  // 0px 0px 0px #a76912;
+  box-shadow: 5px 5px 8px #000000,
+  -5px -5px 8px #393e54;
+}
+.buy_button_home.vs-button--default:hover {
+  background: linear-gradient(315deg, #cb8016, #E1C324);
+  // box-shadow: 0px 3px 1px #ab5d0b,
+  //   0px 0px 0px #a76912 !important;
+    box-shadow: 5px 5px 8px #000000,
+    -5px -5px 8px #393e54;
+}
 .buy_now.vs-button--default {
   border-radius: 80px !important;
   width: 100px;

@@ -40,7 +40,12 @@
     <vs-row class="mt-50">
       <vs-col :w="7" :xs="12" :sm="12">
         <div class="mr-20">
-          <img src="../../assets/images/rew.png" alt="" width="450px" />
+          <!-- <img src="../../assets/images/rew.png" alt="" width="450px" /> -->
+
+          <!-- <div class="prob_box">
+            <span>96%</span>
+            <span>Lost in value</span>
+          </div> -->
         </div>
       </vs-col>
 
