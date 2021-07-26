@@ -24,7 +24,13 @@
           </p>
         </div>
 
-        <div class="mt-50">
+        <div class="d-flex mt-50">
+          <!-- <vs-button gradient color="rgb(6, 30, 65)" blank to="/presale">
+            <b>Learn More</b>
+          </vs-button> -->
+          <!-- <vs-button class="airdrop_btn" blank to="/presale">
+            <b>BUY NOW!</b>
+          </vs-button> -->
           <vs-button class="buy_button" blank to="/presale">
             <b>BUY NOW!</b>
           </vs-button>

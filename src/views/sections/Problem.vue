@@ -14,8 +14,12 @@
 
     <vs-row class="mt-70">
       <vs-col :w="7" :xs="12" :sm="12">
-        <div>
+        <div class="prob_bg">
           <img src="../../assets/images/raw2.png" alt="" width="450px" />
+          <!-- <div class="prob_box">
+            <span>96%</span>
+            <span>Lost in value</span>
+          </div> -->
         </div>
       </vs-col>
 
@@ -67,3 +71,21 @@ export default {
   name: 'Problem',
 };
 </script>
+
+<style lang="scss" scoped>
+// .prob_bg {
+//   width: 480px;
+//   height: 300px;
+//   background-image: url('../../assets/images/usd_power.png');
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+// .prob_box {
+//   height: 120px;
+//   width: 200px;
+//   background: #0f121e;
+//   border-radius: 13px;
+//   padding: 15px;
+// }
+</style>

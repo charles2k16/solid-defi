@@ -887,15 +887,15 @@
               <p class="mt-20 p_tokens">1.48M Tokens</p>
             </div>
 
-            <!-- <div>
+            <div v-if="!isDrizzleInitialized">
               <div class="progress">
-                <div class="progress_token" :style="{ width: `${9.2}%` }">
-                  <span>9.2%</span>
+                <div class="progress_token" :style="{ width: `${11}%` }">
+                  <span>11%</span>
                 </div>
               </div>
 
               <p class="mt-20 p_tokens">20M Tokens</p>
-            </div> -->
+            </div>
           </vs-col>
         </vs-row>
 
@@ -928,11 +928,24 @@
         </vs-row>
 
         <Illustrations />
+        <br />
+        <subscribe />
+      </div>
+    </div>
+
+    <!-- blog news section -->
+    <div class="sec_div">
+      <div
+        class="wrap_blog"
+        style="z-index: 2; position:relative; margin-top:-250px;"
+      >
+        <BlogSection />
       </div>
 
-      <Faqs />
-      <Community />
+      <AboutSolid />
     </div>
+
+    <Community />
     <Footer />
 
     <vs-dialog v-model="showWallects" width="420px" class="_dialog">
@@ -1054,6 +1067,13 @@
 </template>
 
 <script>
+// import Vue from 'vue';
+// import { store } from '../store/';
+// import drizzleVuePlugin from '@drizzle/vue-plugin';
+// import drizzleOptions from '@/plugins/drizzle';
+
+// Vue.use(drizzleVuePlugin, { store, drizzleOptions });
+
 import { mapGetters } from 'vuex';
 import {
   getSmallBundleEth,
@@ -1076,9 +1096,11 @@ import NavBar from '@/components/NavBar';
 import GetSolidHeader from './sections/GetSolidHeader.vue';
 import FlipCountdown from 'vue2-flip-countdown';
 import Illustrations from './sections/Illustrations.vue';
-import Faqs from './sections/Faqs.vue';
 import Community from './sections/Community.vue';
 import Footer from './sections/Footer.vue';
+import AboutSolid from './sections/AboutSolid.vue';
+import BlogSection from './sections/BlogSection.vue';
+import Subscribe from './sections/Subscribe.vue';
 
 export default {
   name: 'Home',
@@ -1087,10 +1109,12 @@ export default {
     ConnectWallect,
     NavBar,
     GetSolidHeader,
-    Faqs,
     Community,
     Footer,
     Illustrations,
+    Subscribe,
+    BlogSection,
+    AboutSolid,
   },
   data() {
     return {

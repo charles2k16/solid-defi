@@ -20,6 +20,16 @@
           </div>
           <br />
           <img src="../../assets/images/usdt.png" alt="" width="450px" />
+
+          <!-- <div>
+            <div>
+              <img
+                src="../../assets/images/print_cash_icon.png"
+                alt="icon"
+                width="90px"
+              />
+            </div>
+          </div> -->
         </div>
       </vs-col>
 

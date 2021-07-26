@@ -27,6 +27,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+h3 {
+  font-weight: 510;
+}
+h5 {
+  font-weight: 400;
+}
 
 body {
   font-family: Montserrat;
@@ -103,11 +109,11 @@ hr.sales_hr {
   color: rgb(245, 245, 245);
   font-size: 33px;
   line-height: 3rem;
-  font-weight: 600;
-  font-family: Avenir,
+  font-weight: 530;
+  /* font-family: Avenir,
     Helvetica,
     Arial,
-    sans-serif;
+    sans-serif; */
 }
 .icx {
   color: #362652;
@@ -129,11 +135,9 @@ hr.sales_hr {
   color: rgb(160, 157, 157);
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
-
 .lead_text-mob {
   display: none;
 }
-
 .small_text1 {
   font-size: 14px;
   color: rgb(190, 188, 188);
@@ -564,6 +568,7 @@ hr.sales_hr {
   background: linear-gradient(180deg, #181C20 40%, #191b23 81%, #27293A 92%);
   /* background-color:#181C20; */
   padding-top: 50px;
+  padding-bottom: 00px;
   display: block;
   align-items: center;
   margin: 0 auto;
@@ -1677,19 +1682,10 @@ hr.sales_hr {
 #airdrop_btn {
   display: none;
 }
-.head_background {
+/* .head_background {
   background-image: url('../images/globe-particle.png');
   background-size: cover;
-}
-.home_bg {
-  background-image:url("../images/homebg.png");
-  background-color: #0f121e;
-  height: 450px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;   
-}
+} */
 .problem_image {
   width: 160px;
   transform: scaleX(-1);
@@ -1701,9 +1697,14 @@ hr.sales_hr {
   margin-top: 20px;
 }
 hr.hd_rule {
-    border: 1px solid rgb(121, 120, 120);
-    width: 300px;
-    margin: auto;
+  border: 1px solid rgb(121, 120, 120);
+  width: 300px;
+  margin: auto;
+}
+hr.hd_rule2 {
+  border: 1px solid rgb(64, 64, 133);
+  width: 180px;
+  margin: auto;
 }
 
 
