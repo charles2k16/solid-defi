@@ -14,13 +14,13 @@
     <div class="flex-row-center mt-70">
       <div class="roadmap">
         <div class="first_oval">
-          <div>
+          <!-- <div>
             <img
               src="../../assets/images/yellow_thing_1.png"
               alt="icon"
               class="coma"
             />
-          </div>
+          </div> -->
 
           <div class="round_oval">
             <span>JULY</span>
@@ -116,7 +116,7 @@
 
 <style lang="scss" scoped>
 .road_image {
-  width: 160px;
+  width: 165px;
   transform: scaleX(-1);
   margin-right: 100px;
 }
@@ -133,7 +133,7 @@
 .first_oval {
   border: 1px solid white;
   border-radius: 50px;
-  padding: 5px;
+  padding: 6px;
 
   .coma {
     height: 15px;

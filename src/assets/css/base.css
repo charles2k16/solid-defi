@@ -536,7 +536,6 @@ hr.sales_hr {
 } */
 .ul {
   width: 500px;
-  border: 1px solid red;
 }
 .roadmap_ul {
   list-style: none;
@@ -557,7 +556,7 @@ hr.sales_hr {
 
 .vl {
   border-left: 1px solid white;
-  height: 50px;
+  height: 59px;
   margin-top: -30px;
 }
 .ul2 {
