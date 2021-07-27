@@ -16,7 +16,19 @@
     <vs-row class="mt-70">
       <vs-col :w="7" :xs="12" :sm="12">
         <div class="prob_bg">
-          <img src="../../assets/images/raw2.png" alt="" width="450px" />
+          <!-- <img src="../../assets/images/raw2.png" alt="" width="450px" /> -->
+          <div class="dai_box1">
+            <div class="prob_box arr-d flex-row-center">
+              <div class="d-flex-center arr">
+                <span class="material-icons sol_i">
+                  arrow_upward
+                </span>
+                <span class="sol_fig">96%</span>
+              </div>
+
+              <span class="sl_txt">LOST IN VALUE</span>
+            </div>
+          </div>
         </div>
       </vs-col>
 
@@ -37,17 +49,41 @@
     <vs-row class="mt-50">
       <vs-col :w="7" :xs="12" :sm="12">
         <div class="mr-20 prob2_bg">
-          <img src="../../assets/images/rew.png" alt="" width="450px" />
-          <!-- <div class="prob_box flex-row-center">
-            <div class="d-flex-center arr">
-              <span class="material-icons sol_i">
-                arrow_upward
-              </span>
-              <span class="sol_fig">96%</span>
+          <!-- <img src="../../assets/images/rew.png" alt="" width="450px" /> -->
+          <div class="inflation_boxes">
+            <div class="prob_box flex-row-center">
+              <div class="d-flex-center arr">
+                <span class="material-icons sol_i">
+                  arrow_upward
+                </span>
+                <span class="sol_fig">65%</span>
+              </div>
+
+              <span class="sl_txt">INCREASE IN MONEY SUPPLY</span>
             </div>
 
-            <span class="sl_txt">INCREASE IN MONEY SUPPLY</span>
-          </div> -->
+            <div class="prob_box flex-row-center mt-15">
+              <div class="d-flex-center arr">
+                <span class="material-icons sol_i">
+                  arrow_upward
+                </span>
+                <span class="sol_fig">5X</span>
+              </div>
+
+              <span class="sl_txt">PRICE OF LUMBER</span>
+            </div>
+
+            <div class="prob_box flex-row-center mt-15">
+              <div class="d-flex-center arr">
+                <span class="material-icons sol_i">
+                  arrow_upward
+                </span>
+                <span class="sol_fig">2X</span>
+              </div>
+
+              <span class="sl_txt">PRICE OF GASOLINE</span>
+            </div>
+          </div>
         </div>
       </vs-col>
 
@@ -80,12 +116,46 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .prob2_bg {
-//   height: 500px;
-//   background-image: url('../../assets/images/stableCoin-Inflation.png');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-// }
+.inflation_boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 60px;
+}
+.dai_box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-left: 150px;
+
+  .arr-d {
+    z-index: 2;
+    position: relative;
+
+    ::after {
+      content: ' ';
+      position: absolute;
+      left: 38%;
+      bottom: -15px;
+      border-top: 15px solid #0f121e;
+      border-right: 15px solid transparent;
+      border-left: 15px solid transparent;
+    }
+  }
+}
+.prob_bg {
+  height: 250px;
+  background-image: url('../../assets/images/usd_power.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.prob2_bg {
+  height: 350px;
+  background-image: url('../../assets/images/stableCoin-Inflation.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .problem_image {
   width: 180px;
   margin-right: 70px;
@@ -108,6 +178,7 @@ export default {
   .sol_i {
     font-weight: bold;
     font-size: 35px;
+    margin-right: 5px;
   }
   .sol_fig {
     font-size: 35px;
