@@ -57,6 +57,9 @@
                 />
               </span>
             </div>
+            <div class="comma_div3">
+              <img src="../../assets/images/yellow_thing_2.png" alt="icon" />
+            </div>
           </div>
         </div>
 
@@ -77,7 +80,6 @@
           <div style="display:flex;justify-content:center;">
             <div class="vl vl2"></div>
           </div>
-
           <div class="first_oval">
             <div class="yellow_oval">
               <span class="yellow_curve"></span>
@@ -91,9 +93,6 @@
                   />
                 </span>
               </div>
-            </div>
-            <div class="comma_div3">
-              <img src="../../assets/images/yellow_thing_2.png" alt="icon" />
             </div>
           </div>
         </div>
@@ -135,7 +134,7 @@
 .first_oval {
   border: 1px solid white;
   border-radius: 52px;
-  padding: 6px;
+  padding: 5px;
 
   .comma_div {
     z-index: 2;
@@ -156,8 +155,9 @@
     position: relative;
     float: right;
     // margin-bottom: -20px;
-    margin-top: -53px;
-    padding: 0px 0px 0px 10px;
+    margin-top: -59px;
+    margin-right: -7px;
+    // padding: 0px 0px 0px 0px;
 
     img {
       width: 10px;
