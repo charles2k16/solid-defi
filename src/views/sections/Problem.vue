@@ -138,7 +138,7 @@ export default {
       position: absolute;
       left: 42%;
       bottom: -15px;
-      border-top: 15px solid #0f121e;
+      border-top: 15px solid #191e33;
       border-right: 15px solid transparent;
       border-left: 15px solid transparent;
     }
@@ -163,7 +163,8 @@ export default {
 .prob_box {
   height: 110px;
   width: 180px;
-  background: #0f121e;
+  // background: #0f121e;
+  background: linear-gradient(180deg, #0f121e 39%, #191e33);
   border-radius: 13px;
   padding: 10px;
   color: rgb(186, 206, 245);

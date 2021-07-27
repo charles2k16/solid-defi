@@ -135,6 +135,11 @@
 </template>
 
 <style lang="scss" scoped>
+.solution_image {
+  width: 120px;
+  margin-right: 70px;
+  margin-top: 20px;
+}
 .sol_img_div {
   width: 400px;
 
