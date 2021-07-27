@@ -47,13 +47,6 @@
           </div>
 
           <div class="first_oval">
-            <div class="comma_div2">
-              <img
-                src="../../assets/images/yellow_thing_1.png"
-                alt="icon"
-                class="coma"
-              />
-            </div>
             <div class="round_oval">
               <span>AUG</span>
               <span>
@@ -98,6 +91,9 @@
                   />
                 </span>
               </div>
+            </div>
+            <div class="comma_div3">
+              <img src="../../assets/images/yellow_thing_2.png" alt="icon" />
             </div>
           </div>
         </div>
@@ -155,17 +151,16 @@
     }
   }
 
-  .comma_div2 {
+  .comma_div3 {
     z-index: 2;
     position: relative;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: -20px;
-    margin-top: -13px;
-    padding: 5px 0px 7px 0px;
+    float: right;
+    // margin-bottom: -20px;
+    margin-top: -53px;
+    padding: 0px 0px 0px 10px;
 
     img {
-      width: 35px;
+      width: 10px;
     }
   }
 }

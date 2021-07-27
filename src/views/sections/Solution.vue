@@ -32,9 +32,7 @@
             <div class="flex-row-center sol_img">
               <img src="../../assets/images/deflation_icon.png" alt="icon" />
 
-              <span class="white mt-10 sol_img_txt"
-                >More USDt money supply</span
-              >
+              <span class="white mt-10 sol_img_txt">Less value per USDt</span>
             </div>
           </div>
 
@@ -56,9 +54,7 @@
             <div class="flex-row-center sol_img pl-15">
               <img src="../../assets/images/appreciate_icon.png" alt="icon" />
 
-              <span class="white mt-10 sol_img_txt"
-                >More USDt money supply</span
-              >
+              <span class="white mt-10 sol_img_txt">More value generated</span>
             </div>
           </div>
         </div>
@@ -158,7 +154,7 @@
   color: white;
 }
 .solution_txt {
-  background-color: #353844;
+  background-color: #272939;
   color: grey;
   padding: 15px;
   width: 400px;
