@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="d-flex-center mt-100">
+    <div class="d-flex-center sol_head mt-100">
       <img
         src="../../assets/images/roadmap.png"
         alt="money"
@@ -119,7 +119,19 @@
 .road_image {
   width: 165px;
   transform: scaleX(-1);
-  margin-right: 100px;
+}
+.sol_head {
+  h1 {
+    margin-left: 110px;
+  }
+}
+.roadmap {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  width: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid red; */
 }
 .round_oval {
   border: 1px solid rgb(77, 26, 192);

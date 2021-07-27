@@ -516,24 +516,6 @@ hr.sales_hr {
 .white {
   color: rgb(245, 245, 245);
 }
-
-.roadmap {
-  font-family: Avenir,
-    Helvetica,
-    Arial,
-    sans-serif;
-  width: 550px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* border: 1px solid red; */
-}
-
-/* .yellow_oval {
-  border-radius: 50px;
-  padding: 7px;
-  border-right: 3px solid #F5AC37
-} */
 .ul {
   width: 500px;
 }
