@@ -20,7 +20,7 @@
           <div class="dai_box1">
             <div class="prob_box arr-d flex-row-center">
               <div class="d-flex-center arr">
-                <span class="material-icons sol_i">
+                <span class="material-icons-round sol_i">
                   arrow_upward
                 </span>
                 <span class="sol_fig">96%</span>
@@ -53,7 +53,7 @@
           <div class="inflation_boxes">
             <div class="prob_box flex-row-center">
               <div class="d-flex-center arr">
-                <span class="material-icons sol_i">
+                <span class="material-icons-round sol_i">
                   arrow_upward
                 </span>
                 <span class="sol_fig">65%</span>
@@ -64,7 +64,7 @@
 
             <div class="prob_box flex-row-center mt-15">
               <div class="d-flex-center arr">
-                <span class="material-icons sol_i">
+                <span class="material-icons-round sol_i">
                   arrow_upward
                 </span>
                 <span class="sol_fig">5X</span>
@@ -75,7 +75,7 @@
 
             <div class="prob_box flex-row-center mt-15">
               <div class="d-flex-center arr">
-                <span class="material-icons sol_i">
+                <span class="material-icons-round sol_i">
                   arrow_upward
                 </span>
                 <span class="sol_fig">2X</span>
@@ -164,7 +164,7 @@ export default {
   height: 110px;
   width: 180px;
   // background: #0f121e;
-  background: linear-gradient(180deg, #0f121e 39%, #191e33);
+  background: linear-gradient(180deg, #150f27ff 39%, #191e33);
   border-radius: 13px;
   padding: 10px;
   color: rgb(186, 206, 245);
@@ -173,13 +173,13 @@ export default {
     margin-top: 5px;
     font-size: 15px;
     text-align: center;
-    line-height: 23px;
+    line-height: 21px;
   }
 }
 .arr {
   .sol_i {
     font-weight: bold;
-    font-size: 32px;
+    font-size: 31px;
     margin-right: 5px;
   }
   .sol_fig {

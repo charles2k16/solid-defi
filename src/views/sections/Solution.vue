@@ -19,7 +19,6 @@
             <span>USDt vs solidUSDT as supply increases </span>
           </div>
           <br />
-          <!-- <img src="../../assets/images/usdt.png" alt="" width="450px" /> -->
 
           <div class="flex-justify-around-center sol_img_div">
             <div class="flex-row-center sol_img">
@@ -70,7 +69,7 @@
           <h2 class="white">
             SolidUSDT: PURCHASING POWER INCREASES WITH INFLATION
           </h2>
-          <p class="lead_text_inf mt-20">
+          <p class="lead_text_inf mt-20" style="color:#7a83a1">
             With Solid Defi, the Fed can print all they want, it just gives the
             market more USDt to add to the Solid Bonding curve. Since the Solid
             Bonding Curve issues SolidUSDT priced at the square root of supply
@@ -97,7 +96,7 @@
 
       <vs-col :w="6" :xs="12" :sm="12">
         <div class="ml-20">
-          <p class="lead_text_inf mt-20">
+          <p class="lead_text_inf mt-20" style="color:#7a83a1">
             While the Solid Bonding Curve will eventually accept USDT. We like
             to support native crypto currency projects so the initial Solid
             Bonding Curve will accept DAI and mint SolidDAI according to this
@@ -120,7 +119,7 @@
             SOLIDDAI REWARDS UP TO 20% OF VALUE OF CRYPTO SHAKEOUT
           </h2>
 
-          <p class="lead_text_inf mt-20">
+          <p class="lead_text_inf mt-20" style="color:#7a83a1">
             $1 Trillion dollars in market cap evaporated in the massive May 19th
             2021 sell off. People lost $300 billion because of a single tweet
             from Elon Musk. What if there was a market manipulators tax that
@@ -153,7 +152,7 @@
 .solution_head {
   border-radius: 50px;
   width: 400px;
-  background-color: #6133c9;
+  background: linear-gradient(90deg, #4317b4ff 39%, #8127e0ff);
   /* #181C2F */
   padding: 16px;
   color: white;

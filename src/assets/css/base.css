@@ -410,13 +410,13 @@ hr.sales_hr {
   display: block;
   box-sizing: border-box;
   position: absolute;
-  width: 6px;
-  height: 6px;
-  border-top: 2px solid;
-  border-right: 2px solid;
+  width: 12px;
+  height: 12px;
+  border-top: 4px solid;
+  border-right: 4px solid;
   transform: rotate(45deg);
   right: 0;
-  bottom: -2px
+  bottom: -5px
 }
 .center {
   text-align: center;
