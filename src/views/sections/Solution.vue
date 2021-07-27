@@ -21,34 +21,42 @@
           <br />
           <!-- <img src="../../assets/images/usdt.png" alt="" width="450px" /> -->
 
-          <div class="flex-justify-around-center">
+          <div class="flex-justify-around-center sol_img_div">
             <div class="flex-row-center sol_img">
               <img src="../../assets/images/print_cash_icon.png" alt="icon" />
 
-              <span class="white mt-10">More USDt money supply</span>
+              <span class="white mt-10 sol_img_txt"
+                >More USDt money supply</span
+              >
             </div>
 
             <div class="flex-row-center sol_img">
               <img src="../../assets/images/deflation_icon.png" alt="icon" />
 
-              <span class="white mt-10">More USDt money supply</span>
+              <span class="white mt-10 sol_img_txt"
+                >More USDt money supply</span
+              >
             </div>
           </div>
 
-          <div class="flex-justify-around-center mt-20">
+          <div class="flex-justify-around-center mt-20 sol_img_div">
             <div class="flex-row-center sol_img">
               <img
                 src="../../assets/images/protocol_input_icon.png"
                 alt="icon"
               />
 
-              <span class="white mt-10">More USDt money supply</span>
+              <span class="white mt-10 sol_img_txt"
+                >More USDt money supply</span
+              >
             </div>
 
             <div class="flex-row-center sol_img">
               <img src="../../assets/images/appreciate_icon.png" alt="icon" />
 
-              <span class="white mt-10">More USDt money supply</span>
+              <span class="white mt-10 sol_img_txt"
+                >More USDt money supply</span
+              >
             </div>
           </div>
         </div>
@@ -102,7 +110,7 @@
           <img
             src="../../assets/images/coin_on_a_curve_02.jpg"
             alt=""
-            width="450px"
+            width="400px"
           />
         </div>
       </vs-col>
@@ -127,7 +135,34 @@
 </template>
 
 <style lang="scss" scoped>
-.sol_img img {
-  width: 90px;
+.sol_img_div {
+  width: 400px;
+
+  .sol_img img {
+    width: 50px;
+  }
+
+  .sol_img .sol_img_txt {
+    font-size: 12px;
+  }
+}
+.solution_head {
+  border-radius: 50px;
+  width: 400px;
+  background-color: #6133c9;
+  /* #181C2F */
+  padding: 15px;
+  color: white;
+}
+.solution_txt {
+  background-color: #353844;
+  color: grey;
+  padding: 15px;
+  width: 400px;
+  font-family: 'Courier New', Courier, monospace;
+
+  p {
+    font-size: 14px;
+  }
 }
 </style>
