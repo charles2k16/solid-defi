@@ -482,21 +482,7 @@ hr.sales_hr {
 .white {
   color: rgb(245, 245, 245);
 }
-.solution_head {
-  border-radius: 50px;
-    width: 450px;
-  background-color: #6133C9;
-  /* #181C2F */
-  padding: 15px;
-  color: white;
-}
-.solution_txt {
-  background-color: #353844;
-  color: grey;
-  padding: 15px;
-  width: 450px;
-  font-family:'Courier New', Courier, monospace;
-}
+
 .roadmap {
   font-family: Avenir,
     Helvetica,
