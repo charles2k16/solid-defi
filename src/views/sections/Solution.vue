@@ -39,10 +39,10 @@
             </div>
           </div>
 
-          <i class="gg-arrow-long-right mt-30 mb-20"></i>
+          <i class="gg-arrow-long-right mt-20 mb-20"></i>
 
           <div class="flex-justify-around-center mt-20 sol_img_div">
-            <div class="flex-row-center sol_img">
+            <div class="flex-row-center sol_img" id="p-2">
               <img
                 src="../../assets/images/protocol_input_icon.png"
                 alt="icon"
@@ -54,7 +54,7 @@
               </span>
             </div>
 
-            <div class="flex-row-center sol_img">
+            <div class="flex-row-center sol_img pl-15">
               <img src="../../assets/images/appreciate_icon.png" alt="icon" />
 
               <span class="white mt-10 sol_img_txt"
@@ -66,7 +66,7 @@
       </vs-col>
 
       <vs-col :w="6" :xs="12" :sm="12">
-        <div class="ml-50">
+        <div class="ml-20">
           <h2 class="white">
             SolidUSDT: PURCHASING POWER INCREASES WITH INFLATION
           </h2>
@@ -110,11 +110,7 @@
     <vs-row class="mt-50">
       <vs-col :w="6" :xs="12" :sm="12">
         <div class="mr-20">
-          <img
-            src="../../assets/images/coin_on_a_curve_02.jpg"
-            alt=""
-            width="400px"
-          />
+          <img src="../../assets/images/coin_curve.png" alt="" width="400px" />
         </div>
       </vs-col>
 
@@ -159,7 +155,7 @@
   width: 400px;
   background-color: #6133c9;
   /* #181C2F */
-  padding: 15px;
+  padding: 16px;
   color: white;
 }
 .solution_txt {
@@ -167,6 +163,7 @@
   color: grey;
   padding: 15px;
   width: 400px;
+  margin-top: 13px;
   font-family: 'Courier New', Courier, monospace;
 
   p {

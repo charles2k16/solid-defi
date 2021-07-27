@@ -77,6 +77,7 @@
 
           <div class="first_oval">
             <div class="yellow_oval">
+              <span class="yellow_curve"></span>
               <div class="round_oval">
                 <span>SEP</span>
                 <span>
@@ -114,5 +115,24 @@
   width: 160px;
   transform: scaleX(-1);
   margin-right: 70px;
+}
+.round_oval {
+  border: 1px solid rgb(77, 26, 192);
+  border-radius: 50px;
+  padding: 12px 12px;
+  width: 170px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.first_oval {
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 5px;
+}
+.round_oval span {
+  color: rgb(77, 26, 192);
+  font-weight: bold;
 }
 </style>
