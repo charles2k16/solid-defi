@@ -31,7 +31,7 @@
           <!-- <vs-button class="airdrop_btn" blank to="/presale">
             <b>BUY NOW!</b>
           </vs-button> -->
-          <vs-button class="buy_button_home" blank to="/presale">
+          <vs-button class="buy_button_home btn_hover" blank to="/presale">
             <b>BUY NOW!</b>
           </vs-button>
         </div>

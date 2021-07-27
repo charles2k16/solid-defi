@@ -14,14 +14,13 @@
     <div class="flex-row-center mt-70">
       <div class="roadmap">
         <div class="first_oval">
-          <!-- <div>
+          <div class="comma_div">
             <img
               src="../../assets/images/yellow_thing_1.png"
               alt="icon"
               class="coma"
             />
-          </div> -->
-
+          </div>
           <div class="round_oval">
             <span>JULY</span>
             <span>
@@ -135,10 +134,18 @@
   border-radius: 50px;
   padding: 6px;
 
-  .coma {
-    height: 15px;
-    float: right;
-    padding-top: 5px;
+  .comma_div {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -20px;
+    margin-top: -13px;
+    padding: 5px 0px 7px 0px;
+
+    img {
+      width: 35px;
+    }
   }
 }
 .round_oval span {
