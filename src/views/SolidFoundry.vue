@@ -81,7 +81,36 @@
 
         <vs-row class="mt-50">
           <vs-col :w="4" :xs="12" :sm="12">
-            <div class="dai_locked flex-justify-around-center">
+            <div class="dai_locked flex-justify-between-center">
+              <img
+                src="../assets/images/token_lock_icon.png"
+                alt="lock"
+                width="80px"
+              />
+
+              <div>
+                <span class="d-block tt">TOTAL DAI LOCKED </span>
+                <span class="d-block pr">$700,000 </span>
+              </div>
+            </div>
+
+            <!-- second dai loacked -->
+            <div class="dai_locked flex-justify-between-center mt-20">
+              <img
+                src="../assets/images/token_lock_icon.png"
+                alt="lock"
+                width="80px"
+              />
+
+              <div>
+                <span class="d-block tt">TRADING VOLUME </span>
+                <span class="d-block pr">$700,000 </span>
+                <span class="d-block hr">+10,000(24hr)</span>
+              </div>
+            </div>
+
+            <!-- third dai locked -->
+            <div class="dai_locked flex-justify-between-center mt-20">
               <img
                 src="../assets/images/token_lock_icon.png"
                 alt="lock"
@@ -240,17 +269,26 @@ export default {
 .dai_locked {
   height: 112px;
   width: 300px;
-  border-radius: 15px;
+  border-radius: 20px;
   background: linear-gradient(240deg, #e1c324, #cf6d10);
+  padding: 10px 25px 10px 10px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 
   .tt {
     color: whitesmoke;
+    font-size: 14px;
+    font-weight: bold;
   }
   .pr {
     color: whitesmoke;
     font-weight: bold;
     font-size: 20px;
-    margin-top: 8px;
+    margin-top: 5px;
+  }
+  .hr {
+    color: whitesmoke;
+    font-size: 14px;
+    margin-top: 5px;
   }
 }
 </style>

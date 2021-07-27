@@ -39,6 +39,8 @@
             </div>
           </div>
 
+          <i class="gg-arrow-long-right mt-30 mb-20"></i>
+
           <div class="flex-justify-around-center mt-20 sol_img_div">
             <div class="flex-row-center sol_img">
               <img
@@ -47,8 +49,9 @@
               />
 
               <span class="white mt-10 sol_img_txt"
-                >More USDt money supply</span
-              >
+                >More USDt put into <br />
+                SolidUSDT protocol
+              </span>
             </div>
 
             <div class="flex-row-center sol_img">
@@ -63,7 +66,7 @@
       </vs-col>
 
       <vs-col :w="6" :xs="12" :sm="12">
-        <div class="ml-20">
+        <div class="ml-50">
           <h2 class="white">
             SolidUSDT: PURCHASING POWER INCREASES WITH INFLATION
           </h2>
