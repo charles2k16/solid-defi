@@ -21,7 +21,7 @@
               class="coma"
             />
           </div>
-          <div class="round_oval">
+          <div class="round_oval" style="margin-top:-28px;">
             <span>JULY</span>
             <span>
               <img src="../../assets/images/dai.png" alt="dai" width="40px" />
@@ -78,11 +78,10 @@
       <div class="roadmap">
         <div>
           <div style="display:flex;justify-content:center;">
-            <div class="vl vl2"></div>
+            <div class="vl2"></div>
           </div>
-          <div class="first_oval">
+          <div class="first_oval oval3">
             <div class="yellow_oval">
-              <span class="yellow_curve"></span>
               <div class="round_oval">
                 <span>SEP</span>
                 <span>
@@ -154,9 +153,10 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: -20px;
+    margin-bottom: -27px;
     margin-top: -12px;
-    padding: 5px 0px 10px 0px;
+    margin-right: -1px;
+    padding: 5px 0px 14px 2px;
 
     img {
       width: 35px;
@@ -176,6 +176,9 @@
       width: 10px;
     }
   }
+}
+.oval3 {
+  margin-top: -62px;
 }
 .round_oval span {
   color: rgb(77, 26, 192);
