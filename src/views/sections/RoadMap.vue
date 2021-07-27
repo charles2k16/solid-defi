@@ -100,7 +100,8 @@
         <div class="ul">
           <ul class="roadmap_ul ul2">
             <li>
-              Solid Community Votes on new Solid TO BE USED for bonding curve
+              Solid Community Votes on new Solid Bonding Curve - Eth, Matic,
+              USDC, etc.
             </li>
             <li>
               Solid Community Voted Bonding Curve 2 week funding period.
@@ -122,12 +123,12 @@
 }
 .sol_head {
   h1 {
-    margin-left: 110px;
+    margin-left: 115px;
   }
 }
 .roadmap {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  width: 550px;
+  width: 650px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -154,8 +155,8 @@
     display: flex;
     justify-content: flex-end;
     margin-bottom: -20px;
-    margin-top: -13px;
-    padding: 5px 0px 7px 0px;
+    margin-top: -12px;
+    padding: 5px 0px 10px 0px;
 
     img {
       width: 35px;

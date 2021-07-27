@@ -517,15 +517,16 @@ hr.sales_hr {
   color: rgb(245, 245, 245);
 }
 .ul {
-  width: 500px;
+  width: 400px;
 }
 .roadmap_ul {
   list-style: none;
-  margin-left: 130px;
+  margin-left: 120px;
 }
 .roadmap_ul li{
   margin: 8px 0px;
-  font-size: 14px;
+  /* font-size: 16px; */
+  font-size: 1.1rem;
 }
 .roadmap_ul li::before {
   content: "\2022";
@@ -538,7 +539,7 @@ hr.sales_hr {
 
 .vl {
   border-left: 1px solid white;
-  height: 59px;
+  height: 97px;
   margin-top: -30px;
 }
 .ul2 {
@@ -546,8 +547,8 @@ hr.sales_hr {
 }
 .vl2 {
   border-left: 1px solid white;
-  height: 61px;
-  margin-top: -61px;
+  height: 100px;
+  margin-top: -60px;
 }
 
 .ilustrations {
