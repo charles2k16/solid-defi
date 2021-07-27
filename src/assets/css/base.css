@@ -243,6 +243,9 @@ hr.sales_hr {
 .mb-100 {
   margin-bottom: 350px;
 }
+.mb-70 {
+  margin-bottom: 100px;
+}
 .mt-70 {
   margin-top: 70px;
 }
@@ -539,7 +542,7 @@ hr.sales_hr {
 
 .vl {
   border-left: 1px solid white;
-  height: 74px;
+  height: 75px;
   margin-top: -55px;
 }
 .ul2 {
@@ -1276,8 +1279,8 @@ hr.sales_hr {
   align-items: center;
 }
 .team_cont { 
-  background: #7489E9;
-  background: linear-gradient(180deg, #5E52A9 10%, #7489E9 38%);
+ background: rgb(99, 81, 171);
+ background: linear-gradient(180deg, rgba(99, 81, 171, 1) 30%, rgba(117, 140, 230, 1) 90%);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   height: 90px;

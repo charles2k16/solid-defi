@@ -1,14 +1,16 @@
 <template>
   <div>
-    <div class="d-flex-center sol_head mt-100">
-      <img
-        src="../../assets/images/roadmap.png"
-        alt="money"
-        class="road_image"
-      />
-      <h1 class="lead_head_text2" style="color: rgb(77,26,192);">
-        2021 ROADMAP
-      </h1>
+    <div class="d-flex-center">
+      <div class="sol_head mt-100">
+        <img
+          src="../../assets/images/roadmap.png"
+          alt="money"
+          class="road_image"
+        />
+        <h1 class="lead_head_text2" style="color: rgb(77,26,192);">
+          2021 ROADMAP
+        </h1>
+      </div>
     </div>
 
     <div class="flex-row-center mt-70">
@@ -48,12 +50,12 @@
 
           <div class="first_oval">
             <div class="round_oval">
-              <span>AUG</span>
-              <span>
+              <span style="margin-left:15px">AUG</span>
+              <span style="margin-top:5px;">
                 <img
                   src="../../assets/images/polygon_logo.png"
                   alt="dai"
-                  width="90px"
+                  width="80px"
                 />
               </span>
             </div>
@@ -121,8 +123,13 @@
   transform: scaleX(-1);
 }
 .sol_head {
+  width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   h1 {
-    margin-left: 115px;
+    margin-right: 50px;
   }
 }
 .roadmap {
@@ -136,12 +143,12 @@
 .round_oval {
   border: 1px solid rgb(77, 26, 192);
   border-radius: 50px;
-  padding: 12px 13px;
+  padding: 12px 0px;
   width: 170px;
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .first_oval {
   border: 1px solid white;

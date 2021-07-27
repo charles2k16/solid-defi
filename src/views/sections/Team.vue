@@ -1,18 +1,18 @@
 <template>
-  <div class="wrap mb-50">
-    <div class="d-flex-center mt-100">
+  <div class="wrap mb-70">
+    <div class="d-flex-center mt-150">
       <h1 class="lead_head_text2" style="color: rgb(77,26,192);">
         SOLID DEFI TEAM
       </h1>
     </div>
 
-    <div class="blog_div mt-50">
+    <div class="blog_div mt-70">
       <div class="team_div" id="blog1">
         <div class="team_img">
           <img
             src="../../assets/images/justin_dp.png"
             alt="dp"
-            height="150px"
+            height="140px"
           />
         </div>
         <div class="team_cont">
@@ -42,7 +42,7 @@
           <img
             src="../../assets/images/kam_profile.png"
             alt="dp"
-            height="150px"
+            height="110px"
           />
         </div>
         <div class="team_cont">
@@ -57,13 +57,13 @@
           <img
             src="../../assets/images/woody_profile_pic.png"
             alt="dp"
-            height="150px"
+            height="140px"
           />
         </div>
         <div class="team_cont">
-          <span class="d-block">DOT</span>
-          <span class="d-block">@VALUE2VALUE</span>
-          <span class="d-block">CTO</span>
+          <span class="d-block">WOODY BRANDO</span>
+          <span class="d-block">@WOODYBRANDO</span>
+          <span class="d-block">CIO</span>
         </div>
       </div>
     </div>
