@@ -534,9 +534,13 @@ hr.sales_hr {
   padding: 7px;
   border-right: 3px solid #F5AC37
 } */
-
+.ul {
+  width: 500px;
+  border: 1px solid red;
+}
 .roadmap_ul {
   list-style: none;
+  margin-left: 130px;
 }
 .roadmap_ul li{
   margin: 8px 0px;
@@ -550,9 +554,7 @@ hr.sales_hr {
   width: 2em;
   margin-left: -2.3em;
 }
-.ul{
-  width: 250px;
-}
+
 .vl {
   border-left: 1px solid white;
   height: 50px;

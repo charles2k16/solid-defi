@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="d-flex-center mt-70">
+    <div class="d-flex-center mt-100">
       <img
         src="../../assets/images/roadmap.png"
         alt="money"
@@ -14,13 +14,19 @@
     <div class="flex-row-center mt-70">
       <div class="roadmap">
         <div class="first_oval">
-          <div class="yellow_oval">
-            <div class="round_oval">
-              <span>JULY</span>
-              <span>
-                <img src="../../assets/images/dai.png" alt="dai" width="40px" />
-              </span>
-            </div>
+          <div>
+            <img
+              src="../../assets/images/yellow_thing_1.png"
+              alt="icon"
+              class="coma"
+            />
+          </div>
+
+          <div class="round_oval">
+            <span>JULY</span>
+            <span>
+              <img src="../../assets/images/dai.png" alt="dai" width="40px" />
+            </span>
           </div>
         </div>
 
@@ -42,17 +48,15 @@
           </div>
 
           <div class="first_oval">
-            <div class="yellow_oval">
-              <div class="round_oval">
-                <span>AUG</span>
-                <span>
-                  <img
-                    src="../../assets/images/polygon_logo.png"
-                    alt="dai"
-                    width="90px"
-                  />
-                </span>
-              </div>
+            <div class="round_oval">
+              <span>AUG</span>
+              <span>
+                <img
+                  src="../../assets/images/polygon_logo.png"
+                  alt="dai"
+                  width="90px"
+                />
+              </span>
             </div>
           </div>
         </div>
@@ -114,12 +118,12 @@
 .road_image {
   width: 160px;
   transform: scaleX(-1);
-  margin-right: 70px;
+  margin-right: 100px;
 }
 .round_oval {
   border: 1px solid rgb(77, 26, 192);
   border-radius: 50px;
-  padding: 12px 12px;
+  padding: 12px 13px;
   width: 170px;
   height: 70px;
   display: flex;
@@ -130,6 +134,12 @@
   border: 1px solid white;
   border-radius: 50px;
   padding: 5px;
+
+  .coma {
+    height: 15px;
+    float: right;
+    padding-top: 5px;
+  }
 }
 .round_oval span {
   color: rgb(77, 26, 192);

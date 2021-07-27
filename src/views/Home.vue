@@ -67,7 +67,7 @@ export default {
 <style lang="scss" scoped>
 .home_bg {
   margin-top: -20px;
-  background-image: url('../assets/images/homebg2.png');
+  background-image: url('../assets/images/homebg.jpg');
   background-color: #0f121e;
   height: 550px;
   // background-position: center;
