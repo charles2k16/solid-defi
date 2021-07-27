@@ -136,7 +136,7 @@ export default {
     ::after {
       content: ' ';
       position: absolute;
-      left: 38%;
+      left: 42%;
       bottom: -15px;
       border-top: 15px solid #0f121e;
       border-right: 15px solid transparent;
@@ -170,19 +170,19 @@ export default {
 
   .sl_txt {
     margin-top: 5px;
-    font-size: 17px;
+    font-size: 15px;
     text-align: center;
-    line-height: 20px;
+    line-height: 23px;
   }
 }
 .arr {
   .sol_i {
     font-weight: bold;
-    font-size: 35px;
+    font-size: 32px;
     margin-right: 5px;
   }
   .sol_fig {
-    font-size: 35px;
+    font-size: 31px;
     font-weight: 500;
   }
 }
