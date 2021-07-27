@@ -10,7 +10,7 @@
       <div class="team_div" id="blog1">
         <div class="team_img">
           <img
-            src="../../assets/images/charles_dp.png"
+            src="../../assets/images/justin_dp.png"
             alt="dp"
             height="150px"
           />

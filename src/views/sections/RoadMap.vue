@@ -4,7 +4,7 @@
       <img
         src="../../assets/images/roadmap.png"
         alt="money"
-        class="problem_image"
+        class="road_image"
       />
       <h1 class="lead_head_text2" style="color: rgb(77,26,192);">
         2021 ROADMAP
@@ -108,3 +108,11 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.road_image {
+  width: 160px;
+  transform: scaleX(-1);
+  margin-right: 70px;
+}
+</style>

@@ -12,6 +12,12 @@
           <vs-col :w="8" :xs="12" :sm="12">
             <div class="solid_dai_gr">
               <h3>SOLID-DAI BONDING CURVE</h3>
+              <br />
+              <img
+                src="../assets/images/dai_graph_mockup.png"
+                alt="mock"
+                width="600px"
+              />
             </div>
           </vs-col>
 
@@ -57,7 +63,7 @@
                       </span>
                     </div>
 
-                    <span class="dai_pr">2200</span>
+                    <span class="dai_pr">0</span>
                   </div>
                 </div>
 
@@ -71,6 +77,25 @@
               </div>
             </div>
           </vs-col>
+        </vs-row>
+
+        <vs-row class="mt-50">
+          <vs-col :w="4" :xs="12" :sm="12">
+            <div class="dai_locked flex-justify-around-center">
+              <img
+                src="../assets/images/token_lock_icon.png"
+                alt="lock"
+                width="80px"
+              />
+
+              <div>
+                <span class="d-block tt">TOTAL DAI LOCKED </span>
+                <span class="d-block pr">$700,000 </span>
+              </div>
+            </div>
+          </vs-col>
+
+          <vs-col :w="8" :xs="12" :sm="12"> </vs-col>
         </vs-row>
       </div>
     </div>
@@ -210,6 +235,22 @@ export default {
     ::placeholder {
       font-size: 15px;
     }
+  }
+}
+.dai_locked {
+  height: 112px;
+  width: 300px;
+  border-radius: 15px;
+  background: linear-gradient(240deg, #e1c324, #cf6d10);
+
+  .tt {
+    color: whitesmoke;
+  }
+  .pr {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 8px;
   }
 }
 </style>

@@ -24,7 +24,7 @@
           </p>
         </div>
 
-        <div class="d-flex mt-70">
+        <div class="d-flex mt-60">
           <!-- <vs-button gradient color="rgb(6, 30, 65)" blank to="/presale">
             <b>Learn More</b>
           </vs-button> -->

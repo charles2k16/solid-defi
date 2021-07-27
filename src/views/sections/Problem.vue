@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex-center">
       <img
-        src="../../assets/images/money_printing.png"
+        src="../../assets/images/cash_print_mach.png"
         alt="money"
         class="problem_image"
       />
@@ -10,16 +10,13 @@
         PROBLEM
       </h1>
     </div>
+    <br />
     <hr class="hd_rule" />
 
     <vs-row class="mt-70">
       <vs-col :w="7" :xs="12" :sm="12">
         <div class="prob_bg">
           <img src="../../assets/images/raw2.png" alt="" width="450px" />
-          <!-- <div class="prob_box">
-            <span>96%</span>
-            <span>Lost in value</span>
-          </div> -->
         </div>
       </vs-col>
 
@@ -39,12 +36,17 @@
 
     <vs-row class="mt-50">
       <vs-col :w="7" :xs="12" :sm="12">
-        <div class="mr-20">
+        <div class="mr-20 prob2_bg">
           <img src="../../assets/images/rew.png" alt="" width="450px" />
+          <!-- <div class="prob_box flex-row-center">
+            <div class="d-flex-center arr">
+              <span class="material-icons sol_i">
+                arrow_upward
+              </span>
+              <span class="sol_fig">96%</span>
+            </div>
 
-          <!-- <div class="prob_box">
-            <span>96%</span>
-            <span>Lost in value</span>
+            <span class="sl_txt">INCREASE IN MONEY SUPPLY</span>
           </div> -->
         </div>
       </vs-col>
@@ -78,19 +80,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .prob_bg {
-//   width: 480px;
-//   height: 300px;
-//   background-image: url('../../assets/images/usd_power.png');
-//   background-position: center;
+// .prob2_bg {
+//   height: 500px;
+//   background-image: url('../../assets/images/stableCoin-Inflation.png');
 //   background-repeat: no-repeat;
-//   background-size: cover;
+//   background-size: contain;
 // }
-// .prob_box {
-//   height: 120px;
-//   width: 200px;
-//   background: #0f121e;
-//   border-radius: 13px;
-//   padding: 15px;
-// }
+.problem_image {
+  width: 180px;
+  margin-right: 70px;
+}
+.prob_box {
+  height: 110px;
+  width: 180px;
+  background: #0f121e;
+  border-radius: 13px;
+  padding: 10px;
+  color: rgb(186, 206, 245);
+
+  .sl_txt {
+    margin-top: 5px;
+    font-size: 17px;
+    text-align: center;
+  }
+}
+.arr {
+  .sol_i {
+    font-weight: bold;
+    font-size: 35px;
+  }
+  .sol_fig {
+    font-size: 35px;
+    font-weight: bolder;
+  }
+}
 </style>

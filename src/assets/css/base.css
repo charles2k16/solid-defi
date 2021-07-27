@@ -132,7 +132,7 @@ hr.sales_hr {
   font-size: 1.1rem;
   text-align: justify;
   line-height: 1.70rem;
-  color: rgb(160, 157, 157);
+  color: #c4d0fa;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .lead_text-mob {
@@ -244,9 +244,8 @@ hr.sales_hr {
 .mt-70 {
   margin-top: 70px;
 }
-
 .mt-60 {
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
 .mx-10 {
@@ -1689,18 +1688,14 @@ hr.sales_hr {
   background-image: url('../images/globe-particle.png');
   background-size: cover;
 } */
-.problem_image {
-  width: 160px;
-  transform: scaleX(-1);
-  margin-right: 70px;
-}
+
 .solution_image {
   width: 120px;
   margin-right: 70px;
   margin-top: 20px;
 }
 hr.hd_rule {
-  border: 1px solid rgb(121, 120, 120);
+  border: 1px solid #c4d0fa;
   width: 300px;
   margin: auto;
 }
