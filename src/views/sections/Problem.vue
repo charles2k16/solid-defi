@@ -127,7 +127,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding-top: 50px;
-  padding-left: 150px;
+  padding-left: 190px;
 
   .arr-d {
     z-index: 2;
@@ -151,7 +151,7 @@ export default {
   background-size: contain;
 }
 .prob2_bg {
-  height: 350px;
+  height: 358px;
   background-image: url('../../assets/images/stableCoin-Inflation.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -172,6 +172,7 @@ export default {
     margin-top: 5px;
     font-size: 17px;
     text-align: center;
+    line-height: 20px;
   }
 }
 .arr {
@@ -182,7 +183,7 @@ export default {
   }
   .sol_fig {
     font-size: 35px;
-    font-weight: bolder;
+    font-weight: 500;
   }
 }
 </style>
