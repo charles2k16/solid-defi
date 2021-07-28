@@ -77,20 +77,4 @@ export default {
   // -o-box-shadow: inset 0px 850px 500px -500px #222848;
   box-shadow: inset -3px -340px 500px -250px #222848;
 }
-.home_bg:before,
-.home_bg:after {
-  content: '';
-  position: absolute;
-  left: 0%;
-  opacity: 0.6;
-}
-.home_bg:before {
-  top: 0%;
-  width: 100%;
-  height: 100%;
-  // -moz-box-shadow: inset 0px 850px 500px -500px #000;
-  // -webkit-box-shadow: inset 0px 850px 500px -500px #000;
-  // -o-box-shadow: inset 0px 850px 500px -500px #000;
-  box-shadow: inset -3px -340px 500px -200px #222848;
-}
 </style>
