@@ -26,7 +26,12 @@
           <div class="round_oval" style="margin-top:-28px;">
             <span>JULY</span>
             <span>
-              <img src="../../assets/images/dai.png" alt="dai" width="40px" />
+              <img
+                src="../../assets/images/dai.png"
+                alt="dai"
+                width="40px"
+                class="mt-3 mr-5"
+              />
             </span>
           </div>
         </div>
@@ -91,6 +96,7 @@
                     src="../../assets/images/logo_circle.png"
                     alt="dai"
                     width="40px"
+                    class="mt-3 mr-5"
                   />
                 </span>
               </div>

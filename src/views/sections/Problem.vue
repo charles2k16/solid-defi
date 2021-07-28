@@ -138,7 +138,7 @@ export default {
       position: absolute;
       left: 42%;
       bottom: -15px;
-      border-top: 15px solid #191e33;
+      border-top: 15px solid #191a32;
       border-right: 15px solid transparent;
       border-left: 15px solid transparent;
     }
@@ -164,7 +164,7 @@ export default {
   height: 110px;
   width: 180px;
   // background: #0f121e;
-  background: linear-gradient(180deg, #150f27ff 39%, #191e33);
+  background: linear-gradient(180deg, #150f27ff 39%, #191a32);
   border-radius: 13px;
   padding: 10px;
   color: rgb(186, 206, 245);

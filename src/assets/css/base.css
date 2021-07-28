@@ -219,6 +219,9 @@ hr.sales_hr {
 .mt-5 {
   margin-top: 5px;
 }
+.mt-3 {
+  margin-top: 3px;
+}
 
 .mt-40 {
   margin-top: 40px;
@@ -271,6 +274,9 @@ hr.sales_hr {
 
 .mr {
   margin-right: 6px;
+}
+.mr-5{
+  margin-right: 5px;
 }
 
 .mr-10 {
@@ -1287,7 +1293,7 @@ hr.sales_hr {
   padding-top: 5px;
 }
 .team_cont span {
-  margin: 8px 0px 8px 30px;
+  margin: 8px 0px 8px 34px;
   font-size: 13px;
   color: whitesmoke;
 }

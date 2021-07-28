@@ -70,7 +70,11 @@ export default {
   background-image: url('../assets/images/homebg.jpg');
   background-color: #0f121e;
   height: 550px;
-  // background-position: center;
   background-size: cover;
+  position: relative;
+  // -moz-box-shadow: inset 0px 850px 500px -500px #fff;
+  // -webkit-box-shadow: inset 0px 850px 500px -500px #fff;
+  // -o-box-shadow: inset 0px 850px 500px -500px #fff;
+  // box-shadow: inset 0px 450px 400px -500px #fff;
 }
 </style>
