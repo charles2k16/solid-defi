@@ -59,7 +59,7 @@
                 />
               </span>
             </div>
-            <div class="comma_div3">
+            <div class="comma_div2">
               <img src="../../assets/images/yellow_thing_2.png" alt="icon" />
             </div>
           </div>
@@ -94,6 +94,13 @@
                   />
                 </span>
               </div>
+            </div>
+            <div class="comma_div3">
+              <img
+                src="../../assets/images/yellow_thing_1.png"
+                alt="icon"
+                class="coma"
+              />
             </div>
           </div>
         </div>
@@ -170,7 +177,7 @@
     }
   }
 
-  .comma_div3 {
+  .comma_div2 {
     z-index: 2;
     position: relative;
     float: right;
@@ -181,6 +188,21 @@
 
     img {
       width: 10px;
+    }
+  }
+
+  .comma_div3 {
+    z-index: 2;
+    position: relative;
+    float: right;
+    // margin-bottom: -20px;
+    margin-top: -20px;
+    // margin-right: 2px;
+    // padding: 0px 0px 0px 0px;
+    transform: scaleY(-1);
+
+    img {
+      width: 35px;
     }
   }
 }
