@@ -57,7 +57,7 @@
           <img
             src="../../assets/images/woody_profile_pic.png"
             alt="dp"
-            height="140px"
+            height="130px"
           />
         </div>
         <div class="team_cont">

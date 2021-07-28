@@ -181,10 +181,8 @@
     z-index: 2;
     position: relative;
     float: right;
-    // margin-bottom: -20px;
     margin-top: -59px;
     margin-right: -7px;
-    // padding: 0px 0px 0px 0px;
 
     img {
       width: 10px;
@@ -195,10 +193,7 @@
     z-index: 2;
     position: relative;
     float: right;
-    // margin-bottom: -20px;
     margin-top: -20px;
-    // margin-right: 2px;
-    // padding: 0px 0px 0px 0px;
     transform: scaleY(-1);
 
     img {
