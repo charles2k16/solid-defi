@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <div class="d-flex-center mt-100">
+    <div class="d-flex-center mt-150">
       <div style="text-align:center">
         <!-- <span class="insights" style="color: #FCB42A;"
           >Have any questions for us?</span

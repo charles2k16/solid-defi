@@ -116,7 +116,7 @@ hr.sales_hr {
     sans-serif; */
 }
 .icx {
-  color: #362652;
+  color: #453a72;
   font-weight: bold;
   font-size: 28px;
 }
@@ -1273,7 +1273,7 @@ hr.sales_hr {
 .team_img {
   background-color: #424473;
   border-radius: 30px;
-  height: 180px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;

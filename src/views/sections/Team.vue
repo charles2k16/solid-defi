@@ -1,6 +1,6 @@
 <template>
   <div class="wrap mb-70">
-    <div class="d-flex-center mt-150">
+    <div class="d-flex-center mt-120">
       <h1 class="lead_head_text2" style="color: rgb(77,26,192);">
         SOLID DEFI TEAM
       </h1>

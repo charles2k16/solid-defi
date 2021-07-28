@@ -97,14 +97,14 @@
             <!-- second dai loacked -->
             <div class="dai_locked flex-justify-between-center mt-20">
               <img
-                src="../assets/images/token_lock_icon.png"
+                src="../assets/images/sld_trading_volume.png"
                 alt="lock"
-                width="80px"
+                width="60px"
               />
 
               <div>
                 <span class="d-block tt">TRADING VOLUME </span>
-                <span class="d-block pr">$700,000 </span>
+                <span class="d-block pr">$70,000 </span>
                 <span class="d-block hr">+10,000(24hr)</span>
               </div>
             </div>
@@ -270,7 +270,8 @@ export default {
   height: 112px;
   width: 300px;
   border-radius: 20px;
-  background: linear-gradient(240deg, #e1c324, #cf6d10);
+  // background: linear-gradient(240deg, #e1c324, #cf6d10);
+  background: linear-gradient(240deg, #cf6d10 13%, #e1c324 42%);
   padding: 10px 25px 10px 10px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 
