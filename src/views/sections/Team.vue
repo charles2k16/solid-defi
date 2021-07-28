@@ -28,6 +28,7 @@
             src="../../assets/images/charles_dp.png"
             alt="dp"
             height="150px"
+            style="margin-bottom:10px;"
           />
         </div>
         <div class="team_cont">
@@ -42,7 +43,8 @@
           <img
             src="../../assets/images/kam_profile.png"
             alt="dp"
-            height="110px"
+            height="130px"
+            style="margin-top:15px;"
           />
         </div>
         <div class="team_cont">
@@ -57,7 +59,7 @@
           <img
             src="../../assets/images/woody_profile_pic.png"
             alt="dp"
-            height="130px"
+            height="140px"
           />
         </div>
         <div class="team_cont">
