@@ -67,14 +67,15 @@ export default {
 <style lang="scss" scoped>
 .home_bg {
   margin-top: -20px;
-  background-image: url('../assets/images/homebg.jpg');
+  background-image: url('../assets/images/home.jpg');
   // background-color: #0f121e;
-  height: 560px;
+  height: 680px;
+  width: 100%;
   background-size: cover;
   position: relative;
-  // -moz-box-shadow: inset 0px 850px 500px -500px #fff;
-  // -webkit-box-shadow: inset 0px 850px 500px -500px #fff;
-  // -o-box-shadow: inset 0px 850px 500px -500px #222848;
+  -moz-box-shadow: inset -3px -340px 500px -250px #222848;
+  -webkit-box-shadow: inset -3px -340px 500px -250px #222848;
+  -o-box-shadow: inset -3px -340px 500px -250px #222848;
   box-shadow: inset -3px -340px 500px -250px #222848;
 }
 </style>

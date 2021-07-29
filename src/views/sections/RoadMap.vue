@@ -39,9 +39,8 @@
         <div class="ul">
           <ul class="roadmap_ul">
             <li>Solid Webpage Launch</li>
-            <li>SolidDAI Contract launch</li>
-            <li>Presale genesis NFT Airdrop</li>
-            <li>SolidFoundry Dapp Testnet</li>
+            <li>SolidSOLID Rinkeby Testnet Contract Launch</li>
+            <li>SolidDAI Rinkeby Testnet Contract Launch</li>
           </ul>
         </div>
       </div>
@@ -73,7 +72,11 @@
         <div class="ul">
           <ul class="roadmap_ul ul2">
             <li>Polygon host Solid Team AMA</li>
+            <li>SolidFoundry Dapp Testnet</li>
             <li>SolidDAI Bonding Curve Released</li>
+            <li>SolidDAI Contract launch</li>
+            <li>Presale genesis NFT Airdrop</li>
+
             <li>
               1st Solid LP on Quick Swap to farm - SolidSOLID / SolidDAI
             </li>

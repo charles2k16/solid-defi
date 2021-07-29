@@ -38,9 +38,11 @@
           <p class="lead_text_inf mt-20">
             It’s ironic that a token pegged 1:1 to USD should be called a
             “stablecoin”. Nothing about this USD chart implies stability. Since
-            its inception, the dollar has lost over 96% of its value. The only
-            sure thing about the dollar is that it’s purchasing power will
-            continue to decrease.
+            its inception, the dollar has lost over 96% of its value.
+            <b
+              >The only sure thing about the dollar is that it’s purchasing
+              power will continue to decrease.</b
+            >
           </p>
         </div>
       </vs-col>
@@ -93,14 +95,14 @@
 
           <p class="lead_text_inf mt-20">
             The Fed printed 65% of the entire supply of USD in the last 18
-            months. In response the price of Lumber hit 5x and Gasoline 2x and
-            stablecoins have printed exponential charts:
+            months. In response, the price of Lumber hit 5x, Gasoline 2x and
+            stablecoins printed exponential charts.
           </p>
           <br /><br />
           <p class="lead_text_inf">
             Janet Yellen just admitted USD inflation in the month of June 2021
             alone was 5% and that’s with massaged numbers. How safe is it to
-            hold stablecoins that lozok to be losing half their buying power
+            hold stablecoins that look to be losing half their buying power
             every six months? It’s time for a legitimate “stablecoin”.
           </p>
         </div>

@@ -57,7 +57,7 @@ export default {
         {
           title: 'What is the Solid Token ?',
           answer:
-            'Solid is the governance token of the solid defi protocol. it is used to vote on future solid bonding curves and gets you access to be first to fund aka in at the lowest price',
+            'Solid is the governance token of the Solid Defi protocol. Solid is used to vote on future Solid Bonding Curves and gets you "First to Fund" access aka gets you into new bonding curves at the lowest price.',
         },
         {
           title: 'What is the Solid Bonding Curve (aka. SBC) ?',
@@ -67,7 +67,7 @@ export default {
         {
           title: 'What is SolidDAI ?',
           answer:
-            'SolidDAI is a bonding curve based token. The solid bonding curve prices it according to the square root of supply and buys it back at the same price minus a dynamic selling fee given to all SolidDAI holders.',
+            'SolidDAI is our first Solid Bonding Curve based token. The Solid bonding curve prices SolidDAI according to the square root of its supply. The SBC also buys it back at the same price minus a dynamic selling fee which is given in DAI to all SolidDAI holders.',
         },
         {
           title: 'How does the SolidDAI dynamic fee work ?',
@@ -77,7 +77,7 @@ export default {
         {
           title: 'How is the SolidDAI reward distributed?',
           answer:
-            'The SolidDAI rewards are given in DAI and are accumulated passively, no need to be staking your SolidDAI to accumulate rewards. To claim rewards go to the SolidFoundry, connect your Metamask wallet, select the SolidDAI icon on the left and then click the claim button on the lower left of the screen.',
+            'The SolidDAI rewards are given in DAI and are accumulated passively, no need to be staking your SolidDAI to accumulate rewards. To claim rewards go to the SolidFoundry, connect your Metamask wallet and then click the "claim" button.',
         },
       ],
       faqs2: [
@@ -94,18 +94,18 @@ export default {
         {
           title: 'How will the initial SolidDAI supply be distributed ?',
           answer:
-            'The SolidDAI minted from the initial funding of the bonding curve will be airdropped to your metamask address on the polygon network',
+            'For presale participants, the SolidDAI minted from the initial funding of the bonding curve will be airdropped to your metamask address on the polygon network.',
         },
         {
           title:
             'How much of the presale funds will go into the Solid Bonding Curve ?',
           answer:
-            'Anywhere from 25% to 75% of the presale funds raised will be used to fund the soliddai contract. The soliddai minted will go to the presale holders of the solid governance token.',
+            'Anywhere from 25% to 75% of the presale funds raised will be used to fund the SolidDAI contract. The SolidDAI minted will go to the presale holders of our governance token, Solid.',
         },
         {
           title: 'What will be the next Solid Bonding Curve Token ?',
           answer:
-            'This will be decided by the solid community. By voting with their solid they will get to be the first into the next Solid Bonding Curve. Each month a new Solid Bonding Curve token will be issued giving solid holders a chance each month to fund a new bonding curve.',
+            'This will be voted on by the Solid community. Each month a new Solid Bonding Curve token will be issued giving Solid holders a chance each month to get the best price on the latest Solid Bonding Curve.',
         },
       ],
     };

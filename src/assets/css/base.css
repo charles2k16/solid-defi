@@ -548,16 +548,16 @@ hr.sales_hr {
 
 .vl {
   border-left: 1px solid white;
-  height: 75px;
-  margin-top: -55px;
+  height: 124px;
+  margin-top: -121px;
 }
 .ul2 {
   margin-top: 40px;
 }
 .vl2 {
   border-left: 1px solid white;
-  height: 74px;
-  margin-top: -135px;
+  height: 129px;
+  margin-top: -190px;
 }
 
 .ilustrations {
@@ -1278,6 +1278,9 @@ hr.sales_hr {
 }
 .team_img {
   background-color: #424473;
+  background-image: url("../images/team_bg.jpg");
+  background-size: cover;
+  position: relative;
   border-radius: 30px;
   height: 200px;
   display: flex;

@@ -66,11 +66,13 @@
             SolidUSDT: PURCHASING POWER INCREASES WITH INFLATION
           </h2>
           <p class="lead_text_inf mt-20" style="color:#7a83a1">
-            With Solid Defi, the Fed can print all they want, it just gives the
-            market more USDt to add to the Solid Bonding curve. Since the Solid
-            Bonding Curve issues SolidUSDT priced at the square root of supply
-            the more the SolidUSDT supply inflates, the greater the purchasing
-            power will be for each SolidUSDT.
+            With Solid Defi the Fed can print all they want. They're just giving
+            the market more USDt to add to the Solid Bonding curve. Screen
+            reader support enabled. Turn on screen reader support Renaissance
+            Now has joined the document.. Since the Solid Bonding Curve issues
+            SolidUSDT priced at the square root of supply the more the SolidUSDT
+            supply inflates, the greater the purchasing power will be for each
+            SolidUSDT.
           </p>
         </div>
       </vs-col>
@@ -83,8 +85,8 @@
             Buy Price =
             <span class="white">(3/2*x+s**(3/2))**(2/3)-s</span> = The square
             root of supply Sell Price =
-            <span class="white">Integral of x**(½) dx = ⅔*x**(3/2) + c x</span>
-            = The amount in USDt you are sending to the Solid Bonding Curve
+            <span class="white">Integral of x**(½) dx = ⅔*x**(3/2) + c</span>
+            x = The amount in USDt you are sending to the Solid Bonding Curve
             Contract s = The current supply of solidUSDt
           </p>
         </div>
@@ -112,7 +114,7 @@
       <vs-col :w="6" :xs="12" :sm="12">
         <div class="ml-20">
           <h2 class="white">
-            SOLIDDAI REWARDS UP TO 20% OF VALUE OF CRYPTO SHAKEOUT
+            SOLIDDAI REWARDS RETURN UP TO 20% OF CRYPTO SHAKEOUTS
           </h2>
 
           <p class="lead_text_inf mt-20" style="color:#7a83a1">

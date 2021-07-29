@@ -20,7 +20,7 @@
 
         <div class="mt-50">
           <p class="lead_head_text2">
-            The first stablecoin <br />To profit from inflation
+            The first stablecoin <br />to profit from inflation
           </p>
         </div>
 

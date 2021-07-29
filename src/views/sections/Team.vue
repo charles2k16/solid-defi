@@ -64,7 +64,7 @@
         </div>
         <div class="team_cont">
           <span class="d-block">WOODY BRANDO</span>
-          <span class="d-block">@WOODYBRANDO</span>
+          <span class="d-block">@WOODYBRAND0x</span>
           <span class="d-block">CIO</span>
         </div>
       </div>
