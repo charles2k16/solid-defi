@@ -365,38 +365,15 @@ hr.sales_hr {
   align-items: center;
   justify-content: center;
 }
-
 .head_text {
   color: #d4d3d3;
   font-size: 1.3rem;
   padding: 5px;
 }
-
 .head_text-1 {
   color: #FFFFFF;
   font-size: 1.2rem;
 }
-
-.swap_form_div {
-  /* border: 2px solid #202131; */
-  padding: 10px;
-  /* border-top-left-radius: 20px;
-  border-top-right-radius: 20px; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.swap_form_div_tks {
-  /* border: 2px solid #202131; */
-  margin-top: -15px;
-  /* border-top-left-radius: 20px;
-  border-top-right-radius: 20px; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .wallet-not {
   color: #511bb7;
   font-size: 13px;
@@ -1029,26 +1006,21 @@ hr.sales_hr {
   margin-top: -7px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
-
 .percentage_off {
   font-size: 23px;
   font-family: Montserrat;
   color: #091750;
 }
-
 .animate {
   background-image: linear-gradient(to right, #4417b6, #7a1eda, #4417b6, #2c1254, #2c1254);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: move 200s linear infinite;
 }
-
 @keyframes move {
   to {
     background-position: 4500vh;
   }
 }
-
 .num_input {
   background: transparent;
   border: 1px solid rgb(99, 97, 97);

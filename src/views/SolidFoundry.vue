@@ -13,11 +13,7 @@
             <div class="solid_dai_gr">
               <h3>SOLID-DAI BONDING CURVE</h3>
               <br />
-              <img
-                src="../assets/images/dai_graph_mockup.png"
-                alt="mock"
-                width="600px"
-              />
+              <div class="bg-dai"></div>
             </div>
           </vs-col>
 
@@ -81,11 +77,13 @@
 
         <vs-row class="mt-50">
           <vs-col :w="4" :xs="12" :sm="12">
-            <div class="dai_locked flex-justify-between-center">
+            <div
+              class="dai_locked_boxes dai_locked flex-justify-between-center"
+            >
               <img
                 src="../assets/images/token_lock_icon.png"
                 alt="lock"
-                width="80px"
+                width="85px"
               />
 
               <div>
@@ -95,36 +93,69 @@
             </div>
 
             <!-- second dai loacked -->
-            <div class="dai_locked flex-justify-between-center mt-20">
+            <div
+              class="dai_locked_boxes dai_volume flex-justify-between-center mt-20"
+            >
               <img
                 src="../assets/images/sld_trading_volume.png"
                 alt="lock"
-                width="60px"
+                width="63px"
               />
 
               <div>
                 <span class="d-block tt">TRADING VOLUME </span>
                 <span class="d-block pr">$70,000 </span>
-                <span class="d-block hr">+10,000(24hr)</span>
+                <span class="d-block hr">+10,000 (24hr)</span>
               </div>
             </div>
 
             <!-- third dai locked -->
-            <div class="dai_locked flex-justify-between-center mt-20">
+            <div
+              class="dai_locked_boxes dai_reward flex-justify-between-center mt-20"
+            >
               <img
-                src="../assets/images/token_lock_icon.png"
+                src="../assets/images/sld_reward_icon.png"
                 alt="lock"
                 width="80px"
               />
 
               <div>
-                <span class="d-block tt">TOTAL DAI LOCKED </span>
-                <span class="d-block pr">$700,000 </span>
+                <span class="d-block tt">
+                  <span style="color:#29f96c">DAI Reward</span> to <br />
+                  SOLID-DAI holders
+                </span>
+                <span class="d-block pr">$50,000 </span>
+                <span class="d-block hr">+5,000 (24hr)</span>
               </div>
             </div>
           </vs-col>
 
-          <vs-col :w="8" :xs="12" :sm="12"> </vs-col>
+          <vs-col :w="8" :xs="12" :sm="12">
+            <div class="grapgh_an">
+              <h3>SOLID-DAI BONDING CURVE</h3>
+              <br />
+              <div class="graph_bg"></div>
+            </div>
+          </vs-col>
+        </vs-row>
+
+        <vs-row class="mt-50">
+          <vs-col :w="4" :xs="12" :sm="12">
+            <div class="dai_locked_boxes dai_lending">
+              <div>
+                <span class="d-block pr">SOLID LENDING</span>
+                <span class="d-block tt">Coming Soon</span>
+              </div>
+            </div>
+          </vs-col>
+
+          <vs-col :w="8" :xs="12" :sm="12">
+            <img
+              src="../assets/images/sld_solid_game_banner.jpg"
+              alt="mock"
+              class="solid_gm_img"
+            />
+          </vs-col>
         </vs-row>
       </div>
     </div>
@@ -162,6 +193,22 @@ export default {
     font-weight: 530;
   }
 }
+.grapgh_an {
+  border: 1px solid #171938;
+  background: #171938;
+  height: 375px;
+  border-radius: 15px;
+  padding: 20px 10px;
+  color: rgb(223, 222, 222);
+
+  .graph_bg {
+    height: 300px;
+    background-image: url('../assets/images/solid-dai_price_graph.png');
+    // background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+}
 .solid_dai_gr {
   border: 1px solid #171938;
   background: #171938;
@@ -169,6 +216,14 @@ export default {
   border-radius: 15px;
   padding: 20px 10px;
   color: rgb(223, 222, 222);
+
+  .bg-dai {
+    height: 280px;
+    background-image: url('../assets/images/dai_graph_mockup.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 .swap {
   padding: 20px 10px;
@@ -266,30 +321,80 @@ export default {
     }
   }
 }
-.dai_locked {
+.dai_locked_boxes {
   height: 112px;
-  width: 300px;
+  width: 282px;
   border-radius: 20px;
-  // background: linear-gradient(240deg, #e1c324, #cf6d10);
-  background: linear-gradient(240deg, #cf6d10 13%, #e1c324 42%);
-  padding: 10px 25px 10px 10px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 
   .tt {
-    color: whitesmoke;
     font-size: 14px;
-    font-weight: bold;
   }
   .pr {
-    color: whitesmoke;
     font-weight: bold;
     font-size: 20px;
     margin-top: 5px;
+    font-family: Montserrat;
   }
   .hr {
-    color: whitesmoke;
+    color: #a09dc5;
     font-size: 14px;
     margin-top: 5px;
   }
+}
+.dai_locked {
+  background: linear-gradient(240deg, #e1af24 20%, #cf6d10 50%);
+  padding: 10px 40px 10px 10px;
+
+  .tt {
+    color: whitesmoke;
+  }
+  .pr {
+    color: whitesmoke;
+  }
+}
+.dai_volume {
+  background: #5a5581;
+  padding: 10px 40px 10px 20px;
+
+  .tt {
+    color: #a09dc5;
+  }
+  .pr {
+    color: #a09dc5;
+  }
+}
+.dai_reward {
+  background: #393e63;
+  padding: 10px 40px 10px 20px;
+
+  .tt {
+    color: #a09dc5;
+  }
+  .pr {
+    color: #29f96c;
+  }
+}
+.dai_lending {
+  background: url('../assets/images/lending_banner.png');
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px 10px 0px;
+
+  .tt {
+    color: #3e3f6f;
+    font-size: 14px;
+  }
+  .pr {
+    color: #3e3f6f;
+    font-size: 15px;
+  }
+}
+.solid_gm_img {
+  width: 620px;
+  border-radius: 20px;
+  margin-left: 5px;
 }
 </style>

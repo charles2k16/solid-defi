@@ -67,12 +67,10 @@
           </h2>
           <p class="lead_text_inf mt-20" style="color:#7a83a1">
             With Solid Defi the Fed can print all they want. They're just giving
-            the market more USDt to add to the Solid Bonding curve. Screen
-            reader support enabled. Turn on screen reader support Renaissance
-            Now has joined the document.. Since the Solid Bonding Curve issues
-            SolidUSDT priced at the square root of supply the more the SolidUSDT
-            supply inflates, the greater the purchasing power will be for each
-            SolidUSDT.
+            the market more USDt to add to the Solid Bonding curve. Since the
+            Solid Bonding Curve issues SolidUSDT priced at the square root of
+            supply the more the SolidUSDT supply inflates, the greater the
+            purchasing power will be for each SolidUSDT.
           </p>
         </div>
       </vs-col>

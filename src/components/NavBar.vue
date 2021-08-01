@@ -18,7 +18,12 @@
       </template>
       <!-- to="/solidfoundry" -->
       <template #right>
-        <vs-button class="airdrop_btn" blank id="airdrop_btn_nav">
+        <vs-button
+          class="airdrop_btn"
+          blank
+          id="airdrop_btn_nav"
+          to="/solidfoundry"
+        >
           <b>Go to App</b>
         </vs-button>
         <!-- <vs-button
