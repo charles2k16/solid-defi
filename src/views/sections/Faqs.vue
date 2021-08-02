@@ -11,7 +11,7 @@
       </div>
     </div>
     <vs-row class="mt-50">
-      <vs-col :w="6">
+      <vs-col :w="6" :xs="12" :sm="12">
         <el-collapse accordion class="mr-10">
           <el-collapse-item
             v-for="(faq, index) in faqs1"
@@ -27,7 +27,7 @@
           </el-collapse-item>
         </el-collapse>
       </vs-col>
-      <vs-col :w="6">
+      <vs-col :w="6" :xs="12" :sm="12">
         <el-collapse accordion class="mr-10">
           <el-collapse-item
             v-for="(faq, index) in faqs2"
