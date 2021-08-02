@@ -94,3 +94,39 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
+// Collapse Item
+
+.el-collapse-item__header {
+  background-color: transparent;
+  font-size: 16px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  border-bottom: none !important;
+  color: #5943cf;
+  line-height: 24px;
+  font-weight: bold;
+}
+.el-collapse-item__wrap {
+  background-color: transparent;
+}
+.el-collapse-item {
+  margin-bottom: 15px;
+  // border: 1px solid #cbc8ff;
+  padding: 5px;
+}
+.el-collapse {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+.el-collapse-item__content {
+  padding-bottom: 20px !important;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #7c5cf3;
+  line-height: 1.769230769230769;
+}
+.el-collapse-item__wrap {
+  border-bottom: none !important;
+}

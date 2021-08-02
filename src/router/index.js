@@ -4,14 +4,15 @@ import VueRouter from 'vue-router';
 import Home from '@/views/Home';
 import AirDrop from '@/views/AirDrop';
 import BuyNft from '@/views/BuyNft';
+import Presale from '@/views/Presale';
 import RefferalCount from '@/views/RefferalCount';
+import SolidFoundry from '@/views/SolidFoundry';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    alias: ['/eth', '/matic'],
     name: 'Home',
     component: Home,
   },
@@ -26,9 +27,20 @@ const routes = [
     component: BuyNft,
   },
   {
+    path: '/presale',
+    alias: ['/eth', '/matic', '/wEth'],
+    name: 'Presale',
+    component: Presale,
+  },
+  {
     path: '/refferal-airdropcount',
     name: 'RefferalCount',
     component: RefferalCount,
+  },
+  {
+    path: '/solidfoundry',
+    name: 'Foundry',
+    component: SolidFoundry,
   },
 ];
 

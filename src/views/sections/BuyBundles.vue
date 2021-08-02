@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div class="d-flex-center">
+      <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn">
+        <b>Get AirDrop</b>
+      </vs-button>
+    </div>
+    <GetSolidHeader />
+
     <div class="wrap_bundle">
       <div class="mt-50">
         <vs-row class="mt-20">
@@ -18,7 +25,7 @@
 
               <div class="tab">
                 <button class="tablinks active" @click="openTab($event, 'eth')">
-                  <a href="#eth" style="text-decoration:none;">
+                  <a href="#eth" style="text-decoration: none">
                     <div class="flex-justify-evenly-center">
                       <div
                         class="flex-row-center"
@@ -32,38 +39,32 @@
 
                         <span class="mt-20"><b>ETH</b></span>
                       </div>
-                      <div class="mx-20">
-                        <h3 class="stock_bold">40,000</h3>
-                        <br />
-                        <span
-                          class="d-block stock"
-                          v-if="smallBundle == 'loading'"
-                        >
-                          <span class="wallet-not"
-                            >Wallet not connected to eth</span
+                      <div class="mx-10">
+                        <div>
+                          <span class="stock1">20K - </span>
+                          <span
+                            class="wallet-not"
+                            v-if="bigBundle == 'loading'"
                           >
-                        </span>
-
-                        <span class="d-block stock" v-else
-                          >Stock: {{ smallBundle }}</span
-                        >
-                        <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
-                      </div>
-                      <div style="margin-right:10px">
-                        <h3 class="stock_bold">80,000</h3>
-                        <br />
-                        <span
-                          class="d-block stock"
-                          v-if="bigBundle == 'loading'"
-                        >
-                          <span class="wallet-not"
-                            >Wallet not connected to eth</span
+                            Connect to Eth
+                          </span>
+                          <span class="stock" v-else>
+                            Stock: {{ bigBundle }}</span
                           >
-                        </span>
+                        </div>
 
-                        <span class="d-block stock" v-else
-                          >Stock: {{ bigBundle }}</span
-                        >
+                        <div class="mt-12">
+                          <span class="stock1">5K - </span>
+                          <span
+                            class="wallet-not"
+                            v-if="smallBundle == 'loading'"
+                          >
+                            Connect to Eth
+                          </span>
+                          <span class="stock" v-else
+                            >Stock: {{ smallBundle }}</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </a>
@@ -72,62 +73,72 @@
                   class="tablinks opacity"
                   @click="openTab($event, 'wEth')"
                 >
-                  <div class="flex-justify-evenly-center">
-                    <div
-                      class="flex-row-center"
-                      :id="
-                        ethMaticSmallStock == 'loading' ? 'bundle_logo' : 'none'
-                      "
-                    >
-                      <img
-                        src="../assets/images/eth.png"
-                        alt="weth"
-                        width="60px"
-                      />
+                  <a href="#wEth" style="text-decoration: none">
+                    <div class="flex-justify-evenly-center">
+                      <div
+                        class="flex-row-center"
+                        :id="
+                          ethMaticSmallStock == 'loading'
+                            ? 'bundle_logo'
+                            : 'none'
+                        "
+                      >
+                        <img
+                          src="../assets/images/eth.png"
+                          alt="weth"
+                          width="60px"
+                        />
 
-                      <span class="mt-20"><b>wETH</b></span>
+                        <span class="mt-20"><b>wETH</b></span>
+                      </div>
+                      <div class="mx-10">
+                        <div>
+                          <span class="stock1">20K - </span>
+                          <span
+                            class="wallet-not"
+                            v-if="ethMaticBigStock == 'loading'"
+                          >
+                            Connect to Matic
+                          </span>
+                          <span class="stock" v-else>
+                            Stock: {{ ethMaticBigStock }}</span
+                          >
+                        </div>
+
+                        <div class="mt-12">
+                          <span class="stock1">10K - </span>
+                          <span
+                            class="wallet-not"
+                            v-if="ethMaticMediumStock == 'loading'"
+                          >
+                            Connect to Matic
+                          </span>
+                          <span class="stock" v-else
+                            >Stock: {{ ethMaticMediumStock }}</span
+                          >
+                        </div>
+
+                        <div class="mt-12">
+                          <span class="stock1">5K - </span>
+                          <span
+                            class="wallet-not"
+                            v-if="ethMaticSmallStock == 'loading'"
+                          >
+                            Connect to Matic
+                          </span>
+                          <span class="stock" v-else
+                            >Stock: {{ ethMaticSmallStock }}</span
+                          >
+                        </div>
+                      </div>
                     </div>
-                    <div class="mx-20">
-                      <h3 class="stock_bold">40,000</h3>
-                      <br />
-                      <span
-                        class="d-block stock"
-                        v-if="ethMaticSmallStock == 'loading'"
-                      >
-                        <span class="wallet-not"
-                          >Wallect not connected to Matic</span
-                        >
-                      </span>
-
-                      <span class="d-block stock" v-else
-                        >Stock: {{ ethMaticSmallStock }}</span
-                      >
-
-                      <!-- <span class="d-block stock mt-5">Owned: 0</span> -->
-                    </div>
-                    <div style="margin-right:10px">
-                      <h3 class="stock_bold">80,000</h3>
-                      <br />
-                      <span
-                        class="d-block stock"
-                        v-if="ethMaticBigStock == 'loading'"
-                      >
-                        <span class="wallet-not"
-                          >Wallect not connected to Matic</span
-                        >
-                      </span>
-
-                      <span class="d-block stock" v-else
-                        >Stock: {{ ethMaticBigStock }}</span
-                      >
-                    </div>
-                  </div>
+                  </a>
                 </button>
                 <button
                   class="tablinks opacity"
                   @click="openTab($event, 'matic')"
                 >
-                  <a href="#matic" style="text-decoration:none;">
+                  <a href="#matic" style="text-decoration: none">
                     <div class="flex-justify-evenly-center">
                       <div
                         class="flex-row-center"
@@ -143,37 +154,44 @@
 
                         <span class="mt-20"><b>MATIC</b></span>
                       </div>
-                      <div class="mx-20">
-                        <h3 class="stock_bold">40,000</h3>
-                        <br />
-                        <span
-                          class="d-block stock"
-                          v-if="maticSmallStock == 'loading'"
-                        >
-                          <span class="wallet-not"
-                            >Wallect not connected to Matic</span
+                      <div class="mx-10">
+                        <div>
+                          <span class="stock1">20K - </span>
+                          <span
+                            class="wallet-not"
+                            v-if="maticBigStock == 'loading'"
                           >
-                        </span>
-
-                        <span class="d-block stock" v-else
-                          >Stock: {{ maticSmallStock }}</span
-                        >
-                      </div>
-                      <div style="margin-right:10px">
-                        <h3 class="stock_bold">80,000</h3>
-                        <br />
-                        <span
-                          class="d-block stock"
-                          v-if="ethMaticBigStock == 'loading'"
-                        >
-                          <span class="wallet-not"
-                            >Wallect not connected to Matic</span
+                            Connect to Matic
+                          </span>
+                          <span class="stock" v-else>
+                            Stock: {{ maticBigStock }}</span
                           >
-                        </span>
+                        </div>
+                        <div class="mt-12">
+                          <span class="stock1">10K - </span>
+                          <span
+                            class="wallet-not"
+                            v-if="maticMediumStock == 'loading'"
+                          >
+                            Connect to Matic
+                          </span>
+                          <span class="stock" v-else
+                            >Stock: {{ maticMediumStock }}</span
+                          >
+                        </div>
 
-                        <span class="d-block stock" v-else
-                          >Stock: {{ maticBigStock }}</span
-                        >
+                        <div class="mt-12">
+                          <span class="stock1">5K - </span>
+                          <span
+                            class="wallet-not"
+                            v-if="maticSmallStock == 'loading'"
+                          >
+                            Connect to Matic
+                          </span>
+                          <span class="stock" v-else
+                            >Stock: {{ maticSmallStock }}</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </a>
@@ -199,7 +217,7 @@
                   class="mt-15"
                   @change="changeBundle"
                 >
-                  <el-carousel-item name="bigBundle">
+                  <el-carousel-item name="bigBundle" class="bigB">
                     <div>
                       <img
                         src="../assets/images/sLD_Token_voucher_80k_eth.png"
@@ -211,11 +229,11 @@
                       <vs-avatar size="35">
                         <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
-                      <span>80, 000</span>
+                      <span>20,000</span>
                     </div>
                   </el-carousel-item>
 
-                  <el-carousel-item name="smallBundle">
+                  <el-carousel-item name="smallBundle" class="smallB">
                     <div>
                       <img
                         src="../assets/images/sLD_Token_voucher_40k_eth.jpg"
@@ -227,7 +245,7 @@
                       <vs-avatar size="35">
                         <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
-                      <span>40, 000</span>
+                      <span>5,000</span>
                     </div>
                   </el-carousel-item>
                 </el-carousel>
@@ -256,7 +274,7 @@
                       </div>
                     </div>
                     <div class="mt-5">
-                      <span style="font-size:12px;color:#625f81;"
+                      <span style="font-size: 12px; color: #625f81"
                         >*Maximum 3 bundles in a single transaction.</span
                       >
                     </div>
@@ -266,48 +284,56 @@
                         class="flex-justify-between-center"
                         v-if="
                           isDrizzleInitialized &&
-                            checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
+                          checkNetwork(
+                            this.drizzleInstance.web3._provider.networkVersion
+                          )
                         "
                       >
                         <span
                           class="matic_btn"
                           v-if="onEthNetwork"
                           @click="changeNetwork"
-                          style="margin-left:2px"
+                          style="margin-left: 2px"
                         >
                           Connect to <br />
-                          <span style="color:blue;"> <b>Matic </b></span>
+                          <span style="color: blue"> <b>Matic </b></span>
                         </span>
                         <span
                           @click="checkAccounts"
-                          style="color:#B6B6B6;font-size:0.8rem;margin-left:7px;"
+                          style="
+                            color: #b6b6b6;
+                            font-size: 0.8rem;
+                            margin-left: 7px;
+                          "
                           v-else
                           >You're <br />
                           ON
-                          <span style="color:#5772ec;">
+                          <span style="color: #5772ec">
                             <b> Matic </b></span
                           ></span
                         >
 
                         <span
                           @click="checkAccounts"
-                          style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
+                          style="
+                            color: #b6b6b6;
+                            margin-left: 15px;
+                            font-size: 0.8rem;
+                          "
                           v-if="onEthNetwork"
                           >You're <br />
-                          <span style="color:#DDDBEC;">
+                          <span style="color: #dddbec">
                             <b>ON Ethereum </b></span
                           ></span
                         >
                         <span
                           class="matic_btn"
-                          style="margin-left:27px"
+                          style="margin-left: 27px"
                           v-else
                           @click="changeNetwork"
                         >
                           Connect to <br />
-                          <span style="color:blue;"> <b>Ethereum </b></span>
+                          <span style="color: blue"> <b>Ethereum </b></span>
                         </span>
                       </div>
 
@@ -316,17 +342,17 @@
                         @click="changeNetwork"
                         v-else-if="
                           isDrizzleInitialized &&
-                            !checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
+                          !checkNetwork(
+                            this.drizzleInstance.web3._provider.networkVersion
+                          )
                         "
                       >
                         Wrong Network Connected
-                        {{ errorNotify('top-center', 'danger') }}
+                        {{ errorNotify("top-center", "danger") }}
                       </vs-button>
 
                       <vs-button
-                        style="margin-left:0px;"
+                        style="margin-left: 0px"
                         v-else
                         class="connect_button"
                         @click="changeNetwork"
@@ -336,7 +362,7 @@
 
                       <vs-button
                         class="buy_button"
-                        style="font-size: 1rem;"
+                        style="font-size: 1rem"
                         @click="buyTokens"
                       >
                         <b> BUY</b>
@@ -349,7 +375,7 @@
                   <div class="flex-justify-between-center">
                     <h4>Warning</h4>
                     <span
-                      style="margin-right:-4px;"
+                      style="margin-right: -4px"
                       class="material-icons-sharp"
                       @click="showChainWarning = false"
                     >
@@ -380,7 +406,7 @@
                   @change="changeBundle"
                   ref="carouselweth"
                 >
-                  <el-carousel-item name="bigBundle">
+                  <el-carousel-item name="bigBundle" class="bigB">
                     <div>
                       <img
                         src="../assets/images/sLD_Token_voucher_80k_matic.png"
@@ -392,11 +418,11 @@
                       <vs-avatar size="35">
                         <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
-                      <span>80, 000</span>
+                      <span>20,000</span>
                     </div>
                   </el-carousel-item>
 
-                  <el-carousel-item name="smallBundle">
+                  <el-carousel-item name="smallBundle" class="smallB">
                     <div>
                       <img
                         src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
@@ -408,7 +434,23 @@
                       <vs-avatar size="35">
                         <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
-                      <span>40, 000</span>
+                      <span>10,000</span>
+                    </div>
+                  </el-carousel-item>
+
+                  <el-carousel-item name="mediumBundle" class="mediumB">
+                    <div>
+                      <img
+                        src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>5,000</span>
                     </div>
                   </el-carousel-item>
                 </el-carousel>
@@ -437,7 +479,7 @@
                       </div>
                     </div>
                     <div class="mt-5">
-                      <small style="font-size:12px;color:#625f81;"
+                      <small style="font-size: 12px; color: #625f81"
                         >*Maximum 3 bundles in a single transaction.</small
                       >
                     </div>
@@ -447,38 +489,46 @@
                         class="flex-justify-between-center"
                         v-if="
                           isDrizzleInitialized &&
-                            checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
+                          checkNetwork(
+                            this.drizzleInstance.web3._provider.networkVersion
+                          )
                         "
                       >
                         <span
                           class="matic_btn"
                           v-if="onEthNetwork"
                           @click="changeNetwork"
-                          style="margin-left:7px"
+                          style="margin-left: 7px"
                         >
                           Connect to <br />
-                          <span style="color:blue;"> <b>Matic </b></span>
+                          <span style="color: blue"> <b>Matic </b></span>
                         </span>
 
                         <span
                           @click="checkAccounts"
-                          style="color:#B6B6B6;font-size:0.8rem;margin-left:12px;"
+                          style="
+                            color: #b6b6b6;
+                            font-size: 0.8rem;
+                            margin-left: 12px;
+                          "
                           v-else
                           >You're <br />
                           ON
-                          <span style="color:#5772ec;">
+                          <span style="color: #5772ec">
                             <b> Matic </b></span
                           ></span
                         >
 
                         <span
                           @click="checkAccounts"
-                          style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
+                          style="
+                            color: #b6b6b6;
+                            margin-left: 15px;
+                            font-size: 0.8rem;
+                          "
                           v-if="onEthNetwork"
                           >You're <br />
-                          <span style="color:#DDDBEC;">
+                          <span style="color: #dddbec">
                             <b>ON Ethereum </b></span
                           ></span
                         >
@@ -487,10 +537,10 @@
                           class="matic_btn"
                           v-else
                           @click="changeNetwork"
-                          style="margin-left:27px"
+                          style="margin-left: 27px"
                         >
                           Connect to <br />
-                          <span style="color:blue;"> <b>Ethereum </b></span>
+                          <span style="color: blue"> <b>Ethereum </b></span>
                         </span>
                       </div>
 
@@ -499,17 +549,17 @@
                         @click="changeNetwork"
                         v-else-if="
                           isDrizzleInitialized &&
-                            !checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
+                          !checkNetwork(
+                            this.drizzleInstance.web3._provider.networkVersion
+                          )
                         "
                       >
                         Wrong Network Connected
-                        {{ errorNotify('top-center', 'danger') }}
+                        {{ errorNotify("top-center", "danger") }}
                       </vs-button>
 
                       <vs-button
-                        style="margin-left:5px;"
+                        style="margin-left: 5px"
                         v-else
                         class="connect_button"
                         @click="changeNetwork"
@@ -520,7 +570,11 @@
                       <span class="approve_btn" @click="buyTokens">
                         <b>BUY</b>
                         <p
-                          style="font-size: 11px;margin-top:-1px;text-align:center;"
+                          style="
+                            font-size: 11px;
+                            margin-top: -1px;
+                            text-align: center;
+                          "
                         >
                           Approve first
                         </p>
@@ -533,7 +587,7 @@
                   <div class="flex-justify-between-center">
                     <h4>Warning</h4>
                     <span
-                      style="margin-right:-4px;"
+                      style="margin-right: -4px"
                       class="material-icons-sharp"
                       @click="showChainWarning = false"
                     >
@@ -564,7 +618,7 @@
                   @change="changeBundle"
                   ref="carouselmatic"
                 >
-                  <el-carousel-item name="bigBundle">
+                  <el-carousel-item name="bigBundle" class="bigB">
                     <div>
                       <img
                         src="../assets/images/sLD_Token_voucher_80k_matic.png"
@@ -576,11 +630,11 @@
                       <vs-avatar size="35">
                         <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
-                      <span>80, 000</span>
+                      <span>20,000</span>
                     </div>
                   </el-carousel-item>
 
-                  <el-carousel-item name="smallBundle">
+                  <el-carousel-item name="smallBundle" class="smallB">
                     <div>
                       <img
                         src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
@@ -592,7 +646,23 @@
                       <vs-avatar size="35">
                         <img src="../assets/images/sld.png" alt="token" />
                       </vs-avatar>
-                      <span>40, 000</span>
+                      <span>10,000</span>
+                    </div>
+                  </el-carousel-item>
+
+                  <el-carousel-item name="mediumBundle" class="mediumB">
+                    <div>
+                      <img
+                        src="../assets/images/sLD_Token_voucher_40k_matic.jpg"
+                        alt="tkbundles"
+                        class="caro_image"
+                      />
+                    </div>
+                    <div class="bk_bun d-flex-center">
+                      <vs-avatar size="35">
+                        <img src="../assets/images/sld.png" alt="token" />
+                      </vs-avatar>
+                      <span>5,000</span>
                     </div>
                   </el-carousel-item>
                 </el-carousel>
@@ -621,7 +691,7 @@
                       </div>
                     </div>
                     <div class="mt-5">
-                      <small style="font-size:12px;color:#625f81;"
+                      <small style="font-size: 12px; color: #625f81"
                         >*Maximum 3 bundles in a single transaction.</small
                       >
                     </div>
@@ -631,50 +701,58 @@
                         class="flex-justify-between-center"
                         v-if="
                           isDrizzleInitialized &&
-                            checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
+                          checkNetwork(
+                            this.drizzleInstance.web3._provider.networkVersion
+                          )
                         "
                       >
                         <span
                           class="matic_btn"
                           v-if="onEthNetwork"
                           @click="changeNetwork"
-                          style="margin-left:2px"
+                          style="margin-left: 2px"
                         >
                           Connect to <br />
-                          <span style="color:blue;"> <b>Matic </b></span>
+                          <span style="color: blue"> <b>Matic </b></span>
                         </span>
 
                         <span
                           @click="checkAccounts"
-                          style="color:#B6B6B6;font-size:0.8rem;margin-left:7px;"
+                          style="
+                            color: #b6b6b6;
+                            font-size: 0.8rem;
+                            margin-left: 7px;
+                          "
                           v-else
                           >You're <br />
                           ON
-                          <span style="color:#5772ec;">
+                          <span style="color: #5772ec">
                             <b> Matic </b></span
                           ></span
                         >
 
                         <span
                           @click="checkAccounts"
-                          style="color:#B6B6B6;margin-left:15px;font-size:0.8rem;"
+                          style="
+                            color: #b6b6b6;
+                            margin-left: 15px;
+                            font-size: 0.8rem;
+                          "
                           v-if="onEthNetwork"
                           >You're <br />
-                          <span style="color:#DDDBEC;">
+                          <span style="color: #dddbec">
                             <b>ON Ethereum </b></span
                           ></span
                         >
 
                         <span
                           class="matic_btn"
-                          style="margin-left:27px"
+                          style="margin-left: 27px"
                           v-else
                           @click="changeNetwork"
                         >
                           Connect to <br />
-                          <span style="color:blue;"> <b>Ethereum </b></span>
+                          <span style="color: blue"> <b>Ethereum </b></span>
                         </span>
                       </div>
 
@@ -683,17 +761,17 @@
                         @click="changeNetwork"
                         v-else-if="
                           isDrizzleInitialized &&
-                            !checkNetwork(
-                              this.drizzleInstance.web3._provider.networkVersion
-                            )
+                          !checkNetwork(
+                            this.drizzleInstance.web3._provider.networkVersion
+                          )
                         "
                       >
                         Wrong Network Connected
-                        {{ errorNotify('top-center', 'danger') }}
+                        {{ errorNotify("top-center", "danger") }}
                       </vs-button>
 
                       <vs-button
-                        style="margin-left:0px;"
+                        style="margin-left: 0px"
                         v-else
                         class="connect_button"
                         @click="changeNetwork"
@@ -703,7 +781,7 @@
 
                       <vs-button
                         class="buy_button"
-                        style="font-size: 1rem;"
+                        style="font-size: 1rem"
                         @click="buyTokens"
                       >
                         <b> BUY</b>
@@ -716,7 +794,7 @@
                   <div class="flex-justify-between-center">
                     <h4>Warning</h4>
                     <span
-                      style="margin-right:-4px;"
+                      style="margin-right: -4px"
                       class="material-icons-sharp"
                       @click="showChainWarning = false"
                     >
@@ -733,26 +811,98 @@
       </div>
     </div>
 
-    <vs-dialog v-model="showWallects" width="420px">
+    <div class="ilustrations">
+      <div class="wrap">
+        <vs-row class="mt-50">
+          <vs-col :w="5" :xs="12" :sm="12">
+            <div class="flex-align-center" v-if="onEthNetwork">
+              <h1 class="yellow" v-if="bigBundle !== 'loading'">
+                {{ getEthBalance(ethbalance) }} token sold in second presale
+              </h1>
+            </div>
+
+            <div class="flex-align-center" v-else>
+              <h1 class="yellow" v-if="ethMaticSmallStock !== 'loading'">
+                {{ getMaticBalance(maticbalance) }} tokens sold in second
+                presale
+              </h1>
+            </div>
+
+            <div class="flex-align-center" v-if="!isDrizzleInitialized">
+              <h1 class="yellow">
+                {{ tokenSale }} tokens sold in first presale
+              </h1>
+            </div>
+          </vs-col>
+          <vs-col :w="2" :xs="2" :sm="2">
+            <div
+              class="flex-align-center"
+              style="text-align: center; margin-left: 40px"
+            >
+              <div class="rule"></div>
+            </div>
+          </vs-col>
+          <vs-col :w="5" :xs="12" :sm="12">
+            <div v-if="onEthNetwork">
+              <div class="progress">
+                <div
+                  class="progress_token"
+                  :style="{ width: `${ethPercentPurchased}%` }"
+                >
+                  <span>{{ Math.trunc(ethPercentPurchased) }}%</span>
+                </div>
+              </div>
+
+              <p class="mt-20 p_tokens">68K Tokens</p>
+            </div>
+
+            <div v-else>
+              <div class="progress">
+                <div
+                  class="progress_token"
+                  :style="{ width: `${maticPercentPurchased}%` }"
+                >
+                  <span>{{ Math.trunc(maticPercentPurchased) }}%</span>
+                </div>
+              </div>
+
+              <p class="mt-20 p_tokens">1.48M Tokens</p>
+            </div>
+
+            <!-- <div>
+              <div class="progress">
+                <div class="progress_token" :style="{ width: `${9.2}%` }">
+                  <span>9.2%</span>
+                </div>
+              </div>
+
+              <p class="mt-20 p_tokens">20M Tokens</p>
+            </div> -->
+          </vs-col>
+        </vs-row>
+
+        <Illustrations />
+        <br />
+        <Subscribe />
+      </div>
+    </div>
+
+    <vs-dialog v-model="showWallects" width="420px" class="_dialog">
       <template #header>
-        <h4 class="not-margin">
-          Choose a wallect provider
-        </h4>
+        <h4 class="not-margin">Choose a wallect provider</h4>
       </template>
       <ConnectWallect />
     </vs-dialog>
 
-    <vs-dialog v-model="showAccounts" width="420px">
+    <vs-dialog v-model="showAccounts" width="420px" class="_dialog">
       <template #header>
-        <h4 class="not-margin">
-          Account
-        </h4>
+        <h4 class="not-margin">Account</h4>
       </template>
       <div>
         <div class="flex-justify-between-center">
           <h4 class="connected">
             Connected with
-            <span style="color:#cb8016">
+            <span style="color: #cb8016">
               {{
                 getNetworkName(drizzleInstance.web3._provider.networkVersion)
               }}
@@ -767,14 +917,14 @@
         <div class="meta_div">
           <div class="eth_acc">
             <vs-avatar size="20">
-              <img src="../../assets/images/sld.png" alt="logo" />
+              <img src="../assets/images/sld.png" alt="logo" />
             </vs-avatar>
             <span class="acc_span">{{ activeAccount }}</span>
           </div>
           <br />
           <div class="eth_balance">
             <vs-avatar size="20">
-              <img src="../../assets/images/sld.png" alt="logo" />
+              <img src="../assets/images/sld.png" alt="logo" />
             </vs-avatar>
             <span class="acc_span">{{ toEth(activeBalance) }} Eth</span>
           </div>
@@ -785,9 +935,7 @@
               transparent
               @click="copyToClip(activeAccount)"
             >
-              <span class="material-icons">
-                content_copy
-              </span>
+              <span class="material-icons"> content_copy </span>
               Copy address
             </vs-button>
             <vs-button
@@ -796,9 +944,7 @@
               :href="`https://ropsten.etherscan.io/address/${activeAccount}`"
               blank
             >
-              <span class="material-icons">
-                link
-              </span>
+              <span class="material-icons"> link </span>
               View on etherscan
             </vs-button>
           </div>
@@ -806,7 +952,12 @@
       </div>
     </vs-dialog>
 
-    <vs-dialog width="420px" not-center v-model="showConfirmBundle">
+    <vs-dialog
+      width="420px"
+      not-center
+      v-model="showConfirmBundle"
+      class="_dialog"
+    >
       <template #header>
         <h4 class="not-margin">Confirm <b>Bundle</b></h4>
       </template>
@@ -829,8 +980,8 @@
             <vs-button
               v-if="
                 typeof allowanceValue == 'undefined ' ||
-                  allowanceValue == null ||
-                  allowanceValue == 0
+                allowanceValue == null ||
+                allowanceValue == 0
               "
               loading
               warn
@@ -855,52 +1006,72 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 import {
   getSmallBundleEth,
   getBigBundleEth,
+  getMediumBundleEth,
   getSmallBundlePriceEth,
   getBigBundlePriceEth,
   getEthMaticFactor,
   getSmallBundleMatic,
   getBigBundleMatic,
+  getMediumBundleMatic,
   getBigBundle,
   getSmallBundle,
   getSmallBundleprice,
   getBigBundleprice,
-} from '@/api/contractGeters';
-import ConnectWallect from '@/components/ConnectWallect';
+  getMediumBundlePriceEth,
+} from "@/api/contractGeters";
+import ConnectWallect from "@/components/ConnectWallect";
+import NavBar from "@/components/NavBar";
+import GetSolidHeader from "./sections/GetSolidHeader.vue";
+import Illustrations from "./sections/Illustrations.vue";
+import BlogSection from "./sections/BlogSection.vue";
+import Subscribe from "./sections/Subscribe.vue";
+import AboutSolid from "./sections/AboutSolid.vue";
+import Community from "./sections/Community.vue";
+import Footer from "./sections/Footer.vue";
 
 export default {
-  name: 'BuyBundle',
+  name: "Home",
   components: {
     ConnectWallect,
+    NavBar,
+    GetSolidHeader,
+    Illustrations,
+    BlogSection,
+    Subscribe,
+    AboutSolid,
+    Community,
+    Footer,
   },
   data() {
     return {
-      tokenSale: 0,
-      confirmTitle: '',
+      tokenSale: "Over 1000000",
+      confirmTitle: "",
       showConfirmBundle: false,
-      percentageOff: 70,
+      percentageOff: 52,
+      bigPercentage: 52,
+      smallPercentage: 48,
+      midPercentage: 50,
       active: 0,
-      email: '',
+      email: "",
       showWallects: false,
       showAccounts: false,
       activeChain: false,
       ethBundle: 1,
-      currentEthBundle: 80000,
+      currentEthBundle: 20000,
       maticBundle: 1,
-      currentMaticBundle: 80000,
+      currentMaticBundle: 20000,
       wBundle: 1,
-      currentwEthBundle: 80000,
+      currentwEthBundle: 20000,
       showChainWarning: false,
-      title: '',
-      currentNetTab: 'eth',
+      title: "",
+      currentNetTab: "eth",
       chain: null,
       serial: null,
-      escrowAddress: '0x5011D48D4265b6fB8228600a111b2fAa1fDA3139',
-      ethSolidEscrowAddress: '0x27662EC00573DcA447F5F2c50Af1724B63679b29',
-      maticEscrowAddress: '0x5011D48D4265b6fB8228600a111b2fAa1fDA3139',
+      ethSolidEscrowAddress: "0x27662EC00573DcA447F5F2c50Af1724B63679b29",
     };
   },
   created() {
@@ -908,10 +1079,10 @@ export default {
     else this.connectToMaticContract();
   },
   computed: {
-    ...mapGetters('drizzle', ['isDrizzleInitialized']),
-    ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
-    ...mapGetters('contracts', ['getContractData', 'contractInstances']),
-    ...mapGetters('drizzle', ['drizzleInstance']),
+    ...mapGetters("drizzle", ["isDrizzleInitialized"]),
+    ...mapGetters("accounts", ["activeAccount", "activeBalance"]),
+    ...mapGetters("contracts", ["getContractData", "contractInstances"]),
+    ...mapGetters("drizzle", ["drizzleInstance"]),
 
     onEthNetwork() {
       this.chain = this.drizzleInstance.web3._provider.networkVersion;
@@ -927,6 +1098,8 @@ export default {
         method: getEthMaticFactor.method,
       });
     },
+
+    // matci/wEth bundle prices
     smallBundlePriceEthMatic() {
       return this.getContractData({
         contract: getSmallBundlePriceEth.contractName,
@@ -939,52 +1112,14 @@ export default {
         method: getBigBundlePriceEth.method,
       });
     },
-    bigBundle() {
+    mediumBundlePriceEthMatic() {
       return this.getContractData({
-        contract: getBigBundle.contractName,
-        method: getBigBundle.method,
+        contract: getMediumBundlePriceEth.contractName,
+        method: getMediumBundlePriceEth.method,
       });
     },
-    smallBundle() {
-      return this.getContractData({
-        contract: getSmallBundle.contractName,
-        method: getSmallBundle.method,
-      });
-    },
-    ethMaticSmallStock() {
-      return this.getContractData({
-        contract: getSmallBundleEth.contractName,
-        method: getSmallBundleEth.method,
-      });
-    },
-    ethMaticBigStock() {
-      return this.getContractData({
-        contract: getBigBundleEth.contractName,
-        method: getBigBundleEth.method,
-      });
-    },
-    maticSmallStock() {
-      return this.getContractData({
-        contract: getSmallBundleMatic.contractName,
-        method: getSmallBundleMatic.method,
-      });
-    },
-    maticBigStock() {
-      return this.getContractData({
-        contract: getBigBundleMatic.contractName,
-        method: getBigBundleMatic.method,
-      });
-    },
-    allowanceValue() {
-      let allowance = this.drizzleInstance.contracts['WrapEthErc20'].methods[
-        'allowance'
-      ].cacheCall(this.activeAccount, this.escrowAddress);
 
-      let value = this.contractInstances.WrapEthErc20.allowance[allowance]
-        .value;
-
-      return value;
-    },
+    // eth bundle prices
     bigBundlePrice() {
       return this.getContractData({
         contract: getBigBundleprice.contractName,
@@ -997,79 +1132,148 @@ export default {
         method: getSmallBundleprice.method,
       });
     },
+
+    //  eth bundles
+    bigBundle() {
+      return this.getContractData({
+        contract: getBigBundle.contractName,
+        method: getBigBundle.method,
+      });
+    },
+    smallBundle() {
+      return this.getContractData({
+        contract: getSmallBundle.contractName,
+        method: getSmallBundle.method,
+      });
+    },
+
+    //  wrap eth bundles
+    ethMaticSmallStock() {
+      return this.getContractData({
+        contract: getSmallBundleEth.contractName,
+        method: getSmallBundleEth.method,
+      });
+    },
+    ethMaticBigStock() {
+      return this.getContractData({
+        contract: getBigBundleEth.contractName,
+        method: getBigBundleEth.method,
+      });
+    },
+    ethMaticMediumStock() {
+      return this.getContractData({
+        contract: getMediumBundleEth.contractName,
+        method: getMediumBundleEth.method,
+      });
+    },
+
+    //  matic bundles
+    maticSmallStock() {
+      return this.getContractData({
+        contract: getSmallBundleMatic.contractName,
+        method: getSmallBundleMatic.method,
+      });
+    },
+    maticBigStock() {
+      return this.getContractData({
+        contract: getBigBundleMatic.contractName,
+        method: getBigBundleMatic.method,
+      });
+    },
+    maticMediumStock() {
+      return this.getContractData({
+        contract: getMediumBundleMatic.contractName,
+        method: getMediumBundleMatic.method,
+      });
+    },
+
+    allowanceValue() {
+      let allowance = this.drizzleInstance.contracts["WrapEthErc20"].methods[
+        "allowance"
+      ].cacheCall(this.activeAccount, this.maticEscrowAddress);
+
+      let value =
+        this.contractInstances.WrapEthErc20.allowance[allowance].value;
+
+      return value;
+    },
     ethbalance() {
-      let balance = this.drizzleInstance.contracts['EthErc20'].methods[
-        'balanceOf'
+      let balance = this.drizzleInstance.contracts["EthErc20"].methods[
+        "balanceOf"
       ].cacheCall(this.ethSolidEscrowAddress);
 
-      console.log(balance);
       let value = this.contractInstances.EthErc20.balanceOf[balance].value;
 
       return value;
     },
     maticbalance() {
-      let balance = this.drizzleInstance.contracts['MaticErc20'].methods[
-        'balanceOf'
+      let balance = this.drizzleInstance.contracts["MaticErc20"].methods[
+        "balanceOf"
       ].cacheCall(this.maticEscrowAddress);
 
-      console.log(balance);
       let value = this.contractInstances.MaticErc20.balanceOf[balance].value;
 
       return value;
     },
   },
   watch: {
-    chain: function(netId) {
+    chain: function (netId) {
       if (netId == 80001 || netId == 137) {
-        console.log('connecting to matic');
+        console.log("connecting to matic");
         this.connectToMaticContract();
       } else {
-        console.log('connecting to eth');
+        console.log("connecting to eth");
         this.connectToEthContract();
       }
     },
   },
   methods: {
     connectToMaticContract() {
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundleEth);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundleEth);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundleMatic);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundleMatic);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getEthMaticFactor);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundlePriceEth);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundlePriceEth);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getSmallBundleEth);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getBigBundleEth);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getMediumBundleEth);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getBigBundleMatic);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getSmallBundleMatic);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getMediumBundleMatic);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getEthMaticFactor);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getSmallBundlePriceEth);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getBigBundlePriceEth);
+      this.$store.dispatch(
+        "drizzle/REGISTER_CONTRACT",
+        getMediumBundlePriceEth
+      );
     },
     connectToEthContract() {
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundle);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundle);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getBigBundleprice);
-      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getSmallBundleprice);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getSmallBundle);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getBigBundle);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getBigBundleprice);
+      this.$store.dispatch("drizzle/REGISTER_CONTRACT", getSmallBundleprice);
     },
     buyTokens() {
       let chainId = this.drizzleInstance.web3._provider.networkVersion;
-      if (this.getNetworkName(chainId) == 'Wrong Network')
-        this.errorNotify('top-center', 'danger');
+      if (this.getNetworkName(chainId) == "Wrong Network")
+        this.errorNotify("top-center", "danger");
       else this.buyBundleTokens();
     },
     buyBundleTokens() {
-      if (this.currentNetTab !== 'eth' && this.onEthNetwork) {
+      if (this.currentNetTab !== "eth" && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain, please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction.';
         this.showChainWarning = true;
         return;
-      } else if (this.currentNetTab == 'eth' && !this.onEthNetwork) {
+      } else if (this.currentNetTab == "eth" && !this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Matic</span> chain, please switch to <span style="color:#5772ec;">Ethereum Chain</span> for this transaction.';
         this.showChainWarning = true;
         return;
       }
 
-      if (this.currentNetTab == 'eth') {
+      if (this.currentNetTab == "eth") {
         this.getEthSerial(this.ethBundle);
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
           this.ethBundle
         }</b></span> ${
-          this.ethBundle > 1 ? 'bundles' : 'bundle'
+          this.ethBundle > 1 ? "bundles" : "bundle"
         } at <span style="color:#cb8016"><b>${
           this.currentEthBundle
         }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> ${
@@ -1079,13 +1283,13 @@ export default {
         return;
       }
 
-      if (this.currentNetTab == 'wEth') {
-        console.log('weth', this.currentwEthBundle);
+      if (this.currentNetTab == "wEth") {
+        console.log("weth", this.currentwEthBundle);
         this.getMaticSerial(this.wBundle);
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
           this.wBundle
         }</b></span> ${
-          this.wBundle > 1 ? 'bundles' : 'bundle'
+          this.wBundle > 1 ? "bundles" : "bundle"
         } of <span style="color:#cb8016"><b>${
           this.currentwEthBundle
         }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> ${
@@ -1093,7 +1297,7 @@ export default {
         } of wEth</b></span> at ${this.percentageOff}% off.`;
 
         let allowValue = this.allowanceValue;
-        if (typeof allowValue == 'undefined') {
+        if (typeof allowValue == "undefined") {
           this.approveTrans();
         } else if (allowValue == 0 || allowValue == null) {
           this.approveTrans();
@@ -1102,17 +1306,19 @@ export default {
         this.showConfirmBundle = true;
       }
 
-      if (this.currentNetTab == 'matic') {
-        console.log('matic', this.currentMaticBundle);
+      if (this.currentNetTab == "matic") {
+        console.log("matic", this.currentMaticBundle);
         this.getMaticSerial(this.maticBundle);
         let price =
-          this.percentageOff == 70
+          this.percentageOff == this.bigPercentage
             ? this.bigBundlePriceEthMatic
-            : this.smallBundlePriceEthMatic;
+            : this.percentageOff == this.smallPercentage
+            ? this.smallBundlePriceEthMatic
+            : this.mediumBundlePriceEthMatic;
         this.confirmTitle = `You are buying <span style="color:#5772ec;"><b>${
           this.maticBundle
         }</b></span> ${
-          this.maticBundle > 1 ? 'bundles' : 'bundle'
+          this.maticBundle > 1 ? "bundles" : "bundle"
         } at <span style="color:#cb8016"><b>${
           this.currentMaticBundle
         }</b></span> SOLID Tokens with <span style="color:#5772ec;"><b> ${this.getMaticAmount(
@@ -1125,39 +1331,75 @@ export default {
     },
     confirmBuyBundle() {
       let currentNumberofBundle =
-        this.currentNetTab == 'eth'
+        this.currentNetTab == "eth"
           ? this.ethBundle
-          : this.currentNetTab == 'wEth'
+          : this.currentNetTab == "wEth"
           ? this.wBundle
-          : this.currentNetTab == 'matic'
+          : this.currentNetTab == "matic"
           ? this.maticBundle
           : 0;
-      if (this.percentageOff == 70 && this.currentNetTab == 'eth')
+
+      // buy big bundles call
+      if (
+        this.percentageOff == this.bigPercentage &&
+        this.currentNetTab == "eth"
+      )
         this.buyEthBigBundle(currentNumberofBundle, this.bigBundlePrice);
-      else if (this.percentageOff == 70 && this.currentNetTab == 'wEth')
+      else if (
+        this.percentageOff == this.bigPercentage &&
+        this.currentNetTab == "wEth"
+      )
         this.buyWrapEthBigBundle(
           currentNumberofBundle,
           this.bigBundlePriceEthMatic
         );
-      else if (this.percentageOff == 70 && this.currentNetTab == 'matic')
+      else if (
+        this.percentageOff == this.bigPercentage &&
+        this.currentNetTab == "matic"
+      )
         this.buyMaticBigBundle(
           currentNumberofBundle,
           this.bigBundlePriceEthMatic,
           this.ethmaticFactor
         );
 
-      // small bundles call
-      if (this.percentageOff == 60 && this.currentNetTab == 'eth')
+      // buy small bundles call
+      if (this.percentageOff == 60 && this.currentNetTab == "eth")
         this.buyEthSmallBundle(currentNumberofBundle, this.smallBundlePrice);
-      else if (this.percentageOff == 60 && this.currentNetTab == 'wEth')
+      else if (
+        this.percentageOff == this.smallPercentage &&
+        this.currentNetTab == "wEth"
+      )
         this.buyWrapEthSmallBundle(
           currentNumberofBundle,
           this.smallBundlePriceEthMatic
         );
-      else if (this.percentageOff == 60 && this.currentNetTab == 'matic')
+      else if (
+        this.percentageOff == this.smallPercentage &&
+        this.currentNetTab == "matic"
+      )
         this.buyMaticSmallBundle(
           currentNumberofBundle,
           this.smallBundlePriceEthMatic,
+          this.ethmaticFactor
+        );
+
+      // buy medium bundles call
+      if (
+        this.percentageOff == this.midPercentage &&
+        this.currentNetTab == "wEth"
+      )
+        this.buyWrapEthMediumBundle(
+          currentNumberofBundle,
+          this.mediumBundlePriceEthMatic
+        );
+      else if (
+        this.percentageOff == this.midPercentage &&
+        this.currentNetTab == "matic"
+      )
+        this.buyMaticMediumBundle(
+          currentNumberofBundle,
+          this.mediumBundlePriceEthMatic,
           this.ethmaticFactor
         );
 
@@ -1170,23 +1412,22 @@ export default {
     },
     getEthSerial(bundle) {
       let totalAmnt =
-        this.percentageOff == 70
+        this.percentageOff == this.bigPercentage
           ? this.bigBundlePrice * bundle
           : this.smallBundlePrice * bundle;
       let serial = totalAmnt / 1000000000000000000;
-      console.log('serial', serial);
+      console.log("serial", serial);
       this.serial = serial;
     },
     getMaticSerial(bundle) {
-      console.log('bigmatic', this.bigBundlePriceEthMatic);
-      // console.log('factor', this.ethmaticFactor);
-      console.log('smallmatic', this.smallBundlePriceEthMatic);
       let totalAmnt =
-        this.percentageOff == 70
+        this.percentageOff == this.bigPercentage
           ? this.bigBundlePriceEthMatic * bundle
+          : this.percentageOff == this.midPercentage
+          ? this.mediumBundlePriceEthMatic * bundle
           : this.smallBundlePriceEthMatic * bundle;
       let serial = totalAmnt / 1000000000000000000;
-      console.log('serial', serial);
+      console.log("serial", serial);
       this.serial = serial;
     },
     toEth(weiBalance) {
@@ -1200,121 +1441,144 @@ export default {
     },
     maxBundle(bundle) {
       console.log(bundle);
-      if (bundle == 'eth') {
+      if (bundle == "eth") {
         if (this.ethBundle == 3) {
           this.openNotification(
-            'top-center',
-            'danger',
-            'Bundle Size',
+            "top-center",
+            "danger",
+            "Bundle Size",
             "Maximum bundle can't exceed 3"
           );
           this.currentEthBundle =
-            this.percentageOff == 70
-              ? 80000 * this.ethBundle
-              : 40000 * this.ethBundle;
+            this.percentageOff == this.bigPercentage
+              ? 20000 * this.ethBundle
+              : 5000 * this.ethBundle;
         } else {
           this.ethBundle++;
           this.currentEthBundle =
-            this.percentageOff == 70
-              ? 80000 * this.ethBundle
-              : 40000 * this.ethBundle;
+            this.percentageOff == this.bigPercentage
+              ? 20000 * this.ethBundle
+              : 5000 * this.ethBundle;
         }
       }
 
-      if (bundle == 'wEth') {
+      if (bundle == "wEth") {
         if (this.wBundle == 3) {
           this.openNotification(
-            'top-center',
-            'danger',
-            'Bundle Size',
+            "top-center",
+            "danger",
+            "Bundle Size",
             "Maximum bundle can't exceed 3"
           );
           this.currentwEthBundle =
-            this.percentageOff == 70
-              ? 80000 * this.wBundle
-              : 40000 * this.wBundle;
+            this.percentageOff == this.bigPercentage
+              ? 20000 * this.wBundle
+              : this.percentageOff == this.midPercentage
+              ? 10000 * this.wBundle
+              : 5000 * this.wBundle;
         } else {
           this.wBundle++;
           this.currentwEthBundle =
-            this.percentageOff == 70
-              ? 80000 * this.wBundle
-              : 40000 * this.wBundle;
+            this.percentageOff == this.bigPercentage
+              ? 20000 * this.wBundle
+              : this.percentageOff == this.midPercentage
+              ? 10000 * this.wBundle
+              : 5000 * this.wBundle;
         }
       }
 
-      if (bundle == 'matic') {
+      if (bundle == "matic") {
         if (this.maticBundle == 3) {
           this.openNotification(
-            'top-center',
-            'danger',
-            'Bundle Size',
+            "top-center",
+            "danger",
+            "Bundle Size",
             "Maximum bundle can't exceed 3"
           );
           this.currentMaticBundle =
-            this.percentageOff == 70
-              ? 80000 * this.maticBundle
-              : 40000 * this.maticBundle;
+            this.percentageOff == this.bigPercentage
+              ? 20000 * this.maticBundle
+              : this.percentageOff == this.midPercentage
+              ? 10000 * this.maticBundle
+              : 5000 * this.maticBundle;
         } else {
           this.maticBundle++;
           this.currentMaticBundle =
-            this.percentageOff == 70
-              ? 80000 * this.maticBundle
-              : 40000 * this.maticBundle;
+            this.percentageOff == this.bigPercentage
+              ? 20000 * this.maticBundle
+              : this.percentageOff == this.midPercentage
+              ? 10000 * this.maticBundle
+              : 5000 * this.maticBundle;
         }
       }
     },
     minBundle(bundle) {
-      if (bundle == 'eth') {
+      if (bundle == "eth") {
         if (this.ethBundle == 1) {
           this.openNotification(
-            'top-center',
-            'danger',
-            'Bundle Size',
+            "top-center",
+            "danger",
+            "Bundle Size",
             "Maximum bundle can't be less than 1"
           );
-          this.currentEthBundle = this.percentageOff == 70 ? 80000 : 40000;
+          this.currentEthBundle =
+            this.percentageOff == this.bigPercentage ? 20000 : 5000;
         } else {
           this.ethBundle--;
           this.currentEthBundle =
-            this.percentageOff == 70
-              ? this.currentEthBundle - 80000
-              : this.currentEthBundle - 40000;
+            this.percentageOff == this.bigPercentage
+              ? this.currentEthBundle - 20000
+              : this.currentEthBundle - 5000;
         }
       }
 
-      if (bundle == 'wEth') {
+      if (bundle == "wEth") {
         if (this.wBundle == 1) {
           this.openNotification(
-            'top-center',
-            'danger',
-            'Bundle Size',
+            "top-center",
+            "danger",
+            "Bundle Size",
             "Maximum bundle can't be less than 1"
           );
-          this.currentwEthBundle = this.percentageOff == 70 ? 80000 : 40000;
+          this.currentwEthBundle =
+            this.percentageOff == this.bigPercentage
+              ? 20000
+              : this.percentageOff == this.midPercentage
+              ? 10000
+              : 5000;
         } else {
           this.wBundle--;
           this.currentwEthBundle =
-            this.percentageOff == 70
-              ? this.currentwEthBundle - 80000
-              : this.currentwEthBundle - 40000;
+            this.percentageOff == this.bigPercentage
+              ? this.currentwEthBundle - 20000
+              : this.percentageOff == this.midPercentage
+              ? this.currentwEthBundle - 10000
+              : this.currentwEthBundle - 5000;
         }
       }
 
-      if (bundle == 'matic') {
+      if (bundle == "matic") {
         if (this.maticBundle == 1) {
           this.openNotification(
-            'top-center',
-            'danger',
-            'Bundle Size',
+            "top-center",
+            "danger",
+            "Bundle Size",
             "Maximum bundle can't be less than 1"
           );
-          this.currentMaticBundle = this.percentageOff == 70 ? 80000 : 40000;
+          this.currentMaticBundle =
+            this.percentageOff == this.bigPercentage
+              ? 20000
+              : this.percentageOff == this.midPercentage
+              ? 10000
+              : 5000;
         } else {
           this.maticBundle--;
           this.currentMaticBundle =
-            this.percentageOff == 70
-              ? this.currentMaticBundle - 80000
-              : this.currentMaticBundle - 40000;
+            this.percentageOff == this.bigPercentage
+              ? this.currentMaticBundle - 20000
+              : this.percentageOff == this.midPercentage
+              ? this.currentMaticBundle - 10000
+              : this.currentMaticBundle - 5000;
         }
       }
     },
@@ -1322,44 +1586,57 @@ export default {
       this.ethBundle = 1;
       this.wBundle = 1;
       this.maticBundle = 1;
-      let bb = r;
-      this.percentageOff = bb == 1 ? 60 : 70;
-      this.currentEthBundle = bb == 1 ? 40000 : 80000;
-      this.currentwEthBundle = bb == 1 ? 40000 : 80000;
-      this.currentMaticBundle = bb == 1 ? 40000 : 80000;
-      this.addAnimate();
+      let bundleIndex = r;
+      if (this.currentNetTab == "eth") {
+        this.percentageOff =
+          bundleIndex == 1 ? this.smallPercentage : this.bigPercentage;
+      } else {
+        this.percentageOff =
+          bundleIndex == 0
+            ? this.bigPercentage
+            : bundleIndex == 1
+            ? this.midPercentage
+            : this.smallPercentage;
+      }
+      this.currentEthBundle = bundleIndex == 1 ? 5000 : 20000;
+      this.currentwEthBundle =
+        bundleIndex == 1 ? 10000 : bundleIndex == 0 ? 20000 : 5000;
+      this.currentMaticBundle =
+        bundleIndex == 1 ? 10000 : bundleIndex == 0 ? 20000 : 5000;
+      this.setDefaultBundle(r);
     },
     setActiveItem() {
-      this.$refs.carouseleth.setActiveItem('bigBundle');
-      this.$refs.carouselweth.setActiveItem('bigBundle');
-      this.$refs.carouselmatic.setActiveItem('bigBundle');
+      this.$refs.carouseleth.setActiveItem("bigBundle");
+      this.$refs.carouselweth.setActiveItem("bigBundle");
+      this.$refs.carouselmatic.setActiveItem("bigBundle");
     },
     openTab(evt, cityName) {
       this.currentNetTab = cityName;
       this.setActiveItem();
-      this.percentageOff = 70;
-      if ((cityName == 'wEth' || cityName == 'matic') && this.onEthNetwork) {
+      this.percentageOff =
+        cityName == "eth" ? this.bigPercentage : this.bigPercentage;
+      if ((cityName == "wEth" || cityName == "matic") && this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Ethereum</span> chain Please switch to <span style="color:#5772ec;">Matic Mainnet</span> for this transaction';
         this.showChainWarning = true;
-      } else if (cityName == 'eth' && !this.onEthNetwork) {
+      } else if (cityName == "eth" && !this.onEthNetwork) {
         this.title =
           'You are on <span style="color:#5772ec;">Matic</span> chain Please switch to <span style="color:#5772ec;">Ethereum Chain</span> for this transaction';
         this.showChainWarning = true;
       }
       let i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName('tabcontent');
+      tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = 'none';
+        tabcontent[i].style.display = "none";
       }
-      tablinks = document.getElementsByClassName('tablinks');
+      tablinks = document.getElementsByClassName("tablinks");
       for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(' active', '');
-        tablinks[i].classList.add('opacity');
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].classList.add("opacity");
       }
-      document.getElementById(cityName).style.display = 'block';
-      evt.currentTarget.className += ' active';
-      evt.currentTarget.classList.remove('opacity');
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+      evt.currentTarget.classList.remove("opacity");
     },
   },
 };

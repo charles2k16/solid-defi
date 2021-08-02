@@ -2,7 +2,7 @@
   <div>
     <vs-row class="mt-100">
       <vs-col :w="6" :xs="12" :sm="12">
-        <span class="insights">
+        <span class="insights" style="color: #FCB42A;">
           SOLID TOKEN
         </span>
 

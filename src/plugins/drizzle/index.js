@@ -3,6 +3,7 @@ import MaticEscrow from '@/abi/MaticEscrow'
 import WrapEthErc20 from '@/abi/WrapEthErc20'
 import EthErc20 from '@/abi/EthErc20'
 import MaticErc20 from '@/abi/MaticErc20'
+import SolidFoundry from '@/abi/SolidFoundry'
 
 const options = {
   web3: {
@@ -13,7 +14,14 @@ const options = {
     }
   },
 
-  contracts: [SolidEscrow, MaticEscrow, WrapEthErc20, EthErc20, MaticErc20],
+  contracts: [
+    SolidEscrow,
+    MaticEscrow,
+    WrapEthErc20,
+    EthErc20,
+    MaticErc20,
+    SolidFoundry
+  ],
   // events: {
   //   SolidProtocol: ['Transfer']
   // },

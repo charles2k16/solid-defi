@@ -16,8 +16,31 @@
           @click="goHome"
         />
       </template>
+      <!-- to="/solidfoundry" -->
       <template #right>
-        <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn_nav">
+        <vs-button
+          class="airdrop_btn"
+          blank
+          id="airdrop_btn_nav"
+          to="/solidfoundry"
+        >
+          <b>Go to App</b>
+        </vs-button>
+        <!-- <vs-button
+          v-if="routeName == 'Foundry'"
+          class="airdrop_btn"
+          blank
+          to="/presale"
+        >
+          <b>Go to Presale</b>
+        </vs-button> -->
+        <vs-button
+          v-if="routeName == 'Airdrop'"
+          class="airdrop_btn"
+          blank
+          to="/airdrop"
+          id="airdrop_btn_nav"
+        >
           <b>AirDrop</b>
         </vs-button>
         <vs-button
@@ -50,6 +73,15 @@ export default {
   name: 'NavBar',
   data: () => ({
     active: '',
+    routeName: 'Home',
   }),
+  created() {
+    this.routeName =
+      this.$route.name == 'Home'
+        ? 'Home'
+        : this.$route.name == 'Presale'
+        ? 'Presale'
+        : 'Foundary';
+  },
 };
 </script>

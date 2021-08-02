@@ -1,14 +1,13 @@
 <template>
   <div>
     <!-- timer for tokens -->
-    <vs-row class="mt-50 ml-5">
+    <!-- <vs-row class="mt-50 ml-5">
       <vs-col :w="6" :xs="12" :sm="12">
         <div class="d-flex">
           <div>
             <h2 class="time_left-2">
               Time Left
             </h2>
-            <!-- <span class="second_presale">(Second Presale)</span> -->
           </div>
           <flip-countdown
             deadline="2021-07-13 12:00:00"
@@ -27,7 +26,7 @@
         </div>
         <p class="mt-20 p_tokens">14 days</p>
       </vs-col>
-    </vs-row>
+    </vs-row> -->
 
     <vs-row class="mt-70">
       <vs-col :w="12" :xs="12" :sm="12">
@@ -58,12 +57,12 @@
 </template>
 
 <script>
-import FlipCountdown from 'vue2-flip-countdown';
+// import FlipCountdown from 'vue2-flip-countdown';
 
 export default {
   name: 'Illustrations',
-  components: {
-    FlipCountdown,
-  },
+  // components: {
+  //   FlipCountdown,
+  // },
 };
 </script>
