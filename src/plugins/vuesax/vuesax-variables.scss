@@ -78,7 +78,17 @@
              -5px -5px 11px #2e3238;
   font-size: 0.8rem;
 }
-
+.swap_button.vs-button--default {
+  border-radius: 70px !important;
+  width: 80px;
+  color: #fff;
+  background: linear-gradient(315deg, #E1C324, #cb8016);
+  box-shadow: 0px 3px 1px #ab5d0b,
+    0px 0px 0px #a76912;
+  // margin-right: 4px;
+  margin-top: 0px;
+  // border: 3px solid #a46820;
+}
 .buy_button.vs-button--default {
   border-radius: 70px !important;
   width: 100px;
@@ -90,7 +100,9 @@
   margin-top: 0px;
   // border: 3px solid #a46820;
 }
-.buy_button.vs-button--default:hover, .finish_btn.vs-button--default:hover {
+.buy_button.vs-button--default:hover,
+.finish_btn.vs-button--default:hover,
+.swap_button.vs-button--default:hover {
   background: linear-gradient(315deg, #cb8016, #E1C324);
   box-shadow:  0px 3px 1px #ab5d0b,
                0px 0px 0px #a76912 !important;

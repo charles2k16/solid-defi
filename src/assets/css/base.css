@@ -492,13 +492,14 @@ hr.sales_hr {
   margin: 0 auto;
   width: 100%;
 }
-/* .hero3 {
-  background: linear-gradient(180deg, #0f121e 20%, #191D31 87%);
+.hero_swap {
+  background: linear-gradient(180deg, #0f121e 20%, #1B1C4C 87%);
   display: block;
   align-items: center;
   margin: 0 auto;
   width: 100%;
-} */
+  padding-bottom: 100px;
+}
 .white {
   color: rgb(245, 245, 245);
 }

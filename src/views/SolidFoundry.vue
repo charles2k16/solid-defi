@@ -2,7 +2,7 @@
   <div class="main_container">
     <NavBar />
 
-    <div class="hero">
+    <div class="hero_swap">
       <div class="wrap">
         <div class="dai_bg">
           <span>GET YOUR FIRST SOLID-DAI NOW! </span>
@@ -68,8 +68,32 @@
                 </div>
               </div>
 
-              <div class="mt-20">
-                <div></div>
+              <div class="mt-10 conve">
+                <span>1 DAI = 0.0094213 SolidDAI</span>
+              </div>
+
+              <div class="mt-50">
+                <div class="swap_round_div">
+                  <div class="flex-justify-between-center">
+                    <span class="matic_btn_swap">
+                      Connect to <br />
+                      <span style="color: blue"> <b>Matic </b></span>
+                    </span>
+
+                    <span class="eth_btn_swap">
+                      You're <br />
+                      <span style="color: #dddbec">
+                        <b>ON Ethereum </b>
+                      </span>
+                    </span>
+                  </div>
+
+                  <div>
+                    <vs-button class="swap_button" style="font-size: 0.8rem">
+                      <b> SWAP</b>
+                    </vs-button>
+                  </div>
+                </div>
               </div>
             </div>
           </vs-col>
@@ -159,16 +183,20 @@
         </vs-row>
       </div>
     </div>
+
+    <Footer />
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar';
+import Footer from './sections/Footer.vue';
 
 export default {
   name: 'SolidFoundry',
   components: {
     NavBar,
+    Footer,
   },
 };
 </script>
@@ -186,6 +214,7 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 120px;
 
   span {
     color: whitesmoke;
@@ -248,6 +277,15 @@ export default {
       cursor: pointer;
     }
   }
+
+  .conve {
+    float: right;
+
+    span {
+      font-size: 10px;
+      color: #77749c;
+    }
+  }
 }
 .input_from {
   padding: 10px;
@@ -307,12 +345,12 @@ export default {
   input {
     background: #161938;
     height: 55px;
-    padding: 2px 8px;
+    padding: 2px 8px !important;
     width: 130px;
     border-radius: 10px;
     border: none;
     font-family: 'Montserrat';
-    font-size: 15px;
+    font-size: 20px;
     color: whitesmoke;
     font-weight: bold;
 
@@ -396,5 +434,37 @@ export default {
   width: 620px;
   border-radius: 20px;
   margin-left: 5px;
+}
+.swap_round_div {
+  background: #1a1d29;
+  box-shadow: 3px 3px 5px #171c20, -3px -3px 5px #1e2733,
+    inset -3px -3px 5px #111010;
+  border: 3px solid #211e36;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 280px;
+  height: 55px;
+  padding: 2px 2px 2px 7px;
+  border-radius: 45px;
+  margin-bottom: 40.5px;
+
+  .matic_btn_swap {
+    width: 80px;
+    font-size: 0.7rem;
+    color: rgb(116, 112, 112);
+    padding: 1px 5px;
+    background: #dddbec;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .eth_btn_swap {
+    color: #b6b6b6;
+    font-size: 0.7rem;
+    text-align: center;
+    width: 90px;
+    margin-left: 5px;
+  }
 }
 </style>
