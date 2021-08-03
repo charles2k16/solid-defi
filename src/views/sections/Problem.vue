@@ -16,7 +16,6 @@
     <vs-row class="mt-70">
       <vs-col :w="7" :xs="12" :sm="12">
         <div class="prob_bg">
-          <!-- <img src="../../assets/images/raw2.png" alt="" width="450px" /> -->
           <div class="dai_box1">
             <div class="prob_box arr-d flex-row-center">
               <div class="d-flex-center arr">
@@ -33,7 +32,7 @@
       </vs-col>
 
       <vs-col :w="5" :xs="12" :sm="12">
-        <div class="ml-20">
+        <div class="ml-20 problem_right">
           <h2 class="white">USDT ≠ STABLECOIN</h2>
           <p class="lead_text_inf mt-20">
             It’s ironic that a token pegged 1:1 to USD should be called a
@@ -90,7 +89,7 @@
       </vs-col>
 
       <vs-col :w="5" :xs="12" :sm="12">
-        <div class="ml-20">
+        <div class="ml-20 problem_right2">
           <h2 class="white">MONEY PRINTING MANIA</h2>
 
           <p class="lead_text_inf mt-20">

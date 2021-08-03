@@ -9,6 +9,7 @@ import 'material-icons/iconfont/material-icons.css';
 // import drizzleOptions from '@/plugins/drizzle'
 
 import '@/assets/css/base.css';
+import '@/assets/css/display.css';
 import "@/plugins/element/index.js";
 import '@/plugins/vuesax';
 

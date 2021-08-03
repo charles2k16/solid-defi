@@ -61,7 +61,7 @@
       </vs-col>
 
       <vs-col :w="6" :xs="12" :sm="12">
-        <div class="ml-20">
+        <div class="ml-20 problem_right2">
           <h2 class="white">
             SolidUSDT: PURCHASING POWER INCREASES WITH INFLATION
           </h2>
@@ -79,7 +79,7 @@
     <vs-row class="mt-50">
       <vs-col :w="6" :xs="12" :sm="12">
         <div class="solution_txt">
-          <p>
+          <p class="big_p">
             Buy Price =
             <span class="white">(3/2*x+s**(3/2))**(2/3)-s</span> = The square
             root of supply Sell Price =
@@ -91,7 +91,7 @@
       </vs-col>
 
       <vs-col :w="6" :xs="12" :sm="12">
-        <div class="ml-20">
+        <div class="ml-20 problem_right">
           <p class="lead_text_inf mt-20" style="color:#7a83a1">
             While the Solid Bonding Curve will eventually accept USDT. We like
             to support native crypto currency projects so the initial Solid
@@ -110,7 +110,7 @@
       </vs-col>
 
       <vs-col :w="6" :xs="12" :sm="12">
-        <div class="ml-20">
+        <div class="ml-20 problem_right">
           <h2 class="white">
             SOLIDDAI REWARDS RETURN UP TO 20% OF CRYPTO SHAKEOUTS
           </h2>

@@ -2,8 +2,8 @@
   <vs-row>
     <vs-col :w="6" :xs="12" :sm="12">
       <div class="mt-120">
-        <div class="flex-justify-between-center">
-          <h1 class="lead_head_text2" style="color: #FCB42A;">
+        <div class="flex-justify-between-center" id="hd_sm">
+          <h1 class="lead_head_text2" style="color: #FCB42A;" id="head_mob">
             SOLID DEFI
           </h1>
 
@@ -14,12 +14,26 @@
           <img
             src="../../assets/images/polygon.png"
             alt="polygon"
-            width="180px"
+            class="poly_home"
+          />
+        </div>
+
+        <div id="hide_md" style="text-align:center;">
+          <h1 class="lead_head_text2" style="color: #FCB42A;" id="head_mob">
+            SOLID DEFI
+          </h1>
+          <span class="material-icons icx">
+            clear
+          </span>
+          <img
+            src="../../assets/images/polygon.png"
+            alt="polygon"
+            class="poly_home"
           />
         </div>
 
         <div class="mt-50">
-          <p class="lead_head_text2">
+          <p class="lead_head_text2" id="stba_coin">
             The first stablecoin <br />to profit from inflation
           </p>
         </div>

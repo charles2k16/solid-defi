@@ -7,7 +7,7 @@
           alt="money"
           class="road_image"
         />
-        <h1 class="lead_head_text2" style="color: rgb(77,26,192);">
+        <h1 class="lead_head_text2" id="rdmap_h1">
           2021 ROADMAP
         </h1>
       </div>

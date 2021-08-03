@@ -41,7 +41,20 @@
                 </div>
               </div>
 
-              <div class="token_list"></div>
+              <div class="token_list">
+                <div class="tokens">
+                  <div>
+                    <img
+                      src="https://cryptologos.cc/logos/ethereum-eth-logo.svg"
+                      alt="eth"
+                    />
+                  </div>
+                  <div>
+                    <span>ETH</span>
+                    <span>Ether</span>
+                  </div>
+                </div>
+              </div>
 
               <div class="mt-20 tk_brk">
                 <span class="material-icons-round swp">

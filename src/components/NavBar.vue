@@ -21,8 +21,8 @@
         <vs-button
           class="airdrop_btn"
           blank
-          id="airdrop_btn_nav"
           to="/solidfoundry"
+          id="airdrop_btn_nav"
         >
           <b>Go to App</b>
         </vs-button>
