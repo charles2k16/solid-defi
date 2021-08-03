@@ -1,9 +1,8 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .vs-dialog {
-    width: 90% !important;
+    width: 95% !important;
   }
-
   .wrap {
     width: 100% !important;
     padding: 0 10px;
@@ -138,7 +137,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+   display:inline;
   }
 
   #medium_btn {
@@ -242,6 +241,7 @@
   #stba_coin {
     font-size: 40px;
     text-align: left;
+    display: block;
   }
    .problem_image {
      margin-right: 10px !important;
@@ -280,13 +280,17 @@
      width: 100% !important;
    }
    .ul {
-     width: 80% !important;
+     width: 83% !important;
    }
    .roadmap_ul {
-     margin-left: 50px !important;
+     margin-left: 30px !important;
    }
    .roadmap_ul li {
      font-size: 1rem !important;
+   }
+   .roadmap_ul li::before {
+     width: 1em;
+     margin-left: -1.3em;
    }
    .vl {
      height: 169px;
@@ -446,7 +450,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+  display:inline-block;
   }
 
   #medium_btn {
@@ -534,6 +538,7 @@
     #stba_coin {
       font-size: 40px;
       text-align: left;
+      display: block;
     }
 
     .problem_image {
@@ -746,7 +751,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+ display:inline-block;
   }
 
   #medium_btn {
@@ -851,6 +856,7 @@
     #stba_coin {
       font-size: 40px;
       text-align: left;
+      display: block;
     }
 
     .problem_image {
@@ -1067,7 +1073,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+    display:inline-block;
   }
 
   #medium_btn {
@@ -1155,6 +1161,7 @@
       #stba_coin {
         font-size: 40px;
         text-align: left;
+        display: block;
       }
 
       .problem_image {
@@ -1367,7 +1374,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+    display:inline-flex;
   }
 
   #medium_btn {
@@ -1472,6 +1479,7 @@
       #stba_coin {
         font-size: 40px;
         text-align: left;
+        display: block;
       }
 
       .problem_image {
@@ -1693,7 +1701,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+     display:inline-block;
   }
 
   #medium_btn {
@@ -1788,6 +1796,7 @@
        #stba_coin {
          font-size: 40px;
          text-align: left;
+         display: block;
        }
 
        .problem_image {
@@ -2000,7 +2009,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+    display:inline-block;
   }
 
   #medium_btn {
@@ -2109,6 +2118,7 @@
        #stba_coin {
          font-size: 40px;
          text-align: left;
+         display: block;
        }
 
        .problem_image {
@@ -2329,7 +2339,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+    display:inline-block;
   }
 
   #medium_btn {
@@ -2438,6 +2448,7 @@
        #stba_coin {
          font-size: 40px;
          text-align: left;
+         display: block;
        }
 
        .problem_image {
@@ -2658,7 +2669,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+    display:inline-block;
   }
 
   #medium_btn {
@@ -2767,6 +2778,7 @@
      #stba_coin {
        font-size: 40px;
        text-align: left;
+       display: block;
      }
 
      .problem_image {
@@ -2986,7 +2998,7 @@
   }
 
   #airdrop_btn {
-    display: block;
+ display:inline-block;
   }
 
   #medium_btn {
@@ -3078,6 +3090,7 @@
      #stba_coin {
        font-size: 40px;
        text-align: left;
+       display: block;
      }
 
      .problem_image {

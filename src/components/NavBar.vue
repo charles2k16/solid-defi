@@ -20,9 +20,8 @@
       <template #right>
         <vs-button
           class="airdrop_btn"
-          blank
-          to="/solidfoundry"
           id="airdrop_btn_nav"
+          @click="showComingSoon = true"
         >
           <b>Go to App</b>
         </vs-button>
@@ -65,6 +64,15 @@
         </vs-button>
       </template>
     </vs-navbar>
+
+    <vs-dialog v-model="showComingSoon" width="420px" class="_dialog">
+      <template #header>
+        <h4 class="not-margin">Solid Foundry</h4>
+      </template>
+      <div>
+        <h1>Coming Soon</h1>
+      </div>
+    </vs-dialog>
   </div>
 </template>
 
@@ -74,6 +82,7 @@ export default {
   data: () => ({
     active: '',
     routeName: 'Home',
+    showComingSoon: false,
   }),
   created() {
     this.routeName =

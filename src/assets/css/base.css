@@ -363,6 +363,7 @@ hr.sales_hr {
 .d-flex {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .d-flex-center {
@@ -672,7 +673,9 @@ hr.sales_hr {
   font-size: 11px;
   padding: 2px;
 }
-
+#stba_coin {
+  display: none;
+}
 .progress_time {
   background: linear-gradient(315deg, #6D21DF, #501BC4);
   width: 0%;
@@ -1666,10 +1669,6 @@ hr.sales_hr {
 #airdrop_btn {
   display: none;
 }
-/* .head_background {
-  background-image: url('../images/globe-particle.png');
-  background-size: cover;
-} */
 hr.hd_rule {
   border: 1px solid #61698b;
   width: 300px;
