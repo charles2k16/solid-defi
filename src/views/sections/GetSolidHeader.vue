@@ -2,6 +2,10 @@
   <div class="wrap">
     <div class="center mt-50">
       <h1 class="lead_head_text">Get your SOLID now</h1>
+      <p class="white mt-20">
+        SOLID is the governance token of the inflation resistant Solid Defi
+        protocol.
+      </p>
     </div>
 
     <div class="d-flex-center mt-30">

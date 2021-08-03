@@ -6,7 +6,7 @@ export default {
     ...mapGetters('drizzle', ['drizzleInstance']),
     ...mapGetters('contracts', ['getContractData']),
   },
-  data() {
+  data () {
     return {
       maticEscrowAddress: '0x7fB34A69B92eE66673e5bC4D1908ABa257e60648',
       tokenIdMatic: '0x498E0A753840075c4925442D4d8863eEe49D61E2',
@@ -34,15 +34,15 @@ export default {
 
     //   return percentPurchased;
     // },
-    subscribeErrorResponse(errorString) {
+    subscribeErrorResponse (errorString) {
       let extractError = errorString.split("<")
       return extractError[0];
     },
-    getReferralString() {
+    getReferralString () {
       let randomString = Math.random().toString(36).substr(2);
       return `SLD-${randomString}`;
     },
-    getEthBalance(currentBalance) {
+    getEthBalance (currentBalance) {
       console.log('currentETHbalance', currentBalance)
       let balanceOf = 13160000;
       let currBalance = this.getSerial(currentBalance)
@@ -51,7 +51,7 @@ export default {
 
       return Math.round(balance);
     },
-    getMaticBalance(currentBalance) {
+    getMaticBalance (currentBalance) {
       console.log('currentbalanceMatic', currentBalance)
       let balanceOf = this.maticNewTotalToken
       let currBalance = this.getSerial(currentBalance)
@@ -61,7 +61,7 @@ export default {
 
       return Math.round(balance);
     },
-    setDefaultBundle(r) {
+    setDefaultBundle (r) {
       let i;
       let smallB = document.getElementsByClassName('smallB');
       let bigB = document.getElementsByClassName('bigB');
@@ -98,9 +98,9 @@ export default {
           mediumB[i].style.marginLeft = '35px';
         }
       }
-      this.addAnimate();
+      // this.addAnimate();
     },
-    addAnimate() {
+    addAnimate () {
       let i, percentage
       percentage = document.getElementsByClassName('percentage_off');
 
@@ -114,17 +114,17 @@ export default {
         }
       }, 4000);
     },
-    getMaticAmount(numberofBundle, price, factor) {
+    getMaticAmount (numberofBundle, price, factor) {
       let wei = factor * price
       let amount = wei * numberofBundle;
       let finalAmount = amount / 1000000000000000000;
       return finalAmount;
     },
-    getSerial(amount) {
+    getSerial (amount) {
       let finalAmount = amount / 1000000000000000000;
       return finalAmount;
     },
-    approveTrans() {
+    approveTrans () {
       let amount = 10000000000000000000;
       let amt = amount.toString();
 
@@ -132,11 +132,11 @@ export default {
         'approve'
       ].cacheSend(this.maticEscrowAddress, amt);
     },
-    toWei(eth) {
+    toWei (eth) {
       let weiValue = Web3.utils.toWei(eth, 'ether');
       return weiValue;
     },
-    buyEthSmallBundle(numberofBundle, smallPrice) {
+    buyEthSmallBundle (numberofBundle, smallPrice) {
       let toWeiBundle = smallPrice * numberofBundle;
       console.log(toWeiBundle);
       this.drizzleInstance.contracts['SolidEscrow'].methods[
@@ -145,7 +145,7 @@ export default {
         value: toWeiBundle,
       });
     },
-    buyEthBigBundle(numberofBundle, bigPrice) {
+    buyEthBigBundle (numberofBundle, bigPrice) {
       let toWeiBundle = bigPrice * numberofBundle;
       console.log(toWeiBundle);
       this.drizzleInstance.contracts['SolidEscrow'].methods[
@@ -156,7 +156,7 @@ export default {
     },
 
     // wrap eth bundle functions
-    buyWrapEthSmallBundle(numberofBundle, smallPrice) {
+    buyWrapEthSmallBundle (numberofBundle, smallPrice) {
       let amount = smallPrice * numberofBundle;
       let finalAmount = amount.toString();
 
@@ -164,7 +164,7 @@ export default {
         'buySmallBundleEth'
       ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, finalAmount);
     },
-    buyWrapEthBigBundle(numberofBundle, bigPrice) {
+    buyWrapEthBigBundle (numberofBundle, bigPrice) {
       let amount = bigPrice * numberofBundle;
       let finalAmount = amount.toString();
 
@@ -172,7 +172,7 @@ export default {
         'buyBigBundleEth'
       ].cacheSend(this.tokenIdMatic, this.wrapEthAddress, finalAmount);
     },
-    buyWrapEthMediumBundle(numberofBundle, bigPrice) {
+    buyWrapEthMediumBundle (numberofBundle, bigPrice) {
       let amount = bigPrice * numberofBundle;
       let finalAmount = amount.toString();
 
@@ -182,7 +182,7 @@ export default {
     },
 
     // matic bundles functions
-    buyMaticBigBundle(numberofBundle, bigPrice, factor) {
+    buyMaticBigBundle (numberofBundle, bigPrice, factor) {
       let wei = factor * bigPrice
       let amount = wei * numberofBundle;
       let finalAmount = amount.toString();
@@ -193,7 +193,7 @@ export default {
         value: finalAmount,
       });
     },
-    buyMaticSmallBundle(numberofBundle, smallPrice, factor) {
+    buyMaticSmallBundle (numberofBundle, smallPrice, factor) {
       let wei = factor * smallPrice
       let amount = wei * numberofBundle;
       let finalAmount = amount.toString();
@@ -204,7 +204,7 @@ export default {
         value: finalAmount,
       });
     },
-    buyMaticMediumBundle(numberofBundle, smallPrice, factor) {
+    buyMaticMediumBundle (numberofBundle, smallPrice, factor) {
       let wei = factor * smallPrice
       let amount = wei * numberofBundle;
       let finalAmount = amount.toString();
@@ -215,7 +215,7 @@ export default {
         value: finalAmount,
       });
     },
-    checkNetwork(netId) {
+    checkNetwork (netId) {
       let id = parseInt(netId);
       let networks = [1, 2, 3, 4, 42, 61, 62, 137, 80001];
       if (networks.includes(id)) {
@@ -225,7 +225,7 @@ export default {
         return false
       }
     },
-    getNetworkName(netId) {
+    getNetworkName (netId) {
       let id = parseInt(netId);
       let netName = "Wrong Network"
       switch (id) {
@@ -259,7 +259,7 @@ export default {
       }
       return netName;
     },
-    copyToClip(text) {
+    copyToClip (text) {
       let self = this;
       let textArea = document.createElement("textarea");
       textArea.value = text;
@@ -282,10 +282,10 @@ export default {
 
       setTimeout(function () { self.clipboard = 'Copy to clipboard' }, 3000);
     },
-    goHome() {
+    goHome () {
       this.$router.push("/")
     },
-    openNotification(position = null, color, title, text) {
+    openNotification (position = null, color, title, text) {
       this.$vs.notification({
         sticky: true,
         color,
@@ -294,7 +294,7 @@ export default {
         text,
       });
     },
-    connectedNotify(position = null, color) {
+    connectedNotify (position = null, color) {
       this.$vs.notification({
         progress: 'auto',
         color,
@@ -303,7 +303,7 @@ export default {
         text: `You already connected to a Matic Network`,
       });
     },
-    errorNotify(position = null, color) {
+    errorNotify (position = null, color) {
       this.$vs.notification({
         color,
         position,

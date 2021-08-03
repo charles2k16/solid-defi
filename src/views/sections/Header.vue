@@ -48,7 +48,7 @@
               id="airdrop_btn"
               @click="showComingSoon = true"
             >
-              <b>Go to App</b>
+              <b>Join Contest</b>
             </vs-button>
             <vs-button class="buy_button_home btn_hover" blank to="/presale">
               <b>BUY NOW!</b>

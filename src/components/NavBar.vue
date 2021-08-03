@@ -23,7 +23,7 @@
           id="airdrop_btn_nav"
           @click="showComingSoon = true"
         >
-          <b>Go to App</b>
+          <b>Join Contest</b>
         </vs-button>
         <!-- <vs-button
           v-if="routeName == 'Foundry'"

@@ -1,7 +1,7 @@
 <template>
   <div class="main_container">
     <NavBar />
-    <div class="hero">
+    <div class="hero mb-50">
       <div class="wrap">
         <div class="d-flex-center">
           <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn">
@@ -1658,6 +1658,7 @@ export default {
       }
     },
     changeBundle(r) {
+      // console.log(r);
       this.ethBundle = 1;
       this.wBundle = 1;
       this.maticBundle = 1;
