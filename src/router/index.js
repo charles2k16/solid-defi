@@ -7,6 +7,7 @@ import BuyNft from '@/views/BuyNft';
 import Presale from '@/views/Presale';
 import RefferalCount from '@/views/RefferalCount';
 import SolidFoundry from '@/views/SolidFoundry';
+// const Presale = () => import('../views/Presale')
 
 Vue.use(VueRouter);
 

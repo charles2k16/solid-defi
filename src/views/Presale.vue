@@ -861,33 +861,35 @@
             </div>
           </vs-col>
           <vs-col :w="5" :xs="12" :sm="12">
-            <div v-if="onEthNetwork">
-              <div class="progress">
-                <div
-                  class="progress_token"
-                  :style="{ width: `${ethPercentPurchased}%` }"
-                >
-                  <span>{{ Math.trunc(ethPercentPurchased) }}%</span>
+            <div v-if="isDrizzleInitialized">
+              <div v-if="onEthNetwork">
+                <div class="progress">
+                  <div
+                    class="progress_token"
+                    :style="{ width: `${ethPercentPurchased}%` }"
+                  >
+                    <span>{{ Math.trunc(ethPercentPurchased) }}%</span>
+                  </div>
                 </div>
+
+                <p class="mt-20 p_tokens">68K Tokens</p>
               </div>
 
-              <p class="mt-20 p_tokens">68K Tokens</p>
+              <div v-else>
+                <div class="progress">
+                  <div
+                    class="progress_token"
+                    :style="{ width: `${maticPercentPurchased}%` }"
+                  >
+                    <span>{{ Math.trunc(maticPercentPurchased) }}%</span>
+                  </div>
+                </div>
+
+                <p class="mt-20 p_tokens">1.48M Tokens</p>
+              </div>
             </div>
 
             <div v-else>
-              <div class="progress">
-                <div
-                  class="progress_token"
-                  :style="{ width: `${maticPercentPurchased}%` }"
-                >
-                  <span>{{ Math.trunc(maticPercentPurchased) }}%</span>
-                </div>
-              </div>
-
-              <p class="mt-20 p_tokens">1.48M Tokens</p>
-            </div>
-
-            <div v-if="!isDrizzleInitialized">
               <div class="progress">
                 <div class="progress_token" :style="{ width: `${11}%` }">
                   <span>11%</span>
@@ -909,7 +911,7 @@
                 </h2>
               </div>
               <flip-countdown
-                deadline="2021-07-13 12:00:00"
+                deadline="2021-09-03 12:00:00"
                 class="timerr"
               ></flip-countdown>
             </div>
@@ -923,7 +925,7 @@
             <div class="progress">
               <div class="progress_time"></div>
             </div>
-            <p class="mt-20 p_tokens">14 days</p>
+            <p class="mt-20 p_tokens">31 days</p>
           </vs-col>
         </vs-row>
 
@@ -1067,12 +1069,12 @@
 </template>
 
 <script>
-// import Vue from 'vue';
-// import { store } from '../store/';
-// import drizzleVuePlugin from '@drizzle/vue-plugin';
-// import drizzleOptions from '@/plugins/drizzle';
+import Vue from 'vue';
+import { store } from '../store/';
+import drizzleVuePlugin from '@drizzle/vue-plugin';
+import drizzleOptions from '@/plugins/drizzle';
 
-// Vue.use(drizzleVuePlugin, { store, drizzleOptions });
+Vue.use(drizzleVuePlugin, { store, drizzleOptions });
 
 import { mapGetters } from 'vuex';
 import {
@@ -1144,6 +1146,9 @@ export default {
       ethSolidEscrowAddress: '0x27662EC00573DcA447F5F2c50Af1724B63679b29',
     };
   },
+  // beforeCreate() {
+  //   this.$router.go();
+  // },
   created() {
     if (this.onEthNetwork) this.connectToEthContract();
     else this.connectToMaticContract();

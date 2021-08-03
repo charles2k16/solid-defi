@@ -510,6 +510,9 @@ hr.sales_hr {
 .white {
   color: rgb(245, 245, 245);
 }
+.curve_sol_image {
+  width: 400px;
+}
 .ul {
   width: 400px;
 }
@@ -672,7 +675,7 @@ hr.sales_hr {
 
 .progress_time {
   background: linear-gradient(315deg, #6D21DF, #501BC4);
-  width: 10%;
+  width: 0%;
   height: 20px;
   border-radius: 40px;
   margin-top: 10px;

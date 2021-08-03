@@ -15,9 +15,12 @@
     <vs-row class="mt-70">
       <vs-col :w="6" :xs="12" :sm="12">
         <div>
-          <div class="solution_head d-flex-center">
-            <span>USDt vs solidUSDT as supply increases </span>
+          <div class="d-flex-center">
+            <div class="solution_head d-flex-center">
+              <span>USDt vs solidUSDT as supply increases </span>
+            </div>
           </div>
+
           <br />
 
           <div class="flex-justify-around-center sol_img_div">
@@ -78,15 +81,17 @@
 
     <vs-row class="mt-50">
       <vs-col :w="6" :xs="12" :sm="12">
-        <div class="solution_txt">
-          <p class="big_p">
-            Buy Price =
-            <span class="white">(3/2*x+s**(3/2))**(2/3)-s</span> = The square
-            root of supply Sell Price =
-            <span class="white">Integral of x**(½) dx = ⅔*x**(3/2) + c</span>
-            x = The amount in USDt you are sending to the Solid Bonding Curve
-            Contract s = The current supply of solidUSDt
-          </p>
+        <div class=" d-flex-center">
+          <div class="solution_txt">
+            <p class="big_p">
+              Buy Price =
+              <span class="white">(3/2*x+s**(3/2))**(2/3)-s</span> = The square
+              root of supply Sell Price =
+              <span class="white">Integral of x**(½) dx = ⅔*x**(3/2) + c</span>
+              x = The amount in USDt you are sending to the Solid Bonding Curve
+              Contract s = The current supply of solidUSDt
+            </p>
+          </div>
         </div>
       </vs-col>
 
@@ -105,7 +110,11 @@
     <vs-row class="mt-50">
       <vs-col :w="6" :xs="12" :sm="12">
         <div class="mr-20">
-          <img src="../../assets/images/coin_curve.png" alt="" width="400px" />
+          <img
+            src="../../assets/images/coin_curve.png"
+            alt=""
+            class="curve_sol_image"
+          />
         </div>
       </vs-col>
 

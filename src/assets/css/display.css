@@ -296,6 +296,15 @@
      height: 164px;
      margin-top: -226px;
    }
+   .curve_sol_image {
+     width: 98% !important;
+   }
+   .sol_img_div {
+     width: 100% !important;
+   }
+   .gg-arrow-long-right {
+     width: 98% !important;
+   }
 }
 
 /* ----------- iPhone 12 pro max ----------- */
@@ -911,10 +920,10 @@
       margin-top: -226px;
     }
     .solution_head {
-      width: 370px !important;
+      width: 98% !important;
     }
     .solution_txt {
-        width: 370px !important;
+        width: 98% !important;
     }
 }
 
@@ -1534,13 +1543,13 @@
         margin-top: -226px;
       }
 
-      .solution_head {
-        width: 370px !important;
-      }
+     .solution_head {
+       width: 98% !important;
+     }
 
-      .solution_txt {
-        width: 370px !important;
-      }
+     .solution_txt {
+       width: 98% !important;
+     }
 
 }
 
@@ -2171,13 +2180,13 @@
          margin-top: -226px;
        }
 
-       .solution_head {
-         width: 360px !important;
-       }
+     .solution_head {
+       width: 98% !important;
+     }
 
-       .solution_txt {
-         width: 360px !important;
-       }
+     .solution_txt {
+       width: 98% !important;
+     }
 }
 
 /* ----------- iPhone 5 ----------- */
@@ -2500,13 +2509,13 @@
          margin-top: -226px;
        }
 
-       .solution_head {
-         width: 310px !important;
-       }
+   .solution_head {
+     width: 98% !important;
+   }
 
-       .solution_txt {
-         width: 310px !important;
-       }
+   .solution_txt {
+     width: 98% !important;
+   }
 }
 
 /* ----------- Galaxy S6 s5 ----------- */
@@ -2829,13 +2838,13 @@
        margin-top: -226px;
      }
 
-     .solution_head {
-       width: 350px !important;
-     }
+ .solution_head {
+   width: 98% !important;
+ }
 
-     .solution_txt {
-       width: 350px !important;
-     }
+ .solution_txt {
+   width: 98% !important;
+ }
 }
 
 /* ----------- pixel 2 xl ----------- */
