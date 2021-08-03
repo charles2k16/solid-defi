@@ -497,10 +497,104 @@
     margin-top: 50px !important;
   }
 
-  .problem_image {
-    margin-right: 10px !important;
-    width: 150px;
-  }
+    /* landing page */
+    .poly_home {
+      width: 270px;
+      margin-top: 25px;
+    }
+
+    .icx {
+      display: block;
+      margin-top: 25px;
+      font-size: 48px;
+    }
+
+    #hd_sm {
+      display: none;
+    }
+
+    #hide_md {
+      display: block;
+    }
+
+    #head_mob {
+      font-size: 40px;
+      margin-top: -20px;
+    }
+
+    #stba_coin {
+      font-size: 40px;
+      text-align: left;
+    }
+
+    .problem_image {
+      margin-right: 10px !important;
+      width: 150px !important;
+    }
+
+    .solution_image {
+      margin-right: 10px !important;
+      width: 110px !important;
+    }
+
+    .problem_right {
+      margin-left: 0px;
+    }
+
+    .problem_right2 {
+      margin-left: 0px;
+      margin-top: 45px;
+    }
+
+    .prob2_bg {
+      margin-right: 0px;
+    }
+
+    .inflation_boxes {
+      padding-right: 0px !important;
+    }
+
+    .big_p {
+      font-size: 16px !important;
+    }
+
+    .road_image {
+      width: 150px !important;
+    }
+
+    .sol_head {
+      width: 100% !important;
+    }
+
+    #rdmap_h1 {
+      margin-right: 0px !important;
+    }
+
+    .roadmap {
+      width: 100% !important;
+    }
+
+    .ul {
+      width: 80% !important;
+    }
+
+    .roadmap_ul {
+      margin-left: 50px !important;
+    }
+
+    .roadmap_ul li {
+      font-size: 1rem !important;
+    }
+
+    .vl {
+      height: 169px;
+      margin-top: -132px;
+    }
+
+    .vl2 {
+      height: 164px;
+      margin-top: -226px;
+    }
 }
 
 /* ----------- iPhone 11 12 pro  ----------- */
@@ -719,6 +813,109 @@
   #learn_btn {
     font-size: 1.2rem
   }
+
+    /* landing page */
+    .poly_home {
+      width: 270px;
+      margin-top: 25px;
+    }
+
+    .icx {
+      display: block;
+      margin-top: 25px;
+      font-size: 48px;
+    }
+
+    #hd_sm {
+      display: none;
+    }
+
+    #hide_md {
+      display: block;
+    }
+
+    #head_mob {
+      font-size: 40px;
+      margin-top: -20px;
+    }
+
+    #stba_coin {
+      font-size: 40px;
+      text-align: left;
+    }
+
+    .problem_image {
+      margin-right: 10px !important;
+      width: 150px !important;
+    }
+
+    .solution_image {
+      margin-right: 10px !important;
+      width: 110px !important;
+    }
+
+    .problem_right {
+      margin-left: 0px;
+    }
+
+    .problem_right2 {
+      margin-left: 0px;
+      margin-top: 45px;
+    }
+
+    .prob2_bg {
+      margin-right: 0px;
+    }
+
+    .inflation_boxes {
+      padding-right: 0px !important;
+    }
+
+    .big_p {
+      font-size: 16px !important;
+    }
+
+    .road_image {
+      width: 150px !important;
+    }
+
+    .sol_head {
+      width: 100% !important;
+    }
+
+    #rdmap_h1 {
+      margin-right: 0px !important;
+    }
+
+    .roadmap {
+      width: 100% !important;
+    }
+
+    .ul {
+      width: 80% !important;
+    }
+
+    .roadmap_ul {
+      margin-left: 50px !important;
+    }
+
+    .roadmap_ul li {
+      font-size: 1rem !important;
+    }
+    .vl {
+      height: 169px;
+      margin-top: -132px;
+    }
+    .vl2 {
+      height: 164px;
+      margin-top: -226px;
+    }
+    .solution_head {
+      width: 370px !important;
+    }
+    .solution_txt {
+        width: 370px !important;
+    }
 }
 
 /* ----------- iPhone 11 pro max  ----------- */
@@ -920,6 +1117,105 @@
   .comm_icons {
     margin-top: 50px !important;
   }
+
+      /* landing page */
+      .poly_home {
+        width: 270px;
+        margin-top: 25px;
+      }
+
+      .icx {
+        display: block;
+        margin-top: 25px;
+        font-size: 48px;
+      }
+
+      #hd_sm {
+        display: none;
+      }
+
+      #hide_md {
+        display: block;
+      }
+
+      #head_mob {
+        font-size: 40px;
+        margin-top: -20px;
+      }
+
+      #stba_coin {
+        font-size: 40px;
+        text-align: left;
+      }
+
+      .problem_image {
+        margin-right: 10px !important;
+        width: 150px !important;
+      }
+
+      .solution_image {
+        margin-right: 10px !important;
+        width: 110px !important;
+      }
+
+      .problem_right {
+        margin-left: 0px;
+      }
+
+      .problem_right2 {
+        margin-left: 0px;
+        margin-top: 45px;
+      }
+
+      .prob2_bg {
+        margin-right: 0px;
+      }
+
+      .inflation_boxes {
+        padding-right: 0px !important;
+      }
+
+      .big_p {
+        font-size: 16px !important;
+      }
+
+      .road_image {
+        width: 150px !important;
+      }
+
+      .sol_head {
+        width: 100% !important;
+      }
+
+      #rdmap_h1 {
+        margin-right: 0px !important;
+      }
+
+      .roadmap {
+        width: 100% !important;
+      }
+
+      .ul {
+        width: 80% !important;
+      }
+
+      .roadmap_ul {
+        margin-left: 50px !important;
+      }
+
+      .roadmap_ul li {
+        font-size: 1rem !important;
+      }
+
+      .vl {
+        height: 169px;
+        margin-top: -132px;
+      }
+
+      .vl2 {
+        height: 164px;
+        margin-top: -226px;
+      }
 }
 
 /* ----------- iPhone X ----------- */
@@ -1139,11 +1435,112 @@
     font-size: 1rem
   }
 
-  /* lANDING PAGE*/
-  .home_bg {
-    height: 100%;
-  }
- 
+      /* landing page */
+      .poly_home {
+        width: 270px;
+        margin-top: 25px;
+      }
+
+      .icx {
+        display: block;
+        margin-top: 25px;
+        font-size: 48px;
+      }
+
+      #hd_sm {
+        display: none;
+      }
+
+      #hide_md {
+        display: block;
+      }
+
+      #head_mob {
+        font-size: 40px;
+        margin-top: -20px;
+      }
+
+      #stba_coin {
+        font-size: 40px;
+        text-align: left;
+      }
+
+      .problem_image {
+        margin-right: 10px !important;
+        width: 150px !important;
+      }
+
+      .solution_image {
+        margin-right: 10px !important;
+        width: 110px !important;
+      }
+
+      .problem_right {
+        margin-left: 0px;
+      }
+
+      .problem_right2 {
+        margin-left: 0px;
+        margin-top: 45px;
+      }
+
+      .prob2_bg {
+        margin-right: 0px;
+      }
+
+      .inflation_boxes {
+        padding-right: 0px !important;
+      }
+
+      .big_p {
+        font-size: 16px !important;
+      }
+
+      .road_image {
+        width: 150px !important;
+      }
+
+      .sol_head {
+        width: 100% !important;
+      }
+
+      #rdmap_h1 {
+        margin-right: 0px !important;
+      }
+
+      .roadmap {
+        width: 100% !important;
+      }
+
+      .ul {
+        width: 80% !important;
+      }
+
+      .roadmap_ul {
+        margin-left: 50px !important;
+      }
+
+      .roadmap_ul li {
+        font-size: 1rem !important;
+      }
+
+      .vl {
+        height: 169px;
+        margin-top: -132px;
+      }
+
+      .vl2 {
+        height: 164px;
+        margin-top: -226px;
+      }
+
+      .solution_head {
+        width: 370px !important;
+      }
+
+      .solution_txt {
+        width: 370px !important;
+      }
 
 }
 
@@ -1354,6 +1751,104 @@
   .time_left-2 {
     margin-bottom: 13px;
   }
+       /* landing page */
+       .poly_home {
+         width: 270px;
+         margin-top: 25px;
+       }
+
+       .icx {
+         display: block;
+         margin-top: 25px;
+         font-size: 48px;
+       }
+
+       #hd_sm {
+         display: none;
+       }
+
+       #hide_md {
+         display: block;
+       }
+
+       #head_mob {
+         font-size: 40px;
+         margin-top: -20px;
+       }
+
+       #stba_coin {
+         font-size: 40px;
+         text-align: left;
+       }
+
+       .problem_image {
+         margin-right: 10px !important;
+         width: 150px !important;
+       }
+
+       .solution_image {
+         margin-right: 10px !important;
+         width: 110px !important;
+       }
+
+       .problem_right {
+         margin-left: 0px;
+       }
+
+       .problem_right2 {
+         margin-left: 0px;
+         margin-top: 45px;
+       }
+
+       .prob2_bg {
+         margin-right: 0px;
+       }
+
+       .inflation_boxes {
+         padding-right: 0px !important;
+       }
+
+       .big_p {
+         font-size: 16px !important;
+       }
+
+       .road_image {
+         width: 150px !important;
+       }
+
+       .sol_head {
+         width: 100% !important;
+       }
+
+       #rdmap_h1 {
+         margin-right: 0px !important;
+       }
+
+       .roadmap {
+         width: 100% !important;
+       }
+
+       .ul {
+         width: 80% !important;
+       }
+
+       .roadmap_ul {
+         margin-left: 50px !important;
+       }
+
+       .roadmap_ul li {
+         font-size: 1rem !important;
+       }
+
+       .vl {
+         height: 169px;
+         margin-top: -132px;
+       }
+
+       .vl2 {
+         height: 164px;
+         margin-top: -226px;
+       }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
@@ -1577,11 +2072,112 @@
     height: 0;
   }
 
-  /* Landing page */
-  /* landing page */
-  .poly_home {
-    width: 190px;
-  }
+       /* landing page */
+       .poly_home {
+         width: 270px;
+         margin-top: 25px;
+       }
+
+       .icx {
+         display: block;
+         margin-top: 25px;
+         font-size: 48px;
+       }
+
+       #hd_sm {
+         display: none;
+       }
+
+       #hide_md {
+         display: block;
+       }
+
+       #head_mob {
+         font-size: 40px;
+         margin-top: -20px;
+       }
+
+       #stba_coin {
+         font-size: 40px;
+         text-align: left;
+       }
+
+       .problem_image {
+         margin-right: 10px !important;
+         width: 150px !important;
+       }
+
+       .solution_image {
+         margin-right: 10px !important;
+         width: 110px !important;
+       }
+
+       .problem_right {
+         margin-left: 0px;
+       }
+
+       .problem_right2 {
+         margin-left: 0px;
+         margin-top: 45px;
+       }
+
+       .prob2_bg {
+         margin-right: 0px;
+       }
+
+       .inflation_boxes {
+         padding-right: 0px !important;
+       }
+
+       .big_p {
+         font-size: 16px !important;
+       }
+
+       .road_image {
+         width: 150px !important;
+       }
+
+       .sol_head {
+         width: 100% !important;
+       }
+
+       #rdmap_h1 {
+         margin-right: 0px !important;
+       }
+
+       .roadmap {
+         width: 100% !important;
+       }
+
+       .ul {
+         width: 80% !important;
+       }
+
+       .roadmap_ul {
+         margin-left: 50px !important;
+       }
+
+       .roadmap_ul li {
+         font-size: 1rem !important;
+       }
+
+       .vl {
+         height: 169px;
+         margin-top: -132px;
+       }
+
+       .vl2 {
+         height: 164px;
+         margin-top: -226px;
+       }
+
+       .solution_head {
+         width: 360px !important;
+       }
+
+       .solution_txt {
+         width: 360px !important;
+       }
 }
 
 /* ----------- iPhone 5 ----------- */
@@ -1804,6 +2400,113 @@
   .el-carousel__item {
     height: 69% !important;
   }
+
+       /* landing page */
+       .poly_home {
+         width: 270px;
+         margin-top: 25px;
+       }
+
+       .icx {
+         display: block;
+         margin-top: 25px;
+         font-size: 48px;
+       }
+
+       #hd_sm {
+         display: none;
+       }
+
+       #hide_md {
+         display: block;
+       }
+
+       #head_mob {
+         font-size: 40px;
+         margin-top: -20px;
+       }
+
+       #stba_coin {
+         font-size: 40px;
+         text-align: left;
+       }
+
+       .problem_image {
+         margin-right: 10px !important;
+         width: 150px !important;
+       }
+
+       .solution_image {
+         margin-right: 10px !important;
+         width: 110px !important;
+       }
+
+       .problem_right {
+         margin-left: 0px;
+       }
+
+       .problem_right2 {
+         margin-left: 0px;
+         margin-top: 45px;
+       }
+
+       .prob2_bg {
+         margin-right: 0px;
+       }
+
+       .inflation_boxes {
+         padding-right: 0px !important;
+       }
+
+       .big_p {
+         font-size: 16px !important;
+       }
+
+       .road_image {
+         width: 150px !important;
+       }
+
+       .sol_head {
+         width: 100% !important;
+       }
+
+       #rdmap_h1 {
+         margin-right: 0px !important;
+       }
+
+       .roadmap {
+         width: 100% !important;
+       }
+
+       .ul {
+         width: 80% !important;
+       }
+
+       .roadmap_ul {
+         margin-left: 50px !important;
+       }
+
+       .roadmap_ul li {
+         font-size: 1rem !important;
+       }
+
+       .vl {
+         height: 169px;
+         margin-top: -132px;
+       }
+
+       .vl2 {
+         height: 164px;
+         margin-top: -226px;
+       }
+
+       .solution_head {
+         width: 310px !important;
+       }
+
+       .solution_txt {
+         width: 310px !important;
+       }
 }
 
 /* ----------- Galaxy S6 s5 ----------- */
@@ -2026,6 +2729,113 @@
   .el-carousel__item {
     height: 76% !important;
   }
+
+     /* landing page */
+     .poly_home {
+       width: 270px;
+       margin-top: 25px;
+     }
+
+     .icx {
+       display: block;
+       margin-top: 25px;
+       font-size: 48px;
+     }
+
+     #hd_sm {
+       display: none;
+     }
+
+     #hide_md {
+       display: block;
+     }
+
+     #head_mob {
+       font-size: 40px;
+       margin-top: -20px;
+     }
+
+     #stba_coin {
+       font-size: 40px;
+       text-align: left;
+     }
+
+     .problem_image {
+       margin-right: 10px !important;
+       width: 150px !important;
+     }
+
+     .solution_image {
+       margin-right: 10px !important;
+       width: 110px !important;
+     }
+
+     .problem_right {
+       margin-left: 0px;
+     }
+
+     .problem_right2 {
+       margin-left: 0px;
+       margin-top: 45px;
+     }
+
+     .prob2_bg {
+       margin-right: 0px;
+     }
+
+     .inflation_boxes {
+       padding-right: 0px !important;
+     }
+
+     .big_p {
+       font-size: 16px !important;
+     }
+
+     .road_image {
+       width: 150px !important;
+     }
+
+     .sol_head {
+       width: 100% !important;
+     }
+
+     #rdmap_h1 {
+       margin-right: 0px !important;
+     }
+
+     .roadmap {
+       width: 100% !important;
+     }
+
+     .ul {
+       width: 80% !important;
+     }
+
+     .roadmap_ul {
+       margin-left: 50px !important;
+     }
+
+     .roadmap_ul li {
+       font-size: 1rem !important;
+     }
+
+     .vl {
+       height: 169px;
+       margin-top: -132px;
+     }
+
+     .vl2 {
+       height: 164px;
+       margin-top: -226px;
+     }
+
+     .solution_head {
+       width: 350px !important;
+     }
+
+     .solution_txt {
+       width: 350px !important;
+     }
 }
 
 /* ----------- pixel 2 xl ----------- */
@@ -2231,8 +3041,102 @@
     height: 85% !important;
   }
 
-  /* landing page */
-  .poly_home {
-    width: 190px;
-  }
+     /* landing page */
+     .poly_home {
+       width: 270px;
+       margin-top: 25px;
+     }
+
+     .icx {
+       display: block;
+       margin-top: 25px;
+       font-size: 48px;
+     }
+
+     #hd_sm {
+       display: none;
+     }
+
+     #hide_md {
+       display: block;
+     }
+
+     #head_mob {
+       font-size: 40px;
+       margin-top: -20px;
+     }
+
+     #stba_coin {
+       font-size: 40px;
+       text-align: left;
+     }
+
+     .problem_image {
+       margin-right: 10px !important;
+       width: 150px !important;
+     }
+
+     .solution_image {
+       margin-right: 10px !important;
+       width: 110px !important;
+     }
+
+     .problem_right {
+       margin-left: 0px;
+     }
+
+     .problem_right2 {
+       margin-left: 0px;
+       margin-top: 45px;
+     }
+
+     .prob2_bg {
+       margin-right: 0px;
+     }
+
+     .inflation_boxes {
+       padding-right: 0px !important;
+     }
+
+     .big_p {
+       font-size: 16px !important;
+     }
+
+     .road_image {
+       width: 150px !important;
+     }
+
+     .sol_head {
+       width: 100% !important;
+     }
+
+     #rdmap_h1 {
+       margin-right: 0px !important;
+     }
+
+     .roadmap {
+       width: 100% !important;
+     }
+
+     .ul {
+       width: 80% !important;
+     }
+
+     .roadmap_ul {
+       margin-left: 50px !important;
+     }
+
+     .roadmap_ul li {
+       font-size: 1rem !important;
+     }
+
+     .vl {
+       height: 169px;
+       margin-top: -132px;
+     }
+
+     .vl2 {
+       height: 164px;
+       margin-top: -226px;
+     }
 }
