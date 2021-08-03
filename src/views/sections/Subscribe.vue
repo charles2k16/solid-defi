@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding-bottom: 350px;">
     <vs-row class="mt-100">
       <vs-col :w="6" :xs="12" :sm="12">
         <span class="insights" style="color: #FCB42A;">
