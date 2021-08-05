@@ -22,18 +22,6 @@ export default {
     }
   },
   methods: {
-    // getEthPercentage(currentBalance) {
-    //   let getBalance = this.getEthBalance(currentBalance)
-    //   let percentPurchased = (100 * getBalance) / this.ethNewTotalToken;
-
-    //   return percentPurchased;
-    // },
-    // getMaticPercentage(currentBalance) {
-    //   let getBalance = this.getMaticBalance(currentBalance)
-    //   let percentPurchased = (100 * getBalance) / this.maticNewTotalToken;
-
-    //   return percentPurchased;
-    // },
     subscribeErrorResponse (errorString) {
       let extractError = errorString.split("<")
       return extractError[0];
@@ -41,6 +29,23 @@ export default {
     getReferralString () {
       let randomString = Math.random().toString(36).substr(2);
       return `SLD-${randomString}`;
+    },
+    buyEstimate (etherAmount) {
+      const totalSupply = 400;
+      let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupply, 3 / 2), 2 / 3) - totalSupply
+
+      buyEstimate = buyEstimate * 10 ** 18
+      buyEstimate = buyEstimate - 1000000
+
+      return buyEstimate.toString();
+    },
+    mintOnBuy (currentAddress, amount) {
+      const amount1 = 0
+      const tokenId = ''
+
+      this.drizzleInstance.contracts['SolidFoundry'].methods[
+        'mintOnBuy'
+      ].cacheSend(tokenId, currentAddress, amount, amount1);
     },
     getEthBalance (currentBalance) {
       console.log('currentETHbalance', currentBalance)

@@ -322,6 +322,9 @@ hr.sales_hr {
 .pl-15 {
   padding-left: 25px;
 }
+.p-15-c {
+  padding: 5px 10px 5px 15px;
+}
 
 .flex-justify-between-center {
   display: flex;
@@ -1678,4 +1681,7 @@ hr.hd_rule2 {
   border: 1px solid rgb(64, 64, 133);
   width: 180px;
   margin: auto;
+}
+.close_icon {
+  cursor: pointer;
 }

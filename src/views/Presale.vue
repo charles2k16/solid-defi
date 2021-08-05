@@ -1069,12 +1069,12 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { store } from '../store/';
-import drizzleVuePlugin from '@drizzle/vue-plugin';
-import drizzleOptions from '@/plugins/drizzle';
+// import Vue from 'vue';
+// import { store } from '../store/';
+// import drizzleVuePlugin from '@drizzle/vue-plugin';
+// import drizzleOptions from '@/plugins/drizzle';
 
-Vue.use(drizzleVuePlugin, { store, drizzleOptions });
+// Vue.use(drizzleVuePlugin, { store, drizzleOptions });
 
 import { mapGetters } from 'vuex';
 import {

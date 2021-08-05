@@ -13,62 +13,84 @@
             <div class="solid_dai_gr">
               <h3>SOLID-DAI BONDING CURVE</h3>
               <br />
-              <div class="bg-dai"></div>
+              <div class="bg-dai">
+                <apexchart
+                  height="330"
+                  type="area"
+                  :options="chartOptions"
+                  :series="series"
+                >
+                </apexchart>
+
+                <!-- <div>
+                  <div class="solid_box">
+                    <img
+                      src="../assets/images/solid_dai.png"
+                      alt="dai"
+                      width="30px"
+                    />
+                    <span>SOLID-DAI</span>
+                    <span>Current price:</span>
+                    <span>0</span>
+                  </div>
+
+                  <div class="solid_nextprice">
+                    <p>
+                      Next price point of SOLD-DAI after your purchase*: $110.52
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      Your intended purchase with: $200,000 DAI SOLID-DAI Avg.
+                      price at 104.85
+                    </p>
+                  </div>
+                </div> -->
+              </div>
             </div>
           </vs-col>
 
           <vs-col :w="4" :xs="12" :sm="12">
             <div class="swap">
               <h3>SWAP</h3>
+              <div class="token_list" v-if="viewTokenList">
+                <div class="flex-justify-between-center p-15-c">
+                  <h3>Select a Token</h3>
+                  <span
+                    class="material-icons close_icon"
+                    @click="viewTokenList = false"
+                  >
+                    clear
+                  </span>
+                </div>
 
-              <div class="input_from mt-20">
-                <div class="input_info">
-                  <img src="../assets/images/dai.png" alt="tk" />
-                  <div class="ml-10 sw_cnt">
-                    <div class="dcnt">
-                      <h5>DAI</h5>
-                      <span class="material-icons ar">
-                        keyboard_arrow_down
-                      </span>
+                <div
+                  class="tokens"
+                  v-for="(token, index) in tokensList.tokens"
+                  :key="index"
+                  @click="selectetToken(token)"
+                >
+                  <div class="d-flex tk_cont">
+                    <div class="mr-10">
+                      <vs-avatar size="35">
+                        <img :src="token.logoURI" alt="logo" />
+                      </vs-avatar>
                     </div>
-
-                    <span class="dai_pr">2200</span>
-                  </div>
-                </div>
-
-                <div class="input_space">
-                  <input type="number" placeholder="0.0" />
-                </div>
-              </div>
-
-              <div class="token_list">
-                <div class="tokens">
-                  <div>
-                    <img
-                      src="https://cryptologos.cc/logos/ethereum-eth-logo.svg"
-                      alt="eth"
-                    />
-                  </div>
-                  <div>
-                    <span>ETH</span>
-                    <span>Ether</span>
+                    <div>
+                      <span class="d-block">{{ token.symbol }}</span>
+                      <span class="d-block tk_symbol">{{ token.name }}</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="mt-20 tk_brk">
-                <span class="material-icons-round swp">
-                  swap_vert
-                </span>
-                <hr class="hd_rule2" />
-              </div>
-
+              <!-- token input from -->
               <div class="input_from mt-20">
                 <div class="input_info">
-                  <img src="../assets/images/dai.png" alt="tk" />
+                  <img :src="inputToken.logoURI" alt="tk" />
                   <div class="ml-10 sw_cnt">
-                    <div class="dcnt">
-                      <h5>DAI</h5>
+                    <div class="dcnt" @click="showTokenList(0)">
+                      <h5>{{ inputToken.symbol }}</h5>
                       <span class="material-icons ar">
                         keyboard_arrow_down
                       </span>
@@ -79,7 +101,44 @@
                 </div>
 
                 <div class="input_space">
-                  <input type="number" placeholder="0.0" />
+                  <input
+                    type="number"
+                    placeholder="0.0"
+                    v-model="inputAmount"
+                    @change="changeInputAmount"
+                  />
+                </div>
+              </div>
+
+              <div class="mt-20 tk_brk">
+                <span class="material-icons-round swp">
+                  swap_vert
+                </span>
+                <hr class="hd_rule2" />
+              </div>
+
+              <!-- token output -->
+              <div class="input_from mt-20">
+                <div class="input_info">
+                  <img :src="outputToken.logoURI" alt="tk" />
+                  <div class="ml-10 sw_cnt">
+                    <div class="dcnt" @click="showTokenList(1)">
+                      <h5>{{ outputToken.symbol }}</h5>
+                      <span class="material-icons ar">
+                        keyboard_arrow_down
+                      </span>
+                    </div>
+
+                    <span class="dai_pr">0</span>
+                  </div>
+                </div>
+
+                <div class="input_space">
+                  <input
+                    type="number"
+                    placeholder="0.0"
+                    v-model="outputAmount"
+                  />
                 </div>
               </div>
 
@@ -204,14 +263,119 @@
 </template>
 
 <script>
+// import { mapGetters } from 'vuex';
 import NavBar from '@/components/NavBar';
 import Footer from './sections/Footer.vue';
+import solidMainnetTokenlist from '@/api/solidMainnetTokenlist.json';
 
 export default {
   name: 'SolidFoundry',
   components: {
     NavBar,
     Footer,
+  },
+  data() {
+    return {
+      tokensList: solidMainnetTokenlist,
+      viewTokenList: false,
+      inputToken: {
+        name: 'Ether',
+        symbol: 'ETH',
+        logoURI:
+          'https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Ethereum-ETH-icon.png',
+      },
+      outputToken: {
+        name: 'Solid',
+        symbol: 'SOLID',
+        logoURI: 'http://localhost:8080/img/sld.a6af7737.png',
+      },
+      tkn_selected: null,
+      inputAmount: null,
+      outputAmount: null,
+      chartOptions: {
+        title: {
+          text: 'Total Value Locked',
+          align: 'left',
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        markers: {
+          size: 4,
+          colors: ['#000524'],
+          strokeColor: '#00BAEC',
+          strokeWidth: 3,
+        },
+        subtitle: {
+          text: 'Price Movements',
+          align: 'left',
+        },
+        tooltip: {
+          theme: 'dark',
+        },
+        stroke: {
+          curve: 'smooth',
+        },
+        colors: ['#00BAEC'],
+        grid: {
+          borderColor: '#555',
+          clipMarkers: false,
+          yaxis: {
+            lines: {
+              show: false,
+            },
+          },
+        },
+        fill: {
+          gradient: {
+            enabled: true,
+            opacityFrom: 0.55,
+            opacityTo: 0,
+          },
+        },
+        xaxis: {
+          categories: [
+            '3 Jul',
+            '18 July',
+            '20 July',
+            '30 July',
+            '12 Aug',
+            '14 Aug',
+            '18 Aug',
+            '20 Aug',
+            '25 Aug',
+          ],
+        },
+      },
+      series: [
+        {
+          name: 'Price',
+          data: [5, 15, 20, 30, 31, 35, 43, 44, 55],
+        },
+      ],
+    };
+  },
+  // computed: {
+  //   ...mapGetters('drizzle', ['isDrizzleInitialized']),
+  //   ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
+  // },
+  methods: {
+    showTokenList(inputIndex) {
+      console.log(inputIndex);
+      this.tkn_selected = inputIndex;
+      this.viewTokenList = true;
+    },
+    selectetToken(selectedToken) {
+      console.log(this.tkn_selected);
+      if (this.tkn_selected == 0) this.inputToken = selectedToken;
+      else if (this.tkn_selected == 1) this.outputToken = selectedToken;
+
+      this.viewTokenList = false;
+    },
+    changeInputAmount() {
+      console.log(this.inputAmount);
+      this.outputAmount = this.buyEstimate(this.inputAmount);
+    },
   },
 };
 </script>
@@ -263,10 +427,34 @@ export default {
 
   .bg-dai {
     height: 280px;
-    background-image: url('../assets/images/dai_graph_mockup.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-image: url('../assets/images/dai_graph_mockup.png');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+
+    .solid_box {
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #111010;
+      padding: 8px 0px;
+      border-radius: 15px;
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+
+      span {
+        font-size: 11px;
+      }
+    }
+
+    .solid_nextprice {
+      background: linear-gradient(90deg, #4317b4ff 39%, #8127e0ff);
+      width: 250px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
   }
 }
 .swap {
@@ -374,6 +562,42 @@ export default {
     }
   }
 }
+.token_list {
+  height: 250px;
+  overflow-y: auto;
+  width: 277px;
+  z-index: 2;
+  position: relative;
+  margin: 20px auto -268px auto;
+  background: #1a1d46;
+  padding: 1rem 0px;
+  border-radius: 0.625rem;
+  border-color: rgba(229, 231, 235, 1);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+
+  h3 {
+    font-size: 17px;
+  }
+  .tokens {
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+
+    .tk_cont {
+      padding: 5px 5px 5px 15px;
+    }
+
+    :hover {
+      background-color: #2b2e5a;
+      border-radius: 0.625rem;
+    }
+
+    span {
+      font-size: 14px;
+      color: rgb(207, 204, 204);
+    }
+  }
+}
 .dai_locked_boxes {
   height: 112px;
   width: 282px;
@@ -434,7 +658,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 10px 20px 10px 0px;
+  padding: 10px 13px 10px 0px;
 
   .tt {
     color: #3e3f6f;
@@ -449,6 +673,7 @@ export default {
   width: 620px;
   border-radius: 20px;
   margin-left: 5px;
+  height: 112px;
 }
 .swap_round_div {
   background: #1a1d29;

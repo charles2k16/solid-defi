@@ -12,6 +12,7 @@ import '@/assets/css/base.css';
 import '@/assets/css/display.css';
 import "@/plugins/element/index.js";
 import '@/plugins/vuesax';
+import '@/plugins/apexCharts';
 
 Vue.mixin(mixin);
 
