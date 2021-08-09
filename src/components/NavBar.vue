@@ -19,6 +19,7 @@
       <!-- to="/solidfoundry" -->
       <template #right>
         <vs-button
+          v-if="routeName == 'Home'"
           class="airdrop_btn"
           id="airdrop_btn_nav"
           @click="showComingSoon = true"
@@ -34,7 +35,7 @@
           <b>Go to Presale</b>
         </vs-button> -->
         <vs-button
-          v-if="routeName == 'Airdrop'"
+          v-if="routeName == 'Presale'"
           class="airdrop_btn"
           blank
           to="/airdrop"
