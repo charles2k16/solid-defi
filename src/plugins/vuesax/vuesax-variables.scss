@@ -74,8 +74,10 @@
   padding-right: 15px !important;
   color: #fff;
   background: rgb(242, 19, 93) !important;
-  box-shadow:  5px 5px 11px #141618,
-             -5px -5px 11px #2e3238;
+  // box-shadow:  5px 5px 11px #141618,
+  //            -5px -5px 11px #2e3238;
+   box-shadow: 3px 3px 8px #000000,
+   -3px -3px 8px #393e54;
   font-size: 0.8rem;
 }
 .swap_button.vs-button--default {

@@ -22,6 +22,11 @@ export default {
     }
   },
   methods: {
+    toEth (weiBalance) {
+      // let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
+      let ether = parseFloat(weiBalance).toFixed(4);
+      return ether;
+    },
     subscribeErrorResponse (errorString) {
       let extractError = errorString.split("<")
       return extractError[0];
@@ -30,14 +35,14 @@ export default {
       let randomString = Math.random().toString(36).substr(2);
       return `SLD-${randomString}`;
     },
-    buyEstimate (etherAmount) {
-      const totalSupply = 400;
-      let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupply, 3 / 2), 2 / 3) - totalSupply
+    buyEstimate (etherAmount, totalSupply) {
+      console.log('supply', totalSupply);
+      let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(10000, 3 / 2), 2 / 3) - 10000
 
-      buyEstimate = buyEstimate * 10 ** 18
-      buyEstimate = buyEstimate - 1000000
+      let tt = buyEstimate * 10 ** 18
+      let ff = tt - 1000000
 
-      return buyEstimate.toString();
+      return ff.toString();
     },
     mintOnBuy (currentAddress, amount) {
       const amount1 = 0

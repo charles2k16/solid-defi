@@ -82,4 +82,11 @@ export const getSmallBundle = {
   methodArgs: '',
 };
 
+// solid foundry total supply
+export const getTotalSupply = {
+  contractName: 'SolidFoundry',
+  method: 'totalSupply',
+  methodArgs: '',
+};
+
 

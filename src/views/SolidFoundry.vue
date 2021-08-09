@@ -1,6 +1,55 @@
 <template>
   <div class="main_container">
-    <NavBar />
+    <vs-navbar
+      text-black
+      color="#0F121E"
+      center-collapsed
+      fixed
+      square
+      v-model="active"
+    >
+      <template #left>
+        <img
+          src="../assets/images/sld.png"
+          alt="logo"
+          width="50px"
+          @click="goHome"
+        />
+      </template>
+      <!-- to="/solidfoundry" -->
+      <!-- @click="showComingSoon = true" -->
+      <template #right>
+        <!-- <vs-button
+          class="airdrop_btn"
+          id="airdrop_btn_nav"
+          blank
+          to="/solidfoundry"
+        >
+          <b>Join Contest</b>
+        </vs-button> -->
+        <span v-if="isDrizzleInitialized">
+          <span class="nav_accont" v-if="onEthNetwork">
+            <b>{{ activeBalance }} ETH</b>
+            <span class="nav_address" @click="showAccounts = true">
+              <span class="acc_span" style="width: 80px;font-size: 1rem;">{{
+                activeAccount
+              }}</span>
+              <span class="material-icons">
+                account_circle
+              </span>
+            </span>
+          </span>
+
+          <vs-button v-else class="connect_button">
+            Wrong Network
+          </vs-button>
+        </span>
+
+        <vs-button v-else class="connect_button">
+          Connect to a wallet
+        </vs-button>
+      </template>
+    </vs-navbar>
 
     <div class="hero_swap">
       <div class="wrap">
@@ -65,10 +114,10 @@
                 </div>
 
                 <div
-                  class="tokens"
                   v-for="(token, index) in tokensList.tokens"
                   :key="index"
                   @click="selectetToken(token)"
+                  :class="token.symbol == 'DAI' ? 'tokens active' : 'tokens'"
                 >
                   <div class="d-flex tk_cont">
                     <div class="mr-10">
@@ -149,12 +198,15 @@
               <div class="mt-50">
                 <div class="swap_round_div">
                   <div class="flex-justify-between-center">
-                    <span class="matic_btn_swap">
-                      Connect to <br />
-                      <span style="color: blue"> <b>Matic </b></span>
+                    <span
+                      class="matic_btn_swap"
+                      v-if="!onEthNetwork || !isDrizzleInitialized"
+                    >
+                      Connect to an<br />
+                      <span style="color: blue"> <b>Eth Network </b></span>
                     </span>
 
-                    <span class="eth_btn_swap">
+                    <span class="eth_btn_swap" v-else>
                       You're <br />
                       <span style="color: #dddbec">
                         <b>ON Ethereum </b>
@@ -257,32 +309,100 @@
         </vs-row>
       </div>
     </div>
+    <vs-dialog v-model="showAccounts" width="420px" class="_dialog">
+      <template #header>
+        <h4 class="not-margin">Account</h4>
+      </template>
+      <div>
+        <div class="flex-justify-between-center">
+          <h4 class="connected">
+            Connected with
+            <span style="color: #cb8016">
+              {{
+                getNetworkName(drizzleInstance.web3._provider.networkVersion)
+              }}
+            </span>
+          </h4>
 
+          <vs-button color="#cb8016" transparent>
+            Change
+          </vs-button>
+        </div>
+
+        <div class="meta_div">
+          <div class="eth_acc">
+            <vs-avatar size="20">
+              <img src="../assets/images/sld.png" alt="logo" />
+            </vs-avatar>
+            <span class="acc_span">{{ activeAccount }}</span>
+          </div>
+          <br />
+          <div class="eth_balance">
+            <vs-avatar size="20">
+              <img src="../assets/images/sld.png" alt="logo" />
+            </vs-avatar>
+            <span class="acc_span">{{ toEth(activeBalance) }} Eth</span>
+          </div>
+
+          <div class="flex-justify-between-center mt-10">
+            <vs-button
+              color="#cb8016"
+              transparent
+              @click="copyToClip(activeAccount)"
+            >
+              <span class="material-icons"> content_copy </span>
+              Copy address
+            </vs-button>
+            <vs-button
+              color="#cb8016"
+              transparent
+              :href="`https://ropsten.etherscan.io/address/${activeAccount}`"
+              blank
+            >
+              <span class="material-icons"> link </span>
+              View on etherscan
+            </vs-button>
+          </div>
+        </div>
+      </div>
+    </vs-dialog>
     <Footer />
   </div>
 </template>
 
 <script>
-// import { mapGetters } from 'vuex';
-import NavBar from '@/components/NavBar';
+import Vue from 'vue';
+import { store } from '../store/';
+import drizzleVuePlugin from '@drizzle/vue-plugin';
+import drizzleOptions from '@/plugins/drizzle';
+
+Vue.use(drizzleVuePlugin, { store, drizzleOptions });
+
+import { mapGetters } from 'vuex';
 import Footer from './sections/Footer.vue';
 import solidMainnetTokenlist from '@/api/solidMainnetTokenlist.json';
+import { getTotalSupply } from '@/api/contractGeters';
 
 export default {
   name: 'SolidFoundry',
   components: {
-    NavBar,
     Footer,
   },
   data() {
     return {
+      showAccounts: false,
+      chain: null,
+      active: '',
       tokensList: solidMainnetTokenlist,
       viewTokenList: false,
       inputToken: {
-        name: 'Ether',
-        symbol: 'ETH',
+        name: 'Dai Stablecoin',
+        address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+        symbol: 'DAI',
+        decimals: 18,
+        chainId: 1,
         logoURI:
-          'https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Ethereum-ETH-icon.png',
+          'https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.svg',
       },
       outputToken: {
         name: 'Solid',
@@ -355,26 +475,55 @@ export default {
       ],
     };
   },
-  // computed: {
-  //   ...mapGetters('drizzle', ['isDrizzleInitialized']),
-  //   ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
-  // },
+  computed: {
+    ...mapGetters('drizzle', ['isDrizzleInitialized']),
+    ...mapGetters('drizzle', ['drizzleInstance']),
+    ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
+    ...mapGetters('contracts', ['getContractData', 'contractInstances']),
+
+    onEthNetwork() {
+      this.chain = this.drizzleInstance.web3._provider.networkVersion;
+      let chain = this.drizzleInstance.web3._provider.networkVersion;
+      let id = parseInt(chain);
+
+      if (id == 80001 || id == 137) return false;
+      else return true;
+    },
+
+    // total supply
+    solidTotalSupply() {
+      return this.getContractData({
+        contract: getTotalSupply.contractName,
+        method: getTotalSupply.method,
+      });
+    },
+  },
+  created() {
+    this.$store.dispatch('drizzle/REGISTER_CONTRACT', getTotalSupply);
+  },
   methods: {
     showTokenList(inputIndex) {
-      console.log(inputIndex);
       this.tkn_selected = inputIndex;
       this.viewTokenList = true;
     },
     selectetToken(selectedToken) {
-      console.log(this.tkn_selected);
+      if (selectedToken.symbol == 'DAI') {
+        this.closeTokenList(selectedToken);
+      } else {
+        return;
+      }
+    },
+    closeTokenList(selectedToken) {
       if (this.tkn_selected == 0) this.inputToken = selectedToken;
       else if (this.tkn_selected == 1) this.outputToken = selectedToken;
 
       this.viewTokenList = false;
     },
     changeInputAmount() {
-      console.log(this.inputAmount);
-      this.outputAmount = this.buyEstimate(this.inputAmount);
+      this.outputAmount = this.buyEstimate(
+        this.inputAmount,
+        this.solidTotalSupply
+      );
     },
   },
 };
@@ -580,12 +729,25 @@ export default {
   }
   .tokens {
     margin-top: 10px;
-    cursor: pointer;
+    // cursor: pointer;
     width: 100%;
 
     .tk_cont {
       padding: 5px 5px 5px 15px;
     }
+
+    // :hover {
+    //   background-color: #2b2e5a;
+    //   border-radius: 0.625rem;
+    // }
+
+    span {
+      font-size: 14px;
+      color: grey;
+    }
+  }
+  .active {
+    cursor: pointer;
 
     :hover {
       background-color: #2b2e5a;
@@ -593,8 +755,7 @@ export default {
     }
 
     span {
-      font-size: 14px;
-      color: rgb(207, 204, 204);
+      color: rgb(228, 226, 226);
     }
   }
 }
@@ -678,7 +839,7 @@ export default {
 .swap_round_div {
   background: #1a1d29;
   box-shadow: 3px 3px 5px #171c20, -3px -3px 5px #1e2733,
-    inset -3px -3px 5px #111010;
+    inset -2px -2px 5px #111010;
   border: 3px solid #211e36;
   display: flex;
   align-items: center;
@@ -690,11 +851,12 @@ export default {
   margin-bottom: 40.5px;
 
   .matic_btn_swap {
-    width: 80px;
+    width: 100px;
+    margin-top: -2px;
     font-size: 0.7rem;
-    color: rgb(116, 112, 112);
+    color: rgb(9, 35, 102);
     padding: 1px 5px;
-    background: #dddbec;
+    background: #bebccc;
     border-radius: 20px;
     cursor: pointer;
     text-align: center;
