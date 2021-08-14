@@ -29,7 +29,7 @@
         </vs-button> -->
         <span v-if="isDrizzleInitialized">
           <span class="nav_accont" v-if="onEthNetwork">
-            <b>{{ activeBalance }} ETH</b>
+            <b>{{ toEth(activeBalance) }} ETH</b>
             <span class="nav_address" @click="showAccounts = true">
               <span class="acc_span" style="width: 80px;font-size: 1rem;">{{
                 activeAccount
@@ -215,7 +215,11 @@
                   </div>
 
                   <div>
-                    <vs-button class="swap_button" style="font-size: 0.8rem">
+                    <vs-button
+                      class="swap_button"
+                      style="font-size: 0.8rem"
+                      @click="swapToken"
+                    >
                       <b> SWAP</b>
                     </vs-button>
                   </div>
@@ -282,9 +286,12 @@
 
           <vs-col :w="8" :xs="12" :sm="12">
             <div class="grapgh_an">
-              <h3>SOLID-DAI BONDING CURVE</h3>
-              <br />
-              <div class="graph_bg"></div>
+              <h3>SOLID-DAI CHART</h3>
+              <div class="graph_bg">
+                <div class="d-flex-center cover">
+                  <h1>Coming Soon</h1>
+                </div>
+              </div>
             </div>
           </vs-col>
         </vs-row>
@@ -371,12 +378,12 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { store } from '../store/';
-import drizzleVuePlugin from '@drizzle/vue-plugin';
-import drizzleOptions from '@/plugins/drizzle';
+// import Vue from 'vue';
+// import { store } from '../store/';
+// import drizzleVuePlugin from '@drizzle/vue-plugin';
+// import drizzleOptions from '@/plugins/drizzle';
 
-Vue.use(drizzleVuePlugin, { store, drizzleOptions });
+// Vue.use(drizzleVuePlugin, { store, drizzleOptions });
 
 import { mapGetters } from 'vuex';
 import Footer from './sections/Footer.vue';
@@ -397,7 +404,7 @@ export default {
       viewTokenList: false,
       inputToken: {
         name: 'Dai Stablecoin',
-        address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+        address: '0x40ef836B1B8418F3ad17f7fA07eFE7c8dBBdC147',
         symbol: 'DAI',
         decimals: 18,
         chainId: 1,
@@ -407,7 +414,7 @@ export default {
       outputToken: {
         name: 'Solid',
         symbol: 'SOLID',
-        logoURI: 'http://localhost:8080/img/sld.a6af7737.png',
+        logoURI: 'http://localhost:8081/img/sld.a6af7737.png',
       },
       tkn_selected: null,
       inputAmount: null,
@@ -482,8 +489,12 @@ export default {
     ...mapGetters('contracts', ['getContractData', 'contractInstances']),
 
     onEthNetwork() {
-      this.chain = this.drizzleInstance.web3._provider.networkVersion;
-      let chain = this.drizzleInstance.web3._provider.networkVersion;
+      let network =
+        typeof this.drizzleInstance.web3._provider.networkVersion == 'undefined'
+          ? 0
+          : this.drizzleInstance.web3._provider.networkVersion;
+      this.chain = network;
+      let chain = network;
       let id = parseInt(chain);
 
       if (id == 80001 || id == 137) return false;
@@ -525,6 +536,10 @@ export default {
         this.solidTotalSupply
       );
     },
+    swapToken() {
+      //this.approveMintOnBuy();
+      this.mintOnBuy(this.activeAccount, this.inputAmount, this.outputAmount);
+    },
   },
 };
 </script>
@@ -559,11 +574,21 @@ export default {
   color: rgb(223, 222, 222);
 
   .graph_bg {
-    height: 300px;
+    height: 318px;
     background-image: url('../assets/images/solid-dai_price_graph.png');
     // background-position: center;
     background-size: cover;
     position: relative;
+    margin-top: 10px;
+
+    .cover {
+      height: 310px;
+      background: rgba(13, 13, 36, 0.7);
+      // border: 1px solid #000000;
+      box-sizing: border-box;
+      // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: rgb(104, 101, 101);
+    }
   }
 }
 .solid_dai_gr {

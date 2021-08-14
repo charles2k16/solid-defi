@@ -4,6 +4,7 @@ import WrapEthErc20 from '@/abi/WrapEthErc20'
 import EthErc20 from '@/abi/EthErc20'
 import MaticErc20 from '@/abi/MaticErc20'
 import SolidFoundry from '@/abi/SolidFoundry'
+import TestErc20 from '@/abi/TestErc20'
 
 const options = {
   web3: {
@@ -20,14 +21,15 @@ const options = {
     WrapEthErc20,
     EthErc20,
     MaticErc20,
-    SolidFoundry
+    SolidFoundry,
+    TestErc20
   ],
   // events: {
   //   SolidProtocol: ['Transfer']
   // },
   polls: {
     // check accounts every 15 seconds
-    accounts: 100000
+    accounts: 50000
   }
 }
 

@@ -12,6 +12,7 @@ export default {
       tokenIdMatic: '0x498E0A753840075c4925442D4d8863eEe49D61E2',
       tokenIdEth: '0x5011d48d4265b6fb8228600a111b2faa1fda3139',
       wrapEthAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+      solidFoundryAddress: '0x69a440ebf12A010e35E6415966Bc37b9E98f3D4B',
       ethNewTotalToken: 680000,
       maticNewTotalToken: 1480000,
       ethTotalToken: 14000000,
@@ -24,8 +25,9 @@ export default {
   methods: {
     toEth (weiBalance) {
       // let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
-      let ether = parseFloat(weiBalance).toFixed(4);
-      return ether;
+      let etherValue = weiBalance / 1000000000000000000;
+      let amt = parseFloat(etherValue).toFixed(4);
+      return amt;
     },
     subscribeErrorResponse (errorString) {
       let extractError = errorString.split("<")
@@ -36,17 +38,41 @@ export default {
       return `SLD-${randomString}`;
     },
     buyEstimate (etherAmount, totalSupply) {
-      console.log('supply', totalSupply);
-      let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(10000, 3 / 2), 2 / 3) - 10000
+      let totalSupp = totalSupply == null ? 0 : totalSupply
+      console.log('supply', totalSupp);
+      let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupp, 3 / 2), 2 / 3) - totalSupp
 
-      let tt = buyEstimate * 10 ** 18
-      let ff = tt - 1000000
+      let tt = buyEstimate * 10 ** 18;
+      let ff = tt - 1000000;
 
-      return ff.toString();
+      return ff / 1000000000000000000
     },
-    mintOnBuy (currentAddress, amount) {
+    approveMintOnBuy () {
+      let amount = 10000000000000000000;
+      let amt = amount.toString();
+
+      this.drizzleInstance.contracts['TestErc20'].methods[
+        'approve'
+      ].cacheSend(this.solidFoundryAddress, amt);
+    },
+    mintOnBuy (currentAddress, amountInput, estimate) {
+      const amount0 = this.toWei(amountInput);
+      const amount1 = this.toWei(estimate);
+
+      const tokenId = '0x40ef836B1B8418F3ad17f7fA07eFE7c8dBBdC147'
+
+      // let amount0 = weiAmount0.toString();
+      // let amount1 = weiAmount1.toString();
+
+      console.log(amount0, amount1, currentAddress)
+
+      this.drizzleInstance.contracts['SolidFoundry'].methods[
+        'mintOnBuy'
+      ].cacheSend(tokenId, currentAddress, amount0, 0);
+    },
+    burnOnSell (currentAddress, amount) {
       const amount1 = 0
-      const tokenId = ''
+      const tokenId = '0x40ef836B1B8418F3ad17f7fA07eFE7c8dBBdC147'
 
       this.drizzleInstance.contracts['SolidFoundry'].methods[
         'mintOnBuy'
@@ -143,7 +169,7 @@ export default {
       ].cacheSend(this.maticEscrowAddress, amt);
     },
     toWei (eth) {
-      let weiValue = Web3.utils.toWei(eth, 'ether');
+      let weiValue = Web3.utils.toWei(eth.toString(), 'ether');
       return weiValue;
     },
     buyEthSmallBundle (numberofBundle, smallPrice) {
@@ -236,7 +262,7 @@ export default {
       }
     },
     getNetworkName (netId) {
-      let id = parseInt(netId);
+      let id = typeof netId == 'undefined' ? 0 : parseInt(netId);
       let netName = "Wrong Network"
       switch (id) {
         case 1:
