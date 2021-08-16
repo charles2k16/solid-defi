@@ -1,4 +1,4 @@
-export const solidMainnetTokenlist = {
+ {
   "name": "Solid",
   "logoURI": "http://localhost:8081/img/sld.a6af7737.png",
   "tokens": [
@@ -8,7 +8,7 @@ export const solidMainnetTokenlist = {
       "symbol": "ETH",
       "decimals": 18,
       "chainId": 1,
-      "logoURI": "https://cryptologos.cc/logos/ethereum-eth-logo.svg"
+      "logoURI": "https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Ethereum-ETH-icon.png"
     },
     {
       "name": "Dai Stablecoin",
@@ -50,11 +50,5 @@ export const solidMainnetTokenlist = {
       "chainId": 1,
       "logoURI": "https://cryptologos.cc/logos/uniswap-uni-logo.svg"
     }
-
-  ],
-  "version": {
-    "major": 0,
-    "minor": 1,
-    "patch": 0
-  }
+  ]
 }

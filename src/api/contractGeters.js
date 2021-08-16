@@ -1,9 +1,4 @@
 
-
-export const wrapeth = {
-  address: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619'
-}
-
 export const getEthMaticFactor = {
   contractName: 'MaticEscrow',
   method: 'ethmaticfactor',
@@ -84,6 +79,13 @@ export const getBigBundle = {
 export const getSmallBundle = {
   contractName: 'SolidEscrow',
   method: 'smallbundle',
+  methodArgs: '',
+};
+
+// solid foundry total supply
+export const getTotalSupply = {
+  contractName: 'SolidFoundry',
+  method: 'totalSupply',
   methodArgs: '',
 };
 

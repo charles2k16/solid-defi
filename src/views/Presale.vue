@@ -1069,12 +1069,12 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { store } from '../store/';
-import drizzleVuePlugin from '@drizzle/vue-plugin';
-import drizzleOptions from '@/plugins/drizzle';
+// import Vue from 'vue';
+// import { store } from '../store/';
+// import drizzleVuePlugin from '@drizzle/vue-plugin';
+// import drizzleOptions from '@/plugins/drizzle';
 
-Vue.use(drizzleVuePlugin, { store, drizzleOptions });
+// Vue.use(drizzleVuePlugin, { store, drizzleOptions });
 
 import { mapGetters } from 'vuex';
 import {
@@ -1146,9 +1146,6 @@ export default {
       ethSolidEscrowAddress: '0x27662EC00573DcA447F5F2c50Af1724B63679b29',
     };
   },
-  // beforeCreate() {
-  //   this.$router.go();
-  // },
   created() {
     if (this.onEthNetwork) this.connectToEthContract();
     else this.connectToMaticContract();
@@ -1491,7 +1488,6 @@ export default {
           ? this.bigBundlePrice * bundle
           : this.smallBundlePrice * bundle;
       let serial = totalAmnt / 1000000000000000000;
-      console.log('serial', serial);
       this.serial = serial;
     },
     getMaticSerial(bundle) {
@@ -1502,13 +1498,7 @@ export default {
           ? this.mediumBundlePriceEthMatic * bundle
           : this.smallBundlePriceEthMatic * bundle;
       let serial = totalAmnt / 1000000000000000000;
-      console.log('serial', serial);
       this.serial = serial;
-    },
-    toEth(weiBalance) {
-      // let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
-      let ether = parseFloat(weiBalance).toFixed(4);
-      return ether;
     },
     checkAccounts() {
       this.showAccounts = true;

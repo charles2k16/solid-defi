@@ -12,6 +12,8 @@ export default {
       tokenIdMatic: '0x498E0A753840075c4925442D4d8863eEe49D61E2',
       tokenIdEth: '0x5011d48d4265b6fb8228600a111b2faa1fda3139',
       wrapEthAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+      solidFoundryAddress: '0x69a440ebf12A010e35E6415966Bc37b9E98f3D4B',
+      tokenIdDai: '0x40ef836B1B8418F3ad17f7fA07eFE7c8dBBdC147',
       ethNewTotalToken: 680000,
       maticNewTotalToken: 1480000,
       ethTotalToken: 14000000,
@@ -22,18 +24,12 @@ export default {
     }
   },
   methods: {
-    // getEthPercentage(currentBalance) {
-    //   let getBalance = this.getEthBalance(currentBalance)
-    //   let percentPurchased = (100 * getBalance) / this.ethNewTotalToken;
-
-    //   return percentPurchased;
-    // },
-    // getMaticPercentage(currentBalance) {
-    //   let getBalance = this.getMaticBalance(currentBalance)
-    //   let percentPurchased = (100 * getBalance) / this.maticNewTotalToken;
-
-    //   return percentPurchased;
-    // },
+    toEth (weiBalance) {
+      // let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
+      let etherValue = weiBalance / 1000000000000000000;
+      let amt = parseFloat(etherValue).toFixed(4);
+      return amt;
+    },
     subscribeErrorResponse (errorString) {
       let extractError = errorString.split("<")
       return extractError[0];
@@ -41,6 +37,45 @@ export default {
     getReferralString () {
       let randomString = Math.random().toString(36).substr(2);
       return `SLD-${randomString}`;
+    },
+    buyEstimate (etherAmount, totalSupply) {
+      let totalSupp = totalSupply == null ? 0 : totalSupply
+      console.log('supply', totalSupp);
+      let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupp, 3 / 2), 2 / 3) - totalSupp
+
+      let tt = buyEstimate * 10 ** 18;
+      let ff = tt - 1000000;
+
+      return ff / 1000000000000000000
+    },
+    approveMintOnBuy () {
+      let amount = 10000000000000000000;
+      let amt = amount.toString();
+
+      this.drizzleInstance.contracts['TestErc20'].methods[
+        'approve'
+      ].cacheSend(this.solidFoundryAddress, amt);
+    },
+    mintOnBuy (currentAddress, amountInput, estimate) {
+      const amount0 = this.toWei(amountInput);
+      const amount1 = this.toWei(estimate);
+
+      // let amount0 = weiAmount0.toString();
+      // let amount1 = weiAmount1.toString();
+
+      console.log(amount0, amount1, currentAddress)
+
+      this.drizzleInstance.contracts['SolidFoundry'].methods[
+        'mintOnBuy'
+      ].cacheSend(this.tokenIdDai, currentAddress, amount0, 0);
+    },
+    burnOnSell (currentAddress, amount) {
+      const amount0 = this.toWei(amount);
+      const amount1 = 0
+
+      this.drizzleInstance.contracts['SolidFoundry'].methods[
+        'mintOnBuy'
+      ].cacheSend(this.tokenIdDai, currentAddress, amount0, amount1);
     },
     getEthBalance (currentBalance) {
       console.log('currentETHbalance', currentBalance)
@@ -52,11 +87,9 @@ export default {
       return Math.round(balance);
     },
     getMaticBalance (currentBalance) {
-      console.log('currentbalanceMatic', currentBalance)
       let balanceOf = this.maticNewTotalToken
       let currBalance = this.getSerial(currentBalance)
       let balance = balanceOf - currBalance
-      console.log('BAL', balance)
       this.maticPercentPurchased = 100 * balance / this.maticNewTotalToken;
 
       return Math.round(balance);
@@ -133,7 +166,7 @@ export default {
       ].cacheSend(this.maticEscrowAddress, amt);
     },
     toWei (eth) {
-      let weiValue = Web3.utils.toWei(eth, 'ether');
+      let weiValue = Web3.utils.toWei(eth.toString(), 'ether');
       return weiValue;
     },
     buyEthSmallBundle (numberofBundle, smallPrice) {

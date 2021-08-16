@@ -17,12 +17,14 @@
         />
       </template>
       <!-- to="/solidfoundry" -->
+      <!-- @click="showComingSoon = true" -->
       <template #right>
         <vs-button
           v-if="routeName == 'Home'"
           class="airdrop_btn"
           id="airdrop_btn_nav"
-          @click="showComingSoon = true"
+          blank
+          to="/solidfoundry"
         >
           <b>Join Contest</b>
         </vs-button>
