@@ -198,10 +198,7 @@
               <div class="mt-50">
                 <div class="swap_round_div">
                   <div class="flex-justify-between-center">
-                    <span
-                      class="matic_btn_swap"
-                      v-if="!onEthNetwork || !isDrizzleInitialized"
-                    >
+                    <span class="matic_btn_swap" v-if="!isDrizzleInitialized">
                       Connect to an<br />
                       <span style="color: blue"> <b>Eth Network </b></span>
                     </span>
@@ -484,20 +481,16 @@ export default {
   },
   computed: {
     ...mapGetters('drizzle', ['isDrizzleInitialized']),
-    ...mapGetters('drizzle', ['drizzleInstance']),
     ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
     ...mapGetters('contracts', ['getContractData', 'contractInstances']),
+    ...mapGetters('drizzle', ['drizzleInstance']),
 
     onEthNetwork() {
-      let network =
-        typeof this.drizzleInstance.web3._provider.networkVersion == 'undefined'
-          ? 0
-          : this.drizzleInstance.web3._provider.networkVersion;
+      let network = this.drizzleInstance.web3._provider.networkVersion;
       this.chain = network;
-      let chain = network;
-      let id = parseInt(chain);
+      let chain = parseInt(network);
 
-      if (id == 80001 || id == 137) return false;
+      if (chain == 80001 || chain == 137) return false;
       else return true;
     },
 
@@ -510,9 +503,12 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('drizzle/REGISTER_CONTRACT', getTotalSupply);
+    if (this.onEthNetwork) this.connectToEthContract();
   },
   methods: {
+    connectToEthContract() {
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', getTotalSupply);
+    },
     showTokenList(inputIndex) {
       this.tkn_selected = inputIndex;
       this.viewTokenList = true;

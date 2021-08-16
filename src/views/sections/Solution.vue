@@ -145,6 +145,7 @@
 }
 .sol_img_div {
   width: 400px;
+  margin-left: 25px;
 
   .sol_img img {
     width: 50px;

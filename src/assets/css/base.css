@@ -395,9 +395,10 @@ hr.sales_hr {
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
   box-shadow: inset 0 0 0 2px;
-  width: 390px;
+  width: 360px;
   height: 6px;
   color: #61698b;
+  margin-left: 45px;
 }
 
 .gg-arrow-long-right::after {
