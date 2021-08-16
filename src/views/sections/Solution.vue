@@ -119,7 +119,7 @@
       </vs-col>
 
       <vs-col :w="6" :xs="12" :sm="12">
-        <div class="ml-20 problem_right">
+        <div class="ml-20 problem_right mt">
           <h2 class="white">
             SOLIDDAI REWARDS RETURN UP TO 20% OF CRYPTO SHAKEOUTS
           </h2>

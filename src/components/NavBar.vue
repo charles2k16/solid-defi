@@ -24,7 +24,7 @@
           class="airdrop_btn"
           id="airdrop_btn_nav"
           blank
-          to="/solidfoundry"
+          @click="showComingSoon = true"
         >
           <b>Join Contest</b>
         </vs-button>

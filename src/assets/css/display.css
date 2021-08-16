@@ -301,13 +301,16 @@
      margin-top: -226px;
    }
    .curve_sol_image {
-     width: 98% !important;
+     width: 100% !important;
+     margin-bottom: 20px;
    }
    .sol_img_div {
-     width: 100% !important;
+      width: 100% !important;
+      margin-left: 0px !important;
    }
    .gg-arrow-long-right {
      width: 98% !important;
+     margin-left: 0px;
    }
 }
 
@@ -557,7 +560,7 @@
 
     .problem_right2 {
       margin-left: 0px;
-      margin-top: 45px;
+      margin-top: 50px;
     }
 
     .prob2_bg {
@@ -1451,113 +1454,110 @@
     font-size: 1rem
   }
 
-      /* landing page */
-      .poly_home {
-        width: 270px;
-        margin-top: 25px;
-      }
+  /* landing page */
+  .poly_home {
+    width: 270px;
+    margin-top: 25px;
+  }
 
-      .icx {
-        display: block;
-        margin-top: 25px;
-        font-size: 48px;
-      }
+  .icx {
+    display: block;
+    margin-top: 25px;
+    font-size: 48px;
+  }
 
-      #hd_sm {
-        display: none;
-      }
+  #hd_sm {
+    display: none;
+  }
 
-      #hide_md {
-        display: block;
-      }
+  #hide_md {
+    display: block;
+  }
 
-      #head_mob {
-        font-size: 40px;
-        margin-top: -20px;
-      }
+  #head_mob {
+    font-size: 40px;
+    margin-top: -20px;
+  }
 
-      #stba_coin {
-        font-size: 40px;
-        text-align: left;
-        display: block;
-      }
+  #stba_coin {
+    font-size: 40px;
+    text-align: left;
+    display: block;
+  }
 
-      .problem_image {
-        margin-right: 10px !important;
-        width: 150px !important;
-      }
+  .problem_image {
+    margin-right: 10px !important;
+    width: 150px !important;
+  }
 
-      .solution_image {
-        margin-right: 10px !important;
-        width: 110px !important;
-      }
+  .solution_image {
+    margin-right: 10px !important;
+    width: 110px !important;
+  }
 
-      .problem_right {
-        margin-left: 0px;
-      }
+  .problem_right {
+    margin-left: 0px;
+  }
+  .problem_right2 {
+    margin-left: 0px;
+    margin-top: 45px;
+  }
 
-      .problem_right2 {
-        margin-left: 0px;
-        margin-top: 45px;
-      }
+  .prob2_bg {
+    margin-right: 0px;
+  }
 
-      .prob2_bg {
-        margin-right: 0px;
-      }
+  .inflation_boxes {
+    padding-right: 0px !important;
+  }
 
-      .inflation_boxes {
-        padding-right: 0px !important;
-      }
+  .big_p {
+    font-size: 16px !important;
+  }
 
-      .big_p {
-        font-size: 16px !important;
-      }
+  .road_image {
+    width: 150px !important;
+  }
 
-      .road_image {
-        width: 150px !important;
-      }
+  .sol_head {
+    width: 100% !important;
+  }
 
-      .sol_head {
-        width: 100% !important;
-      }
+  #rdmap_h1 {
+    margin-right: 0px !important;
+  }
 
-      #rdmap_h1 {
-        margin-right: 0px !important;
-      }
+  .roadmap {
+    width: 100% !important;
+  }
 
-      .roadmap {
-        width: 100% !important;
-      }
+  .ul {
+    width: 80% !important;
+  }
+  .roadmap_ul {
+    margin-left: 50px !important;
+  }
+  .roadmap_ul li {
+    font-size: 1rem !important;
+  }
+  .vl {
+    height: 219px !important;
+    margin-top: -207px !important;
+  }
 
-      .ul {
-        width: 80% !important;
-      }
-
-      .roadmap_ul {
-        margin-left: 50px !important;
-      }
-
-      .roadmap_ul li {
-        font-size: 1rem !important;
-      }
-
-      .vl {
-        height: 169px;
-        margin-top: -132px;
-      }
-
-      .vl2 {
-        height: 164px;
-        margin-top: -226px;
-      }
-
-     .solution_head {
-       width: 98% !important;
-     }
-
-     .solution_txt {
-       width: 98% !important;
-     }
+  .vl2 {
+    height: 219px !important;
+    margin-top: -300px !important;
+  }
+  .oval3 {
+    margin-top: -82px !important;
+  }
+  .solution_head {
+    width: 98% !important;
+  }
+  .solution_txt {
+    width: 98% !important;
+  }
 
 }
 
@@ -1804,69 +1804,69 @@
          width: 150px !important;
        }
 
-       .solution_image {
-         margin-right: 10px !important;
-         width: 110px !important;
-       }
+    .solution_image {
+      margin-right: 10px !important;
+      width: 110px !important;
+    }
 
-       .problem_right {
-         margin-left: 0px;
-       }
+    .problem_right {
+      margin-left: 0px;
+    }
 
-       .problem_right2 {
-         margin-left: 0px;
-         margin-top: 45px;
-       }
+    .problem_right2 {
+      margin-left: 0px;
+      margin-top: 45px;
+    }
 
-       .prob2_bg {
-         margin-right: 0px;
-       }
+    .prob2_bg {
+      margin-right: 0px;
+    }
 
-       .inflation_boxes {
-         padding-right: 0px !important;
-       }
+    .inflation_boxes {
+      padding-right: 0px !important;
+    }
 
-       .big_p {
-         font-size: 16px !important;
-       }
+    .big_p {
+      font-size: 16px !important;
+    }
 
-       .road_image {
-         width: 150px !important;
-       }
+    .road_image {
+      width: 150px !important;
+    }
 
-       .sol_head {
-         width: 100% !important;
-       }
+    .sol_head {
+      width: 100% !important;
+    }
 
-       #rdmap_h1 {
-         margin-right: 0px !important;
-       }
+    #rdmap_h1 {
+      margin-right: 0px !important;
+    }
 
-       .roadmap {
-         width: 100% !important;
-       }
+  .roadmap {
+    width: 100% !important;
+  }
 
-       .ul {
-         width: 80% !important;
-       }
+  .ul {
+    width: 80% !important;
+  }
 
-       .roadmap_ul {
-         margin-left: 50px !important;
-       }
+  .roadmap_ul {
+    margin-left: 50px !important;
+  }
 
-       .roadmap_ul li {
-         font-size: 1rem !important;
-       }
+  .roadmap_ul li {
+    font-size: 1rem !important;
+  }
 
-       .vl {
-         height: 169px;
-         margin-top: -132px;
-       }
+  .vl {
+    height: 179px !important;
+    margin-top: -150px !important;
+  }
 
-       .vl2 {
-         height: 164px;
-         margin-top: -226px;
-       }
+  .vl2 {
+    height: 177px !important;
+    margin-top: -260px !important;
+  }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
