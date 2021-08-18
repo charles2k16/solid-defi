@@ -12,7 +12,7 @@
       <vs-button
         href="https://polygonscan.com/token/0x498e0a753840075c4925442d4d8863eee49d61e2?a=0x5011d48d4265b6fb8228600a111b2faa1fda3139"
         blank
-        style="font-size: 15px;color:whitesmoke;"
+        style="font-size: 15px;color:#838386;"
         transparent
       >
         View SOLID on Matic
@@ -20,7 +20,7 @@
       <vs-button
         href="https://etherscan.io/token/0x5011d48d4265b6fb8228600a111b2faa1fda3139"
         blank
-        style="font-size: 15px;color:whitesmoke;"
+        style="font-size: 15px;color:#838386;"
         transparent
       >
         View SOLID on Etherscan

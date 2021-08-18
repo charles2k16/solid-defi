@@ -48,6 +48,34 @@ export default {
 
       return ff / 1000000000000000000
     },
+    // sellEstimate (sellAmount, totalSupply) {
+    //   let currentTime = Date.now();
+    //   let currentTimeString = BigNumber(currentTime).toString();
+    //   let currentTimeTS = currentTimeString.slice(0, 10)
+    //   let currentTime10 = parseInt(currentTimeTS)
+
+    //   let sellAmountWei = parseFloat(sellAmount);
+
+    //   let expect_amount = (Math.pow(
+    //     totalSupply, 3 / 2) - Math.pow((totalSupply - sellAmountWei), 3 / 2)) * 2 / 3
+
+    //   let timeCheck = currentTime10 - lastTimeStamp
+    //   let rewardPercent = .2
+    //   let last_A_volumeCalc
+
+    //   if (timeCheck < 60) {
+    //     last_A_volumeCalc = (last_A_volume * (60 - (timeCheck)) + expect_amount * timeCheck) / 60
+    //   }
+    //   else {
+    //     last_A_volumeCalc = expect_amount / 60
+    //   }
+
+    //   if (last_A_volumeCalc * 1440 / solidTokenBal <= 1) {
+    //     rewardPercent *= last_A_volumeCalc * 1440 / solidTokenBal
+    //   }
+
+    //   let Est = ((1 - rewardPercent) * expect_amount) * 10 ** (18 - tokenDecimals)
+    // },
     approveMintOnBuy () {
       let amount = 10000000000000000000;
       let amt = amount.toString();
@@ -58,16 +86,17 @@ export default {
     },
     mintOnBuy (currentAddress, amountInput, estimate) {
       const amount0 = this.toWei(amountInput);
-      const amount1 = this.toWei(estimate);
+      const amount1 = 0;
+      // const amount1 = this.toWei(estimate);
 
       // let amount0 = weiAmount0.toString();
       // let amount1 = weiAmount1.toString();
 
-      console.log(amount0, amount1, currentAddress)
+      console.log(estimate);
 
       this.drizzleInstance.contracts['SolidFoundry'].methods[
         'mintOnBuy'
-      ].cacheSend(this.tokenIdDai, currentAddress, amount0, 0);
+      ].cacheSend(this.tokenIdDai, currentAddress, amount0, amount1);
     },
     burnOnSell (currentAddress, amount) {
       const amount0 = this.toWei(amount);
@@ -131,7 +160,7 @@ export default {
           mediumB[i].style.marginLeft = '35px';
         }
       }
-      // this.addAnimate();
+      this.addAnimate();
     },
     addAnimate () {
       let i, percentage

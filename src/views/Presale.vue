@@ -260,7 +260,7 @@
                       </el-carousel-item>
                     </el-carousel>
 
-                    <div class="center d-flex-center mt-15">
+                    <div class="center d-flex-center mt-20">
                       <div>
                         <div class="d-flex-center">
                           <div class="flex-align-center">
@@ -283,13 +283,13 @@
                             </span>
                           </div>
                         </div>
-                        <div class="mt-5">
+                        <div class="mt-15">
                           <span style="font-size: 12px; color: #625f81"
                             >*Maximum 3 bundles in a single transaction.</span
                           >
                         </div>
 
-                        <div class="round_token_button mt-10">
+                        <div class="round_token_button mt-15">
                           <div
                             class="flex-justify-between-center"
                             v-if="
@@ -467,7 +467,7 @@
                       </el-carousel-item>
                     </el-carousel>
 
-                    <div class="center d-flex-center mt-15">
+                    <div class="center d-flex-center mt-20">
                       <div>
                         <div class="d-flex-center">
                           <div class="flex-align-center">
@@ -490,13 +490,13 @@
                             </span>
                           </div>
                         </div>
-                        <div class="mt-5">
+                        <div class="mt-10">
                           <small style="font-size: 12px; color: #625f81"
                             >*Maximum 3 bundles in a single transaction.</small
                           >
                         </div>
 
-                        <div class="round_token_button_weth mt-10">
+                        <div class="round_token_button_weth mt-15">
                           <div
                             class="flex-justify-between-center"
                             v-if="
@@ -681,7 +681,7 @@
                       </el-carousel-item>
                     </el-carousel>
 
-                    <div class="center d-flex-center mt-15">
+                    <div class="center d-flex-center mt-20">
                       <div>
                         <div class="d-flex-center">
                           <div class="flex-align-center">
@@ -704,13 +704,13 @@
                             </span>
                           </div>
                         </div>
-                        <div class="mt-5">
+                        <div class="mt-10">
                           <small style="font-size: 12px; color: #625f81"
                             >*Maximum 3 bundles in a single transaction.</small
                           >
                         </div>
 
-                        <div class="round_token_button mt-10">
+                        <div class="round_token_button mt-15">
                           <div
                             class="flex-justify-between-center"
                             v-if="
@@ -1648,7 +1648,6 @@ export default {
       }
     },
     changeBundle(r) {
-      // console.log(r);
       this.ethBundle = 1;
       this.wBundle = 1;
       this.maticBundle = 1;

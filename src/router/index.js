@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import Home from '@/views/Home';
 import AirDrop from '@/views/AirDrop';
 import BuyNft from '@/views/BuyNft';
-import Presale from '@/views/Presale';
+import SalesBundle from '@/views/SalesBundle';
 import RefferalCount from '@/views/RefferalCount';
 import SolidFoundry from '@/views/SolidFoundry';
 // const Presale = () => import('../views/Presale')
@@ -31,7 +31,7 @@ const routes = [
     path: '/presale',
     alias: ['/eth', '/matic', '/wEth'],
     name: 'Presale',
-    component: Presale,
+    component: SalesBundle,
   },
   {
     path: '/refferal-airdropcount',

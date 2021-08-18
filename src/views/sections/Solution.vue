@@ -109,7 +109,7 @@
 
     <vs-row class="mt-50">
       <vs-col :w="6" :xs="12" :sm="12">
-        <div class="mr-20">
+        <div class="mr-20 d-flex-center">
           <img
             src="../../assets/images/coin_curve.png"
             alt=""

@@ -216,6 +216,7 @@
                       class="swap_button"
                       style="font-size: 0.8rem"
                       @click="swapToken"
+                      loading
                     >
                       <b> SWAP</b>
                     </vs-button>
@@ -527,10 +528,14 @@ export default {
       this.viewTokenList = false;
     },
     changeInputAmount() {
-      this.outputAmount = this.buyEstimate(
-        this.inputAmount,
-        this.solidTotalSupply
-      );
+      if (this.inputAmount == 0) {
+        this.outputAmount = null;
+      } else {
+        this.outputAmount = this.buyEstimate(
+          this.inputAmount,
+          this.solidTotalSupply
+        );
+      }
     },
     swapToken() {
       //this.approveMintOnBuy();

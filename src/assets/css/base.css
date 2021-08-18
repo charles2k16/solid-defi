@@ -395,10 +395,10 @@ hr.sales_hr {
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
   box-shadow: inset 0 0 0 2px;
-  width: 360px;
+  width: 330px;
   height: 6px;
   color: #61698b;
-  margin-left: 45px;
+  margin-left: 65px;
 }
 
 .gg-arrow-long-right::after {
@@ -517,6 +517,7 @@ hr.sales_hr {
 }
 .curve_sol_image {
   width: 400px;
+  margin-left: 30px;
 }
 .ul {
   width: 400px;
@@ -1061,7 +1062,8 @@ hr.sales_hr {
 }
 .animate {
   background-image: linear-gradient(to right, #4417b6, #7a1eda, #4417b6, #2c1254, #2c1254);
-  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-background-clip: text;
   animation: move 200s linear infinite;
 }
 @keyframes move {
@@ -1204,7 +1206,7 @@ hr.sales_hr {
 
 .solid_bundle_promo {
   width: 568px;
-  margin-left: -50px;
+  margin-left: -100px;
   margin-top: 90px
 }
 
