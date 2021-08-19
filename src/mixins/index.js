@@ -12,7 +12,8 @@ export default {
       tokenIdMatic: '0x498E0A753840075c4925442D4d8863eEe49D61E2',
       tokenIdEth: '0x5011d48d4265b6fb8228600a111b2faa1fda3139',
       wrapEthAddress: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
-      solidFoundryAddress: '0x69a440ebf12A010e35E6415966Bc37b9E98f3D4B',
+      solidFoundryAddress: '0x32AE1918C680A2bEBC361d077156f69d4012b5AE',
+      // solidFoundryAddress: '0x69a440ebf12A010e35E6415966Bc37b9E98f3D4B',
       tokenIdDai: '0x40ef836B1B8418F3ad17f7fA07eFE7c8dBBdC147',
       ethNewTotalToken: 680000,
       maticNewTotalToken: 1480000,
@@ -39,43 +40,36 @@ export default {
       return `SLD-${randomString}`;
     },
     buyEstimate (etherAmount, totalSupply) {
-      let totalSupp = totalSupply == null ? 0 : totalSupply
+      let totalSupp = totalSupply == null ? 0 : totalSupply == 'loading' ? 0 : totalSupply
       console.log('supply', totalSupp);
-      let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupp, 3 / 2), 2 / 3) - totalSupp
 
-      let tt = buyEstimate * 10 ** 18;
-      let ff = tt - 1000000;
+      let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupp, 3 / 2), 2 / 3) - totalSupp;
 
-      return ff / 1000000000000000000
+      let finalEstimate = buyEstimate * 10 ** 18;
+      // let finalEstimate = tt - 1000000;
+
+      return finalEstimate / 1000000000000000000
     },
-    // sellEstimate (sellAmount, totalSupply) {
-    //   let currentTime = Date.now();
-    //   let currentTimeString = BigNumber(currentTime).toString();
-    //   let currentTimeTS = currentTimeString.slice(0, 10)
-    //   let currentTime10 = parseInt(currentTimeTS)
+    sellEstimate (sellAmount, totalSupply) {
+      const currSup = 1310370697104000000;
+      let amount = this.toWei(sellAmount);
+      let getAmount = parseInt(amount);
+      let newSellAmount = getAmount / 1000000000000000000;
 
-    //   let sellAmountWei = parseFloat(sellAmount);
+      console.log(newSellAmount);
 
-    //   let expect_amount = (Math.pow(
-    //     totalSupply, 3 / 2) - Math.pow((totalSupply - sellAmountWei), 3 / 2)) * 2 / 3
+      // get total supply
+      let getSupp = totalSupply == null ? currSup : totalSupply == 'loading' ? currSup : totalSupply
+      let totalSupp = getSupp / 1000000000000000000;
+      console.log('supply', totalSupp);
 
-    //   let timeCheck = currentTime10 - lastTimeStamp
-    //   let rewardPercent = .2
-    //   let last_A_volumeCalc
+      let expect_amount = (Math.pow(totalSupp, 3 / 2) - Math.pow((totalSupp - newSellAmount), 3 / 2)) * 2 / 3;
 
-    //   if (timeCheck < 60) {
-    //     last_A_volumeCalc = (last_A_volume * (60 - (timeCheck)) + expect_amount * timeCheck) / 60
-    //   }
-    //   else {
-    //     last_A_volumeCalc = expect_amount / 60
-    //   }
+      // let finalEstimate = expect_amount * 10 ** 18;
+      console.log('sell', expect_amount)
 
-    //   if (last_A_volumeCalc * 1440 / solidTokenBal <= 1) {
-    //     rewardPercent *= last_A_volumeCalc * 1440 / solidTokenBal
-    //   }
-
-    //   let Est = ((1 - rewardPercent) * expect_amount) * 10 ** (18 - tokenDecimals)
-    // },
+      return expect_amount;
+    },
     approveMintOnBuy () {
       let amount = 10000000000000000000;
       let amt = amount.toString();
@@ -87,10 +81,6 @@ export default {
     mintOnBuy (currentAddress, amountInput, estimate) {
       const amount0 = this.toWei(amountInput);
       const amount1 = 0;
-      // const amount1 = this.toWei(estimate);
-
-      // let amount0 = weiAmount0.toString();
-      // let amount1 = weiAmount1.toString();
 
       console.log(estimate);
 
@@ -103,7 +93,7 @@ export default {
       const amount1 = 0
 
       this.drizzleInstance.contracts['SolidFoundry'].methods[
-        'mintOnBuy'
+        'burnOnSell'
       ].cacheSend(this.tokenIdDai, currentAddress, amount0, amount1);
     },
     getEthBalance (currentBalance) {

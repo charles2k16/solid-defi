@@ -42,7 +42,7 @@
                               ROUND 2
                             </h2>
 
-                            <h3>SEPT 10 2021 5pm UTC</h3>
+                            <h3>SEPT 15 2021 5pm UTC</h3>
                             <!-- <span class="second_presale mt-10 d-block"
                           >(Second Presale)</span
                         > -->
@@ -50,7 +50,7 @@
                           <br /><br />
                           <div>
                             <flip-countdown
-                              deadline="2021-09-10 12:00:00"
+                              deadline="2021-09-15 12:00:00"
                               class="timerr"
                             ></flip-countdown>
                           </div>
@@ -564,7 +564,7 @@
           <vs-col :w="5" :xs="12" :sm="12">
             <div class="flex-align-center">
               <h1 class="yellow">
-                Over {{ tokenSale }} tokens sold in presale
+                {{ tokenSale }} tokens sold in first presale
               </h1>
             </div>
           </vs-col>
@@ -579,12 +579,12 @@
           <vs-col :w="5" :xs="12" :sm="12">
             <div>
               <div class="progress">
-                <div class="progress_token" :style="{ width: `${31}%` }">
-                  <span>31%</span>
+                <div class="progress_token" :style="{ width: `${71}%` }">
+                  <span>71%</span>
                 </div>
               </div>
 
-              <p class="mt-20 p_tokens">20M Tokens</p>
+              <p class="mt-20 p_tokens">4.2M Tokens</p>
             </div>
           </vs-col>
         </vs-row>
@@ -599,7 +599,7 @@
                 </h2>
               </div>
               <flip-countdown
-                deadline="2021-09-10 12:00:00"
+                deadline="2021-09-15 12:00:00"
                 class="timerr"
               ></flip-countdown>
             </div>
@@ -613,7 +613,7 @@
             <div class="progress">
               <div class="progress_time"></div>
             </div>
-            <p class="mt-20 p_tokens">22 days</p>
+            <p class="mt-20 p_tokens">26 days</p>
           </vs-col>
         </vs-row>
 
@@ -668,12 +668,16 @@ export default {
     return {
       showOverlay: false,
       tokenSale: '3,000,000',
-      percentageOff: 70,
+      percentageOff: 52,
+      bigPercentage: 52,
+      smallPercentage: 48,
+      midPercentage: 50,
       ethBundle: 1,
       maticBundle: 1,
       wBundle: 1,
       title: '',
       chainNetwork: 'null',
+      currentNetTab: 'eth',
     };
   },
   methods: {
@@ -700,11 +704,34 @@ export default {
 
       this.showOverlay = false;
     },
+    // changeBundle(r) {
+    //   console.log(r);
+    //   let bb = r;
+    //   this.percentageOff = bb == 1 ? 60 : 70;
+    //   // this.addAnimate();
+    // },
     changeBundle(r) {
-      console.log(r);
-      let bb = r;
-      this.percentageOff = bb == 1 ? 60 : 70;
-      this.addAnimate();
+      this.ethBundle = 1;
+      this.wBundle = 1;
+      this.maticBundle = 1;
+      let bundleIndex = r;
+      if (this.currentNetTab == 'eth') {
+        this.percentageOff =
+          bundleIndex == 1 ? this.smallPercentage : this.bigPercentage;
+      } else {
+        this.percentageOff =
+          bundleIndex == 0
+            ? this.bigPercentage
+            : bundleIndex == 1
+            ? this.midPercentage
+            : this.smallPercentage;
+      }
+      this.currentEthBundle = bundleIndex == 1 ? 5000 : 20000;
+      this.currentwEthBundle =
+        bundleIndex == 1 ? 10000 : bundleIndex == 0 ? 20000 : 5000;
+      this.currentMaticBundle =
+        bundleIndex == 1 ? 10000 : bundleIndex == 0 ? 20000 : 5000;
+      this.setDefaultBundle(r);
     },
     setActiveItem() {
       this.$refs.carouseleth.setActiveItem('bigBundle');
@@ -712,8 +739,10 @@ export default {
       this.$refs.carouselmatic.setActiveItem('bigBundle');
     },
     openTab(evt, cityName) {
+      this.currentNetTab = cityName;
       this.setActiveItem();
-      this.percentageOff = 70;
+      this.percentageOff =
+        cityName == 'eth' ? this.bigPercentage : this.bigPercentage;
 
       let i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName('tabcontent');

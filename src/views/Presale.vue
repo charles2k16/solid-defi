@@ -3,7 +3,7 @@
     <NavBar />
     <div class="hero mb-50">
       <div class="wrap">
-        <div class="d-flex-center">
+        <div eclass="d-flex-center">
           <vs-button class="airdrop_btn" blank to="/airdrop" id="airdrop_btn">
             <b>Get AirDrop</b>
           </vs-button>

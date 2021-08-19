@@ -160,7 +160,10 @@
               </div>
 
               <div class="mt-20 tk_brk">
-                <span class="material-icons-round swp">
+                <span
+                  class="material-icons-round swp"
+                  @click="swapToken(inputToken)"
+                >
                   swap_vert
                 </span>
                 <hr class="hd_rule2" />
@@ -215,8 +218,7 @@
                     <vs-button
                       class="swap_button"
                       style="font-size: 0.8rem"
-                      @click="swapToken"
-                      loading
+                      @click="buySellToken"
                     >
                       <b> SWAP</b>
                     </vs-button>
@@ -467,7 +469,6 @@ export default {
             '12 Aug',
             '14 Aug',
             '18 Aug',
-            '20 Aug',
             '25 Aug',
           ],
         },
@@ -528,18 +529,25 @@ export default {
       this.viewTokenList = false;
     },
     changeInputAmount() {
-      if (this.inputAmount == 0) {
+      if (this.inputAmount <= 0) {
         this.outputAmount = null;
       } else {
-        this.outputAmount = this.buyEstimate(
+        this.outputAmount = this.sellEstimate(
           this.inputAmount,
           this.solidTotalSupply
         );
       }
     },
-    swapToken() {
-      //this.approveMintOnBuy();
-      this.mintOnBuy(this.activeAccount, this.inputAmount, this.outputAmount);
+    swapToken(input) {
+      let curToken = input;
+      this.inputToken = this.outputToken;
+      this.outputToken = curToken;
+    },
+    buySellToken() {
+      // this.approveMintOnBuy();
+      // this.mintOnBuy(this.activeAccount, this.inputAmount, this.outputAmount);
+
+      this.burnOnSell(this.activeAccount, this.inputAmount);
     },
   },
 };

@@ -10,7 +10,6 @@
 
           <div class="airdrop_form">
             <div class="flex-justify-between airdrop_input_cont">
-       
               <input
                 type="text"
                 placeholder="Email"
@@ -21,9 +20,6 @@
 
             <div class="flex-justify-between-center air_text_div">
               <span class="air_text">Please follow us on Twitter</span>
-              <span class="material-icons ic">
-                help
-              </span>
             </div>
             <div class="flex-justify-between airdrop_input_cont">
               <vs-avatar size="35">
@@ -40,12 +36,9 @@
                 v-model="airdropForm.twitter_name"
               />
             </div>
-            
+
             <div class="flex-justify-between-center air_text_div">
               <span class="air_text">Please join us on Telegram</span>
-              <span class="material-icons-outlined ic">
-                help
-              </span>
             </div>
             <div class="flex-justify-between airdrop_input_cont">
               <vs-avatar size="35">
@@ -65,9 +58,6 @@
 
             <div class="flex-justify-between-center air_text_div">
               <span class="air_text">Metamask address</span>
-              <span class="material-icons ic">
-                help
-              </span>
             </div>
             <div class="flex-justify-between airdrop_input_cont">
               <vs-avatar size="35">
@@ -90,9 +80,6 @@
                 >Who referred you
                 <span style="font-size:11px">(Optional)</span></span
               >
-              <span class="material-icons ic">
-                help
-              </span>
             </div>
             <input
               type="text"
@@ -105,9 +92,6 @@
               <span class="air_text" style="color: #fcb420;"
                 >Your personal referral link</span
               >
-              <span class="material-icons ic" style="color:#fcb420;">
-                help
-              </span>
             </div>
           </div>
 
@@ -223,7 +207,11 @@ export default {
   },
   methods: {
     checkReferral() {
-      if (this.airdropForm.email == "" || this.airdropForm.telegram_name == "" || this.airdropForm.metamaskAddress == "") {
+      if (
+        this.airdropForm.email == '' ||
+        this.airdropForm.telegram_name == '' ||
+        this.airdropForm.metamaskAddress == ''
+      ) {
         this.openNotification(
           'top-center',
           'danger',
@@ -232,11 +220,11 @@ export default {
         );
         return false;
       } else {
-        this.sendRefferal()
+        this.sendRefferal();
       }
     },
     sendRefferal() {
-      let self = this
+      let self = this;
       this.btn_loading = true;
 
       referralsApi
@@ -260,7 +248,7 @@ export default {
             'Invalid email address or email address already used.'
           );
         });
-    }
+    },
   },
 };
 </script>
