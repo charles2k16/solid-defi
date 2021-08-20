@@ -428,10 +428,10 @@ export default {
           enabled: false,
         },
         markers: {
-          size: 4,
+          size: 3,
           colors: ['#000524'],
           strokeColor: '#00BAEC',
-          strokeWidth: 3,
+          strokeWidth: 2,
         },
         subtitle: {
           text: 'Price Movements',
@@ -443,7 +443,7 @@ export default {
         stroke: {
           curve: 'smooth',
         },
-        colors: ['#00BAEC'],
+        // colors: ['#00BAEC'],
         grid: {
           borderColor: '#555',
           clipMarkers: false,
@@ -453,13 +453,13 @@ export default {
             },
           },
         },
-        fill: {
-          gradient: {
-            enabled: true,
-            opacityFrom: 0.55,
-            opacityTo: 0,
-          },
-        },
+        // fill: {
+        //   gradient: {
+        //     enabled: true,
+        //     opacityFrom: 0.55,
+        //     opacityTo: 0,
+        //   },
+        // },
         xaxis: {
           categories: [
             '3 Jul',
@@ -476,7 +476,11 @@ export default {
       series: [
         {
           name: 'Price',
-          data: [5, 15, 20, 30, 31, 35, 43, 44, 55],
+          data: [10, 15, 20, 30, 31, 35, 43, 44, 55, 80],
+        },
+        {
+          name: 'sell',
+          data: [19, 20, 25, 40, 51, 55, 64, 80, 105],
         },
       ],
     };
@@ -504,6 +508,13 @@ export default {
       });
     },
   },
+  // watch: {
+  //   solidTotalSupply: function(totSupp) {
+  //     // update of total supply
+  //     // calculate for price (square root of supply)
+  //     // push update to chart
+  //   },
+  // },
   created() {
     if (this.onEthNetwork) this.connectToEthContract();
   },
