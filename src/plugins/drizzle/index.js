@@ -29,7 +29,7 @@ const options = {
   // },
   polls: {
     // check accounts every 15 seconds
-    accounts: 50000
+    accounts: 15000
   }
 }
 

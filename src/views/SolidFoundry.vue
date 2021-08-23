@@ -70,31 +70,6 @@
                   :series="series"
                 >
                 </apexchart>
-
-                <!-- <div>
-                  <div class="solid_box">
-                    <img
-                      src="../assets/images/solid_dai.png"
-                      alt="dai"
-                      width="30px"
-                    />
-                    <span>SOLID-DAI</span>
-                    <span>Current price:</span>
-                    <span>0</span>
-                  </div>
-
-                  <div class="solid_nextprice">
-                    <p>
-                      Next price point of SOLD-DAI after your purchase*: $110.52
-                    </p>
-                  </div>
-                  <div>
-                    <p>
-                      Your intended purchase with: $200,000 DAI SOLID-DAI Avg.
-                      price at 104.85
-                    </p>
-                  </div>
-                </div> -->
               </div>
             </div>
           </vs-col>
@@ -389,6 +364,7 @@ import { mapGetters } from 'vuex';
 import Footer from './sections/Footer.vue';
 import solidMainnetTokenlist from '@/api/solidMainnetTokenlist.json';
 import { getTotalSupply } from '@/api/contractGeters';
+import supplyApi from '/api/supplycharts';
 
 export default {
   name: 'SolidFoundry',
@@ -478,10 +454,6 @@ export default {
           name: 'Price',
           data: [10, 15, 20, 30, 31, 35, 43, 44, 55, 80],
         },
-        {
-          name: 'sell',
-          data: [19, 20, 25, 40, 51, 55, 64, 80, 105],
-        },
       ],
     };
   },
@@ -508,13 +480,19 @@ export default {
       });
     },
   },
-  // watch: {
-  //   solidTotalSupply: function(totSupp) {
-  //     // update of total supply
-  //     // calculate for price (square root of supply)
-  //     // push update to chart
-  //   },
-  // },
+  watch: {
+    solidTotalSupply: function(totSupp) {
+      let totalSupply = totSupp / 1000000000000000000;
+      let supplySqrt = Math.sqrt(totalSupply);
+      console.log(supplySqrt);
+
+      // after sell
+      // ttsup - sell amount
+      // square root of total
+
+      this.updatePrice(supplySqrt);
+    },
+  },
   created() {
     if (this.onEthNetwork) this.connectToEthContract();
   },
@@ -543,7 +521,7 @@ export default {
       if (this.inputAmount <= 0) {
         this.outputAmount = null;
       } else {
-        this.outputAmount = this.sellEstimate(
+        this.outputAmount = this.buyEstimate(
           this.inputAmount,
           this.solidTotalSupply
         );
@@ -556,9 +534,25 @@ export default {
     },
     buySellToken() {
       // this.approveMintOnBuy();
-      // this.mintOnBuy(this.activeAccount, this.inputAmount, this.outputAmount);
+      this.mintOnBuy(this.activeAccount, this.inputAmount, this.outputAmount);
 
-      this.burnOnSell(this.activeAccount, this.inputAmount);
+      // this.burnOnSell(this.activeAccount, this.inputAmount);
+      this.outputAmount = null;
+      this.inputAmount = null;
+    },
+    updatePrice(supplySqrt) {
+      let supply = parseFloat(supplySqrt).toFixed(4);
+
+      let data = {
+        price: supply,
+      };
+
+      supplyApi
+        .addSupplyChart(data)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => console.log(error));
     },
   },
 };
