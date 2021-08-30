@@ -6,14 +6,14 @@ export default {
   addSupplyChart (chartData) {
     let url = 'https://quiet-wave-74001.herokuapp.com/api/v1/charts'
     return axios.post(url, chartData)
-      .then((response) => Promise.resolve(response))
+      .then((response) => Promise.resolve(response.data))
       .catch((error) => Promise.reject(error))
   },
 
   getSupplyChart () {
-    let url = 'https://quiet-wave-74001.herokuapp.com/api/v1/charts'
+    let url = 'https://quiet-wave-74001.herokuapp.com/api/v1/charts/graph'
     return axios.get(url)
-      .then((response) => Promise.resolve(response))
+      .then((response) => Promise.resolve(response.data))
       .catch((error) => Promise.reject(error))
   }
 }
