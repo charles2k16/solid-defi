@@ -202,7 +202,7 @@
                     </vs-button>
                     <vs-button
                       :loading="approveLoading"
-                      v-if="notApproved"
+                      v-if="approveLoading"
                       @click="approveBuy()"
                     >
                       Approve
@@ -418,70 +418,53 @@ export default {
       outputAmount: null,
       series: [
         {
-          name: 'Price',
+          name: 'Bonding Curve',
+          data: [0, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        },
+        {
+          name: 'Dai in bonding curve',
           data: [],
         },
+        // {
+        //   name: 'Preview',
+        //   data: [0, 0, 0, 0, 0, 5, 6],
+        // },
       ],
       chartOptions: {
         chart: {
-          id: 'area-datetime',
           type: 'area',
           height: 350,
           zoom: {
             autoScaleYaxis: true,
           },
         },
-        annotations: {
-          // yaxis: [
-          //   {
-          //     y: 30,
-          //     borderColor: '#999',
-          //     label: {
-          //       show: true,
-          //       text: 'Support',
-          //       style: {
-          //         color: '#fff',
-          //         background: '#00E396',
-          //       },
-          //     },
-          //   },
-          // ],
-          // xaxis: [
-          //   {
-          //     x: new Date('14 Nov 2012').getTime(),
-          //     borderColor: '#999',
-          //     yAxisIndex: 0,
-          //     label: {
-          //       show: true,
-          //       text: 'Rally',
-          //       style: {
-          //         color: '#fff',
-          //         background: '#775DD0',
-          //       },
-          //     },
-          //   },
-          // ],
-        },
         dataLabels: {
           enabled: false,
         },
         stroke: {
-          curve: 'smooth',
-          width: 3,
+          curve: 'straight',
+          width: 4,
         },
         markers: {
-          size: 1,
-          style: 'hollow',
+          size: 2,
         },
         xaxis: {
-          type: 'datetime',
-          min: new Date('23 Aug 2021').getTime(),
-          tickAmount: 6,
+          labels: {
+            formatter: function(val) {
+              return parseFloat(val).toFixed(1);
+            },
+          },
+          categories: [0, 4, 4.64, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169],
+        },
+        yaxis: {
+          labels: {
+            formatter: function(val) {
+              return parseFloat(val).toFixed(1);
+            },
+          },
         },
         tooltip: {
-          // x: {
-          //   format: 'dd MMM yyyy',
-          // },
+          theme: 'dark',
         },
         grid: {
           borderColor: '#555',
@@ -499,9 +482,13 @@ export default {
             opacityTo: 0,
           },
         },
+        legend: {
+          show: true,
+          onItemHover: {
+            highlightDataSeries: true,
+          },
+        },
       },
-
-      selection: 'one_year',
     };
   },
   computed: {
@@ -541,23 +528,20 @@ export default {
     buySolid() {
       return this.inputToken.symbol == 'DAI';
     },
-    notApproved() {
-      return (
-        typeof this.allowanceValue == 'undefined' ||
-        this.allowanceValue == null ||
-        this.allowanceValue == 0
-      );
-    },
   },
   watch: {
     solidTotalSupply: function(totSupp) {
       let totalSupply = totSupp / 1000000000000000000;
       let supplySqrt = Math.sqrt(totalSupply);
-      console.log(supplySqrt);
+      console.log('live', supplySqrt);
+
       //  find out when there is a sell
       // after sell
       // ttsup - sell amount
       // square root of total
+
+      // xaxis = total supply
+      // yaxis = price
 
       this.updatePrice(supplySqrt);
     },
@@ -628,6 +612,7 @@ export default {
         this.allowanceValue == null ||
         this.allowanceValue == 0
       ) {
+        this.approveLoading = true;
         return;
       } else {
         this.mintOnBuy(this.activeAccount, this.inputAmount, this.outputAmount);
@@ -642,7 +627,7 @@ export default {
       this.inputAmount = null;
     },
     updatePrice(supplySqrt) {
-      let supply = parseFloat(supplySqrt).toFixed(4);
+      let supply = parseFloat(supplySqrt).toFixed(3);
 
       let data = {
         price: supply,
@@ -661,10 +646,29 @@ export default {
         .getSupplyChart()
         .then(response => {
           response.data.map(function(supp) {
-            data.push([supp.x, supp.y]);
+            if (supp.supply > 0) data.push(supp.supply);
           });
-          // console.log(data);
-          this.series[0].data = data;
+          let maxNumber = this.getMaxNumber(data);
+          let appendCurve = this.greaterThanSupply(
+            this.series[0].data,
+            maxNumber
+          );
+          let prependCurve = this.lessThanSupply(
+            this.series[0].data,
+            maxNumber
+          );
+          let addSupp = this.lessThanSupply(this.series[0].data, maxNumber);
+
+          prependCurve.push(maxNumber);
+          prependCurve = prependCurve.concat(appendCurve);
+          addSupp.push(maxNumber);
+
+          // console.log(addSupp);
+          // console.log(prependCurve);
+
+          this.series[0].data = prependCurve;
+          this.series[1].data = addSupp;
+          // console.log(this.series[1].data);
           this.showChart = true;
         })
         .catch(error => console.log(error));

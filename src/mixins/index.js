@@ -25,6 +25,22 @@ export default {
     }
   },
   methods: {
+    greaterThanSupply (curveArr, supply) {
+      let appendNewCurve = curveArr.filter(function (curve) {
+        return curve > supply;
+      });
+      return appendNewCurve;
+    },
+    lessThanSupply (curveArr, supply) {
+      let prependNewCurve = curveArr.filter(function (curve) {
+        return curve < supply;
+      });
+      return prependNewCurve;
+    },
+    getMaxNumber (arr) {
+      let max = Math.max(...arr);
+      return max;
+    },
     toEth (weiBalance) {
       // let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
       let etherValue = weiBalance / 1000000000000000000;
@@ -40,8 +56,9 @@ export default {
       return `SLD-${randomString}`;
     },
     buyEstimate (etherAmount, totalSupply) {
-      let totalSupp = totalSupply == null ? 0 : totalSupply == 'loading' ? 0 : totalSupply
-      console.log('supply', totalSupp);
+      let getSupp = totalSupply == null ? 0 : totalSupply == 'loading' ? 0 : totalSupply
+      let totalSupp = getSupp / 1000000000000000000;
+      console.log('buySupp', totalSupp);
 
       let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupp, 3 / 2), 2 / 3) - totalSupp;
 
@@ -56,7 +73,7 @@ export default {
       let getAmount = parseInt(amount);
       let newSellAmount = getAmount / 1000000000000000000;
 
-      console.log(newSellAmount);
+      // console.log(newSellAmount);
 
       // get total supply
       let getSupp = totalSupply == null ? currSup : totalSupply == 'loading' ? currSup : totalSupply
