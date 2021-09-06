@@ -27,7 +27,7 @@
         >
           <b>Join Contest</b>
         </vs-button> -->
-        <span v-if="isDrizzleInitialized" class="foundry_nav">
+        <span v-if="isDrizzleInitialized">
           <span class="nav_accont" v-if="onEthNetwork">
             <b>{{ toEth(activeBalance) }} ETH</b>
             <span class="nav_address" @click="showAccounts = true">
@@ -176,7 +176,7 @@
                 <span>1 DAI = 1.31037069 SolidDAI</span>
               </div>
 
-              <div class="mt-50">
+              <div class="mt-50 flex-center">
                 <div class="swap_round_div">
                   <div class="flex-justify-between-center">
                     <span class="matic_btn_swap" v-if="!isDrizzleInitialized">
@@ -994,7 +994,7 @@ export default {
   }
 }
 .solid_gm_img {
-  width: 620px;
+  width: 100%;
   border-radius: 20px;
   margin-left: 5px;
   height: 112px;

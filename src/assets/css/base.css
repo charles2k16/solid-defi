@@ -374,6 +374,10 @@ hr.sales_hr {
   align-items: center;
   justify-content: center;
 }
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
 .head_text {
   color: #d4d3d3;
   font-size: 1.3rem;
