@@ -25,6 +25,9 @@ export default {
     }
   },
   methods: {
+    getFirstFourStrings (str) {
+      return str.substring(0, 5);
+    },
     greaterThanSupply (curveArr, supply) {
       let appendNewCurve = curveArr.filter(function (curve) {
         return curve > supply;
@@ -42,7 +45,6 @@ export default {
       return max;
     },
     toEth (weiBalance) {
-      // let etherValue = Web3.utils.fromWei(weiBalance, 'ether');
       let etherValue = weiBalance / 1000000000000000000;
       let amt = parseFloat(etherValue).toFixed(4);
       return amt;

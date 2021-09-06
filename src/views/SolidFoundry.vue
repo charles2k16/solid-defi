@@ -27,13 +27,13 @@
         >
           <b>Join Contest</b>
         </vs-button> -->
-        <span v-if="isDrizzleInitialized">
+        <span v-if="isDrizzleInitialized" class="foundry_nav">
           <span class="nav_accont" v-if="onEthNetwork">
             <b>{{ toEth(activeBalance) }} ETH</b>
             <span class="nav_address" @click="showAccounts = true">
-              <span class="acc_span" style="width: 80px;font-size: 1rem;">{{
-                activeAccount
-              }}</span>
+              <span class="acc_span"
+                >{{ getFirstFourStrings(activeAccount) }}...</span
+              >
               <span class="material-icons">
                 account_circle
               </span>
@@ -696,6 +696,8 @@ export default {
     color: whitesmoke;
     font-size: 26px;
     font-weight: 530;
+    margin: 5px;
+    text-align: center;
   }
 }
 .grapgh_an {

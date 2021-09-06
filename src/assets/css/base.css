@@ -898,10 +898,9 @@ hr.sales_hr {
 .nav_accont {
   background-color: #202231;
   border-radius: 7px;
-  padding-left: 10px;
+  padding-left: 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   color: rgb(218, 216, 216);
     font-size: 1rem;
      font-family: Avenir,
@@ -914,25 +913,17 @@ hr.sales_hr {
   border-radius: 10px;
   margin-left: 5px;
   padding: 7px 8px;
-  /* overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 1rem;
-  width: fit-content; */
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* width: 100px; */
 }
-
-
+/* 
+.foundry_nav {
+  width: 50%;
+} */
 .acc_span {
-  text-overflow:
-    ellipsis;
-  overflow-x: hidden;
   margin-left: 5px;
-  font-size: 15px;
-  white-space: nowrap;
+  font-size: 1rem;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .eth_acc1 {
