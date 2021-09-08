@@ -25,6 +25,39 @@ export default {
     }
   },
   methods: {
+    get100Zeros () {
+      let thirdLine = {
+        xax: [],
+        lastTwo: []
+      }
+
+      for (const x of Array(100).keys()) {
+
+        if (x == 98) {
+          thirdLine.lastTwo.push(x)
+        } else {
+          thirdLine.xax.push(0)
+        }
+      }
+
+      // console.log(thirdLine)
+      return thirdLine
+    },
+    getRandomNumber () {
+      let graph = {
+        xaxis: [],
+        yaxis: []
+      };
+
+      for (const x of Array(200).keys()) {
+
+        let y = Math.sqrt(x)
+        graph.xaxis.push(x)
+        graph.yaxis.push(y)
+      }
+      // console.log(graph);
+      return graph;
+    },
     getFirstFourStrings (str) {
       return str.substring(0, 5);
     },
@@ -75,17 +108,12 @@ export default {
       let getAmount = parseInt(amount);
       let newSellAmount = getAmount / 1000000000000000000;
 
-      // console.log(newSellAmount);
-
       // get total supply
       let getSupp = totalSupply == null ? currSup : totalSupply == 'loading' ? currSup : totalSupply
       let totalSupp = getSupp / 1000000000000000000;
       console.log('supply', totalSupp);
 
       let expect_amount = (Math.pow(totalSupp, 3 / 2) - Math.pow((totalSupp - newSellAmount), 3 / 2)) * 2 / 3;
-
-      // let finalEstimate = expect_amount * 10 ** 18;
-      console.log('sell', expect_amount)
 
       return expect_amount;
     },

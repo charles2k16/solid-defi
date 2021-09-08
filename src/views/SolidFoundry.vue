@@ -335,7 +335,9 @@
             <vs-avatar size="20">
               <img src="../assets/images/sld.png" alt="logo" />
             </vs-avatar>
-            <span class="acc_span">{{ activeAccount }}</span>
+            <span class="acc_span">{{
+              getFirstFourStrings(activeAccount)
+            }}</span>
           </div>
           <br />
           <div class="eth_balance">
@@ -419,16 +421,16 @@ export default {
       series: [
         {
           name: 'Bonding Curve',
-          data: [0, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+          data: [],
         },
         {
           name: 'Dai in bonding curve',
           data: [],
         },
-        // {
-        //   name: 'Preview',
-        //   data: [0, 0, 0, 0, 0, 5, 6],
-        // },
+        {
+          name: 'Preview',
+          data: [0, 0, 0, 0, 0, 0, 2.3, 2.6, 2.8, 3.0],
+        },
       ],
       chartOptions: {
         chart: {
@@ -613,7 +615,7 @@ export default {
         this.allowanceValue == 0
       ) {
         this.approveLoading = true;
-        return;
+        this.approveMintOnBuy();
       } else {
         this.mintOnBuy(this.activeAccount, this.inputAmount, this.outputAmount);
         this.approveLoading = false;
@@ -641,6 +643,7 @@ export default {
         .catch(error => console.log(error));
     },
     loadSupplyChart() {
+      this.get100Zeros();
       let data = [];
       supplyApi
         .getSupplyChart()
@@ -649,26 +652,20 @@ export default {
             if (supp.supply > 0) data.push(supp.supply);
           });
           let maxNumber = this.getMaxNumber(data);
-          let appendCurve = this.greaterThanSupply(
-            this.series[0].data,
-            maxNumber
-          );
-          let prependCurve = this.lessThanSupply(
-            this.series[0].data,
-            maxNumber
-          );
-          let addSupp = this.lessThanSupply(this.series[0].data, maxNumber);
+          let chart = this.getRandomNumber();
+
+          let appendCurve = this.greaterThanSupply(chart.yaxis, maxNumber);
+          let prependCurve = this.lessThanSupply(chart.yaxis, maxNumber);
+          let addSupp = this.lessThanSupply(chart.yaxis, maxNumber);
 
           prependCurve.push(maxNumber);
           prependCurve = prependCurve.concat(appendCurve);
           addSupp.push(maxNumber);
 
-          // console.log(addSupp);
-          // console.log(prependCurve);
-
-          this.series[0].data = prependCurve;
+          console.log(addSupp);
+          this.series[0].data = chart.yaxis;
           this.series[1].data = addSupp;
-          // console.log(this.series[1].data);
+          this.chartOptions.xaxis.categories = chart.xaxis;
           this.showChart = true;
         })
         .catch(error => console.log(error));
