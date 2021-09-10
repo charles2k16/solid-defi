@@ -427,10 +427,10 @@ export default {
           name: 'Dai in bonding curve',
           data: [],
         },
-        {
-          name: 'Preview',
-          data: [0, 0, 0, 0, 0, 0, 2.3, 2.6, 2.8, 3.0],
-        },
+        // {
+        //   name: 'Preview',
+        //   data: [0, 0, 0, 0, 0, 0, 2.3, 2.6, 2.8, 3.0],
+        // },
       ],
       chartOptions: {
         chart: {
@@ -549,6 +549,9 @@ export default {
     },
     chain: function(netId) {
       console.log(netId, 'connecting to eth');
+      // if (this.chain == 1) {
+      //   this.$router.go();
+      // }
       this.connectToEthContract();
     },
   },
@@ -639,10 +642,12 @@ export default {
         .addSupplyChart(data)
         .then(response => {
           console.log(response.data);
+          // this.loadSupplyChart();
         })
         .catch(error => console.log(error));
     },
     loadSupplyChart() {
+      this.showChart = false;
       this.get100Zeros();
       let data = [];
       supplyApi

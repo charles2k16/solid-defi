@@ -30,7 +30,6 @@ export default {
         xax: [],
         lastTwo: []
       }
-
       for (const x of Array(100).keys()) {
 
         if (x == 98) {
@@ -40,7 +39,8 @@ export default {
         }
       }
 
-      // console.log(thirdLine)
+      // take solid extimate 
+      // add to current supply
       return thirdLine
     },
     getRandomNumber () {
@@ -49,7 +49,7 @@ export default {
         yaxis: []
       };
 
-      for (const x of Array(200).keys()) {
+      for (const x of Array(150).keys()) {
 
         let y = Math.sqrt(x)
         graph.xaxis.push(x)
