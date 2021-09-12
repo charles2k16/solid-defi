@@ -93,12 +93,10 @@ export default {
     buyEstimate (etherAmount, totalSupply) {
       let getSupp = totalSupply == null ? 0 : totalSupply == 'loading' ? 0 : totalSupply
       let totalSupp = getSupp / 1000000000000000000;
-      console.log('buySupp', totalSupp);
 
       let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupp, 3 / 2), 2 / 3) - totalSupp;
 
       let finalEstimate = buyEstimate * 10 ** 18;
-      // let finalEstimate = tt - 1000000;
 
       return finalEstimate / 1000000000000000000
     },
