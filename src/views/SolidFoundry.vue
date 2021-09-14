@@ -445,7 +445,8 @@ export default {
         },
         stroke: {
           curve: 'straight',
-          width: 4,
+          width: 5,
+          colors: ['#1A73E8', '#FCB520'],
         },
         markers: {
           size: 0,
@@ -460,9 +461,9 @@ export default {
           },
           min: 4,
           // max: 190,
-          // tooltip: {
-          //   enabled: fal,
-          // },
+          tooltip: {
+            enabled: true,
+          },
           categories: [0, 4, 4.64, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169],
         },
         yaxis: {
@@ -485,10 +486,13 @@ export default {
           },
         },
         fill: {
+          type: 'gradient',
+          colors: ['#1A73E8', '#FCB520'],
+          // opacity: 0.9,
           gradient: {
             enabled: true,
-            opacityFrom: 0.55,
-            opacityTo: 0,
+            opacityFrom: 0.9,
+            opacityTo: 0.1,
           },
         },
         legend: {
