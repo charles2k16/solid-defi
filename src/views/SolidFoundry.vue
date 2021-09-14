@@ -412,7 +412,7 @@ export default {
       },
       outputToken: {
         name: 'Solid',
-        symbol: 'SOLID',
+        symbol: 'SLDDAI',
         logoURI: 'https://soliddefi.com/img/sld.a6af7737.png',
       },
       tkn_selected: null,
@@ -448,14 +448,21 @@ export default {
           width: 4,
         },
         markers: {
-          size: 2,
+          size: 0,
         },
         xaxis: {
           labels: {
+            show: false,
+            trim: true,
             formatter: function(val) {
               return parseFloat(val).toFixed(1);
             },
           },
+          min: 4,
+          // max: 190,
+          // tooltip: {
+          //   enabled: fal,
+          // },
           categories: [0, 4, 4.64, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169],
         },
         yaxis: {
@@ -537,14 +544,6 @@ export default {
       let supplySqrt = Math.sqrt(totalSupply);
       console.log('live', supplySqrt);
 
-      //  find out when there is a sell
-      // after sell
-      // ttsup - sell amount
-      // square root of total
-
-      // xaxis = total supply
-      // yaxis = price
-
       this.updatePrice(supplySqrt);
     },
     chain: function(netId) {
@@ -601,11 +600,13 @@ export default {
     },
     swapToken(input) {
       let curToken = input;
+      let outAmt = this.outputAmount;
       this.inputToken = this.outputToken;
       this.outputToken = curToken;
-      this.outputAmount = null;
-      this.inputAmount = null;
+      this.outputAmount = this.inputAmount;
+      this.inputAmount = outAmt;
       this.approveLoading = false;
+      this.solidTotalSupply;
     },
     approveBuy() {
       this.approveLoading = true;

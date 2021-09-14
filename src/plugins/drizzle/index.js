@@ -28,8 +28,8 @@ const options = {
   //   SolidProtocol: ['Transfer']
   // },
   polls: {
-    // check accounts every 15 seconds
-    accounts: 15000
+    // check accounts every 10 seconds
+    accounts: 10000
   }
 }
 

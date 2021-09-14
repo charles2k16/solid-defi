@@ -49,7 +49,7 @@ export default {
         yaxis: []
       };
 
-      for (const x of Array(150).keys()) {
+      for (const x of Array(400).keys()) {
 
         let y = Math.sqrt(x)
         graph.xaxis.push(x)
@@ -93,6 +93,7 @@ export default {
     buyEstimate (etherAmount, totalSupply) {
       let getSupp = totalSupply == null ? 0 : totalSupply == 'loading' ? 0 : totalSupply
       let totalSupp = getSupp / 1000000000000000000;
+      console.log('buy', totalSupp);
 
       let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupp, 3 / 2), 2 / 3) - totalSupp;
 
@@ -109,7 +110,7 @@ export default {
       // get total supply
       let getSupp = totalSupply == null ? currSup : totalSupply == 'loading' ? currSup : totalSupply
       let totalSupp = getSupp / 1000000000000000000;
-      console.log('supply', totalSupp);
+      console.log('sell', totalSupp);
 
       let expect_amount = (Math.pow(totalSupp, 3 / 2) - Math.pow((totalSupp - newSellAmount), 3 / 2)) * 2 / 3;
 
