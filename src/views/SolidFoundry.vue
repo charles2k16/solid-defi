@@ -497,6 +497,11 @@ export default {
         },
         legend: {
           show: true,
+          markers: {
+            strokeColor: '#fff',
+            fillColors: ['#1A73E8', '#FCB520'],
+            radius: 12,
+          },
           onItemHover: {
             highlightDataSeries: true,
           },
