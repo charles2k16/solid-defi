@@ -38,24 +38,25 @@ export default {
           thirdLine.xax.push(0)
         }
       }
-
-      // take solid extimate 
-      // add to current supply
       return thirdLine
     },
-    getRandomNumber () {
+    getRandomNumber (maxNumber) {
+      console.log('one', maxNumber)
       let graph = {
         xaxis: [],
         yaxis: []
       };
 
-      for (const x of Array(400).keys()) {
+      maxNumber = maxNumber * 30
+      let max = ~~maxNumber
+      console.log(max)
+
+      for (const x of Array(max).keys()) {
 
         let y = Math.sqrt(x)
         graph.xaxis.push(x)
         graph.yaxis.push(y)
       }
-      // console.log(graph);
       return graph;
     },
     getFirstFourStrings (str) {
@@ -116,6 +117,20 @@ export default {
 
       return expect_amount;
     },
+    // claimEstimate (reward, stakedLet, kRewardAccu,) {
+    //   const divExact = new BigNumber(10 ** 24)
+    //   let rewardBal = BigNumber(kRewardAccu)
+    //   rewardBal = rewardBal - reward
+    //   rewardBal = rewardBal * balanceOf
+    //   // that would be balance of SolidDAI
+    //   rewardBal = rewardBal / divExact
+    //   rewardBal = new BigNumber(rewardBal)
+    //   rewardBal = rewardBal.shiftedBy(-18)
+    //   rewardBal = rewardBal.toFixed(18)
+    //   rewardBal = rewardBal.toString()
+
+    //   return rewardBal
+    // },
     approveMintOnBuy () {
       let amount = 10000000000000000000;
       let amt = amount.toString();

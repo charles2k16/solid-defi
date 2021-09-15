@@ -62,7 +62,11 @@
             <div class="solid_dai_gr">
               <h3>SOLID-DAI BONDING CURVE</h3>
               <br />
-              <div id="chart-timeline">
+              <div
+                id="chart-timeline"
+                v-loading="chartLoading"
+                element-loading-text="Loading chart..."
+              >
                 <apexchart
                   v-if="showChart"
                   height="330"
@@ -395,6 +399,7 @@ export default {
   data() {
     return {
       approveLoading: false,
+      chartLoading: true,
       showChart: false,
       showAccounts: false,
       chain: null,
@@ -446,7 +451,7 @@ export default {
         stroke: {
           curve: 'straight',
           width: 5,
-          colors: ['#1A73E8', '#FCB520'],
+          colors: ['#404085', '#FCB520'],
         },
         markers: {
           size: 0,
@@ -459,7 +464,7 @@ export default {
               return parseFloat(val).toFixed(1);
             },
           },
-          min: 4,
+          min: 3,
           // max: 190,
           tooltip: {
             enabled: true,
@@ -487,7 +492,7 @@ export default {
         },
         fill: {
           type: 'gradient',
-          colors: ['#1A73E8', '#FCB520'],
+          colors: ['#404085', '#FCB520'],
           // opacity: 0.9,
           gradient: {
             enabled: true,
@@ -557,16 +562,11 @@ export default {
     },
     chain: function(netId) {
       console.log(netId, 'connecting to eth');
-      // if (this.chain == 1) {
-      //   this.$router.go();
-      // }
       this.connectToEthContract();
     },
   },
   created() {
     this.connectToEthContract();
-
-    this.loadSupplyChart();
   },
   methods: {
     connectToEthContract() {
@@ -652,13 +652,13 @@ export default {
         .addSupplyChart(data)
         .then(response => {
           console.log(response.data);
-          // this.loadSupplyChart();
+          this.loadSupplyChart();
         })
         .catch(error => console.log(error));
     },
     loadSupplyChart() {
       this.showChart = false;
-      this.get100Zeros();
+      this.chartLoading = true;
       let data = [];
       supplyApi
         .getSupplyChart()
@@ -667,7 +667,7 @@ export default {
             if (supp.supply > 0) data.push(supp.supply);
           });
           let maxNumber = this.getMaxNumber(data);
-          let chart = this.getRandomNumber();
+          let chart = this.getRandomNumber(maxNumber);
 
           let appendCurve = this.greaterThanSupply(chart.yaxis, maxNumber);
           let prependCurve = this.lessThanSupply(chart.yaxis, maxNumber);
@@ -677,10 +677,12 @@ export default {
           prependCurve = prependCurve.concat(appendCurve);
           addSupp.push(maxNumber);
 
-          console.log(addSupp);
+          // console.log(addSupp);
           this.series[0].data = chart.yaxis;
           this.series[1].data = addSupp;
+          // console.log(addSupp);
           this.chartOptions.xaxis.categories = chart.xaxis;
+          this.chartLoading = false;
           this.showChart = true;
         })
         .catch(error => console.log(error));
