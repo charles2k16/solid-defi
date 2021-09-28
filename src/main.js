@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import mixin from './mixins';
 import router from './router';
-import { store } from "./store/";
+import store from "./store/";
 import 'material-icons/iconfont/material-icons.css';
 
 import drizzleVuePlugin from '@drizzle/vue-plugin'

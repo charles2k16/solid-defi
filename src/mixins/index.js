@@ -92,9 +92,7 @@ export default {
       return `SLD-${randomString}`;
     },
     buyEstimate (etherAmount, totalSupply) {
-      let getSupp = totalSupply == null ? 0 : totalSupply == 'loading' ? 0 : totalSupply
-      let totalSupp = getSupp / 1000000000000000000;
-      console.log('buy', totalSupp);
+      let totalSupp = totalSupply == null ? 0 : totalSupply
 
       let buyEstimate = Math.pow(3 / 2 * etherAmount + Math.pow(totalSupp, 3 / 2), 2 / 3) - totalSupp;
 
@@ -117,22 +115,19 @@ export default {
 
       return expect_amount;
     },
-    // claimEstimate (reward, stakedLet, kRewardAccu,) {
-    //   const divExact = new BigNumber(10 ** 24)
-    //   let rewardBal = BigNumber(kRewardAccu)
-    //   rewardBal = rewardBal - reward
-    //   rewardBal = rewardBal * balanceOf
-    //   // that would be balance of SolidDAI
-    //   rewardBal = rewardBal / divExact
-    //   rewardBal = new BigNumber(rewardBal)
-    //   rewardBal = rewardBal.shiftedBy(-18)
-    //   rewardBal = rewardBal.toFixed(18)
-    //   rewardBal = rewardBal.toString()
+    claimReward (address) {
+      this.drizzleInstance.contracts['SolidFoundry'].methods[
+        'claimReward'
+      ].cacheSend(address);
+    },
+    // getSolidDaiBalance () {
+    //   this.drizzleInstance.contracts['SolidFoundry'].methods[
+    //     'balanceOf'
+    //   ].call(this.solidFoundryAddress);
 
-    //   return rewardBal
     // },
     approveMintOnBuy () {
-      let amount = 10000000000000000000;
+      let amount = 9000000000000000000000000000;
       let amt = amount.toString();
 
       this.drizzleInstance.contracts['TestErc20'].methods[

@@ -89,4 +89,10 @@ export const getTotalSupply = {
   methodArgs: '',
 };
 
+// export const getSolidDaiBalance = {
+//   contractName: 'SolidFoundry',
+//   method: 'balanceOf',
+//   methodArgs: 'address',
+// };
+
 

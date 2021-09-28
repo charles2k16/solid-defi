@@ -15,6 +15,9 @@
           width="50px"
           @click="goHome"
         />
+        <vs-button class="airdrop_btn" @click="claimReward(activeAccount)">
+          Claim
+        </vs-button>
       </template>
       <!-- to="/solidfoundry" -->
       <!-- @click="showComingSoon = true" -->
@@ -126,7 +129,9 @@
                       </span>
                     </div>
 
-                    <span class="dai_pr">0</span>
+                    <span class="dai_pr">{{
+                      Number(getDaiBalance).toFixed(2)
+                    }}</span>
                   </div>
                 </div>
 
@@ -162,7 +167,9 @@
                       </span>
                     </div>
 
-                    <span class="dai_pr">0</span>
+                    <span class="dai_pr">{{
+                      Number(getSolidDaiBalance).toFixed(2)
+                    }}</span>
                   </div>
                 </div>
 
@@ -519,6 +526,11 @@ export default {
     ...mapGetters('accounts', ['activeAccount', 'activeBalance']),
     ...mapGetters('contracts', ['getContractData', 'contractInstances']),
     ...mapGetters('drizzle', ['drizzleInstance']),
+    ...mapGetters('solid', [
+      'getDaiBalance',
+      'getSolidDaiBalance',
+      'getSolidDaiSupply',
+    ]),
 
     onEthNetwork() {
       let network = this.drizzleInstance.web3._provider.networkVersion;
@@ -559,6 +571,7 @@ export default {
       console.log('live', supplySqrt);
 
       this.updatePrice(supplySqrt);
+      this.$store.dispatch('solid/fetchSolidDaiBalance');
     },
     chain: function(netId) {
       console.log(netId, 'connecting to eth');
@@ -571,6 +584,10 @@ export default {
   methods: {
     connectToEthContract() {
       this.$store.dispatch('drizzle/REGISTER_CONTRACT', getTotalSupply);
+      this.$store.dispatch('solid/fetchDaiBalance');
+      this.$store.dispatch('solid/fetchSolidDaiBalance');
+      this.$store.dispatch('solid/fetchSolidDaiSupply');
+      this.allowanceValue();
     },
     showTokenList(inputIndex) {
       this.tkn_selected = inputIndex;
@@ -598,12 +615,12 @@ export default {
       if (this.buySolid) {
         this.outputAmount = this.buyEstimate(
           this.inputAmount,
-          this.solidTotalSupply
+          this.getSolidDaiSupply
         );
       } else {
         this.outputAmount = this.sellEstimate(
           this.inputAmount,
-          this.solidTotalSupply
+          this.getSolidDaiSupply
         );
       }
     },
@@ -615,7 +632,7 @@ export default {
       this.outputAmount = this.inputAmount;
       this.inputAmount = outAmt;
       this.approveLoading = false;
-      this.solidTotalSupply;
+      this.getSolidDaiSupply;
     },
     approveBuy() {
       this.approveLoading = true;

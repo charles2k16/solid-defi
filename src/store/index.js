@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import solid from './modules/solid'
 
 Vue.use(Vuex)
 
-// const store = new Vuex.Store({ state: {} });
+// export const store = new Vuex.Store({ state: {} })
 
-export const store = new Vuex.Store({ state: {} })
+export default new Vuex.Store({
+  modules: {
+    solid
+  }
+})
